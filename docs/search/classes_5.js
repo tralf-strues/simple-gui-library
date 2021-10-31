@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['label_0',['Label',['../class_label.html',1,'']]]
+  ['menubar_0',['MenuBar',['../class_menu_bar.html',1,'']]],
+  ['menuitem_1',['MenuItem',['../class_menu_item.html',1,'']]]
 ];

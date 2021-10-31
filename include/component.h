@@ -13,14 +13,6 @@
 #include "sml/utils/id.h"
 #include "events/gui_event_dispatching.h"
 
-struct Dimension
-{
-    Dimension(int32_t width = 0, int32_t height = 0) : width(width), height(height) {}
-
-    int32_t width;
-    int32_t height;
-};
-
 class Component : public EventTarget
 {
 public:
@@ -33,8 +25,8 @@ public:
     }
 
     virtual Component* getHitComponent(int32_t x, int32_t y);
-    virtual void updateGraphics() = 0;
-    void render(Texture* target);
+    virtual void updateGraphics();
+    virtual void render(Texture* target, const Rectangle<int32_t>& targetRegion);
 
     /* EventTarget */
     virtual EventDispatchChain* buildEventDispatchChain(EventDispatchChain* chain) override;
@@ -75,14 +67,16 @@ public:
 
     int32_t getX() const;
     int32_t getY() const;
+    Vec2<int32_t> getPos() const;
+    Rectangle<int32_t> getRegion() const;
 
     int32_t getWidth() const;
     int32_t getHeight() const;
-    const Dimension& getSize() const;
+    const Vec2<int32_t>& getSize() const;
 
-    const Dimension& getMinSize() const;
-    const Dimension& getMaxSize() const;
-    const Dimension& getPrefSize() const;
+    const Vec2<int32_t>& getMinSize() const;
+    const Vec2<int32_t>& getMaxSize() const;
+    const Vec2<int32_t>& getPrefSize() const;
     bool isMinSizeSet() const;
     bool isMaxSizeSet() const;
     bool isPrefSizeSet() const;
@@ -106,18 +100,18 @@ protected:
     int32_t            m_X           = 0;
     int32_t            m_Y           = 0;
 
-    Dimension          m_Size        = 0;
+    Vec2<int32_t>      m_Size        = {0, 0};
     
     bool               m_MinSizeSet  = false;
-    Dimension          m_MinSize     = {0, 0};
+    Vec2<int32_t>      m_MinSize     = {0, 0};
     bool               m_MaxSizeSet  = false;
-    Dimension          m_MaxSize     = {0, 0};
+    Vec2<int32_t>      m_MaxSize     = {0, 0};
     bool               m_PrefSizeSet = false;
-    Dimension          m_PrefSize    = {0, 0};
+    Vec2<int32_t>      m_PrefSize    = {0, 0};
 
     /* Visuals */
     Color              m_Foreground  = COLOR_BLACK;
-    Color              m_Background  = COLOR_WHITE;
+    Color              m_Background  = 0xFF'FF'FF'00;
 
     void updateTextureSize();
 };

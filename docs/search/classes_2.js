@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dimension_0',['Dimension',['../struct_dimension.html',1,'']]]
+  ['frame_0',['Frame',['../class_frame.html',1,'']]]
 ];

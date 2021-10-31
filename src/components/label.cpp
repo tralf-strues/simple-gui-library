@@ -31,20 +31,25 @@ const char* Label::getText() const
 
 void Label::updateGraphics()
 {
-    Texture* savedTarget = m_Renderer->getTarget();
+    Component::updateGraphics();
 
-    m_Renderer->setTarget(m_Texture);
-    
-    m_Renderer->setColor(m_Background);
-    m_Renderer->clear();
-
-    if (m_Text.getStr() != nullptr)
+    if (m_Text.getStr() == nullptr)
     {
-        m_Text.load(*m_Renderer);
-        setPrefSize(m_Text.getWidth(), m_Text.getHeight());
+        return;
     }
 
-    m_Text.render(*m_Renderer, Vec2<int32_t>{0, 0});
- 
-    m_Renderer->setTarget(savedTarget);
+    m_Text.load(*m_Renderer);
+    setPrefSize(m_Text.getWidth(), m_Text.getHeight());
+}
+
+void Label::render(Texture* target, const Rectangle<int32_t>& targetRegion)
+{
+    Component::render(target, targetRegion);
+
+    Texture* savedTarget = m_Renderer->getTarget();
+    m_Renderer->setTarget(target);
+
+    m_Text.render(*m_Renderer, targetRegion.pos + getPos());
+
+    m_Renderer->setTarget(savedTarget);    
 }

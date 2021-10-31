@@ -50,12 +50,7 @@ void Frame::proccessSystemEvents()
 
 void Frame::show()
 {
-    for (Component* component : m_Components)
-    {
-        component->render(m_Texture);
-    }
-
-    render(nullptr);
+    render(nullptr, Rectangle<int32_t>{Vec2<int32_t>{0, 0}, m_Size.x, m_Size.y});
 
     m_Renderer->present();
 }

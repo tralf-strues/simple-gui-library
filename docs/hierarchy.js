@@ -1,6 +1,5 @@
 var hierarchy =
 [
-    [ "Dimension", "struct_dimension.html", null ],
     [ "EventDispatchChain", null, [
       [ "GuiEventDispatchChain", "class_gui_event_dispatch_chain.html", null ]
     ] ],
@@ -20,6 +19,16 @@ var hierarchy =
     [ "GuiEventTarget", null, [
       [ "Scene", "class_scene.html", null ]
     ] ],
+    [ "Listener", null, [
+      [ "CloseListener", "class_close_listener.html", null ],
+      [ "LabelOnHover", "class_label_on_hover.html", null ]
+    ] ],
     [ "MenuBar", "class_menu_bar.html", null ],
-    [ "MenuItem", "class_menu_item.html", null ]
+    [ "MenuItem", "class_menu_item.html", null ],
+    [ "Skin", "class_skin.html", [
+      [ "BasicSkin", "class_basic_skin.html", null ]
+    ] ],
+    [ "Skinable", "class_skinable.html", [
+      [ "Button", "class_button.html", null ]
+    ] ]
 ];

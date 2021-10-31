@@ -20,11 +20,12 @@ public:
     Container(Renderer* renderer, int32_t width = 100, int32_t height = 100)
         : Component(renderer, width, height) {}
 
-    virtual void updateGraphics() override;
     virtual Component* getHitComponent(int32_t x, int32_t y) override;
+    virtual void updateGraphics() override;
+    virtual void render(Texture* target, const Rectangle<int32_t>& targetRegion) override;
 
-    virtual Dimension getPrefferedLayoutSize();
-    virtual Dimension getMinLayoutSize();
+    virtual Vec2<int32_t> getPrefferedLayoutSize();
+    virtual Vec2<int32_t> getMinLayoutSize();
 
     void addComponent(Component* component);
     void removeComponent(Component* component);

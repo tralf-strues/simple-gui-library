@@ -46,7 +46,7 @@ Event* GuiEventDispatcher::dispatchEvent(Event* event, EventDispatchChain* chain
     assert(event);
     assert(chain);
     
-    event = dispatchCapturingEvent(static_cast<Event*>(event));
+    event = dispatchCapturingEvent(event);
 
     if (event->isConsumed())
     {
@@ -59,7 +59,7 @@ Event* GuiEventDispatcher::dispatchEvent(Event* event, EventDispatchChain* chain
     // If the event hasn't been consumed
     if (event != nullptr)
     {
-        event = dispatchBubblingEvent(static_cast<Event*>(event));
+        event = dispatchBubblingEvent(event);
         
         if (event->isConsumed())
         {

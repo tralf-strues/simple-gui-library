@@ -1,7 +1,6 @@
 var files_dup =
 [
     [ "component.h", "component_8h.html", [
-      [ "Dimension", "struct_dimension.html", null ],
       [ "Component", "class_component.html", null ]
     ] ],
     [ "button.h", "button_8h.html", [
@@ -28,11 +27,18 @@ var files_dup =
     [ "scene.h", "scene_8h.html", [
       [ "Scene", "class_scene.html", null ]
     ] ],
+    [ "default_skins.h", "default__skins_8h.html", null ],
+    [ "skin.h", "skin_8h.html", [
+      [ "Skin", "class_skin.html", null ],
+      [ "Skinable", "class_skinable.html", null ],
+      [ "BasicSkin", "class_basic_skin.html", null ]
+    ] ],
     [ "component.cpp", "component_8cpp.html", null ],
     [ "button.cpp", "button_8cpp.html", null ],
     [ "label.cpp", "label_8cpp_source.html", null ],
     [ "container.cpp", "container_8cpp.html", null ],
     [ "gui_event_dispatching.cpp", "gui__event__dispatching_8cpp.html", "gui__event__dispatching_8cpp" ],
     [ "frame.cpp", "frame_8cpp.html", null ],
-    [ "main.cpp", "main_8cpp_source.html", null ]
+    [ "main.cpp", "main_8cpp_source.html", null ],
+    [ "skin.cpp", "skin_8cpp.html", null ]
 ];

@@ -9,21 +9,28 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
+#include "style/skin.h"
 #include "label.h"
 
-class Button : public Component
+class Button : public Component, public Skinable
 {
 public:
     Button(Renderer* renderer, const Font& font, Color background = COLOR_WHITE);
     Button(Renderer* renderer, const Font& font, const char* label,
            Color foreground = COLOR_BLACK, Color background = COLOR_WHITE);
 
-    /* Component */
     const char* getLabel() const;
     void setLabel(const char* label);
 
-private:
+    /* Component */
+    virtual void updateGraphics() override;
+    virtual void render(Texture* target, const Rectangle<int32_t>& targetRegion) override;
+
+protected:
     Label m_Label;
+
+    /* Skinable */
+    virtual void applySkin() override;
 };
 
 #endif // BUTTON_H

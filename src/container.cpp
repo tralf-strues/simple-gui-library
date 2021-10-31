@@ -8,28 +8,6 @@
 
 #include "container.h"
 
-void Container::updateGraphics()
-{
-    if (m_Texture == nullptr)
-    {
-        return;
-    }
-
-    Texture* savedTarget = m_Renderer->getTarget();
-
-    m_Renderer->setTarget(m_Texture);
-    
-    m_Renderer->setColor(m_Background);
-    m_Renderer->clear();
-
-    for (Component* component : m_Components)
-    {
-        component->updateGraphics();
-    }
-
-    m_Renderer->setTarget(savedTarget);
-}
-
 Component* Container::getHitComponent(int32_t x, int32_t y)
 {
     if (Component::getHitComponent(x, y) == nullptr)
@@ -50,14 +28,47 @@ Component* Container::getHitComponent(int32_t x, int32_t y)
     return this;
 }
 
-Dimension Container::getPrefferedLayoutSize()
+void Container::updateGraphics()
 {
-    return Dimension{0, 0};
+    Component::updateGraphics();
+
+    Texture* savedTarget = m_Renderer->getTarget();
+    m_Renderer->setTarget(m_Texture);
+    
+    for (Component* component : m_Components)
+    {
+        component->updateGraphics();
+    }
+
+    m_Renderer->setTarget(savedTarget);
 }
 
-Dimension Container::getMinLayoutSize()
+void Container::render(Texture* target, const Rectangle<int32_t>& targetRegion)
 {
-    return Dimension{0, 0};
+    Component::render(target, targetRegion);
+
+    Texture* savedTarget = m_Renderer->getTarget();
+    m_Renderer->setTarget(target);
+
+    Rectangle<int32_t> translatedRegion = targetRegion;
+    translatedRegion.pos += Vec2<int32_t>{m_X, m_Y};
+
+    for (Component* component : m_Components)
+    {
+        component->render(target, translatedRegion);
+    }
+
+    m_Renderer->setTarget(savedTarget);
+}
+
+Vec2<int32_t> Container::getPrefferedLayoutSize()
+{
+    return Vec2<int32_t>{0, 0};
+}
+
+Vec2<int32_t> Container::getMinLayoutSize()
+{
+    return Vec2<int32_t>{0, 0};
 }
 
 void Container::addComponent(Component* component)

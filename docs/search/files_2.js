@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['frame_2ecpp_0',['frame.cpp',['../frame_8cpp.html',1,'']]],
-  ['frame_2eh_1',['frame.h',['../frame_8h.html',1,'']]]
+  ['default_5fskins_2eh_0',['default_skins.h',['../default__skins_8h.html',1,'']]]
 ];

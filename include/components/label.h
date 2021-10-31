@@ -22,6 +22,7 @@ public:
 
     /* Component */
     virtual void updateGraphics() override;
+    virtual void render(Texture* target, const Rectangle<int32_t>& targetRegion) override;
 
 private:
     Text m_Text;

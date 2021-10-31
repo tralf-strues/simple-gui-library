@@ -302,7 +302,7 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    assert(event);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    assert(chain);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">event</span> = dispatchCapturingEvent(<span class="keyword">static_cast&lt;</span>Event*<span class="keyword">&gt;</span>(event));</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">event</span> = dispatchCapturingEvent(event);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span> (event-&gt;isConsumed())</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {</div>
@@ -315,7 +315,7 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">// If the event hasn&#39;t been consumed</span></div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> (event != <span class="keyword">nullptr</span>)</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keyword">event</span> = dispatchBubblingEvent(<span class="keyword">static_cast&lt;</span>Event*<span class="keyword">&gt;</span>(event));</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keyword">event</span> = dispatchBubblingEvent(event);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">if</span> (event-&gt;isConsumed())</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        {</div>

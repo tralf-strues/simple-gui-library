@@ -11,7 +11,7 @@
 
 Component* Component::getHitComponent(int32_t x, int32_t y)
 {
-    if (x >= m_X && x < m_X + m_Size.width && y >= m_Y && y < m_Y + m_Size.height)
+    if (x >= m_X && x < m_X + m_Size.x && y >= m_Y && y < m_Y + m_Size.y)
     {
         return this;
     }
@@ -19,13 +19,25 @@ Component* Component::getHitComponent(int32_t x, int32_t y)
     return nullptr;
 }
 
-void Component::render(Texture* target)
+void Component::updateGraphics()
 {
     Texture* savedTarget = m_Renderer->getTarget();
+    m_Renderer->setTarget(m_Texture);
+    
+    m_Renderer->setColor(m_Background);
+    m_Renderer->clear();
 
+    m_Renderer->setTarget(savedTarget);
+}
+
+void Component::render(Texture* target, const Rectangle<int32_t>& targetRegion)
+{
+    Texture* savedTarget = m_Renderer->getTarget();
     m_Renderer->setTarget(target);
-    Rectangle region{Vec2<int32_t>{m_X, m_Y}, m_Size.width, m_Size.height};
-    renderTexture(*m_Renderer, *m_Texture, region);
+
+    Rectangle<int32_t> region = getRegion();
+    region.pos += targetRegion.pos;
+    renderTexture(m_Renderer, *m_Texture, &region, nullptr);
 
     m_Renderer->setTarget(savedTarget);
 }
@@ -84,30 +96,30 @@ void Component::setY(int32_t y)
 
 void Component::setSize(int32_t width, int32_t height)
 {
-    m_Size.width  = width;
-    m_Size.height = height;
+    m_Size.x = width;
+    m_Size.y = height;
 
     updateTextureSize();
 }
 
 void Component::setMinSize(int32_t minWidth, int32_t minHeight)
 {
-    m_MinSize.width  = minWidth;
-    m_MinSize.height = minHeight;
+    m_MinSize.x = minWidth;
+    m_MinSize.y = minHeight;
     setMinSizeEnabled(true);
 }
 
 void Component::setMaxSize(int32_t maxWidth, int32_t maxHeight)
 {
-    m_MaxSize.width  = maxWidth;
-    m_MaxSize.height = maxHeight;
+    m_MaxSize.x = maxWidth;
+    m_MaxSize.y = maxHeight;
     setMaxSizeEnabled(true);
 }
 
 void Component::setPrefSize(int32_t prefWidth, int32_t prefHeight)
 {
-    m_PrefSize.width  = prefWidth;
-    m_PrefSize.height = prefHeight;
+    m_PrefSize.x = prefWidth;
+    m_PrefSize.y = prefHeight;
     setPrefSizeEnabled(true);
 }
 
@@ -183,32 +195,42 @@ int32_t Component::getY() const
     return m_Y;
 }
 
+Vec2<int32_t> Component::getPos() const
+{
+    return Vec2<int32_t>{m_X, m_Y};
+}
+
+Rectangle<int32_t> Component::getRegion() const
+{
+    return Rectangle<int32_t>{getPos(), m_Size.x, m_Size.y};
+}
+
 int32_t Component::getWidth() const
 {
-    return m_Size.width;
+    return m_Size.x;
 }
 
 int32_t Component::getHeight() const
 {
-    return m_Size.height;
+    return m_Size.y;
 }
 
-const Dimension& Component::getSize() const
+const Vec2<int32_t>& Component::getSize() const
 {
     return m_Size;
 }
 
-const Dimension& Component::getMinSize() const
+const Vec2<int32_t>& Component::getMinSize() const
 {
     return m_MinSize;
 }
 
-const Dimension& Component::getMaxSize() const
+const Vec2<int32_t>& Component::getMaxSize() const
 {
     return m_MaxSize;
 }
 
-const Dimension& Component::getPrefSize() const
+const Vec2<int32_t>& Component::getPrefSize() const
 {
     return m_PrefSize;
 }
@@ -243,19 +265,19 @@ void Component::updateTextureSize()
 {
     assert(m_Renderer);
 
-    if (m_Size.width <= 0 || m_Size.height <= 0)
+    if (m_Size.x <= 0 || m_Size.y <= 0)
     {
         return;
     }
 
     if (m_Texture == nullptr)
     {
-        m_Texture = new Texture(*m_Renderer, m_Size.width, m_Size.height);
+        m_Texture = new Texture(m_Renderer, m_Size.x, m_Size.y);
     }
-    else if (static_cast<int32_t>(m_Texture->getWidth()) < m_Size.width ||
-             static_cast<int32_t>(m_Texture->getHeight()) < m_Size.height)
+    else if (static_cast<int32_t>(m_Texture->getWidth()) < m_Size.x ||
+             static_cast<int32_t>(m_Texture->getHeight()) < m_Size.y)
     {
         delete m_Texture;
-        m_Texture = new Texture(*m_Renderer, m_Size.width, m_Size.height);
+        m_Texture = new Texture(m_Renderer, m_Size.x, m_Size.y);
     }
 }
