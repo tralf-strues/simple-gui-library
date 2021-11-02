@@ -38,8 +38,22 @@ void Label::updateGraphics()
         return;
     }
 
+    m_Text.setColor(getForeground());
     m_Text.load(*m_Renderer);
-    setPrefSize(m_Text.getWidth(), m_Text.getHeight());
+
+    // FIXME: create a separate function ensureSize()
+    if (m_Text.getWidth() > getWidth())
+    {
+        setWidth(m_Text.getWidth());
+    }
+
+    if (m_Text.getHeight() > getHeight())
+    {
+        setHeight(m_Text.getHeight());
+    }
+    // setSize(m_Text.getWidth(), m_Text.getHeight());
+    // setMinSize(m_Text.getWidth(),  m_Text.getHeight());
+    // setPrefSize(m_Text.getWidth(), m_Text.getHeight());
 }
 
 void Label::render(Texture* target, const Rectangle<int32_t>& targetRegion)

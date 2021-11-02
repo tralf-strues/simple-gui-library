@@ -55,8 +55,10 @@
 #ifndef GUI_EVENT_DISPATCHING_H
 #define GUI_EVENT_DISPATCHING_H
 
+#include <vector>
 #include "sml/events/event_dispatching.h"
 #include "sml/events/listener_notifier.h"
+#include "sml/events/system_events.h"
 #include "gui_event.h"
 
 class GuiEventDispatchChain;
@@ -64,13 +66,13 @@ class GuiEventDispatchChain;
 class GuiEventDispatcher : public EventDispatcher
 {
 public:
+    ~GuiEventDispatcher() = default;
+
     /* Listeners */
     void attachFilter(const std::initializer_list<EventType>& types, Listener* filter);    
     void attachHandler(const std::initializer_list<EventType>& types, Listener* handler);    
 
     /* EventDispatcher */
-
-    /*! @warning event must be of type @ref Event! */
     virtual Event* dispatchEvent(Event* event, EventDispatchChain* chain) override;
 
 protected:
@@ -90,13 +92,11 @@ public:
 
     /* EventDispatchChain */
     virtual void prependDispatcher(EventDispatcher* dispatcher) override;
-
-    //! @warning event must be of type @ref Event!
     virtual Event* sendThroughChain(Event* event) override;
 
 private:
-    DynamicArray<GuiEventDispatcher*> m_Dispatchers;
-    uint32_t                          m_ActiveCount;
+    std::vector<GuiEventDispatcher*> m_Dispatchers;
+    uint32_t                         m_ActiveCount;
 };
 
 //------------------------------------------------------------------------------

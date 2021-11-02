@@ -12,12 +12,14 @@ Button::Button(Renderer* renderer, const Font& font, Color background)
     : Component(renderer), m_Label(renderer, font)
 {
     m_Background = background;
+    setDefaultStyle();
 }
 
 Button::Button(Renderer* renderer, const Font& font, const char* label, Color foreground, Color background)
-    : Button(renderer, font, background)
+    : Component(renderer), m_Label(renderer, font, label, foreground)
 {
-    m_Label.setForeground(foreground);
+    m_Background = background;
+    setDefaultStyle();
 }
 
 const char* Button::getLabel() const
@@ -32,34 +34,33 @@ void Button::setLabel(const char* label)
 
 void Button::updateGraphics()
 {
-    Component::updateGraphics();
-
-    applySkin();
-
+    m_Label.setForeground(getForeground());
     m_Label.updateGraphics();
-    m_Label.setSize(m_Label.getPrefSize().x, m_Label.getPrefSize().y);
-    m_Label.updateGraphics(); // FIXME: Rerender text to the newly allocated Texture
-    Rectangle<int32_t> centeredRegion = centerRegion(getRegion(), m_Label.getRegion());
-    m_Label.setX(centeredRegion.pos.x);
-    m_Label.setY(centeredRegion.pos.y);
+    // setMinSize(m_Label.getMinSize() + BUTTON_DEFAULT_MIN_MARGINS);
+    // setPrefSize(getMinSize());
+
+    if (m_Label.getText() != nullptr)
+    {
+        setSize(m_Label.getSize() + BUTTON_DEFAULT_MIN_MARGINS);
+    }
+
+    Component::updateGraphics();
 }
 
 void Button::render(Texture* target, const Rectangle<int32_t>& targetRegion)
 {
     Component::render(target, targetRegion);
 
-    // Rectangle<int32_t> translatedRegion = targetRegion;
-    // translatedRegion.pos += getPos();
-    // translatedRegion.pos += targetRegion.pos;
-    // translatedRegion.pos -= m_Label.getPos();
+    Rectangle<int32_t> centeredRegion = centerRegion(getRegion(), m_Label.getRegion());
+    m_Label.setX(centeredRegion.pos.x);
+    m_Label.setY(centeredRegion.pos.y);
 
     m_Label.render(target, targetRegion);
 }
 
-void Button::applySkin()
+void Button::setDefaultStyle()
 {
-    if (m_Skin != nullptr)
-    {
-        m_Skin->apply(m_Renderer, m_Texture, nullptr);
-    }
+    setSkin(&DEFAULT_SKIN_BUTTON);
+    m_Dispatcher.attachHandler({MouseEnteredEvent::getStaticType(), MouseExitedEvent::getStaticType()},
+                               new HoverListener{this, &DEFAULT_HOVER_STYLE_BUTTON});
 }

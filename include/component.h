@@ -12,17 +12,20 @@
 #include "sml/sml_graphics_wrapper.h"
 #include "sml/utils/id.h"
 #include "events/gui_event_dispatching.h"
+#include "style/skin.h"
 
 class Component : public EventTarget
 {
 public:
-    Component() = default;
+    Component() {};
 
-    Component(Renderer* renderer, int32_t width = 32, int32_t height = 32)
+    Component(Renderer* renderer, int32_t width = 1, int32_t height = 1)
         : m_Renderer(renderer)
     {
         setSize(width, height);
     }
+
+    virtual ~Component() = default;
 
     virtual Component* getHitComponent(int32_t x, int32_t y);
     virtual void updateGraphics();
@@ -30,6 +33,9 @@ public:
 
     /* EventTarget */
     virtual EventDispatchChain* buildEventDispatchChain(EventDispatchChain* chain) override;
+
+    void attachHandler(const std::initializer_list<EventType>& types, Listener* handler);
+    void attachFilter(const std::initializer_list<EventType>& types, Listener* filter);
 
     /* Setters */
     void setRenderer(Renderer* renderer);
@@ -44,13 +50,20 @@ public:
     void setY(int32_t y);
 
     void setSize(int32_t width, int32_t height);
+    void setSize(const Vec2<int32_t>& size);
+
+    void setWidth(int32_t width);
+    void setHeight(int32_t height);
     
-    void setMinSize(int32_t minWidth, int32_t minHeight);
-    void setMaxSize(int32_t maxWidth, int32_t maxHeight);
-    void setPrefSize(int32_t prefWidth, int32_t prefHeight);
-    void setMinSizeEnabled(bool enabled);
-    void setMaxSizeEnabled(bool enabled);
-    void setPrefSizeEnabled(bool enabled);
+    // void setMinSize(int32_t minWidth, int32_t minHeight);
+    // void setMinSize(const Vec2<int32_t>& minSize);
+    // void setMaxSize(int32_t maxWidth, int32_t maxHeight);
+    // void setMaxSize(const Vec2<int32_t>& maxSize);
+    // void setPrefSize(int32_t prefWidth, int32_t prefHeight);
+    // void setPrefSize(const Vec2<int32_t>& prefSize);
+    // void setMinSizeEnabled(bool enabled);
+    // void setMaxSizeEnabled(bool enabled);
+    // void setPrefSizeEnabled(bool enabled);
 
     void setForeground(Color foreground);
     void setBackground(Color background);
@@ -74,12 +87,12 @@ public:
     int32_t getHeight() const;
     const Vec2<int32_t>& getSize() const;
 
-    const Vec2<int32_t>& getMinSize() const;
-    const Vec2<int32_t>& getMaxSize() const;
-    const Vec2<int32_t>& getPrefSize() const;
-    bool isMinSizeSet() const;
-    bool isMaxSizeSet() const;
-    bool isPrefSizeSet() const;
+    // const Vec2<int32_t>& getMinSize() const;
+    // const Vec2<int32_t>& getMaxSize() const;
+    // const Vec2<int32_t>& getPrefSize() const;
+    // bool isMinSizeSet() const;
+    // bool isMaxSizeSet() const;
+    // bool isPrefSizeSet() const;
 
     Color getForeground() const;
     Color getBackground() const;
@@ -102,18 +115,19 @@ protected:
 
     Vec2<int32_t>      m_Size        = {0, 0};
     
-    bool               m_MinSizeSet  = false;
-    Vec2<int32_t>      m_MinSize     = {0, 0};
-    bool               m_MaxSizeSet  = false;
-    Vec2<int32_t>      m_MaxSize     = {0, 0};
-    bool               m_PrefSizeSet = false;
-    Vec2<int32_t>      m_PrefSize    = {0, 0};
+    // bool               m_MinSizeSet  = false;
+    // Vec2<int32_t>      m_MinSize     = {0, 0};
+    // bool               m_MaxSizeSet  = false;
+    // Vec2<int32_t>      m_MaxSize     = {0, 0};
+    // bool               m_PrefSizeSet = false;
+    // Vec2<int32_t>      m_PrefSize    = {0, 0};
 
     /* Visuals */
     Color              m_Foreground  = COLOR_BLACK;
     Color              m_Background  = 0xFF'FF'FF'00;
 
     void updateTextureSize();
+    virtual void setDefaultStyle() {}
 };
 
 #endif // COMPONENT_H

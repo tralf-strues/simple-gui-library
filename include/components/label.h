@@ -14,8 +14,10 @@
 class Label : public Component
 {
 public:
+    Label() {}
     Label(Renderer* renderer, const Font& font, Color foreground = COLOR_BLACK);
     Label(Renderer* renderer, const Font& font, const char* str, Color foreground = COLOR_BLACK);
+    virtual ~Label() override = default;
 
     void setText(const char* str);
     const char* getText() const;

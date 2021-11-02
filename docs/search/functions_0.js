@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dispatchevent_0',['dispatchEvent',['../class_gui_event_dispatcher.html#aac527dcef0bbcfe218ed4634124f18dd',1,'GuiEventDispatcher']]]
+  ['dispose_0',['dispose',['../class_skin.html#a33947663db739a9f8ba035ee96f5487c',1,'Skin']]]
 ];

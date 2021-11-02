@@ -27,11 +27,18 @@ void Component::updateGraphics()
     m_Renderer->setColor(m_Background);
     m_Renderer->clear();
 
+    applySkin();
+
     m_Renderer->setTarget(savedTarget);
 }
 
 void Component::render(Texture* target, const Rectangle<int32_t>& targetRegion)
 {
+    if (!m_IsVisible)
+    {
+        return;
+    }
+
     Texture* savedTarget = m_Renderer->getTarget();
     m_Renderer->setTarget(target);
 
@@ -54,6 +61,24 @@ EventDispatchChain* Component::buildEventDispatchChain(EventDispatchChain* chain
     }
     
     return m_Parent->buildEventDispatchChain(chain);
+}
+
+void Component::attachHandler(const std::initializer_list<EventType>& types, Listener* handler)
+{
+    m_Dispatcher.attachHandler(types, handler);
+}
+
+void Component::attachFilter(const std::initializer_list<EventType>& types, Listener* filter)
+{
+    m_Dispatcher.attachFilter(types, filter);
+}
+
+void Component::applySkin()
+{
+    if (m_Skin != nullptr)
+    {
+        m_Skin->apply(m_Renderer, m_Texture, nullptr);
+    }
 }
 
 //------------------------------------Setters-----------------------------------
@@ -102,41 +127,85 @@ void Component::setSize(int32_t width, int32_t height)
     updateTextureSize();
 }
 
-void Component::setMinSize(int32_t minWidth, int32_t minHeight)
+void Component::setSize(const Vec2<int32_t>& size)
 {
-    m_MinSize.x = minWidth;
-    m_MinSize.y = minHeight;
-    setMinSizeEnabled(true);
+    setSize(size.x, size.y);
 }
 
-void Component::setMaxSize(int32_t maxWidth, int32_t maxHeight)
+void Component::setWidth(int32_t width)
 {
-    m_MaxSize.x = maxWidth;
-    m_MaxSize.y = maxHeight;
-    setMaxSizeEnabled(true);
+    setSize(width, getHeight());
 }
 
-void Component::setPrefSize(int32_t prefWidth, int32_t prefHeight)
+void Component::setHeight(int32_t height)
 {
-    m_PrefSize.x = prefWidth;
-    m_PrefSize.y = prefHeight;
-    setPrefSizeEnabled(true);
+    setSize(getWidth(), height);
 }
 
-void Component::setMinSizeEnabled(bool enabled)
-{
-    m_MinSizeSet = enabled;
-}
+// void Component::setMinSize(int32_t minWidth, int32_t minHeight)
+// {
+//     m_MinSize.x = minWidth;
+//     m_MinSize.y = minHeight;
+//     setMinSizeEnabled(true);
 
-void Component::setMaxSizeEnabled(bool enabled)
-{
-    m_MaxSizeSet = enabled;
-}
+//     Vec2<int32_t> newSize = getSize();
 
-void Component::setPrefSizeEnabled(bool enabled)
-{
-    m_PrefSizeSet = enabled;
-}
+//     if (getWidth() < m_MinSize.x)
+//     {
+//         newSize.x = m_MinSize.x;
+//     }
+    
+//     if (getHeight() < m_MinSize.y)
+//     {
+//         newSize.y = m_MinSize.y;
+//     }
+
+//     setSize(newSize);
+// }
+
+// void Component::setMinSize(const Vec2<int32_t>& minSize)
+// {
+//     setMinSize(minSize.x, minSize.y);
+// }
+
+// void Component::setMaxSize(int32_t maxWidth, int32_t maxHeight)
+// {
+//     m_MaxSize.x = maxWidth;
+//     m_MaxSize.y = maxHeight;
+//     setMaxSizeEnabled(true);
+// }
+
+// void Component::setMaxSize(const Vec2<int32_t>& maxSize)
+// {
+//     setMaxSize(maxSize.x, maxSize.y);
+// }
+
+// void Component::setPrefSize(int32_t prefWidth, int32_t prefHeight)
+// {
+//     m_PrefSize.x = prefWidth;
+//     m_PrefSize.y = prefHeight;
+//     setPrefSizeEnabled(true);
+// }
+
+// void Component::setPrefSize(const Vec2<int32_t>& prefSize)
+// {
+//     setPrefSize(prefSize.x, prefSize.y);
+// }
+
+// void Component::setMinSizeEnabled(bool enabled)
+// {
+//     m_MinSizeSet = enabled;
+// }
+
+// void Component::setMaxSizeEnabled(bool enabled)
+// {
+//     m_MaxSizeSet = enabled;
+// }
+
+// void Component::setPrefSizeEnabled(bool enabled)
+// {
+//     m_PrefSizeSet = enabled;
+// }
 
 void Component::setForeground(Color foreground)
 {
@@ -220,35 +289,35 @@ const Vec2<int32_t>& Component::getSize() const
     return m_Size;
 }
 
-const Vec2<int32_t>& Component::getMinSize() const
-{
-    return m_MinSize;
-}
+// const Vec2<int32_t>& Component::getMinSize() const
+// {
+//     return m_MinSize;
+// }
 
-const Vec2<int32_t>& Component::getMaxSize() const
-{
-    return m_MaxSize;
-}
+// const Vec2<int32_t>& Component::getMaxSize() const
+// {
+//     return m_MaxSize;
+// }
 
-const Vec2<int32_t>& Component::getPrefSize() const
-{
-    return m_PrefSize;
-}
+// const Vec2<int32_t>& Component::getPrefSize() const
+// {
+//     return m_PrefSize;
+// }
 
-bool Component::isMinSizeSet() const
-{
-    return m_MinSizeSet;
-}
+// bool Component::isMinSizeSet() const
+// {
+//     return m_MinSizeSet;
+// }
 
-bool Component::isMaxSizeSet() const
-{
-    return m_MaxSizeSet;
-}
+// bool Component::isMaxSizeSet() const
+// {
+//     return m_MaxSizeSet;
+// }
 
-bool Component::isPrefSizeSet() const
-{
-    return m_PrefSizeSet;
-}
+// bool Component::isPrefSizeSet() const
+// {
+//     return m_PrefSizeSet;
+// }
 
 Color Component::getForeground() const
 {

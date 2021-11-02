@@ -146,13 +146,12 @@ Functions</h2></td></tr>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_class" href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a>* targetDispatchChain = </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a>*<span class="keyword">&gt;</span>(<span class="keyword">event</span>-&gt;getTarget()-&gt;buildEventDispatchChain(&amp;baseDispatchChain));</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    Event* returnEvent = targetDispatchChain-&gt;<a class="code hl_function" href="class_gui_event_dispatch_chain.html#a9758757c99c9797ca2ee3ff398fc7bca">sendThroughChain</a>(event);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    Event* returnEvent = targetDispatchChain-&gt;sendThroughChain(event);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    baseDispatchChain.reset();</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> returnEvent;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
-<div class="ttc" id="aclass_gui_event_dispatch_chain_html"><div class="ttname"><a href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8h_source.html#l00084">gui_event_dispatching.h:85</a></div></div>
-<div class="ttc" id="aclass_gui_event_dispatch_chain_html_a9758757c99c9797ca2ee3ff398fc7bca"><div class="ttname"><a href="class_gui_event_dispatch_chain.html#a9758757c99c9797ca2ee3ff398fc7bca">GuiEventDispatchChain::sendThroughChain</a></div><div class="ttdeci">virtual Event * sendThroughChain(Event *event) override</div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8cpp_source.html#l00114">gui_event_dispatching.cpp:114</a></div></div>
+<div class="ttc" id="aclass_gui_event_dispatch_chain_html"><div class="ttname"><a href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8h_source.html#l00086">gui_event_dispatching.h:87</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

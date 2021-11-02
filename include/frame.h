@@ -21,13 +21,22 @@ public:
     Frame(int32_t width = DEFAULT_WIDTH,
           int32_t height = DEFAULT_HEIGHT,
           const char* title = nullptr);
+    virtual ~Frame() override = default;
 
     void proccessSystemEvents();
     void show();
 
+    Window* getWindow();
+
 protected:
     Window             m_Window;
     SystemEventManager m_SystemEventManager;
+    
+    Component*         m_PrevMouseHoverComponent = nullptr;
+
+    void proccessWindowEvent(WindowEvent* windowEvent);
+    void proccessKeyboardEvent(KeyEvent* keyEvent);
+    void proccessMouseEvent(MouseEvent* mouseEvent);
 };
 
 #endif // FRAME_H

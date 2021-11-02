@@ -10,11 +10,6 @@
 
 Component* Container::getHitComponent(int32_t x, int32_t y)
 {
-    if (Component::getHitComponent(x, y) == nullptr)
-    {
-        return nullptr;
-    }
-
     for (auto it = m_Components.begin(); it != m_Components.end(); ++it)
     {
         Component* hitComponent = (*it)->getHitComponent(x - m_X, y - m_Y);
@@ -25,26 +20,32 @@ Component* Container::getHitComponent(int32_t x, int32_t y)
         }
     }
 
+    if (Component::getHitComponent(x, y) == nullptr)
+    {
+        return nullptr;
+    }
+
     return this;
 }
 
 void Container::updateGraphics()
 {
-    Component::updateGraphics();
-
-    Texture* savedTarget = m_Renderer->getTarget();
-    m_Renderer->setTarget(m_Texture);
-    
     for (Component* component : m_Components)
     {
         component->updateGraphics();
     }
 
-    m_Renderer->setTarget(savedTarget);
+    layOutComponents();
+    Component::updateGraphics();
 }
 
 void Container::render(Texture* target, const Rectangle<int32_t>& targetRegion)
 {
+    if (!m_IsVisible)
+    {
+        return;
+    }
+
     Component::render(target, targetRegion);
 
     Texture* savedTarget = m_Renderer->getTarget();
@@ -55,26 +56,31 @@ void Container::render(Texture* target, const Rectangle<int32_t>& targetRegion)
 
     for (Component* component : m_Components)
     {
-        component->render(target, translatedRegion);
+        if (component->isVisible())
+        {
+            component->render(target, translatedRegion);
+        }
     }
 
     m_Renderer->setTarget(savedTarget);
 }
 
-Vec2<int32_t> Container::getPrefferedLayoutSize()
-{
-    return Vec2<int32_t>{0, 0};
-}
+// Vec2<int32_t> Container::getPrefferedLayoutSize()
+// {
+//     return Vec2<int32_t>{0, 0};
+// }
 
-Vec2<int32_t> Container::getMinLayoutSize()
-{
-    return Vec2<int32_t>{0, 0};
-}
+// Vec2<int32_t> Container::getMinLayoutSize()
+// {
+//     return Vec2<int32_t>{0, 0};
+// }
 
 void Container::addComponent(Component* component)
 {
     component->setParent(this);
-    m_Components.pushBack(component);
+    m_Components.push_back(component);
+
+    layOutComponents();
 }
 
 void Container::removeComponent(Component* component)
@@ -84,13 +90,15 @@ void Container::removeComponent(Component* component)
         if (*it == component)
         {
             (*it)->setParent(nullptr);
-            m_Components.remove(it);
+            m_Components.erase(it);
             break;
         }
     }
+
+    layOutComponents();
 }
 
-const List<Component*>& Container::getComponents() const
+const std::list<Component*>& Container::getComponents() const
 {
     return m_Components;
 }

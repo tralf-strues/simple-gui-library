@@ -9,17 +9,20 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
-#include "style/skin.h"
+#include "style/default_skins.h"
 #include "label.h"
 
-class Button : public Component, public Skinable
+static const Vec2<int32_t> BUTTON_DEFAULT_MIN_MARGINS = {32, 0};
+
+class Button : public Component
 {
 public:
     Button(Renderer* renderer, const Font& font, Color background = COLOR_WHITE);
     Button(Renderer* renderer, const Font& font, const char* label,
            Color foreground = COLOR_BLACK, Color background = COLOR_WHITE);
+    virtual ~Button() override = default;
 
-    const char* getLabel() const;
+    Label* getLabel() const;
     void setLabel(const char* label);
 
     /* Component */
@@ -29,8 +32,7 @@ public:
 protected:
     Label m_Label;
 
-    /* Skinable */
-    virtual void applySkin() override;
+    virtual void setDefaultStyle() override;
 };
 
 #endif // BUTTON_H

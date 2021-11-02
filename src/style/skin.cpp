@@ -19,6 +19,12 @@ void Skinable::setSkin(const Skin* skin)
     m_Skin = skin;
 }
 
+void IconSkin::apply(Renderer* renderer, Texture* target, const Rectangle<int32_t>* targetRegion) const
+{
+    assert(renderer);
+    renderTexture(renderer, *m_Icon, targetRegion, nullptr);
+}
+
 BasicSkin::BasicSkin(bool backgroundEnabled, Color background,
                      bool borderEnabled, Color borderColor, int32_t borderThickness)
     : m_BackgroundEnabled(backgroundEnabled), m_BackgroundColor(background),
@@ -29,7 +35,6 @@ BasicSkin::BasicSkin(bool backgroundEnabled, Color background,
 void BasicSkin::apply(Renderer* renderer, Texture* target, const Rectangle<int32_t>* targetRegion) const
 {
     assert(renderer);
-    assert(target);
 
     Rectangle<int32_t> region{{0, 0}, static_cast<int32_t>(target->getWidth()), 
                                       static_cast<int32_t>(target->getHeight())};

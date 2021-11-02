@@ -1,19 +1,25 @@
 var annotated_dup =
 [
-    [ "BasicSkin", "class_basic_skin.html", null ],
     [ "Button", "class_button.html", null ],
+    [ "ButtonSkin", "class_button_skin.html", null ],
     [ "CloseListener", "class_close_listener.html", null ],
     [ "Component", "class_component.html", null ],
     [ "Container", "class_container.html", "class_container" ],
     [ "Frame", "class_frame.html", null ],
-    [ "GuiEventDispatchChain", "class_gui_event_dispatch_chain.html", "class_gui_event_dispatch_chain" ],
-    [ "GuiEventDispatcher", "class_gui_event_dispatcher.html", "class_gui_event_dispatcher" ],
+    [ "GuiEventDispatchChain", "class_gui_event_dispatch_chain.html", null ],
+    [ "GuiEventDispatcher", "class_gui_event_dispatcher.html", null ],
     [ "Label", "class_label.html", null ],
     [ "LabelOnHover", "class_label_on_hover.html", null ],
+    [ "ListMenu", "class_list_menu.html", null ],
+    [ "Menu", "class_menu.html", null ],
     [ "MenuBar", "class_menu_bar.html", null ],
-    [ "MenuItem", "class_menu_item.html", null ],
+    [ "MenuItemSelectListener", "class_menu_item_select_listener.html", null ],
+    [ "MenuSelectListener", "class_menu_select_listener.html", null ],
+    [ "MouseEnteredEvent", "class_mouse_entered_event.html", null ],
+    [ "MouseExitedEvent", "class_mouse_exited_event.html", null ],
     [ "Pane", "class_pane.html", null ],
     [ "Scene", "class_scene.html", null ],
-    [ "Skin", "class_skin.html", null ],
-    [ "Skinable", "class_skinable.html", null ]
+    [ "Skin", "class_skin.html", "class_skin" ],
+    [ "Skinnable", "class_skinnable.html", null ],
+    [ "SpacedContainer", "class_spaced_container.html", "class_spaced_container" ]
 ];

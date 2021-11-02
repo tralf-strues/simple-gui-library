@@ -11,64 +11,98 @@
 
 #include "sml/containers/dynamic_array.h"
 #include "sml/graphics_wrapper/renderer.h"
+#include "../component.h"
 
+template<typename C>
 class Skin
 {
 public:
-    virtual void apply(Renderer* renderer, Texture* target, const Rectangle<int32_t>* targetRegion) const = 0;
-};
+    Skin(C* component) : m_Component(component) { assert(component); };
 
-class Skinable
-{
-public:
-    const Skin* getSkin() const;
-    void setSkin(const Skin* skin);
+    //--------------------------------------------------------------------------
+    //! @brief Should be called by @ref Skinnable when this skin is replaced.
+    //--------------------------------------------------------------------------
+    virtual void dispose();
+
+    C* getSkinnable() { return m_Component; }
+
+    void render(Texture* target, const Rectangle<int32_t>& targetRegion);
+
+    virtual int32_t computePrefHeight() const { return 0; };
+    virtual int32_t computePrefWidth()  const { return 0; };
+    virtual void    layoutChildren()    const {};
 
 protected:
-    const Skin* m_Skin = nullptr;
+    Renderer* m_Renderer  = nullptr;
+    C*        m_Component = nullptr;
+
+    Notifier  m_ViewNotifier;
+};
+
+template<typename C>
+class Skinnable
+{
+public:
+    const Skin<C>* getSkin() const;
+    void setSkin(Skin<C>* skin);
+
+protected:
+    Skin<C>* m_Skin = nullptr;
 
     virtual void applySkin() = 0;
 };
 
-class BasicSkin : public Skin
-{
-public:
-    BasicSkin() = default;
-    BasicSkin(bool backgroundEnabled, Color background,
-              bool borderEnabled, Color borderColor, int32_t borderThickness);
+// class IconSkin : public Skin
+// {
+// public:
+//     IconSkin(Texture* icon) : m_Icon(icon) {}
 
-    virtual void apply(Renderer* renderer, Texture* target,
-                       const Rectangle<int32_t>* targetRegion) const override;
+//     virtual void apply(Renderer* renderer, Texture* target,
+//                        const Rectangle<int32_t>* targetRegion) const override;
 
-    /* Getters */
-    bool isBackgroundEnabled() const;
-    Color getBackgroundColor() const;
+// private:
+//     Texture* m_Icon = nullptr;
+// };
+
+// class BasicSkin : public Skin
+// {
+// public:
+//     BasicSkin() = default;
+//     BasicSkin(bool backgroundEnabled, Color background,
+//               bool borderEnabled, Color borderColor, int32_t borderThickness);
+
+//     virtual void apply(Renderer* renderer, Texture* target,
+//                        const Rectangle<int32_t>* targetRegion) const override;
+
+//     /* Getters */
+//     bool isBackgroundEnabled() const;
+//     Color getBackgroundColor() const;
     
-    bool isBorderEnabled() const;
-    Color getBorderColor() const;
-    int32_t getBorderThickness() const;
+//     bool isBorderEnabled() const;
+//     Color getBorderColor() const;
+//     int32_t getBorderThickness() const;
 
-    /* Setters */
-    void setBackgroundEnabled(bool enabled);
-    void setBackgroundColor(Color color);
+//     /* Setters */
+//     void setBackgroundEnabled(bool enabled);
+//     void setBackgroundColor(Color color);
     
-    void setBorderEnabled(bool enabled);
-    void setBorderColor(Color color);
-    void setBorderThickness(int32_t thickness);
+//     void setBorderEnabled(bool enabled);
+//     void setBorderColor(Color color);
+//     void setBorderThickness(int32_t thickness);
 
-protected:
-    /* Background */
-    bool  m_BackgroundEnabled = false;
-    Color m_BackgroundColor   = COLOR_TRANSPARENT;
+// protected:
+//     /* Background */
+//     bool  m_BackgroundEnabled = false;
+//     Color m_BackgroundColor   = COLOR_TRANSPARENT;
 
-    /* Border */
-    bool  m_BorderEnabled     = false;
-    Color m_BorderColor       = COLOR_BLACK;
-    int32_t m_BorderThickness = 1;
+//     /* Border */
+//     bool  m_BorderEnabled     = false;
+//     Color m_BorderColor       = COLOR_BLACK;
+//     int32_t m_BorderThickness = 1;
 
-    void renderBackground(Renderer* renderer, Texture* target, const Rectangle<int32_t>& region) const;
-    void renderBorder(Renderer* renderer, Texture* target, const Rectangle<int32_t>& region) const;
-};
+//     void renderBackground(Renderer* renderer, Texture* target, const Rectangle<int32_t>& region) const;
+//     void renderBorder(Renderer* renderer, Texture* target, const Rectangle<int32_t>& region) const;
+// };
 
 // struct Patch
 // {

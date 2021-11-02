@@ -26,31 +26,78 @@ void Frame::proccessSystemEvents()
             continue;
         }
 
-        Component* target = nullptr;
-
         if (nextEvent->isInCategory(EVENT_CATEGORY_WINDOW))
         {
-            target = this;
+            proccessWindowEvent(static_cast<WindowEvent*>(nextEvent));
         }
         else if (nextEvent->isInCategory(EVENT_CATEGORY_MOUSE))
         {
-            MouseEvent* mouseEvent = static_cast<MouseEvent*>(nextEvent);
-            target = getHitComponent(mouseEvent->getX(), mouseEvent->getY());
+            proccessMouseEvent(static_cast<MouseEvent*>(nextEvent));
         }
-
-        if (target != nullptr)
+        else if (nextEvent->isInCategory(EVENT_CATEGORY_KEYBOARD))
         {
-            nextEvent->setTarget(target);
-            fireEvent(nextEvent);
+            proccessKeyboardEvent(static_cast<KeyEvent*>(nextEvent));
         }
 
         delete nextEvent;
     }
 }
 
+void Frame::proccessWindowEvent(WindowEvent* windowEvent)
+{
+    assert(windowEvent);
+
+    windowEvent->setTarget(this);
+    fireEvent(windowEvent);
+}
+
+void Frame::proccessKeyboardEvent(KeyEvent* keyEvent)
+{
+    assert(keyEvent);
+}
+
+void Frame::proccessMouseEvent(MouseEvent* mouseEvent)
+{
+    assert(mouseEvent);
+
+    Component* curHoverComponent = getHitComponent(mouseEvent->getX(), mouseEvent->getY());
+    
+    if (curHoverComponent != nullptr)
+    {
+        mouseEvent->setTarget(curHoverComponent);
+        fireEvent(mouseEvent);
+    }
+
+    if (mouseEvent->getType() == MouseMovedEvent::getStaticType() &&
+        m_PrevMouseHoverComponent != curHoverComponent)
+    {
+        if (m_PrevMouseHoverComponent != nullptr)
+        {
+            MouseExitedEvent mouseExitedEvent{mouseEvent->getX(), mouseEvent->getY()};
+            mouseExitedEvent.setTarget(m_PrevMouseHoverComponent);
+            fireEvent(&mouseExitedEvent);
+        }
+
+        if (curHoverComponent != nullptr)
+        {
+            MouseEnteredEvent mouseEnteredEvent{mouseEvent->getX(), mouseEvent->getY()};
+            mouseEnteredEvent.setTarget(curHoverComponent);
+            fireEvent(&mouseEnteredEvent);
+        }
+    }
+
+    m_PrevMouseHoverComponent = curHoverComponent;
+}
+
+
 void Frame::show()
 {
     render(nullptr, Rectangle<int32_t>{Vec2<int32_t>{0, 0}, m_Size.x, m_Size.y});
 
     m_Renderer->present();
+}
+
+Window* Frame::getWindow()
+{
+    return &m_Window;
 }

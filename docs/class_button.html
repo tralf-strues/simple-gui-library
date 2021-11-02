@@ -99,7 +99,6 @@ Inheritance diagram for Button:</div>
   <img src="class_button.png" usemap="#Button_map" alt=""/>
   <map id="Button_map" name="Button_map">
 <area href="class_component.html" alt="Component" shape="rect" coords="0,56,80,80"/>
-<area href="class_skinable.html" alt="Skinable" shape="rect" coords="90,56,170,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -109,7 +108,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a456854c0f8948c3f71a827c16947aba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a125d4cb408c8e0831f476c390cd39e08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_button.html#a125d4cb408c8e0831f476c390cd39e08">Button</a> (Renderer *renderer, const Font &amp;font, const char *label, Color foreground=COLOR_BLACK, Color background=COLOR_WHITE)</td></tr>
 <tr class="separator:a125d4cb408c8e0831f476c390cd39e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae828a0fcb1884de783208e140b5b3c98"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_button.html#ae828a0fcb1884de783208e140b5b3c98">getLabel</a> () const</td></tr>
+<tr class="memitem:ae828a0fcb1884de783208e140b5b3c98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_label.html">Label</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_button.html#ae828a0fcb1884de783208e140b5b3c98">getLabel</a> () const</td></tr>
 <tr class="separator:ae828a0fcb1884de783208e140b5b3c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c737f72a2345685d5cbb95a2303a16c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_button.html#a5c737f72a2345685d5cbb95a2303a16c">setLabel</a> (const char *label)</td></tr>
 <tr class="separator:a5c737f72a2345685d5cbb95a2303a16c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,12 +117,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeecfae5a87080408b8fd6eb12ab4cbb9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_button.html#aeecfae5a87080408b8fd6eb12ab4cbb9">render</a> (Texture *target, const Rectangle&lt; int32_t &gt; &amp;targetRegion) override</td></tr>
 <tr class="separator:aeecfae5a87080408b8fd6eb12ab4cbb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_component.html">Component</a></td></tr>
-<tr class="memitem:af6066217be489fa49e526d8a8f447cf0 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#af6066217be489fa49e526d8a8f447cf0">Component</a> (Renderer *renderer, int32_t width=32, int32_t height=32)</td></tr>
-<tr class="separator:af6066217be489fa49e526d8a8f447cf0 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34f8b856b8caf2591bb35487f0c126a5 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a34f8b856b8caf2591bb35487f0c126a5">Component</a> (Renderer *renderer, int32_t width=1, int32_t height=1)</td></tr>
+<tr class="separator:a34f8b856b8caf2591bb35487f0c126a5 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acea94d337e6745c6418a45184d259e23 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_component.html">Component</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#acea94d337e6745c6418a45184d259e23">getHitComponent</a> (int32_t x, int32_t y)</td></tr>
 <tr class="separator:acea94d337e6745c6418a45184d259e23 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b394f60046397bc7a0bc353707b53d8 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">virtual EventDispatchChain *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a5b394f60046397bc7a0bc353707b53d8">buildEventDispatchChain</a> (EventDispatchChain *chain) override</td></tr>
 <tr class="separator:a5b394f60046397bc7a0bc353707b53d8 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af44e8bda6e30f333221f199c9ba06e2e inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#af44e8bda6e30f333221f199c9ba06e2e">attachHandler</a> (const std::initializer_list&lt; EventType &gt; &amp;types, Listener *handler)</td></tr>
+<tr class="separator:af44e8bda6e30f333221f199c9ba06e2e inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a597d699951dc5f1b31478a1488cd97de inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a597d699951dc5f1b31478a1488cd97de">attachFilter</a> (const std::initializer_list&lt; EventType &gt; &amp;types, Listener *filter)</td></tr>
+<tr class="separator:a597d699951dc5f1b31478a1488cd97de inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f8e4b256d025010269a0f3b5b0e7a16 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a0f8e4b256d025010269a0f3b5b0e7a16">setRenderer</a> (Renderer *renderer)</td></tr>
 <tr class="separator:a0f8e4b256d025010269a0f3b5b0e7a16 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbe2908b79d5f73106007574a07112db inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#afbe2908b79d5f73106007574a07112db">setId</a> (const id128_t &amp;id)</td></tr>
@@ -143,18 +146,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setFocused</b> (bool 
 <tr class="separator:a7c4c502980912f5392bdf37e00e8eb39 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a565fe6509d798befc60c6933c1065b6c inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a565fe6509d798befc60c6933c1065b6c">setSize</a> (int32_t width, int32_t height)</td></tr>
 <tr class="separator:a565fe6509d798befc60c6933c1065b6c inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6ec3932e0f9a9bc7e19c58e86568406 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#ac6ec3932e0f9a9bc7e19c58e86568406">setMinSize</a> (int32_t minWidth, int32_t minHeight)</td></tr>
-<tr class="separator:ac6ec3932e0f9a9bc7e19c58e86568406 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6faa90331a1fe6654bb5ae88f28ebbcf inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a6faa90331a1fe6654bb5ae88f28ebbcf">setMaxSize</a> (int32_t maxWidth, int32_t maxHeight)</td></tr>
-<tr class="separator:a6faa90331a1fe6654bb5ae88f28ebbcf inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5670c51041474f4d52cdc64adaf1c25 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#ac5670c51041474f4d52cdc64adaf1c25">setPrefSize</a> (int32_t prefWidth, int32_t prefHeight)</td></tr>
-<tr class="separator:ac5670c51041474f4d52cdc64adaf1c25 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9118ba27cce9f4fe2134f80d7c3b49a3 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a9118ba27cce9f4fe2134f80d7c3b49a3">setMinSizeEnabled</a> (bool enabled)</td></tr>
-<tr class="separator:a9118ba27cce9f4fe2134f80d7c3b49a3 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a593fcafc376d4b1d56200a8fccd95568 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a593fcafc376d4b1d56200a8fccd95568">setMaxSizeEnabled</a> (bool enabled)</td></tr>
-<tr class="separator:a593fcafc376d4b1d56200a8fccd95568 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cf4d190ec9bb2b9d60c89c19c806892 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a9cf4d190ec9bb2b9d60c89c19c806892">setPrefSizeEnabled</a> (bool enabled)</td></tr>
-<tr class="separator:a9cf4d190ec9bb2b9d60c89c19c806892 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad39e5231d891bd1c5c8bdd1fe1032933 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#ad39e5231d891bd1c5c8bdd1fe1032933">setSize</a> (const Vec2&lt; int32_t &gt; &amp;size)</td></tr>
+<tr class="separator:ad39e5231d891bd1c5c8bdd1fe1032933 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98c63e3c45d0dc431e55fa86dd9cd021 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a98c63e3c45d0dc431e55fa86dd9cd021">setWidth</a> (int32_t width)</td></tr>
+<tr class="separator:a98c63e3c45d0dc431e55fa86dd9cd021 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a296914ecf5580d2d8aac2185c98e1361 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a296914ecf5580d2d8aac2185c98e1361">setHeight</a> (int32_t height)</td></tr>
+<tr class="separator:a296914ecf5580d2d8aac2185c98e1361 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba06d34e5111faa8c117276e13637870 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#aba06d34e5111faa8c117276e13637870">setForeground</a> (Color foreground)</td></tr>
 <tr class="separator:aba06d34e5111faa8c117276e13637870 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af60810d0b15e34c4f512a8ef280cc352 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#af60810d0b15e34c4f512a8ef280cc352">setBackground</a> (Color background)</td></tr>
@@ -187,32 +184,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setFocused</b> (bool 
 <tr class="separator:a5a39d7efe0ee16be202233360533df11 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5df76bf33747d145ac177a389687042a inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">const Vec2&lt; int32_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a5df76bf33747d145ac177a389687042a">getSize</a> () const</td></tr>
 <tr class="separator:a5df76bf33747d145ac177a389687042a inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a899ba5236a4e37bf9175937c99641222 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">const Vec2&lt; int32_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a899ba5236a4e37bf9175937c99641222">getMinSize</a> () const</td></tr>
-<tr class="separator:a899ba5236a4e37bf9175937c99641222 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1707d6e94906baf47a46451f1089b051 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">const Vec2&lt; int32_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a1707d6e94906baf47a46451f1089b051">getMaxSize</a> () const</td></tr>
-<tr class="separator:a1707d6e94906baf47a46451f1089b051 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3bcd624aa0a264e1ce4789bcf255893 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">const Vec2&lt; int32_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#ad3bcd624aa0a264e1ce4789bcf255893">getPrefSize</a> () const</td></tr>
-<tr class="separator:ad3bcd624aa0a264e1ce4789bcf255893 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9596d133cbe53ee5af477fdb82892e8e inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a9596d133cbe53ee5af477fdb82892e8e">isMinSizeSet</a> () const</td></tr>
-<tr class="separator:a9596d133cbe53ee5af477fdb82892e8e inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b206308947300e4e33467ffb7e80926 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a8b206308947300e4e33467ffb7e80926">isMaxSizeSet</a> () const</td></tr>
-<tr class="separator:a8b206308947300e4e33467ffb7e80926 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56705b6babd0c8bd9fc348a0a043254e inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a56705b6babd0c8bd9fc348a0a043254e">isPrefSizeSet</a> () const</td></tr>
-<tr class="separator:a56705b6babd0c8bd9fc348a0a043254e inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa25c5af60d502bde6c627ac651893383 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#aa25c5af60d502bde6c627ac651893383">getForeground</a> () const</td></tr>
 <tr class="separator:aa25c5af60d502bde6c627ac651893383 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cef3d6b4d1c559c52cd9faac4744e0b inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a7cef3d6b4d1c559c52cd9faac4744e0b">getBackground</a> () const</td></tr>
 <tr class="separator:a7cef3d6b4d1c559c52cd9faac4744e0b inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_class_skinable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_skinable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_skinable.html">Skinable</a></td></tr>
-<tr class="memitem:a2cdf75f56ae55572c71bec67aeccf5a0 inherit pub_methods_class_skinable"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_skin.html">Skin</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_skinable.html#a2cdf75f56ae55572c71bec67aeccf5a0">getSkin</a> () const</td></tr>
-<tr class="separator:a2cdf75f56ae55572c71bec67aeccf5a0 inherit pub_methods_class_skinable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8acca3e42db54d0e9fd7d18d8976637 inherit pub_methods_class_skinable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_skinable.html#aa8acca3e42db54d0e9fd7d18d8976637">setSkin</a> (const <a class="el" href="class_skin.html">Skin</a> *skin)</td></tr>
-<tr class="separator:aa8acca3e42db54d0e9fd7d18d8976637 inherit pub_methods_class_skinable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:abfa11c7a396125e0d156fd5b0a1c7e6e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_button.html#abfa11c7a396125e0d156fd5b0a1c7e6e">applySkin</a> () override</td></tr>
-<tr class="separator:abfa11c7a396125e0d156fd5b0a1c7e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4160ec04781aaf658aa3fa5e7239a6d1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_button.html#a4160ec04781aaf658aa3fa5e7239a6d1">setDefaultStyle</a> () override</td></tr>
+<tr class="separator:a4160ec04781aaf658aa3fa5e7239a6d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_component.html">Component</a></td></tr>
 <tr class="memitem:a90541f64736476e41e20d8c2cd162a8a inherit pro_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a90541f64736476e41e20d8c2cd162a8a">updateTextureSize</a> ()</td></tr>
 <tr class="separator:a90541f64736476e41e20d8c2cd162a8a inherit pro_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -242,29 +222,14 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:af7d3f967701f856ed413b936833a31a8 inherit pro_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a574432d18646285f4278d98920b8739f inherit pro_attribs_class_component"><td class="memItemLeft" align="right" valign="top">Vec2&lt; int32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a574432d18646285f4278d98920b8739f">m_Size</a> = {0, 0}</td></tr>
 <tr class="separator:a574432d18646285f4278d98920b8739f inherit pro_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d828f0366fdf90a427602cd3c71dc90 inherit pro_attribs_class_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a3d828f0366fdf90a427602cd3c71dc90">m_MinSizeSet</a> = false</td></tr>
-<tr class="separator:a3d828f0366fdf90a427602cd3c71dc90 inherit pro_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34f657f2e9063a940ea43dbb63274b4a inherit pro_attribs_class_component"><td class="memItemLeft" align="right" valign="top">Vec2&lt; int32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a34f657f2e9063a940ea43dbb63274b4a">m_MinSize</a> = {0, 0}</td></tr>
-<tr class="separator:a34f657f2e9063a940ea43dbb63274b4a inherit pro_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a015e8030ee07f67f07855551da9728fb inherit pro_attribs_class_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a015e8030ee07f67f07855551da9728fb">m_MaxSizeSet</a> = false</td></tr>
-<tr class="separator:a015e8030ee07f67f07855551da9728fb inherit pro_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe03fe8e1778a716acb95fa115f9ec19 inherit pro_attribs_class_component"><td class="memItemLeft" align="right" valign="top">Vec2&lt; int32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#abe03fe8e1778a716acb95fa115f9ec19">m_MaxSize</a> = {0, 0}</td></tr>
-<tr class="separator:abe03fe8e1778a716acb95fa115f9ec19 inherit pro_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a045902148ac078b741c58b8efa3038c1 inherit pro_attribs_class_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a045902148ac078b741c58b8efa3038c1">m_PrefSizeSet</a> = false</td></tr>
-<tr class="separator:a045902148ac078b741c58b8efa3038c1 inherit pro_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2213a6103fc7f830dcb6b8c04d9b462e inherit pro_attribs_class_component"><td class="memItemLeft" align="right" valign="top">Vec2&lt; int32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a2213a6103fc7f830dcb6b8c04d9b462e">m_PrefSize</a> = {0, 0}</td></tr>
-<tr class="separator:a2213a6103fc7f830dcb6b8c04d9b462e inherit pro_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0083c35427b4477e052553067507b54 inherit pro_attribs_class_component"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#ae0083c35427b4477e052553067507b54">m_Foreground</a> = COLOR_BLACK</td></tr>
 <tr class="separator:ae0083c35427b4477e052553067507b54 inherit pro_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a240a67d6f79775597ed1129c58cac71f inherit pro_attribs_class_component"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a240a67d6f79775597ed1129c58cac71f">m_Background</a> = 0xFF'FF'FF'00</td></tr>
 <tr class="separator:a240a67d6f79775597ed1129c58cac71f inherit pro_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_class_skinable"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_skinable')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_skinable.html">Skinable</a></td></tr>
-<tr class="memitem:a018707ca7afdba826d4bd3c6ba7e4b86 inherit pro_attribs_class_skinable"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_skin.html">Skin</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_skinable.html#a018707ca7afdba826d4bd3c6ba7e4b86">m_Skin</a> = nullptr</td></tr>
-<tr class="separator:a018707ca7afdba826d4bd3c6ba7e4b86 inherit pro_attribs_class_skinable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="button_8h_source.html#l00015">15</a> of file <a class="el" href="button_8h_source.html">button.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="button_8h_source.html#l00017">17</a> of file <a class="el" href="button_8h_source.html">button.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a456854c0f8948c3f71a827c16947aba3" name="a456854c0f8948c3f71a827c16947aba3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a456854c0f8948c3f71a827c16947aba3">&#9670;&nbsp;</a></span>Button() <span class="overload">[1/2]</span></h2>
@@ -302,8 +267,9 @@ Protected Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    : <a class="code hl_class" href="class_component.html">Component</a>(renderer), m_Label(renderer, font)</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    m_Background = background;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
-<div class="ttc" id="aclass_component_html"><div class="ttname"><a href="class_component.html">Component</a></div><div class="ttdef"><b>Definition:</b> <a href="component_8h_source.html#l00016">component.h:17</a></div></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    setDefaultStyle();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+<div class="ttc" id="aclass_component_html"><div class="ttname"><a href="class_component.html">Component</a></div><div class="ttdef"><b>Definition:</b> <a href="component_8h_source.html#l00017">component.h:18</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -351,51 +317,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00017">17</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
-<div class="fragment"><div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    : <a class="code hl_class" href="class_button.html">Button</a>(renderer, font, background)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    m_Label.setForeground(foreground);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
-<div class="ttc" id="aclass_button_html"><div class="ttname"><a href="class_button.html">Button</a></div><div class="ttdef"><b>Definition:</b> <a href="button_8h_source.html#l00015">button.h:16</a></div></div>
+<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00018">18</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
+<div class="fragment"><div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    : <a class="code hl_class" href="class_component.html">Component</a>(renderer), m_Label(renderer, font, label, foreground)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    m_Background = background;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    setDefaultStyle();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="abfa11c7a396125e0d156fd5b0a1c7e6e" name="abfa11c7a396125e0d156fd5b0a1c7e6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfa11c7a396125e0d156fd5b0a1c7e6e">&#9670;&nbsp;</a></span>applySkin()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Button::applySkin </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="class_skinable.html">Skinable</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00059">59</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
-<div class="fragment"><div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>{</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> (m_Skin != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        m_Skin-&gt;apply(m_Renderer, m_Texture, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
-</div><!-- fragment -->
-</div>
-</div>
 <a id="ae828a0fcb1884de783208e140b5b3c98" name="ae828a0fcb1884de783208e140b5b3c98"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae828a0fcb1884de783208e140b5b3c98">&#9670;&nbsp;</a></span>getLabel()</h2>
 
@@ -411,10 +342,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00023">23</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
-<div class="fragment"><div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">return</span> m_Label.getText();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00025">25</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
+<div class="fragment"><div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> m_Label.getText();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -454,17 +385,50 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_component.html">Component</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00047">47</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
-<div class="fragment"><div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    Component::render(target, targetRegion);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">// Rectangle&lt;int32_t&gt; translatedRegion = targetRegion;</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">// translatedRegion.pos += getPos();</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">// translatedRegion.pos += targetRegion.pos;</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">// translatedRegion.pos -= m_Label.getPos();</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    m_Label.render(target, targetRegion);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00050">50</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
+<div class="fragment"><div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    Component::render(target, targetRegion);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    Rectangle&lt;int32_t&gt; centeredRegion = centerRegion(getRegion(), m_Label.getRegion());</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    m_Label.setX(centeredRegion.pos.x);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    m_Label.setY(centeredRegion.pos.y);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    m_Label.render(target, targetRegion);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4160ec04781aaf658aa3fa5e7239a6d1" name="a4160ec04781aaf658aa3fa5e7239a6d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4160ec04781aaf658aa3fa5e7239a6d1">&#9670;&nbsp;</a></span>setDefaultStyle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Button::setDefaultStyle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_component.html">Component</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00061">61</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
+<div class="fragment"><div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    setSkin(&amp;DEFAULT_SKIN_BUTTON);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    m_Dispatcher.attachHandler({MouseEnteredEvent::getStaticType(), MouseExitedEvent::getStaticType()},</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                               <span class="keyword">new</span> HoverListener{<span class="keyword">this</span>, &amp;DEFAULT_HOVER_STYLE_BUTTON});</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -484,10 +448,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00028">28</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
-<div class="fragment"><div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    m_Label.setText(label);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
+<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00030">30</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
+<div class="fragment"><div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    m_Label.setText(label);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -516,19 +480,20 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_component.html">Component</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00033">33</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
-<div class="fragment"><div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    Component::updateGraphics();</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    applySkin();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    m_Label.updateGraphics();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    m_Label.setSize(m_Label.getPrefSize().x, m_Label.getPrefSize().y);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    m_Label.updateGraphics(); <span class="comment">// FIXME: Rerender text to the newly allocated Texture</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    Rectangle&lt;int32_t&gt; centeredRegion = centerRegion(getRegion(), m_Label.getRegion());</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    m_Label.setX(centeredRegion.pos.x);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    m_Label.setY(centeredRegion.pos.y);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
+<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00035">35</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
+<div class="fragment"><div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    m_Label.setForeground(getForeground());</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    m_Label.updateGraphics();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">// setMinSize(m_Label.getMinSize() + BUTTON_DEFAULT_MIN_MARGINS);</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">// setPrefSize(getMinSize());</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">if</span> (m_Label.getText() != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        setSize(m_Label.getSize() + BUTTON_DEFAULT_MIN_MARGINS);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    Component::updateGraphics();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -553,7 +518,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="button_8h_source.html#l00030">30</a> of file <a class="el" href="button_8h_source.html">button.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="button_8h_source.html#l00033">33</a> of file <a class="el" href="button_8h_source.html">button.h</a>.</p>
 
 </div>
 </div>

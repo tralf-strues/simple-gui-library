@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('gui__event__dispatching_8cpp_source.ht
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_class" href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a>* targetDispatchChain = </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a>*<span class="keyword">&gt;</span>(<span class="keyword">event</span>-&gt;getTarget()-&gt;buildEventDispatchChain(&amp;baseDispatchChain));</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    Event* returnEvent = targetDispatchChain-&gt;<a class="code hl_function" href="class_gui_event_dispatch_chain.html#a9758757c99c9797ca2ee3ff398fc7bca">sendThroughChain</a>(event);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    Event* returnEvent = targetDispatchChain-&gt;sendThroughChain(event);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    baseDispatchChain.reset();</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> returnEvent;</div>
@@ -121,16 +121,16 @@ $(document).ready(function(){initNavTree('gui__event__dispatching_8cpp_source.ht
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">void</span> GuiEventDispatcher::attachFilter(<span class="keyword">const</span> std::initializer_list&lt;EventType&gt;&amp; types, Listener* filter)</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    assert(filter);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    m_HandlersNotifier.attachListener(types, filter);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    m_FiltersNotifier.attachListener(types, filter);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span> GuiEventDispatcher::attachHandler(<span class="keyword">const</span> std::initializer_list&lt;EventType&gt;&amp; types, Listener* handler)</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    assert(handler);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    m_FiltersNotifier.attachListener(types, handler);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    m_HandlersNotifier.attachListener(types, handler);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_gui_event_dispatcher.html#aac527dcef0bbcfe218ed4634124f18dd">   44</a></span>Event* <a class="code hl_function" href="class_gui_event_dispatcher.html#aac527dcef0bbcfe218ed4634124f18dd">GuiEventDispatcher::dispatchEvent</a>(Event* event, EventDispatchChain* chain)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>Event* GuiEventDispatcher::dispatchEvent(Event* event, EventDispatchChain* chain)</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    assert(event);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    assert(chain);</div>
@@ -196,32 +196,38 @@ $(document).ready(function(){initNavTree('gui__event__dispatching_8cpp_source.ht
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>{</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    assert(dispatcher);</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    m_Dispatchers.insert(<span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_gui_event_dispatcher.html">GuiEventDispatcher</a>*<span class="keyword">&gt;</span>(dispatcher));</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    ++m_ActiveCount;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="class_gui_event_dispatch_chain.html#a9758757c99c9797ca2ee3ff398fc7bca">  114</a></span>Event* <a class="code hl_function" href="class_gui_event_dispatch_chain.html#a9758757c99c9797ca2ee3ff398fc7bca">GuiEventDispatchChain::sendThroughChain</a>(Event* event)</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>{</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    assert(event);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">if</span> (m_ActiveCount == 0)</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    {</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordflow">return</span> event;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    }</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    uint32_t savedActiveCount = m_ActiveCount;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <a class="code hl_class" href="class_gui_event_dispatcher.html">GuiEventDispatcher</a>* nextDispatcher = m_Dispatchers[--m_ActiveCount];</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    Event* returnEvent = nextDispatcher-&gt;<a class="code hl_function" href="class_gui_event_dispatcher.html#aac527dcef0bbcfe218ed4634124f18dd">dispatchEvent</a>(event, <span class="keyword">this</span>);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    m_ActiveCount = savedActiveCount;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">return</span> returnEvent;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
-<div class="ttc" id="aclass_gui_event_dispatch_chain_html"><div class="ttname"><a href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8h_source.html#l00084">gui_event_dispatching.h:85</a></div></div>
-<div class="ttc" id="aclass_gui_event_dispatch_chain_html_a9758757c99c9797ca2ee3ff398fc7bca"><div class="ttname"><a href="class_gui_event_dispatch_chain.html#a9758757c99c9797ca2ee3ff398fc7bca">GuiEventDispatchChain::sendThroughChain</a></div><div class="ttdeci">virtual Event * sendThroughChain(Event *event) override</div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8cpp_source.html#l00114">gui_event_dispatching.cpp:114</a></div></div>
-<div class="ttc" id="aclass_gui_event_dispatcher_html"><div class="ttname"><a href="class_gui_event_dispatcher.html">GuiEventDispatcher</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8h_source.html#l00064">gui_event_dispatching.h:65</a></div></div>
-<div class="ttc" id="aclass_gui_event_dispatcher_html_aac527dcef0bbcfe218ed4634124f18dd"><div class="ttname"><a href="class_gui_event_dispatcher.html#aac527dcef0bbcfe218ed4634124f18dd">GuiEventDispatcher::dispatchEvent</a></div><div class="ttdeci">virtual Event * dispatchEvent(Event *event, EventDispatchChain *chain) override</div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8cpp_source.html#l00044">gui_event_dispatching.cpp:44</a></div></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">if</span> (m_ActiveCount &gt;= m_Dispatchers.size())</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        m_Dispatchers.push_back(<span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_gui_event_dispatcher.html">GuiEventDispatcher</a>*<span class="keyword">&gt;</span>(dispatcher));</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        m_Dispatchers[m_ActiveCount] = <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_gui_event_dispatcher.html">GuiEventDispatcher</a>*<span class="keyword">&gt;</span>(dispatcher);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    ++m_ActiveCount;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>}</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>Event* GuiEventDispatchChain::sendThroughChain(Event* event)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>{</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    assert(event);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">if</span> (m_ActiveCount == 0)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">return</span> event;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    uint32_t savedActiveCount = m_ActiveCount;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <a class="code hl_class" href="class_gui_event_dispatcher.html">GuiEventDispatcher</a>* nextDispatcher = m_Dispatchers[--m_ActiveCount];</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    Event* returnEvent = nextDispatcher-&gt;dispatchEvent(event, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    m_ActiveCount = savedActiveCount;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordflow">return</span> returnEvent;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>}</div>
+<div class="ttc" id="aclass_gui_event_dispatch_chain_html"><div class="ttname"><a href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8h_source.html#l00086">gui_event_dispatching.h:87</a></div></div>
+<div class="ttc" id="aclass_gui_event_dispatcher_html"><div class="ttname"><a href="class_gui_event_dispatcher.html">GuiEventDispatcher</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8h_source.html#l00066">gui_event_dispatching.h:67</a></div></div>
 <div class="ttc" id="acomponent_8h_html"><div class="ttname"><a href="component_8h.html">component.h</a></div></div>
 <div class="ttc" id="agui__event__dispatching_8cpp_html_a9e3990a271b3a518fbe2b64de195d972"><div class="ttname"><a href="gui__event__dispatching_8cpp.html#a9e3990a271b3a518fbe2b64de195d972">fireEvent</a></div><div class="ttdeci">Event * fireEvent(Event *event)</div><div class="ttdoc">Fire the event from the specified.</div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8cpp_source.html#l00013">gui_event_dispatching.cpp:13</a></div></div>
 <div class="ttc" id="agui__event__dispatching_8h_html"><div class="ttname"><a href="gui__event__dispatching_8h.html">gui_event_dispatching.h</a></div></div>

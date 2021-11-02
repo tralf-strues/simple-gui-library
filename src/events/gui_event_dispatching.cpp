@@ -32,13 +32,13 @@ Event* fireEvent(Event* event)
 void GuiEventDispatcher::attachFilter(const std::initializer_list<EventType>& types, Listener* filter)
 {
     assert(filter);
-    m_HandlersNotifier.attachListener(types, filter);
+    m_FiltersNotifier.attachListener(types, filter);
 }
 
 void GuiEventDispatcher::attachHandler(const std::initializer_list<EventType>& types, Listener* handler)
 {
     assert(handler);
-    m_FiltersNotifier.attachListener(types, handler);
+    m_HandlersNotifier.attachListener(types, handler);
 }
 
 Event* GuiEventDispatcher::dispatchEvent(Event* event, EventDispatchChain* chain)
@@ -107,7 +107,15 @@ void GuiEventDispatchChain::prependDispatcher(EventDispatcher* dispatcher)
 {
     assert(dispatcher);
 
-    m_Dispatchers.insert(static_cast<GuiEventDispatcher*>(dispatcher));
+    if (m_ActiveCount >= m_Dispatchers.size())
+    {
+        m_Dispatchers.push_back(static_cast<GuiEventDispatcher*>(dispatcher));
+    }
+    else
+    {
+        m_Dispatchers[m_ActiveCount] = static_cast<GuiEventDispatcher*>(dispatcher);
+    }
+
     ++m_ActiveCount;
 }
 

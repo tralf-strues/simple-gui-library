@@ -144,48 +144,48 @@ $(document).ready(function(){initNavTree('gui__event__dispatching_8h_source.html
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#ifndef GUI_EVENT_DISPATCHING_H</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#define GUI_EVENT_DISPATCHING_H</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#include &quot;sml/events/event_dispatching.h&quot;</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#include &quot;sml/events/listener_notifier.h&quot;</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#include &quot;gui_event.h&quot;</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">class </span><a class="code hl_class" href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#include &quot;sml/events/event_dispatching.h&quot;</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#include &quot;sml/events/listener_notifier.h&quot;</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#include &quot;sml/events/system_events.h&quot;</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#include &quot;<a class="code" href="gui__event_8h.html">gui_event.h</a>&quot;</span></div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_gui_event_dispatcher.html">   64</a></span><span class="keyword">class </span><a class="code hl_class" href="class_gui_event_dispatcher.html">GuiEventDispatcher</a> : <span class="keyword">public</span> EventDispatcher</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>{</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="comment">/* Listeners */</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">void</span> attachFilter(<span class="keyword">const</span> std::initializer_list&lt;EventType&gt;&amp; types, Listener* filter);    </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> attachHandler(<span class="keyword">const</span> std::initializer_list&lt;EventType&gt;&amp; types, Listener* handler);    </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">class </span><a class="code hl_class" href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_gui_event_dispatcher.html">   66</a></span><span class="keyword">class </span><a class="code hl_class" href="class_gui_event_dispatcher.html">GuiEventDispatcher</a> : <span class="keyword">public</span> EventDispatcher</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_class" href="class_gui_event_dispatcher.html">~GuiEventDispatcher</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">/* EventDispatcher */</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment"></span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">    /*! @warning event must be of type @ref Event! */</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">virtual</span> Event* <a class="code hl_function" href="class_gui_event_dispatcher.html#aac527dcef0bbcfe218ed4634124f18dd">dispatchEvent</a>(Event* event, EventDispatchChain* chain) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    Notifier m_FiltersNotifier;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    Notifier m_HandlersNotifier;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">virtual</span> Event* dispatchCapturingEvent(Event* event);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">virtual</span> Event* dispatchBubblingEvent(Event* event);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>};</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_gui_event_dispatch_chain.html">   84</a></span><span class="keyword">class </span><a class="code hl_class" href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a> : <span class="keyword">public</span> EventDispatchChain</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_class" href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a>(<span class="keywordtype">size_t</span> defaultDispatchersCount = 8);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">void</span> reset();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">/* Listeners */</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> attachFilter(<span class="keyword">const</span> std::initializer_list&lt;EventType&gt;&amp; types, Listener* filter);    </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> attachHandler(<span class="keyword">const</span> std::initializer_list&lt;EventType&gt;&amp; types, Listener* handler);    </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">/* EventDispatcher */</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">virtual</span> Event* dispatchEvent(Event* event, EventDispatchChain* chain) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    Notifier m_FiltersNotifier;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    Notifier m_HandlersNotifier;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">virtual</span> Event* dispatchCapturingEvent(Event* event);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">virtual</span> Event* dispatchBubblingEvent(Event* event);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>};</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_gui_event_dispatch_chain.html">   86</a></span><span class="keyword">class </span><a class="code hl_class" href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a> : <span class="keyword">public</span> EventDispatchChain</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_class" href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a>(<span class="keywordtype">size_t</span> defaultDispatchersCount = 8);</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="comment">/* EventDispatchChain */</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> prependDispatcher(EventDispatcher* dispatcher) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment"></span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">    //! @warning event must be of type @ref Event!</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment"></span>    <span class="keyword">virtual</span> Event* <a class="code hl_function" href="class_gui_event_dispatch_chain.html#a9758757c99c9797ca2ee3ff398fc7bca">sendThroughChain</a>(Event* event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordtype">void</span> reset();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="comment">/* EventDispatchChain */</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> prependDispatcher(EventDispatcher* dispatcher) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">virtual</span> Event* sendThroughChain(Event* event) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    DynamicArray&lt;GuiEventDispatcher*&gt; m_Dispatchers;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    uint32_t                          m_ActiveCount;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    std::vector&lt;GuiEventDispatcher*&gt; m_Dispatchers;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    uint32_t                         m_ActiveCount;</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>};</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment">//------------------------------------------------------------------------------</span><span class="comment"></span></div>
@@ -201,10 +201,9 @@ $(document).ready(function(){initNavTree('gui__event__dispatching_8h_source.html
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>Event* <a class="code hl_function" href="gui__event__dispatching_8h.html#a9e3990a271b3a518fbe2b64de195d972">fireEvent</a>(Event* event);</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#endif </span><span class="comment">// GUI_EVENT_DISPATCHING_H</span></div>
-<div class="ttc" id="aclass_gui_event_dispatch_chain_html"><div class="ttname"><a href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8h_source.html#l00084">gui_event_dispatching.h:85</a></div></div>
-<div class="ttc" id="aclass_gui_event_dispatch_chain_html_a9758757c99c9797ca2ee3ff398fc7bca"><div class="ttname"><a href="class_gui_event_dispatch_chain.html#a9758757c99c9797ca2ee3ff398fc7bca">GuiEventDispatchChain::sendThroughChain</a></div><div class="ttdeci">virtual Event * sendThroughChain(Event *event) override</div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8cpp_source.html#l00114">gui_event_dispatching.cpp:114</a></div></div>
-<div class="ttc" id="aclass_gui_event_dispatcher_html"><div class="ttname"><a href="class_gui_event_dispatcher.html">GuiEventDispatcher</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8h_source.html#l00064">gui_event_dispatching.h:65</a></div></div>
-<div class="ttc" id="aclass_gui_event_dispatcher_html_aac527dcef0bbcfe218ed4634124f18dd"><div class="ttname"><a href="class_gui_event_dispatcher.html#aac527dcef0bbcfe218ed4634124f18dd">GuiEventDispatcher::dispatchEvent</a></div><div class="ttdeci">virtual Event * dispatchEvent(Event *event, EventDispatchChain *chain) override</div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8cpp_source.html#l00044">gui_event_dispatching.cpp:44</a></div></div>
+<div class="ttc" id="aclass_gui_event_dispatch_chain_html"><div class="ttname"><a href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8h_source.html#l00086">gui_event_dispatching.h:87</a></div></div>
+<div class="ttc" id="aclass_gui_event_dispatcher_html"><div class="ttname"><a href="class_gui_event_dispatcher.html">GuiEventDispatcher</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8h_source.html#l00066">gui_event_dispatching.h:67</a></div></div>
+<div class="ttc" id="agui__event_8h_html"><div class="ttname"><a href="gui__event_8h.html">gui_event.h</a></div></div>
 <div class="ttc" id="agui__event__dispatching_8h_html_a9e3990a271b3a518fbe2b64de195d972"><div class="ttname"><a href="gui__event__dispatching_8h.html#a9e3990a271b3a518fbe2b64de195d972">fireEvent</a></div><div class="ttdeci">Event * fireEvent(Event *event)</div><div class="ttdoc">Fire the event from the specified.</div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8cpp_source.html#l00013">gui_event_dispatching.cpp:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
