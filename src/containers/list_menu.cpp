@@ -40,8 +40,7 @@ int32_t ListMenu::getSpacing() const
 
 void ListMenu::setDefaultStyle()
 {
-    Container::setDefaultStyle();
-    setSkin(&DEFAULT_SKIN_LIST_MENU);
+    // setSkin(&DEFAULT_SKIN_LIST_MENU);
 }
 
 // TODO: Get rid of copy-paste code!

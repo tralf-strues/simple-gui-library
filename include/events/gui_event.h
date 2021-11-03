@@ -15,7 +15,14 @@
 enum GuiEventType
 {
     MOUSE_ENTERED = SML_EVENT_TYPE_FIRST_UNSPECIFIED,
-    MOUSE_EXITED
+    MOUSE_EXITED,
+
+    ACTION_PERFORMED
+};
+
+enum GuiEventCategory
+{
+    EVENT_CATEGORY_GUI = SML_EVENT_CATEGORY_FIRST_UNSPECIFIED
 };
 
 class MouseEnteredEvent : public MouseEvent
@@ -28,7 +35,7 @@ public:
     }
 
     DEFINE_STATIC_EVENT_TYPE(MOUSE_ENTERED)
-    DEFINE_STATIC_EVENT_CATEGORY(EVENT_CATEGORY_INPUT | EVENT_CATEGORY_MOUSE)
+    DEFINE_STATIC_EVENT_CATEGORY(EVENT_CATEGORY_GUI | MouseEvent::getStaticCategory())
 };
 
 class MouseExitedEvent : public MouseEvent
@@ -41,7 +48,27 @@ public:
     }
 
     DEFINE_STATIC_EVENT_TYPE(MOUSE_EXITED)
-    DEFINE_STATIC_EVENT_CATEGORY(EVENT_CATEGORY_INPUT | EVENT_CATEGORY_MOUSE)
+    DEFINE_STATIC_EVENT_CATEGORY(EVENT_CATEGORY_GUI | MouseEvent::getStaticCategory())
+};
+
+class ActionEvent : public Event
+{
+public:
+    ActionEvent(EventTarget* target = nullptr) : Event(getStaticType(), getStaticCategory(), target) {}
+
+    DEFINE_STATIC_EVENT_TYPE(ACTION_PERFORMED)
+    DEFINE_STATIC_EVENT_CATEGORY(EVENT_CATEGORY_GUI)
+};
+
+class ActionListener : public Listener
+{
+public:
+    virtual void onEvent(Event* event) override final
+    {
+        onActionPerformed(static_cast<ActionEvent*>(event));
+    }
+
+    virtual void onActionPerformed(ActionEvent* event) = 0;
 };
 
 #endif // GUI_EVENT_H

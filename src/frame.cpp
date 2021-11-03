@@ -6,7 +6,7 @@
 //! @copyright Copyright (c) 2021
 //------------------------------------------------------------------------------
 
-#include "frame.h"
+#include "containers/frame.h"
 
 Frame::Frame(int32_t width, int32_t height, const char* title)
     : m_Window(width, height, title)

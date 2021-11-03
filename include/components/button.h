@@ -12,27 +12,27 @@
 #include "style/default_skins.h"
 #include "label.h"
 
-static const Vec2<int32_t> BUTTON_DEFAULT_MIN_MARGINS = {32, 0};
-
-class Button : public Component
+class Button : public Component, public Skinnable<Button>
 {
 public:
-    Button(Renderer* renderer, const Font& font, Color background = COLOR_WHITE);
-    Button(Renderer* renderer, const Font& font, const char* label,
-           Color foreground = COLOR_BLACK, Color background = COLOR_WHITE);
+    // FIXME: Make private and emit ActionEvents to a queue of gui events 
+    ActionListener* actionListener = nullptr;
+
+    Button(Renderer* renderer, const Font& font, const char* label = nullptr);
     virtual ~Button() override = default;
 
-    Label* getLabel() const;
+    Label* getLabel();
     void setLabel(const char* label);
 
     /* Component */
     virtual void updateGraphics() override;
-    virtual void render(Texture* target, const Rectangle<int32_t>& targetRegion) override;
+    // virtual void render(Texture* target, const Rectangle<int32_t>& targetRegion) override;
+    virtual int32_t getPrefWidth() const override;
+    virtual int32_t getPrefHeight() const override;
 
 protected:
-    Label m_Label;
-
-    virtual void setDefaultStyle() override;
+    Label      m_Label;
+    ButtonSkin m_DefaultSkin;
 };
 
 #endif // BUTTON_H

@@ -8,7 +8,7 @@
 
 #include <assert.h>
 #include "events/gui_event_dispatching.h"
-#include "component.h"
+#include "components/component.h"
 
 Event* fireEvent(Event* event)
 {
@@ -35,10 +35,22 @@ void GuiEventDispatcher::attachFilter(const std::initializer_list<EventType>& ty
     m_FiltersNotifier.attachListener(types, filter);
 }
 
+void GuiEventDispatcher::detachFilter(Listener* filter)
+{
+    assert(filter);
+    m_FiltersNotifier.detachListener(filter);
+}
+
 void GuiEventDispatcher::attachHandler(const std::initializer_list<EventType>& types, Listener* handler)
 {
     assert(handler);
     m_HandlersNotifier.attachListener(types, handler);
+}
+
+void GuiEventDispatcher::detachHandler(Listener* handler)
+{
+    assert(handler);
+    m_HandlersNotifier.detachListener(handler);
 }
 
 Event* GuiEventDispatcher::dispatchEvent(Event* event, EventDispatchChain* chain)

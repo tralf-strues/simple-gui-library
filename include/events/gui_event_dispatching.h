@@ -69,8 +69,10 @@ public:
     ~GuiEventDispatcher() = default;
 
     /* Listeners */
-    void attachFilter(const std::initializer_list<EventType>& types, Listener* filter);    
-    void attachHandler(const std::initializer_list<EventType>& types, Listener* handler);    
+    void attachFilter(const std::initializer_list<EventType>& types, Listener* filter);
+    void detachFilter(Listener* filter);
+    void attachHandler(const std::initializer_list<EventType>& types, Listener* handler);
+    void detachHandler(Listener* handler);
 
     /* EventDispatcher */
     virtual Event* dispatchEvent(Event* event, EventDispatchChain* chain) override;

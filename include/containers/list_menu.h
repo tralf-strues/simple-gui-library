@@ -9,7 +9,7 @@
 #ifndef LIST_MENU_H
 #define LIST_MENU_H
 
-#include "../container.h"
+#include "container.h"
 #include "style/default_skins.h"
 
 class ListMenu : public Container
@@ -39,7 +39,7 @@ private:
     int32_t     m_Indent      = DEFAULT_LIST_MENU_INDENT;
     int32_t     m_Spacing     = DEFAULT_LIST_MENU_SPACING;
 
-    virtual void setDefaultStyle() override;
+    void setDefaultStyle();
     virtual void layOutComponents() override;
 };
 

@@ -6,7 +6,7 @@
 //! @copyright Copyright (c) 2021
 //------------------------------------------------------------------------------
 
-#include "container.h"
+#include "containers/container.h"
 
 Component* Container::getHitComponent(int32_t x, int32_t y)
 {
@@ -30,13 +30,14 @@ Component* Container::getHitComponent(int32_t x, int32_t y)
 
 void Container::updateGraphics()
 {
+    Component::updateGraphics();
+
+    layOutComponents();
+
     for (Component* component : m_Components)
     {
         component->updateGraphics();
     }
-
-    layOutComponents();
-    Component::updateGraphics();
 }
 
 void Container::render(Texture* target, const Rectangle<int32_t>& targetRegion)
@@ -105,4 +106,12 @@ const std::list<Component*>& Container::getComponents() const
 
 void Container::layOutComponents()
 {
+    for (Component* component : m_Components)
+    {
+        if (component->isPrefSizeEnabled())
+        {
+            component->setWidth(component->getPrefWidth());
+            component->setHeight(component->getPrefHeight());
+        }
+    }
 }

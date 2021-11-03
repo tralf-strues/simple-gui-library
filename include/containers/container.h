@@ -10,7 +10,7 @@
 #define CONTAINER_H
 
 #include <list>
-#include "component.h"
+#include "../components/component.h"
 
 class Container : public Component
 {

@@ -15,7 +15,7 @@ public:
 
     virtual void onEvent(Event* event) override
     {
-        assert(event->getCategory() == MouseEvent::getStaticCategory());
+        assert(event->isInCategory(MouseEvent::getStaticCategory()));
 
         printf("MenuSelectListener triggered.\n");
 
@@ -60,7 +60,7 @@ private:
 };
 
 Menu::Menu(Renderer* renderer, const Font& font, const char* title)
-    : m_TitleButton(new Button{renderer, font, title, COLOR_BLACK, COLOR_TRANSPARENT}),
+    : m_TitleButton(new Button{renderer, font, title}),
       m_MenuItems(new ListMenu{renderer}) {}
 
 Menu::~Menu()
@@ -71,7 +71,7 @@ Menu::~Menu()
 
 const char* Menu::getTitle() const
 {
-    return m_TitleButton->getLabel();
+    return m_TitleButton->getLabel()->getText();
 }
 
 Button* Menu::getTitleButton()
@@ -87,7 +87,7 @@ ListMenu* Menu::getMenuItems()
 MenuBar::MenuBar(Renderer* renderer, const Font& font) 
     : SpacedContainer(renderer), m_Font(&font)
 {
-    setSkin(&DEFAULT_SKIN_MENUBAR);
+    // setSkin(&DEFAULT_SKIN_MENUBAR);
 }
 
 MenuBar::~MenuBar()
@@ -107,9 +107,9 @@ Menu* MenuBar::addMenu(const char* title)
     Menu* addedMenu = new Menu{m_Renderer, *m_Font, title};
     m_Menus.push_back(addedMenu);
     addedMenu->getMenuItems()->setVisible(false);
-    addedMenu->getTitleButton()->attachHandler({MouseButtonPressedEvent::getStaticType(), 
-                                                MouseExitedEvent::getStaticType()},
-                                               new MenuSelectListener{addedMenu});
+    addedMenu->getTitleButton()->getEventDispatcher()->attachHandler({MouseButtonPressedEvent::getStaticType(), 
+                                                                      MouseExitedEvent::getStaticType()},
+                                                                     new MenuSelectListener{addedMenu});
 
     // addedMenu->getTitleButton()->setWidth(addedMenu->getTitleButton().g);
     // FIXME:
@@ -173,19 +173,20 @@ Component* MenuBar::getHitComponent(int32_t x, int32_t y)
 
 void MenuBar::updateGraphics()
 {
+    SpacedContainer::updateGraphics();
+
     for (Menu* menu : m_Menus)
     {
         // FIXME:
-        if (menu->getMenuItems()->getWidth() < DEFAULT_LIST_MENU_MIN_WIDTH)
-        {
-            menu->getMenuItems()->setWidth(DEFAULT_LIST_MENU_MIN_WIDTH);
-        }
+        // if (menu->getMenuItems()->getWidth() < DEFAULT_LIST_MENU_MIN_WIDTH)
+        // {
+        //     menu->getMenuItems()->setWidth(DEFAULT_LIST_MENU_MIN_WIDTH);
+        // }
 
         menu->getMenuItems()->updateGraphics();
     }
     
-    setDefaultStyle();
-    SpacedContainer::updateGraphics();
+    // setDefaultStyle();
 }
 
 void MenuBar::render(Texture* target, const Rectangle<int32_t>& targetRegion)
@@ -206,19 +207,19 @@ void MenuBar::render(Texture* target, const Rectangle<int32_t>& targetRegion)
 
 void MenuBar::setDefaultStyle()
 {
-    for (Menu* menu : m_Menus)
-    {
-        for (Component* component : menu->getMenuItems()->getComponents())
-        {
-            if (component->getSkin() == nullptr)
-            {
-                component->setSkin(&DEFAULT_SKIN_MENU_ITEM);
-                component->attachHandler({MouseEnteredEvent::getStaticType(),
-                                          MouseExitedEvent::getStaticType()},
-                                         new HoverListener{component, &DEFAULT_HOVER_STYLE_MENU_ITEM});
-            }
-        }
-    }
+    // for (Menu* menu : m_Menus)
+    // {
+    //     for (Component* component : menu->getMenuItems()->getComponents())
+    //     {
+    //         if (component->getSkin() == nullptr)
+    //         {
+    //             component->setSkin(&DEFAULT_SKIN_MENU_ITEM);
+    //             component->attachHandler({MouseEnteredEvent::getStaticType(),
+    //                                       MouseExitedEvent::getStaticType()},
+    //                                      new HoverListener{component, &DEFAULT_HOVER_STYLE_MENU_ITEM});
+    //         }
+    //     }
+    // }
 }
 
 //! FIXME: 

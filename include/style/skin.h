@@ -11,7 +11,6 @@
 
 #include "sml/containers/dynamic_array.h"
 #include "sml/graphics_wrapper/renderer.h"
-#include "../component.h"
 
 template<typename C>
 class Skin
@@ -22,34 +21,49 @@ public:
     //--------------------------------------------------------------------------
     //! @brief Should be called by @ref Skinnable when this skin is replaced.
     //--------------------------------------------------------------------------
-    virtual void dispose();
+    virtual void dispose() {}
+
+    virtual void apply() = 0;
 
     C* getSkinnable() { return m_Component; }
-
-    void render(Texture* target, const Rectangle<int32_t>& targetRegion);
 
     virtual int32_t computePrefHeight() const { return 0; };
     virtual int32_t computePrefWidth()  const { return 0; };
     virtual void    layoutChildren()    const {};
 
 protected:
-    Renderer* m_Renderer  = nullptr;
-    C*        m_Component = nullptr;
-
-    Notifier  m_ViewNotifier;
+    C* m_Component = nullptr;
 };
 
 template<typename C>
 class Skinnable
 {
 public:
-    const Skin<C>* getSkin() const;
-    void setSkin(Skin<C>* skin);
+    const Skin<C>* getSkin() const
+    {
+        return m_Skin;
+    }
+
+    void setSkin(Skin<C>* skin)
+    {
+        if (m_Skin != nullptr)
+        {
+            m_Skin->dispose();
+        }
+
+        m_Skin = skin;
+    }
+
+    void applySkin()
+    {
+        if (m_Skin != nullptr)
+        {
+            m_Skin->apply();
+        }
+    }
 
 protected:
     Skin<C>* m_Skin = nullptr;
-
-    virtual void applySkin() = 0;
 };
 
 // class IconSkin : public Skin

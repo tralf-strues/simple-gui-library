@@ -13,15 +13,55 @@
 #include "sml/events/event_dispatching.h"
 #include "sml/events/listener_notifier.h"
 #include "skin.h"
-#include "components/button.h"
 
-class ButtonSkin : Skinnable<Button>
+struct BorderedRect
+{
+    bool   backgroundEnabled;
+    Color  background;
+
+    bool   borderEnabled;
+    Color  borderColor;
+    int8_t borderThickness;
+};
+
+//------------------------------------------------------------------------------
+// ButtonSkin
+//------------------------------------------------------------------------------
+static const BorderedRect  DEFAULT_BUTTON_BACKGROUND         = BorderedRect{true, 0xF5'F5'F5'FF, true, 0xE9'E9'E9'FF, 1};
+static const Color         DEFAULT_BUTTON_FOREGROUND         = COLOR_BLACK;
+static const BorderedRect  DEFAULT_BUTTON_BACKGROUND_HOVERED = BorderedRect{true, 0x25'92'FF'FF, true, 0xE9'E9'E9'FF, 1};
+static const Color         DEFAULT_BUTTON_FOREGROUND_HOVERED = COLOR_WHITE;
+static const Vec2<int32_t> DEFAULT_BUTTON_PREF_MARGINS       = {8, 0};
+static const Vec2<int32_t> DEFAULT_BUTTON_PREF_SIZE          = {64, 16};
+
+class Button;
+
+class ButtonSkinListener : public Listener
 {
 public:
-    
+    Button* button;
+
+    ButtonSkinListener(Button* button);
+    virtual void onEvent(Event* event) override;
+};
+
+class ButtonSkin : public Skin<Button>
+{
+public:
+    ButtonSkin(Button* button);
+
+    virtual void apply()   override;
+    virtual void dispose() override;
+
+    virtual int32_t computePrefWidth()  const override;
+    virtual int32_t computePrefHeight() const override;
+    virtual void    layoutChildren()    const override;
 
 private:
-    Button* m_Component;
+    ButtonSkinListener* m_Listener;
+
+    BorderedRect        m_Background = DEFAULT_BUTTON_BACKGROUND;
+    Color               m_Foreground = DEFAULT_BUTTON_FOREGROUND;
 };
 
 // struct HoverStyle
@@ -57,9 +97,9 @@ private:
 // static const HoverStyle DEFAULT_HOVER_STYLE_MENU_ITEM     = {&DEFAULT_SKIN_MENU_ITEM, &DEFAULT_SKIN_MENU_ITEM_HOVERED,
 //                                                              COLOR_BLACK, COLOR_WHITE};
 
-// static const int32_t    DEFAULT_LIST_MENU_MIN_WIDTH       = 128;
-// static const int32_t    DEFAULT_LIST_MENU_INDENT          = 4;
-// static const int32_t    DEFAULT_LIST_MENU_SPACING         = 2;
+static const int32_t    DEFAULT_LIST_MENU_MIN_WIDTH       = 128;
+static const int32_t    DEFAULT_LIST_MENU_INDENT          = 4;
+static const int32_t    DEFAULT_LIST_MENU_SPACING         = 2;
 
 // class Component;
 

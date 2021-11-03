@@ -18,8 +18,6 @@ Label::Label(Renderer* renderer, const Font& font, const char* str, Color foregr
 
 void Label::setText(const char* str)
 {
-    assert(str);
-
     m_Text.setString(str);
     updateGraphics();
 }
@@ -29,10 +27,13 @@ const char* Label::getText() const
     return m_Text.getStr();
 }
 
+bool Label::isEmpty() const
+{
+    return m_Text.getStr() == nullptr;
+}
+
 void Label::updateGraphics()
 {
-    Component::updateGraphics();
-
     if (m_Text.getStr() == nullptr)
     {
         return;
@@ -66,4 +67,24 @@ void Label::render(Texture* target, const Rectangle<int32_t>& targetRegion)
     m_Text.render(*m_Renderer, targetRegion.pos + getPos());
 
     m_Renderer->setTarget(savedTarget);    
+}
+
+int32_t Label::getPrefWidth() const
+{
+    if (!isEmpty())
+    {
+        return m_Text.getWidth();
+    }
+
+    return 0;
+}
+
+int32_t Label::getPrefHeight() const
+{
+    if (!isEmpty())
+    {
+        return m_Text.getHeight();
+    }
+
+    return 0;
 }

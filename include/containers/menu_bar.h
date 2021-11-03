@@ -49,7 +49,7 @@ private:
     const Font*      m_Font;
     std::list<Menu*> m_Menus;
 
-    virtual void setDefaultStyle() override;
+    void setDefaultStyle();
     std::list<Component*>::iterator getFirstComponent();
 };
 

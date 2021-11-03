@@ -9,7 +9,7 @@
 #ifndef SPACED_CONTAINER_H
 #define SPACED_CONTAINER_H
 
-#include "../container.h"
+#include "container.h"
 
 // TODO: 1) Merge several Spacers at the same position
 // TODO: 2) Add the ability to remove spacers

@@ -21,10 +21,13 @@ public:
 
     void setText(const char* str);
     const char* getText() const;
+    bool isEmpty() const;
 
     /* Component */
     virtual void updateGraphics() override;
     virtual void render(Texture* target, const Rectangle<int32_t>& targetRegion) override;
+    virtual int32_t getPrefWidth() const override;
+    virtual int32_t getPrefHeight() const override;
 
 private:
     Text m_Text;

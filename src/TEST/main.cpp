@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "frame.h"
 #include "components/button.h"
 #include "style/default_skins.h"
+#include "containers/frame.h"
 #include "containers/spaced_container.h"
 #include "containers/list_menu.h"
 #include "containers/menu_bar.h"
@@ -40,6 +40,15 @@ private:
     bool* m_Running = nullptr;
 };
 
+class CloseButtonListener : public ActionListener
+{
+public:
+    virtual void onActionPerformed(ActionEvent* event) override
+    {
+        printf("CloseButtonListener\n");
+    }
+};
+
 int main()
 {
     initGraphics();
@@ -53,7 +62,7 @@ int main()
 
     Texture iconTextureClose{frame.getRenderer()};
     iconTextureClose.loadFromImage("res/icons8-macos-close-96.png");
-    IconSkin iconClose{&iconTextureClose};
+    // IconSkin iconClose{&iconTextureClose};
     
     Label label{frame.getRenderer(), font, "Oh my god!", COLOR_BLACK};
     label.setY(16);
@@ -61,29 +70,32 @@ int main()
     Label label2{frame.getRenderer(), font, "Spacers work!", COLOR_BLUE};
 
     Button button{frame.getRenderer(), font};
-    button.setSize(128, 22);
     button.setLabel("Quit");
 
     Button closeButton{frame.getRenderer(), font};
     closeButton.setX(250);
     closeButton.setY(250);
-    closeButton.setSize(50, 50);
-    closeButton.setSkin(&iconClose);
+    closeButton.setPrefWidth(128);
+    closeButton.setPrefHeight(32);
+    closeButton.setLabel("Close button");
+    closeButton.actionListener = new CloseButtonListener();
+    // closeButton.setSkin(&iconClose);
 
     SpacedContainer spacedContainer{frame.getRenderer()};
     spacedContainer.setY(400);
-    spacedContainer.setSize(1280, 12);
+    spacedContainer.setPrefWidth(1280);
+    spacedContainer.setPrefHeight(12);
     spacedContainer.setBackground(COLOR_GREEN);
 
-    label.attachHandler({MouseMovedEvent::getStaticType()}, new LabelOnHover{});
+    label.getEventDispatcher()->attachHandler({MouseMovedEvent::getStaticType()}, new LabelOnHover{});
 
-    button.attachHandler({MouseButtonPressedEvent::getStaticType()}, new CloseListener{&running});
-    frame.attachHandler({WindowCloseEvent::getStaticType()}, new CloseListener{&running});
+    button.getEventDispatcher()->attachHandler({MouseButtonPressedEvent::getStaticType()}, new CloseListener{&running});
+    frame.getEventDispatcher()->attachHandler({WindowCloseEvent::getStaticType()}, new CloseListener{&running});
 
     spacedContainer.addComponent(&label2);
     spacedContainer.addComponent(&label);
     spacedContainer.addSpacer();
-    // spacedContainer.addComponent(&button);
+    spacedContainer.addComponent(&button);
     spacedContainer.insertSpacerAfter(&label2, 3);
 
     // ListMenu listMenu{frame.getRenderer()};
@@ -96,7 +108,8 @@ int main()
     // listMenu.setY(250);
 
     MenuBar menuBar{frame.getRenderer(), font};
-    menuBar.setSize(1280, button.getHeight());
+    menuBar.setPrefWidth(1280);
+    menuBar.setPrefHeight(button.getPrefHeight());
     Menu* fileMenu = menuBar.addMenu("File");
     fileMenu->getMenuItems()->addComponent(new Label{frame.getRenderer(), font, "Open"});
     fileMenu->getMenuItems()->addComponent(new Label{frame.getRenderer(), font, "New"});

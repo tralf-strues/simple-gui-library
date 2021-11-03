@@ -41,7 +41,7 @@ void SpacedContainer::layOutComponents()
     uint32_t totalWeight          = getTotalWeight();
 
     // FIXME: Handle the situation somehow else.
-    assert(totalComponentsWidth <= getWidth());
+    // assert(totalComponentsWidth <= getWidth());
     
     int32_t curX = getSpacerWidth(nullptr, totalWeight, totalSpacersWidth);
 

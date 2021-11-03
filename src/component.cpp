@@ -7,7 +7,7 @@
 //------------------------------------------------------------------------------
 
 #include <assert.h>
-#include "component.h"
+#include "components/component.h"
 
 Component* Component::getHitComponent(int32_t x, int32_t y)
 {
@@ -27,7 +27,7 @@ void Component::updateGraphics()
     m_Renderer->setColor(m_Background);
     m_Renderer->clear();
 
-    applySkin();
+    // applySkin();
 
     m_Renderer->setTarget(savedTarget);
 }
@@ -61,24 +61,6 @@ EventDispatchChain* Component::buildEventDispatchChain(EventDispatchChain* chain
     }
     
     return m_Parent->buildEventDispatchChain(chain);
-}
-
-void Component::attachHandler(const std::initializer_list<EventType>& types, Listener* handler)
-{
-    m_Dispatcher.attachHandler(types, handler);
-}
-
-void Component::attachFilter(const std::initializer_list<EventType>& types, Listener* filter)
-{
-    m_Dispatcher.attachFilter(types, filter);
-}
-
-void Component::applySkin()
-{
-    if (m_Skin != nullptr)
-    {
-        m_Skin->apply(m_Renderer, m_Texture, nullptr);
-    }
 }
 
 //------------------------------------Setters-----------------------------------
@@ -180,6 +162,18 @@ void Component::setHeight(int32_t height)
 //     setMaxSize(maxSize.x, maxSize.y);
 // }
 
+void Component::setPrefWidth(int32_t width)
+{
+    m_PrefSize.x = width;
+    setPrefSizeEnabled(true);
+}
+
+void Component::setPrefHeight(int32_t height)
+{
+    m_PrefSize.y = height;
+    setPrefSizeEnabled(true);
+}
+
 // void Component::setPrefSize(int32_t prefWidth, int32_t prefHeight)
 // {
 //     m_PrefSize.x = prefWidth;
@@ -202,10 +196,10 @@ void Component::setHeight(int32_t height)
 //     m_MaxSizeSet = enabled;
 // }
 
-// void Component::setPrefSizeEnabled(bool enabled)
-// {
-//     m_PrefSizeSet = enabled;
-// }
+void Component::setPrefSizeEnabled(bool enabled)
+{
+    m_PrefSizeEnabled = enabled;
+}
 
 void Component::setForeground(Color foreground)
 {
@@ -304,6 +298,16 @@ const Vec2<int32_t>& Component::getSize() const
 //     return m_PrefSize;
 // }
 
+int32_t Component::getPrefWidth() const
+{
+    return m_PrefSize.x;
+}
+
+int32_t Component::getPrefHeight() const
+{
+    return m_PrefSize.y;
+}
+
 // bool Component::isMinSizeSet() const
 // {
 //     return m_MinSizeSet;
@@ -314,10 +318,10 @@ const Vec2<int32_t>& Component::getSize() const
 //     return m_MaxSizeSet;
 // }
 
-// bool Component::isPrefSizeSet() const
-// {
-//     return m_PrefSizeSet;
-// }
+bool Component::isPrefSizeEnabled() const
+{
+    return m_PrefSizeEnabled;
+}
 
 Color Component::getForeground() const
 {
