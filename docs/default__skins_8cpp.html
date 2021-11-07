@@ -84,25 +84,197 @@ $(document).ready(function(){initNavTree('default__skins_8cpp.html',''); initRes
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">default_skins.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="default__skins_8h_source.html">style/default_skins.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="component_8h_source.html">component.h</a>&quot;</code><br />
+<code>#include &quot;components/button.h&quot;</code><br />
 </div>
 <p><a href="default__skins_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a02bb77b2b67dc14ecceccff1e07bac6b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__skins_8cpp.html#a02bb77b2b67dc14ecceccff1e07bac6b">ASSERT_CATEGORY</a>(eventClass)</td></tr>
+<tr class="separator:a02bb77b2b67dc14ecceccff1e07bac6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ece60572d50cfad1b143eefd4d8c9e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__skins_8cpp.html#a9ece60572d50cfad1b143eefd4d8c9e9">ASSERT_EITHER_CATEGORY</a>(eventClass1,  eventClass2)</td></tr>
+<tr class="separator:a9ece60572d50cfad1b143eefd4d8c9e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae485d10ae4acfae560ab4af48af344c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__skins_8cpp.html#aae485d10ae4acfae560ab4af48af344c">INVALID_EVENT_TYPE</a>(listener)&#160;&#160;&#160;assert(! &quot;Invalid&quot; #listener &quot;event type!&quot;)</td></tr>
+<tr class="separator:aae485d10ae4acfae560ab4af48af344c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a794c87c1d7047489972507ee7554b676"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__skins_8cpp.html#a794c87c1d7047489972507ee7554b676">renderBorderedRect</a> (Renderer *renderer, const Rectangle&lt; int32_t &gt; &amp;region, const <a class="el" href="struct_bordered_rect.html">BorderedRect</a> &amp;style)</td></tr>
+<tr class="separator:a794c87c1d7047489972507ee7554b676"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aec0f7e8f448694935aa2ff35d5003197"><td class="memItemLeft" align="right" valign="top">const std::initializer_list&lt; EventType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__skins_8cpp.html#aec0f7e8f448694935aa2ff35d5003197">BUTTON_SKIN_LISTENER_EVENTS</a></td></tr>
+<tr class="separator:aec0f7e8f448694935aa2ff35d5003197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Nikita Mochalov (github.com/tralf-strues)</dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2021-11-01</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a02bb77b2b67dc14ecceccff1e07bac6b" name="a02bb77b2b67dc14ecceccff1e07bac6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02bb77b2b67dc14ecceccff1e07bac6b">&#9670;&nbsp;</a></span>ASSERT_CATEGORY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASSERT_CATEGORY</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">eventClass</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    assert(event != <span class="keyword">nullptr</span>);       \</div>
+<div class="line">    assert(event-&gt;isInCategory(eventClass::getStaticCategory()))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00012">12</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9ece60572d50cfad1b143eefd4d8c9e9" name="a9ece60572d50cfad1b143eefd4d8c9e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ece60572d50cfad1b143eefd4d8c9e9">&#9670;&nbsp;</a></span>ASSERT_EITHER_CATEGORY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASSERT_EITHER_CATEGORY</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">eventClass1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">eventClass2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    assert(event != <span class="keyword">nullptr</span>);                                      \</div>
+<div class="line">    assert(event-&gt;isInCategory(eventClass1::getStaticCategory() || \</div>
+<div class="line">                               eventClass2::getStaticCategory()))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00016">16</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aae485d10ae4acfae560ab4af48af344c" name="aae485d10ae4acfae560ab4af48af344c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae485d10ae4acfae560ab4af48af344c">&#9670;&nbsp;</a></span>INVALID_EVENT_TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INVALID_EVENT_TYPE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">listener</td><td>)</td>
+          <td>&#160;&#160;&#160;assert(! &quot;Invalid&quot; #listener &quot;event type!&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00021">21</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a794c87c1d7047489972507ee7554b676" name="a794c87c1d7047489972507ee7554b676"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a794c87c1d7047489972507ee7554b676">&#9670;&nbsp;</a></span>renderBorderedRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void renderBorderedRect </td>
+          <td>(</td>
+          <td class="paramtype">Renderer *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Rectangle&lt; int32_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>region</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_bordered_rect.html">BorderedRect</a> &amp;&#160;</td>
+          <td class="paramname"><em>style</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00023">23</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
+<div class="fragment"><div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    assert(renderer);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">if</span> (style.backgroundEnabled)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        renderer-&gt;setColor(style.background);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        renderFilledRect(renderer, region);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">if</span> (style.borderEnabled)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        renderer-&gt;setColor(style.borderColor);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        renderRect(renderer, region, style.borderThickness);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="aec0f7e8f448694935aa2ff35d5003197" name="aec0f7e8f448694935aa2ff35d5003197"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec0f7e8f448694935aa2ff35d5003197">&#9670;&nbsp;</a></span>BUTTON_SKIN_LISTENER_EVENTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::initializer_list&lt;EventType&gt; BUTTON_SKIN_LISTENER_EVENTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {MouseEnteredEvent::getStaticType(),</div>
+<div class="line">                                                                      MouseExitedEvent::getStaticType(),</div>
+<div class="line">                                                                      MouseButtonPressedEvent::getStaticType()}</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00043">43</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ade1fb6582c957ace0eb431debfd084f.html">style</a></li><li class="navelem"><a class="el" href="default__skins_8cpp.html">default_skins.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_35781f0e74aa8deac19fa31b37174dc2.html">scene</a></li><li class="navelem"><a class="el" href="dir_137aaa6cf2f004f44f781ef1ff985645.html">style</a></li><li class="navelem"><a class="el" href="default__skins_8cpp.html">default_skins.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>

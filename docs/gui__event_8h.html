@@ -97,17 +97,25 @@ $(document).ready(function(){initNavTree('gui__event_8h.html',''); initResizable
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mouse_entered_event.html">MouseEnteredEvent</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_mouse_entered_event.html">Sgl::MouseEnteredEvent</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mouse_exited_event.html">MouseExitedEvent</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_mouse_exited_event.html">Sgl::MouseExitedEvent</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_action_event.html">Sgl::ActionEvent</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_action_listener.html">Sgl::ActionListener</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:aaae61530a2da240f5beb3354d0c342c4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>GuiEventType</b> { <b>MOUSE_ENTERED</b> = SML_EVENT_TYPE_FIRST_UNSPECIFIED
+<tr class="memitem:a2c7929342f49a2ab6fdeb58c6395e618"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>GuiEventType</b> { <b>MOUSE_ENTERED</b> = Sml::SML_EVENT_TYPE_FIRST_UNSPECIFIED
 , <b>MOUSE_EXITED</b>
+, <b>ACTION_PERFORMED</b>
  }</td></tr>
-<tr class="separator:aaae61530a2da240f5beb3354d0c342c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a2c7929342f49a2ab6fdeb58c6395e618"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40ea15e959de9c49968b43e11ba8d1ee"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>GuiEventCategory</b> { <b>EVENT_CATEGORY_GUI</b> = Sml::SML_EVENT_CATEGORY_FIRST_UNSPECIFIED
+ }</td></tr>
+<tr class="separator:a40ea15e959de9c49968b43e11ba8d1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Nikita Mochalov (github.com/tralf-strues)</dd></dl>
@@ -116,23 +124,44 @@ Enumerations</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="aaae61530a2da240f5beb3354d0c342c4" name="aaae61530a2da240f5beb3354d0c342c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaae61530a2da240f5beb3354d0c342c4">&#9670;&nbsp;</a></span>GuiEventType</h2>
+<a id="a40ea15e959de9c49968b43e11ba8d1ee" name="a40ea15e959de9c49968b43e11ba8d1ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40ea15e959de9c49968b43e11ba8d1ee">&#9670;&nbsp;</a></span>GuiEventCategory</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum GuiEventType</td>
+          <td class="memname">enum Sgl::GuiEventCategory</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00015">15</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
-<div class="fragment"><div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    MOUSE_ENTERED = SML_EVENT_TYPE_FIRST_UNSPECIFIED,</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    MOUSE_EXITED</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>};</div>
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00024">24</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        EVENT_CATEGORY_GUI = Sml::SML_EVENT_CATEGORY_FIRST_UNSPECIFIED</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    };</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2c7929342f49a2ab6fdeb58c6395e618" name="a2c7929342f49a2ab6fdeb58c6395e618"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c7929342f49a2ab6fdeb58c6395e618">&#9670;&nbsp;</a></span>GuiEventType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum Sgl::GuiEventType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00016">16</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+<div class="fragment"><div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        MOUSE_ENTERED = Sml::SML_EVENT_TYPE_FIRST_UNSPECIFIED,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        MOUSE_EXITED,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        ACTION_PERFORMED</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    };</div>
 </div><!-- fragment -->
 </div>
 </div>

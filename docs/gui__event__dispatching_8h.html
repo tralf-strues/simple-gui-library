@@ -107,9 +107,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9e3990a271b3a518fbe2b64de195d972"><td class="memItemLeft" align="right" valign="top">Event *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gui__event__dispatching_8h.html#a9e3990a271b3a518fbe2b64de195d972">fireEvent</a> (Event *event)</td></tr>
-<tr class="memdesc:a9e3990a271b3a518fbe2b64de195d972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fire the event from the specified.  <a href="gui__event__dispatching_8h.html#a9e3990a271b3a518fbe2b64de195d972">More...</a><br /></td></tr>
-<tr class="separator:a9e3990a271b3a518fbe2b64de195d972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d411ff938b8ac676119ec6f232fbf19"><td class="memItemLeft" align="right" valign="top">Sml::Event *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gui__event__dispatching_8h.html#a7d411ff938b8ac676119ec6f232fbf19">fireEvent</a> (Sml::Event *event)</td></tr>
+<tr class="memdesc:a7d411ff938b8ac676119ec6f232fbf19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fire the event from the specified.  <a href="gui__event__dispatching_8h.html#a7d411ff938b8ac676119ec6f232fbf19">More...</a><br /></td></tr>
+<tr class="separator:a7d411ff938b8ac676119ec6f232fbf19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >The event proccessing is split into several stages.</p>
@@ -125,27 +125,26 @@ Functions</h2></td></tr>
  FilterN FilterN FilterN</p>
 <p class="startli">The next stage is moving the event from the root to the target. Each component has its own <a class="el" href="class_gui_event_dispatcher.html">GuiEventDispatcher</a> which calls filters on the event. A filter can consume the event and then the dispatching proccess terminates (though all of the current dispatcher's filters are called nonetheless).</p>
 </li>
-<li><p class="startli">Bubbling phase. /---&mdash;\ /---------&mdash;\ /---------------&mdash;\ | Root | --&gt; | Component1 | --&gt; ... --&gt; | Target component | ---&mdash;/ ---------&mdash;/ ---------------&mdash;/ Dispatcher Dispatcher Dispatcher Handler1 Handler1 Handler1 ... ... ... <br  />
- HandlerN HandlerN HandlerN</p>
+<li><p class="startli">Bubbling phase. /---&mdash;\ /---------&mdash;\ /---------------&mdash;\ | Root | --&gt; | Component1 | --&gt; ... --&gt; | Target component | ---&mdash;/ ---------&mdash;/ ---------------&mdash;/ Dispatcher Dispatcher Dispatcher Handler1 Handler1 Handler1 ... ... ... HandlerN HandlerN HandlerN</p>
 <p class="startli">The next stage is moving the event from the target to the root. Here each dispatcher calls handlers on the event. A handler can consume the event and then the dispatching proccess terminates (though all of the current dispatcher's handlers are called nonetheless). Most target components consume the event and the bubbling phase doesn't occur.</p>
 </li>
 </ol>
 <dl class="section author"><dt>Author</dt><dd>Nikita Mochalov (github.com/tralf-strues)</dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2021-10-23</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2021-11-06</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="gui__event__dispatching_8h_source.html">gui_event_dispatching.h</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a9e3990a271b3a518fbe2b64de195d972" name="a9e3990a271b3a518fbe2b64de195d972"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e3990a271b3a518fbe2b64de195d972">&#9670;&nbsp;</a></span>fireEvent()</h2>
+<a id="a7d411ff938b8ac676119ec6f232fbf19" name="a7d411ff938b8ac676119ec6f232fbf19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d411ff938b8ac676119ec6f232fbf19">&#9670;&nbsp;</a></span>fireEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Event * fireEvent </td>
+          <td class="memname">Sml::Event * fireEvent </td>
           <td>(</td>
-          <td class="paramtype">Event *&#160;</td>
+          <td class="paramtype">Sml::Event *&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
           <td></td>
         </tr>
@@ -174,12 +173,12 @@ Functions</h2></td></tr>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_class" href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a>* targetDispatchChain = </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a>*<span class="keyword">&gt;</span>(<span class="keyword">event</span>-&gt;getTarget()-&gt;buildEventDispatchChain(&amp;baseDispatchChain));</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    Event* returnEvent = targetDispatchChain-&gt;sendThroughChain(event);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    Sml::Event* returnEvent = targetDispatchChain-&gt;sendThroughChain(event);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    baseDispatchChain.reset();</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> returnEvent;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
-<div class="ttc" id="aclass_gui_event_dispatch_chain_html"><div class="ttname"><a href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8h_source.html#l00086">gui_event_dispatching.h:87</a></div></div>
+<div class="ttc" id="aclass_gui_event_dispatch_chain_html"><div class="ttname"><a href="class_gui_event_dispatch_chain.html">GuiEventDispatchChain</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8h_source.html#l00085">gui_event_dispatching.h:86</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['layoutcomponents_0',['layOutComponents',['../class_container.html#a96456062fe151f42f604c6a12e27d789',1,'Container::layOutComponents()'],['../class_spaced_container.html#a2f2c2d67b02ea6db02af3e3ac0c97d5e',1,'SpacedContainer::layOutComponents()']]]
+  ['prependdispatcher_0',['prependDispatcher',['../class_gui_event_dispatch_chain.html#a52ee73e07d350b772d8aeea25603a462',1,'GuiEventDispatchChain']]]
 ];

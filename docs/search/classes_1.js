@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['closelistener_0',['CloseListener',['../class_close_listener.html',1,'']]],
-  ['component_1',['Component',['../class_component.html',1,'']]],
-  ['container_2',['Container',['../class_container.html',1,'']]]
+  ['background_0',['Background',['../class_sgl_1_1_background.html',1,'Sgl']]],
+  ['border_1',['Border',['../class_sgl_1_1_border.html',1,'Sgl']]]
 ];

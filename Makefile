@@ -36,19 +36,34 @@ SrcDir      = src
 BinDir      = bin
 IntDir      = $(BinDir)/intermediates
 
+rwildcard   = $(foreach d,$(wildcard $(1:=/*)),$(call rwildcard,$d,$2) $(filter $(subst *,%,$2),$d))
 LibArchives = $(LibsDir)/sml/sml.a
-Deps        = $(wildcard $(IncludeDir)/*.h) $(wildcard $(IncludeDir)/**/*.h)
-CppSrc      = $(notdir $(wildcard $(SrcDir)/*.cpp) $(wildcard $(SrcDir)/**/*.cpp))
+Deps 		= $(call rwildcard,$(IncludeDir),*.h)
+CppSrc 		= $(notdir $(call rwildcard,$(SrcDir),*.cpp))
 Objs        = $(addprefix $(IntDir)/, $(CppSrc:.cpp=.o))
 
-Exec = $(BinDir)/test.out
+OutputDir  = sgl
+OutputFile = sgl.a
 # -------------------------------------Files------------------------------------
 
 # ----------------------------------Make rules----------------------------------
-$(Exec): $(LibArchives) $(Objs) $(Deps)
-	$(CXX) -o $(Exec) $(LibArchives) $(Objs) $(LXXFLAGS)
+.PHONY: install
+ifneq ($(OutputPrefix),)
+install: init build
+	mkdir -p $(OutputPrefix)/$(OutputDir)
+	mkdir -p $(OutputPrefix)/$(OutputDir)
+	cp $(BinDir)/$(OutputFile) $(OutputPrefix)/$(OutputDir)
+	cp -a $(IncludeDir)/. $(OutputPrefix)/$(OutputDir)
+else
+install:
+	@echo "[ERROR] Output directory not specified!"
+endif
 
-vpath %.cpp $(SrcDir) $(wildcard $(SrcDir)/**/)
+.PHONY: build
+build: $(LibArchives) $(Objs) $(Deps)
+	ar ru $(BinDir)/$(OutputFile) $(Objs)
+
+vpath %.cpp $(dir $(call rwildcard,$(SrcDir),*.cpp))
 $(IntDir)/%.o: %.cpp $(Deps)
 	$(CXX) -I $(IncludeDir) -I $(LibsDir) -c $< $(CXXFLAGS) -o $@
 
@@ -59,5 +74,5 @@ init:
 
 .PHONY: clean
 clean:
-	rm -f $(Objs) $(Exec)
+	rm -f $(call rwildcard,$(IntDir),*.o) $(BinDir)/$(OutputFile)
 # ----------------------------------Make rules----------------------------------

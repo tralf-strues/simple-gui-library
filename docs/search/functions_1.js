@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fireevent_0',['fireEvent',['../gui__event__dispatching_8h.html#a9e3990a271b3a518fbe2b64de195d972',1,'fireEvent(Event *event):&#160;gui_event_dispatching.cpp'],['../gui__event__dispatching_8cpp.html#a9e3990a271b3a518fbe2b64de195d972',1,'fireEvent(Event *event):&#160;gui_event_dispatching.cpp']]]
+  ['fireevent_0',['fireEvent',['../gui__event__dispatching_8h.html#a7d411ff938b8ac676119ec6f232fbf19',1,'fireEvent(Sml::Event *event):&#160;gui_event_dispatching.cpp'],['../gui__event__dispatching_8cpp.html#a7d411ff938b8ac676119ec6f232fbf19',1,'fireEvent(Sml::Event *event):&#160;gui_event_dispatching.cpp']]]
 ];
