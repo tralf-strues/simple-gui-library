@@ -31,59 +31,29 @@ namespace Sgl
             }
         }
 
+        if (Sml::isPointInsideRectangle({x, y}, getLayoutBounds()))
+        {
+            return this;
+        }
+
         return nullptr;
     }
 
-    void Container::render(const Sml::Rectangle<int32_t>& targetRegion)
+    void Container::prerenderSelf()
     {
-        renderBackground(targetRegion);
-        renderBorder(targetRegion);
+        Sml::Texture* savedTarget = getContextRenderer()->getTarget();
+        getContextRenderer()->setTarget(m_Snapshot);
 
-        for (Component* child : getChildren())
+        if (m_Background != nullptr)
         {
-            Sml::Rectangle<int32_t> translatedRegion = targetRegion;
-            translatedRegion.pos += Sml::Vec2<int32_t>{getLayoutX(), getLayoutY()};
-
-            child->render(translatedRegion);
-        }
-    }
-
-    void Container::renderBackground(const Sml::Rectangle<int32_t>& targetRegion)
-    {
-        if (m_Background == nullptr) { return; }
-
-        for (const Fill* fill : m_Background->getFills())
-        {
-            fill->fillArea(targetRegion, targetRegion);
+            Background::fillArea(*m_Background, getOriginBounds());
         }
 
-        for (const Image* image : m_Background->getImages())
+        if (m_Border != nullptr)
         {
-            renderImage(image, targetRegion);
+            Border::encloseArea(*m_Border, getOriginBounds());
         }
-    }
 
-    void Container::renderBorder(const Sml::Rectangle<int32_t>& targetRegion)
-    {
-        if (m_Border == nullptr || m_Border->getThickness() == 0) { return; }
-
-        getContextRenderer()->setColor(m_Border->getColor());
-        Sml::renderRect(getContextRenderer(), targetRegion, m_Border->getThickness());
-    }
-
-    void Container::addChild(Component* child)
-    {
-        assert(child);
-        assert(child->getParent() == nullptr);
-
-        m_Children.push_back(child);
-    }
-    
-    void Container::removeChild(Component* child)
-    {
-        assert(child);
-        assert(child->getParent() == this);
-
-        m_Children.remove(child);
+        getContextRenderer()->setTarget(savedTarget);
     }
 }

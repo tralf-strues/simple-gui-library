@@ -31,4 +31,18 @@ namespace Sgl
 
         image->getTexture()->copyTo(contextRenderer->getTarget(), &targetRegion, nullptr);
     }
+
+    void renderImage(const Image* image, const Sml::Rectangle<int32_t>& targetRegion,
+                     int32_t scaledWidth, int32_t scaledHeight)
+    {
+        assert(image);
+        assert(image->getTexture());
+        assert(scaledWidth > 0);
+        assert(scaledHeight > 0);
+
+        Sml::Renderer* contextRenderer = getContextRenderer();
+
+        Sml::Rectangle<int32_t> scaledRegion{targetRegion.pos, scaledWidth, scaledHeight};
+        image->getTexture()->copyTo(contextRenderer->getTarget(), &scaledRegion, nullptr);
+    }
 }

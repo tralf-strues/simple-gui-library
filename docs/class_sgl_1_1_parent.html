@@ -101,17 +101,32 @@ Inheritance diagram for Sgl::Parent:</div>
 <area href="class_sgl_1_1_component.html" alt="Sgl::Component" shape="rect" coords="58,56,164,80"/>
 <area href="class_sgl_1_1_container.html" alt="Sgl::Container" shape="rect" coords="0,168,106,192"/>
 <area href="class_sgl_1_1_control.html" alt="Sgl::Control" shape="rect" coords="116,168,222,192"/>
+<area href="class_sgl_1_1_button.html" alt="Sgl::Button" shape="rect" coords="116,224,222,248"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a137857f7f026c36a0d16a10d9ab71c73"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a137857f7f026c36a0d16a10d9ab71c73">render</a> (const Sml::Rectangle&lt; int32_t &gt; &amp;targetRegion) override final</td></tr>
+<tr class="separator:a137857f7f026c36a0d16a10d9ab71c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18a9a8909ee502b88b59b1e4392d0d02"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a18a9a8909ee502b88b59b1e4392d0d02">layout</a> () override final</td></tr>
 <tr class="separator:a18a9a8909ee502b88b59b1e4392d0d02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dc938bda805e18ad732cc5a54d3c01a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a0dc938bda805e18ad732cc5a54d3c01a">prerender</a> () override final</td></tr>
+<tr class="separator:a0dc938bda805e18ad732cc5a54d3c01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ada0b8d3920c97704197b55bede6823"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a3ada0b8d3920c97704197b55bede6823">isResizable</a> () const override</td></tr>
 <tr class="separator:a3ada0b8d3920c97704197b55bede6823"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc8794883fc3f4ab257b2358211ede4b"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="class_sgl_1_1_component.html">Component</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#abc8794883fc3f4ab257b2358211ede4b">getChildren</a> ()</td></tr>
-<tr class="separator:abc8794883fc3f4ab257b2358211ede4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a868d2b08da6aa1d751738d293d90ee98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a868d2b08da6aa1d751738d293d90ee98">addChild</a> (<a class="el" href="class_sgl_1_1_component.html">Component</a> *child)</td></tr>
+<tr class="memdesc:a868d2b08da6aa1d751738d293d90ee98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method for adding a child to <a class="el" href="class_sgl_1_1_parent.html">Parent</a>.  <a href="class_sgl_1_1_parent.html#a868d2b08da6aa1d751738d293d90ee98">More...</a><br /></td></tr>
+<tr class="separator:a868d2b08da6aa1d751738d293d90ee98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a948ec0428d1eb6ad75b12bb180cd7d9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a948ec0428d1eb6ad75b12bb180cd7d9d">removeChild</a> (<a class="el" href="class_sgl_1_1_component.html">Component</a> *child)</td></tr>
+<tr class="memdesc:a948ec0428d1eb6ad75b12bb180cd7d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method for removing a child to <a class="el" href="class_sgl_1_1_parent.html">Parent</a>.  <a href="class_sgl_1_1_parent.html#a948ec0428d1eb6ad75b12bb180cd7d9d">More...</a><br /></td></tr>
+<tr class="separator:a948ec0428d1eb6ad75b12bb180cd7d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a043ffd1f125485d3e0218d6f80d5821a"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="class_sgl_1_1_component.html">Component</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a043ffd1f125485d3e0218d6f80d5821a">getChildren</a> ()</td></tr>
+<tr class="separator:a043ffd1f125485d3e0218d6f80d5821a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6207895eca3cadab5439868e0b49972"><td class="memItemLeft" align="right" valign="top">const std::list&lt; <a class="el" href="class_sgl_1_1_component.html">Component</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#ab6207895eca3cadab5439868e0b49972">getChildrenReadonly</a> () const</td></tr>
+<tr class="separator:ab6207895eca3cadab5439868e0b49972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebcf08b04f3404c49abd5658361a8203"><td class="memItemLeft" align="right" valign="top">Sml::Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#aebcf08b04f3404c49abd5658361a8203">getSnapshot</a> ()</td></tr>
+<tr class="separator:aebcf08b04f3404c49abd5658361a8203"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af852eb7a722d547cd677b26b007094c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#af852eb7a722d547cd677b26b007094c3">needLayoutPass</a> () const</td></tr>
 <tr class="separator:af852eb7a722d547cd677b26b007094c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab54d54e3e07ba44b28fef347cccc6a9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#ab54d54e3e07ba44b28fef347cccc6a9a">requestLayoutPass</a> ()</td></tr>
@@ -142,25 +157,34 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0ba607bcde522a366d7d86b2a362b9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac95462b867c2922371579bb36cca536b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#ac95462b867c2922371579bb36cca536b">setMaxHeight</a> (int32_t height)</td></tr>
 <tr class="separator:ac95462b867c2922371579bb36cca536b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af796b0d08df2db9d8b7b78b8b1f55035"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#af796b0d08df2db9d8b7b78b8b1f55035">computePrefWidth</a> (int32_t height=-1) override</td></tr>
-<tr class="separator:af796b0d08df2db9d8b7b78b8b1f55035"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab1c8748b9182430b46a9850e9817e4f"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#aab1c8748b9182430b46a9850e9817e4f">computePrefHeight</a> (int32_t width=-1) override</td></tr>
-<tr class="separator:aab1c8748b9182430b46a9850e9817e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0207116b567b88c3134ae6de6abbb7fe"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a0207116b567b88c3134ae6de6abbb7fe">computeMinWidth</a> (int32_t height=-1) override</td></tr>
-<tr class="separator:a0207116b567b88c3134ae6de6abbb7fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a952bcba692301c22851ae7d97121d219"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a952bcba692301c22851ae7d97121d219">computeMinHeight</a> (int32_t width=-1) override</td></tr>
-<tr class="separator:a952bcba692301c22851ae7d97121d219"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e40dfd13b4654e9d22c1d12d5b85147"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a0e40dfd13b4654e9d22c1d12d5b85147">computeMaxWidth</a> (int32_t height=-1) override</td></tr>
-<tr class="separator:a0e40dfd13b4654e9d22c1d12d5b85147"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cccd62ce9246de04558d9c467587c7d"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a7cccd62ce9246de04558d9c467587c7d">computeMaxHeight</a> (int32_t width=-1) override</td></tr>
-<tr class="separator:a7cccd62ce9246de04558d9c467587c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a318608851af7d19d690df1866473c2c0"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a318608851af7d19d690df1866473c2c0">getPrefWidth</a> () const</td></tr>
+<tr class="separator:a318608851af7d19d690df1866473c2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d3884ae4d5e2506fe3ba71ec7dd5f7e"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a0d3884ae4d5e2506fe3ba71ec7dd5f7e">getPrefHeight</a> () const</td></tr>
+<tr class="separator:a0d3884ae4d5e2506fe3ba71ec7dd5f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a820d59862a7045705d5165b94f2effb4"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a820d59862a7045705d5165b94f2effb4">getMinWidth</a> () const</td></tr>
+<tr class="separator:a820d59862a7045705d5165b94f2effb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbfcd6b04127355fbc0a84e95789c7cf"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#adbfcd6b04127355fbc0a84e95789c7cf">getMinHeight</a> () const</td></tr>
+<tr class="separator:adbfcd6b04127355fbc0a84e95789c7cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b36929ff3ef4aaef667e0f365dd98aa"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a0b36929ff3ef4aaef667e0f365dd98aa">getMaxWidth</a> () const</td></tr>
+<tr class="separator:a0b36929ff3ef4aaef667e0f365dd98aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a653955e491c4179619166a6d0d72a75e"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a653955e491c4179619166a6d0d72a75e">getMaxHeight</a> () const</td></tr>
+<tr class="separator:a653955e491c4179619166a6d0d72a75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bc61dec0b1ef7b0b20803228f153b55"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a8bc61dec0b1ef7b0b20803228f153b55">computePrefWidth</a> (int32_t height=-1) const override</td></tr>
+<tr class="separator:a8bc61dec0b1ef7b0b20803228f153b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addf3f97f27ec7ef5f4536f69c3030771"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#addf3f97f27ec7ef5f4536f69c3030771">computePrefHeight</a> (int32_t width=-1) const override</td></tr>
+<tr class="separator:addf3f97f27ec7ef5f4536f69c3030771"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d1a619f0328ee1f8f63b8a29a549326"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a1d1a619f0328ee1f8f63b8a29a549326">computeMinWidth</a> (int32_t height=-1) const override</td></tr>
+<tr class="separator:a1d1a619f0328ee1f8f63b8a29a549326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1de0d58a6acbac7220858eb1a01b2352"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a1de0d58a6acbac7220858eb1a01b2352">computeMinHeight</a> (int32_t width=-1) const override</td></tr>
+<tr class="separator:a1de0d58a6acbac7220858eb1a01b2352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80007daac566ae487c704f6cd2f9b140"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a80007daac566ae487c704f6cd2f9b140">computeMaxWidth</a> (int32_t height=-1) const override</td></tr>
+<tr class="separator:a80007daac566ae487c704f6cd2f9b140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ff733db2764e7e05edff40e33c18f02"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a9ff733db2764e7e05edff40e33c18f02">computeMaxHeight</a> (int32_t width=-1) const override</td></tr>
+<tr class="separator:a9ff733db2764e7e05edff40e33c18f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_sgl_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_sgl_1_1_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a></td></tr>
 <tr class="memitem:a42384a482f9dbd7ff125b264491af50a inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="a42384a482f9dbd7ff125b264491af50a" name="a42384a482f9dbd7ff125b264491af50a"></a>
 virtual <a class="el" href="class_sgl_1_1_component.html">Component</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getHitComponent</b> (int32_t x, int32_t y)=0</td></tr>
 <tr class="separator:a42384a482f9dbd7ff125b264491af50a inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad74de28dc15ab1c40ed9120ed7c5c613 inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="ad74de28dc15ab1c40ed9120ed7c5c613" name="ad74de28dc15ab1c40ed9120ed7c5c613"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> (const Sml::Rectangle&lt; int32_t &gt; &amp;targetRegion)=0</td></tr>
-<tr class="separator:ad74de28dc15ab1c40ed9120ed7c5c613 inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20f0c167092df2fff6c4b311045f2b7e inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual Sml::EventDispatchChain *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a20f0c167092df2fff6c4b311045f2b7e">buildEventDispatchChain</a> (Sml::EventDispatchChain *chain) override</td></tr>
 <tr class="separator:a20f0c167092df2fff6c4b311045f2b7e inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4017dc04f85e757c85c07fae118d7fca inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a4017dc04f85e757c85c07fae118d7fca">isVisible</a> () const</td></tr>
@@ -183,6 +207,8 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> (c
 <tr class="separator:ad34c629b8234de708a03e57553156872 inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadcdbceda37e8b24739d8f3b25531478 inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#aadcdbceda37e8b24739d8f3b25531478">setParent</a> (<a class="el" href="class_sgl_1_1_parent.html">Parent</a> *parent)</td></tr>
 <tr class="separator:aadcdbceda37e8b24739d8f3b25531478 inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c384a9d7498579608ef29147fc564c9 inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">Sml::Rectangle&lt; int32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a8c384a9d7498579608ef29147fc564c9">getOriginBounds</a> () const</td></tr>
+<tr class="separator:a8c384a9d7498579608ef29147fc564c9 inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0abdab7d835bce01be42ca975eb714df inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">const Sml::Rectangle&lt; int32_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a0abdab7d835bce01be42ca975eb714df">getLayoutBounds</a> () const</td></tr>
 <tr class="separator:a0abdab7d835bce01be42ca975eb714df inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa23340166e54ef17d0cff67a9b4974fc inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#aa23340166e54ef17d0cff67a9b4974fc">getLayoutX</a> () const</td></tr>
@@ -206,11 +232,17 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> (c
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a6241260932ed3412c9163a9d80d5adb4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a6241260932ed3412c9163a9d80d5adb4">layoutChildren</a> ()</td></tr>
 <tr class="separator:a6241260932ed3412c9163a9d80d5adb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83a8505edfb4f8a851ca528cc8106f35"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a83a8505edfb4f8a851ca528cc8106f35">prerenderSelf</a> ()</td></tr>
+<tr class="separator:a83a8505edfb4f8a851ca528cc8106f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ce4e6c3742af70070ce3f7a767a77f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a5ce4e6c3742af70070ce3f7a767a77f4">updateSnapshotSize</a> ()</td></tr>
+<tr class="separator:a5ce4e6c3742af70070ce3f7a767a77f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a9f0eb88d7982b2fe31538446de95a75a"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="class_sgl_1_1_component.html">Component</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a9f0eb88d7982b2fe31538446de95a75a">m_Children</a></td></tr>
 <tr class="separator:a9f0eb88d7982b2fe31538446de95a75a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3616cd9ee16b033c109f79759ef4ea3e"><td class="memItemLeft" align="right" valign="top">Sml::Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a3616cd9ee16b033c109f79759ef4ea3e">m_Snapshot</a> = nullptr</td></tr>
+<tr class="separator:a3616cd9ee16b033c109f79759ef4ea3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4c36aad5144e58557e7c61db9f5ec9e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#aa4c36aad5144e58557e7c61db9f5ec9e">m_NeedLayoutPass</a> = false</td></tr>
 <tr class="separator:aa4c36aad5144e58557e7c61db9f5ec9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3753bab025a0927acea7bdc9d1484c2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_sgl_1_1_background.html">Background</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#ac3753bab025a0927acea7bdc9d1484c2">m_Background</a> = nullptr</td></tr>
@@ -262,8 +294,37 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00017">17</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7cccd62ce9246de04558d9c467587c7d" name="a7cccd62ce9246de04558d9c467587c7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cccd62ce9246de04558d9c467587c7d">&#9670;&nbsp;</a></span>computeMaxHeight()</h2>
+<a id="a868d2b08da6aa1d751738d293d90ee98" name="a868d2b08da6aa1d751738d293d90ee98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a868d2b08da6aa1d751738d293d90ee98">&#9670;&nbsp;</a></span>addChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sgl::Parent::addChild </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_sgl_1_1_component.html">Component</a> *&#160;</td>
+          <td class="paramname"><em>child</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convenience method for adding a child to <a class="el" href="class_sgl_1_1_parent.html">Parent</a>. </p>
+<dl class="section attention"><dt>Attention</dt><dd>For <a class="el" href="class_sgl_1_1_control.html">Control</a> this should only be used by custom skins! It's undefined behavior if you simply add children to a <a class="el" href="class_sgl_1_1_control.html">Control</a>. For <a class="el" href="class_sgl_1_1_container.html">Container</a> this method can easily be used for adding any number of custom components.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">child</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00074">74</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9ff733db2764e7e05edff40e33c18f02" name="a9ff733db2764e7e05edff40e33c18f02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ff733db2764e7e05edff40e33c18f02">&#9670;&nbsp;</a></span>computeMaxHeight()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -276,7 +337,7 @@ Additional Inherited Members</h2></td></tr>
           <td>(</td>
           <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>width</em> = <code>-1</code></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -288,12 +349,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00145">145</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00210">210</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a0e40dfd13b4654e9d22c1d12d5b85147" name="a0e40dfd13b4654e9d22c1d12d5b85147"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e40dfd13b4654e9d22c1d12d5b85147">&#9670;&nbsp;</a></span>computeMaxWidth()</h2>
+<a id="a80007daac566ae487c704f6cd2f9b140" name="a80007daac566ae487c704f6cd2f9b140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80007daac566ae487c704f6cd2f9b140">&#9670;&nbsp;</a></span>computeMaxWidth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,7 +367,7 @@ Additional Inherited Members</h2></td></tr>
           <td>(</td>
           <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>height</em> = <code>-1</code></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -318,12 +379,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00139">139</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00204">204</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a952bcba692301c22851ae7d97121d219" name="a952bcba692301c22851ae7d97121d219"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a952bcba692301c22851ae7d97121d219">&#9670;&nbsp;</a></span>computeMinHeight()</h2>
+<a id="a1de0d58a6acbac7220858eb1a01b2352" name="a1de0d58a6acbac7220858eb1a01b2352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1de0d58a6acbac7220858eb1a01b2352">&#9670;&nbsp;</a></span>computeMinHeight()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -336,7 +397,7 @@ Additional Inherited Members</h2></td></tr>
           <td>(</td>
           <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>width</em> = <code>-1</code></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -348,12 +409,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00133">133</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00198">198</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a0207116b567b88c3134ae6de6abbb7fe" name="a0207116b567b88c3134ae6de6abbb7fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0207116b567b88c3134ae6de6abbb7fe">&#9670;&nbsp;</a></span>computeMinWidth()</h2>
+<a id="a1d1a619f0328ee1f8f63b8a29a549326" name="a1d1a619f0328ee1f8f63b8a29a549326"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d1a619f0328ee1f8f63b8a29a549326">&#9670;&nbsp;</a></span>computeMinWidth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -366,7 +427,7 @@ Additional Inherited Members</h2></td></tr>
           <td>(</td>
           <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>height</em> = <code>-1</code></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -378,12 +439,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00127">127</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00192">192</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aab1c8748b9182430b46a9850e9817e4f" name="aab1c8748b9182430b46a9850e9817e4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab1c8748b9182430b46a9850e9817e4f">&#9670;&nbsp;</a></span>computePrefHeight()</h2>
+<a id="addf3f97f27ec7ef5f4536f69c3030771" name="addf3f97f27ec7ef5f4536f69c3030771"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addf3f97f27ec7ef5f4536f69c3030771">&#9670;&nbsp;</a></span>computePrefHeight()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -396,7 +457,7 @@ Additional Inherited Members</h2></td></tr>
           <td>(</td>
           <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>width</em> = <code>-1</code></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -408,12 +469,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00099">99</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00160">160</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
-<a id="af796b0d08df2db9d8b7b78b8b1f55035" name="af796b0d08df2db9d8b7b78b8b1f55035"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af796b0d08df2db9d8b7b78b8b1f55035">&#9670;&nbsp;</a></span>computePrefWidth()</h2>
+<a id="a8bc61dec0b1ef7b0b20803228f153b55" name="a8bc61dec0b1ef7b0b20803228f153b55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bc61dec0b1ef7b0b20803228f153b55">&#9670;&nbsp;</a></span>computePrefWidth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -426,7 +487,7 @@ Additional Inherited Members</h2></td></tr>
           <td>(</td>
           <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>height</em> = <code>-1</code></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -438,7 +499,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00071">71</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00132">132</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -457,7 +518,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00046">46</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00100">100</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -476,18 +537,18 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00049">49</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00103">103</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
-<a id="abc8794883fc3f4ab257b2358211ede4b" name="abc8794883fc3f4ab257b2358211ede4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc8794883fc3f4ab257b2358211ede4b">&#9670;&nbsp;</a></span>getChildren()</h2>
+<a id="a043ffd1f125485d3e0218d6f80d5821a" name="a043ffd1f125485d3e0218d6f80d5821a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a043ffd1f125485d3e0218d6f80d5821a">&#9670;&nbsp;</a></span>getChildren()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::list&lt; <a class="el" href="class_sgl_1_1_component.html">Component</a> * &gt; Sgl::Parent::getChildren </td>
+          <td class="memname">std::list&lt; <a class="el" href="class_sgl_1_1_component.html">Component</a> * &gt; &amp; Sgl::Parent::getChildren </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -495,7 +556,26 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00037">37</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00092">92</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab6207895eca3cadab5439868e0b49972" name="ab6207895eca3cadab5439868e0b49972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6207895eca3cadab5439868e0b49972">&#9670;&nbsp;</a></span>getChildrenReadonly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::list&lt; <a class="el" href="class_sgl_1_1_component.html">Component</a> * &gt; &amp; Sgl::Parent::getChildrenReadonly </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00093">93</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -514,7 +594,83 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00052">52</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00106">106</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a653955e491c4179619166a6d0d72a75e" name="a653955e491c4179619166a6d0d72a75e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a653955e491c4179619166a6d0d72a75e">&#9670;&nbsp;</a></span>getMaxHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t Sgl::Parent::getMaxHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00130">130</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0b36929ff3ef4aaef667e0f365dd98aa" name="a0b36929ff3ef4aaef667e0f365dd98aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b36929ff3ef4aaef667e0f365dd98aa">&#9670;&nbsp;</a></span>getMaxWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t Sgl::Parent::getMaxWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00129">129</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adbfcd6b04127355fbc0a84e95789c7cf" name="adbfcd6b04127355fbc0a84e95789c7cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbfcd6b04127355fbc0a84e95789c7cf">&#9670;&nbsp;</a></span>getMinHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t Sgl::Parent::getMinHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00127">127</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a820d59862a7045705d5165b94f2effb4" name="a820d59862a7045705d5165b94f2effb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a820d59862a7045705d5165b94f2effb4">&#9670;&nbsp;</a></span>getMinWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t Sgl::Parent::getMinWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00126">126</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -533,7 +689,64 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00057">57</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00111">111</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0d3884ae4d5e2506fe3ba71ec7dd5f7e" name="a0d3884ae4d5e2506fe3ba71ec7dd5f7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d3884ae4d5e2506fe3ba71ec7dd5f7e">&#9670;&nbsp;</a></span>getPrefHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t Sgl::Parent::getPrefHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00124">124</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a318608851af7d19d690df1866473c2c0" name="a318608851af7d19d690df1866473c2c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a318608851af7d19d690df1866473c2c0">&#9670;&nbsp;</a></span>getPrefWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t Sgl::Parent::getPrefWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00123">123</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aebcf08b04f3404c49abd5658361a8203" name="aebcf08b04f3404c49abd5658361a8203"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebcf08b04f3404c49abd5658361a8203">&#9670;&nbsp;</a></span>getSnapshot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Sml::Texture * Sgl::Parent::getSnapshot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00095">95</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -562,7 +775,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00035">35</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00072">72</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -591,7 +804,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00014">14</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00038">38</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -618,7 +831,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00026">26</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00063">63</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -637,7 +850,122 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00039">39</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00097">97</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0dc938bda805e18ad732cc5a54d3c01a" name="a0dc938bda805e18ad732cc5a54d3c01a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dc938bda805e18ad732cc5a54d3c01a">&#9670;&nbsp;</a></span>prerender()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sgl::Parent::prerender </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00050">50</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a83a8505edfb4f8a851ca528cc8106f35" name="a83a8505edfb4f8a851ca528cc8106f35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83a8505edfb4f8a851ca528cc8106f35">&#9670;&nbsp;</a></span>prerenderSelf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sgl::Parent::prerenderSelf </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00061">61</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a948ec0428d1eb6ad75b12bb180cd7d9d" name="a948ec0428d1eb6ad75b12bb180cd7d9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a948ec0428d1eb6ad75b12bb180cd7d9d">&#9670;&nbsp;</a></span>removeChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sgl::Parent::removeChild </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_sgl_1_1_component.html">Component</a> *&#160;</td>
+          <td class="paramname"><em>child</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convenience method for removing a child to <a class="el" href="class_sgl_1_1_parent.html">Parent</a>. </p>
+<dl class="section attention"><dt>Attention</dt><dd>For <a class="el" href="class_sgl_1_1_control.html">Control</a> this should only be used by custom skins! It's undefined behavior if you simply remove children from a <a class="el" href="class_sgl_1_1_control.html">Control</a>. For <a class="el" href="class_sgl_1_1_container.html">Container</a> this method can easily be used for removing children from it.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">child</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00083">83</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a137857f7f026c36a0d16a10d9ab71c73" name="a137857f7f026c36a0d16a10d9ab71c73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a137857f7f026c36a0d16a10d9ab71c73">&#9670;&nbsp;</a></span>render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sgl::Parent::render </td>
+          <td>(</td>
+          <td class="paramtype">const Sml::Rectangle&lt; int32_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>targetRegion</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00015">15</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -656,7 +984,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00044">44</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00098">98</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -676,7 +1004,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00047">47</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00101">101</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -696,7 +1024,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00050">50</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00104">104</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -716,7 +1044,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00067">67</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00121">121</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -736,7 +1064,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00066">66</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00120">120</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -756,7 +1084,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00064">64</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00118">118</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -776,7 +1104,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00063">63</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00117">117</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -796,7 +1124,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00058">58</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00112">112</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -816,7 +1144,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00061">61</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00115">115</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -836,7 +1164,34 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00060">60</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00114">114</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5ce4e6c3742af70070ce3f7a767a77f4" name="a5ce4e6c3742af70070ce3f7a767a77f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ce4e6c3742af70070ce3f7a767a77f4">&#9670;&nbsp;</a></span>updateSnapshotSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sgl::Parent::updateSnapshotSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00216">216</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>
@@ -861,7 +1216,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00065">65</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00103">103</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -885,7 +1240,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00066">66</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00104">104</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -909,7 +1264,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00062">62</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00099">99</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -933,7 +1288,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00074">74</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00112">112</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -957,7 +1312,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00073">73</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00111">111</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -981,7 +1336,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00072">72</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00110">110</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1005,7 +1360,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00071">71</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00109">109</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1029,7 +1384,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00064">64</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00102">102</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1053,7 +1408,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00067">67</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00105">105</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1077,7 +1432,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00070">70</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00108">108</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1101,7 +1456,31 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00069">69</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00107">107</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+
+</div>
+</div>
+<a id="a3616cd9ee16b033c109f79759ef4ea3e" name="a3616cd9ee16b033c109f79759ef4ea3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3616cd9ee16b033c109f79759ef4ea3e">&#9670;&nbsp;</a></span>m_Snapshot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Sml::Texture* Sgl::Parent::m_Snapshot = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00100">100</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>

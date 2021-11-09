@@ -105,6 +105,7 @@ Inheritance diagram for Sgl::Component:</div>
 <area href="class_sgl_1_1_container.html" alt="Sgl::Container" shape="rect" coords="58,168,164,192"/>
 <area href="class_sgl_1_1_control.html" alt="Sgl::Control" shape="rect" coords="174,168,280,192"/>
 <area href="class_sgl_1_1_text.html" alt="Sgl::Text" shape="rect" coords="290,168,396,192"/>
+<area href="class_sgl_1_1_button.html" alt="Sgl::Button" shape="rect" coords="174,224,280,248"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -119,6 +120,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> (c
 <tr class="memitem:a52a0c1fd362ce86efce5b88c47b3feb6"><td class="memItemLeft" align="right" valign="top"><a id="a52a0c1fd362ce86efce5b88c47b3feb6" name="a52a0c1fd362ce86efce5b88c47b3feb6"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>layout</b> ()=0</td></tr>
 <tr class="separator:a52a0c1fd362ce86efce5b88c47b3feb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd0aaa876b0ce4e9784dbd4b65e61162"><td class="memItemLeft" align="right" valign="top"><a id="afd0aaa876b0ce4e9784dbd4b65e61162" name="afd0aaa876b0ce4e9784dbd4b65e61162"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>prerender</b> ()=0</td></tr>
+<tr class="separator:afd0aaa876b0ce4e9784dbd4b65e61162"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20f0c167092df2fff6c4b311045f2b7e"><td class="memItemLeft" align="right" valign="top">virtual Sml::EventDispatchChain *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a20f0c167092df2fff6c4b311045f2b7e">buildEventDispatchChain</a> (Sml::EventDispatchChain *chain) override</td></tr>
 <tr class="separator:a20f0c167092df2fff6c4b311045f2b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4017dc04f85e757c85c07fae118d7fca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a4017dc04f85e757c85c07fae118d7fca">isVisible</a> () const</td></tr>
@@ -144,6 +148,8 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isResizable</
 <tr class="separator:ad34c629b8234de708a03e57553156872"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadcdbceda37e8b24739d8f3b25531478"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#aadcdbceda37e8b24739d8f3b25531478">setParent</a> (<a class="el" href="class_sgl_1_1_parent.html">Parent</a> *parent)</td></tr>
 <tr class="separator:aadcdbceda37e8b24739d8f3b25531478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c384a9d7498579608ef29147fc564c9"><td class="memItemLeft" align="right" valign="top">Sml::Rectangle&lt; int32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a8c384a9d7498579608ef29147fc564c9">getOriginBounds</a> () const</td></tr>
+<tr class="separator:a8c384a9d7498579608ef29147fc564c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0abdab7d835bce01be42ca975eb714df"><td class="memItemLeft" align="right" valign="top">const Sml::Rectangle&lt; int32_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a0abdab7d835bce01be42ca975eb714df">getLayoutBounds</a> () const</td></tr>
 <tr class="separator:a0abdab7d835bce01be42ca975eb714df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa23340166e54ef17d0cff67a9b4974fc"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#aa23340166e54ef17d0cff67a9b4974fc">getLayoutX</a> () const</td></tr>
@@ -162,24 +168,24 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isResizable</
 <tr class="separator:a3d7a3d1f94bf5b2476fe62d3f7dda807"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f42d7da4bd4263671511796c6f5ddcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a9f42d7da4bd4263671511796c6f5ddcf">setLayoutHeight</a> (int32_t height)</td></tr>
 <tr class="separator:a9f42d7da4bd4263671511796c6f5ddcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa63a3c9525b29820cc810a6075c2aa7b"><td class="memItemLeft" align="right" valign="top"><a id="aa63a3c9525b29820cc810a6075c2aa7b" name="aa63a3c9525b29820cc810a6075c2aa7b"></a>
-virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>computePrefWidth</b> (int32_t height=-1)=0</td></tr>
-<tr class="separator:aa63a3c9525b29820cc810a6075c2aa7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf4460131134531504c84b206b71376f"><td class="memItemLeft" align="right" valign="top"><a id="abf4460131134531504c84b206b71376f" name="abf4460131134531504c84b206b71376f"></a>
-virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>computePrefHeight</b> (int32_t width=-1)=0</td></tr>
-<tr class="separator:abf4460131134531504c84b206b71376f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a643700c704ff5ef5e2595e49f4fa6386"><td class="memItemLeft" align="right" valign="top"><a id="a643700c704ff5ef5e2595e49f4fa6386" name="a643700c704ff5ef5e2595e49f4fa6386"></a>
-virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>computeMinWidth</b> (int32_t height=-1)=0</td></tr>
-<tr class="separator:a643700c704ff5ef5e2595e49f4fa6386"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5f870edb770cb32677c0e9984e13648"><td class="memItemLeft" align="right" valign="top"><a id="ab5f870edb770cb32677c0e9984e13648" name="ab5f870edb770cb32677c0e9984e13648"></a>
-virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>computeMinHeight</b> (int32_t width=-1)=0</td></tr>
-<tr class="separator:ab5f870edb770cb32677c0e9984e13648"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31f66d1f5cb845392e6ffaab3ff26af9"><td class="memItemLeft" align="right" valign="top"><a id="a31f66d1f5cb845392e6ffaab3ff26af9" name="a31f66d1f5cb845392e6ffaab3ff26af9"></a>
-virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>computeMaxWidth</b> (int32_t height=-1)=0</td></tr>
-<tr class="separator:a31f66d1f5cb845392e6ffaab3ff26af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4cf4168c70904813c54037475daf915"><td class="memItemLeft" align="right" valign="top"><a id="ae4cf4168c70904813c54037475daf915" name="ae4cf4168c70904813c54037475daf915"></a>
-virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>computeMaxHeight</b> (int32_t width=-1)=0</td></tr>
-<tr class="separator:ae4cf4168c70904813c54037475daf915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ec1f311a0f21cd9f38ee31206bb0579"><td class="memItemLeft" align="right" valign="top"><a id="a2ec1f311a0f21cd9f38ee31206bb0579" name="a2ec1f311a0f21cd9f38ee31206bb0579"></a>
+virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>computePrefWidth</b> (int32_t height=-1) const =0</td></tr>
+<tr class="separator:a2ec1f311a0f21cd9f38ee31206bb0579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a2240fc417f289d738963c4abcf4716"><td class="memItemLeft" align="right" valign="top"><a id="a5a2240fc417f289d738963c4abcf4716" name="a5a2240fc417f289d738963c4abcf4716"></a>
+virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>computePrefHeight</b> (int32_t width=-1) const =0</td></tr>
+<tr class="separator:a5a2240fc417f289d738963c4abcf4716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54d00b6557d1c551c3ba8701862f0801"><td class="memItemLeft" align="right" valign="top"><a id="a54d00b6557d1c551c3ba8701862f0801" name="a54d00b6557d1c551c3ba8701862f0801"></a>
+virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>computeMinWidth</b> (int32_t height=-1) const =0</td></tr>
+<tr class="separator:a54d00b6557d1c551c3ba8701862f0801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7550c2e3875f4ef5acbef58f33b07bc"><td class="memItemLeft" align="right" valign="top"><a id="ac7550c2e3875f4ef5acbef58f33b07bc" name="ac7550c2e3875f4ef5acbef58f33b07bc"></a>
+virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>computeMinHeight</b> (int32_t width=-1) const =0</td></tr>
+<tr class="separator:ac7550c2e3875f4ef5acbef58f33b07bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae004016b76f502cd8c77a4c1258c50d8"><td class="memItemLeft" align="right" valign="top"><a id="ae004016b76f502cd8c77a4c1258c50d8" name="ae004016b76f502cd8c77a4c1258c50d8"></a>
+virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>computeMaxWidth</b> (int32_t height=-1) const =0</td></tr>
+<tr class="separator:ae004016b76f502cd8c77a4c1258c50d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38ee34ed2bf0f9f85d1f110ce83fb0ee"><td class="memItemLeft" align="right" valign="top"><a id="a38ee34ed2bf0f9f85d1f110ce83fb0ee" name="a38ee34ed2bf0f9f85d1f110ce83fb0ee"></a>
+virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>computeMaxHeight</b> (int32_t width=-1) const =0</td></tr>
+<tr class="separator:a38ee34ed2bf0f9f85d1f110ce83fb0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -276,7 +282,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00067">67</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00072">72</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -295,7 +301,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00087">87</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00092">92</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -314,7 +320,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00082">82</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00087">87</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -333,7 +339,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00072">72</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00077">77</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -352,7 +358,26 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00077">77</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00082">82</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8c384a9d7498579608ef29147fc564c9" name="a8c384a9d7498579608ef29147fc564c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c384a9d7498579608ef29147fc564c9">&#9670;&nbsp;</a></span>getOriginBounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Sml::Rectangle&lt; int32_t &gt; Sgl::Component::getOriginBounds </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00067">67</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -486,7 +511,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00107">107</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00112">112</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -506,7 +531,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00102">102</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00107">107</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -526,7 +551,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00092">92</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00097">97</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -546,7 +571,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00097">97</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00102">102</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -631,7 +656,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00078">78</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00080">80</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
@@ -655,7 +680,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00076">76</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00078">78</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
@@ -679,7 +704,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00077">77</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00079">79</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
@@ -703,7 +728,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00082">82</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00084">84</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
@@ -727,7 +752,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00081">81</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00083">83</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
@@ -751,7 +776,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00080">80</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00082">82</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
@@ -775,7 +800,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00075">75</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00077">77</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>

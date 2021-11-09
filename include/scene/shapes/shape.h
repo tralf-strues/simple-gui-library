@@ -19,8 +19,17 @@ namespace Sgl
         Shape(Fill* fill = nullptr);
         virtual ~Shape() override = default;
 
+        virtual void layout() override final;
+        virtual bool isResizable() const override final;
+
         const Fill* getFill() const;
         void setFill(Fill* fill);
+
+        virtual int32_t computeMinWidth(int32_t height = -1) const override final;
+        virtual int32_t computeMinHeight(int32_t width = -1) const override final;
+
+        virtual int32_t computeMaxWidth(int32_t height = -1) const override final;
+        virtual int32_t computeMaxHeight(int32_t width = -1) const override final;
 
     protected:
         Fill* m_Fill = nullptr;

@@ -20,10 +20,38 @@ namespace Sgl
         Parent() = default;
         virtual ~Parent() override = default;
 
+        virtual void render(const Sml::Rectangle<int32_t>& targetRegion) override final;
         virtual void layout() override final;
+        virtual void prerender() override final;
+
         virtual bool isResizable() const override;
 
-        std::list<Component*> getChildren();
+        /**
+         * @brief Convenience method for adding a child to @ref Parent.
+         * 
+         * @attention For @ref Control this should only be used by custom skins! It's undefined behavior
+         *            if you simply add children to a @ref Control. For @ref Container this method can
+         *            easily be used for adding any number of custom components.
+         * 
+         * @param child
+         */
+        void addChild(Component* child);
+
+        /**
+         * @brief Convenience method for removing a child to @ref Parent.
+         * 
+         * @attention For @ref Control this should only be used by custom skins! It's undefined behavior
+         *            if you simply remove children from a @ref Control. For @ref Container this method
+         *            can easily be used for removing children from it.
+         * 
+         * @param child
+         */
+        void removeChild(Component* child);
+
+        std::list<Component*>& getChildren();
+        const std::list<Component*>& getChildrenReadonly() const;
+
+        Sml::Texture* getSnapshot();
 
         bool needLayoutPass() const;
         void requestLayoutPass();
@@ -48,18 +76,28 @@ namespace Sgl
         void setMaxWidth(int32_t width);
         void setMaxHeight(int32_t height);
 
-        /* Default computeSize functions don't account for insets! */
-        virtual int32_t computePrefWidth(int32_t height = -1) override;
-        virtual int32_t computePrefHeight(int32_t width = -1) override;
-        
-        virtual int32_t computeMinWidth(int32_t height = -1) override;
-        virtual int32_t computeMinHeight(int32_t width = -1) override;
+        int32_t getPrefWidth() const;
+        int32_t getPrefHeight() const;
 
-        virtual int32_t computeMaxWidth(int32_t height = -1) override;
-        virtual int32_t computeMaxHeight(int32_t width = -1) override;
+        int32_t getMinWidth() const;
+        int32_t getMinHeight() const;
+
+        int32_t getMaxWidth() const;
+        int32_t getMaxHeight() const;
+
+        /* Default computeSize functions don't account for insets! */
+        virtual int32_t computePrefWidth(int32_t height = -1) const override;
+        virtual int32_t computePrefHeight(int32_t width = -1) const override;
+        
+        virtual int32_t computeMinWidth(int32_t height = -1) const override;
+        virtual int32_t computeMinHeight(int32_t width = -1) const override;
+
+        virtual int32_t computeMaxWidth(int32_t height = -1) const override;
+        virtual int32_t computeMaxHeight(int32_t width = -1) const override;
 
     protected:
         std::list<Component*> m_Children;
+        Sml::Texture*         m_Snapshot       = nullptr;
 
         bool                  m_NeedLayoutPass = false;
         const Background*     m_Background     = nullptr;
@@ -74,5 +112,7 @@ namespace Sgl
         int32_t               m_MaxHeight      = USE_COMPUTED_SIZE;
 
         virtual void layoutChildren();
+        virtual void prerenderSelf();
+        void updateSnapshotSize();
     };
 }

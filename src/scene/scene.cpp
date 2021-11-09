@@ -24,10 +24,14 @@ namespace Sgl
         m_Root->setLayoutHeight(m_Height);
 
         m_Root->layout();
+        m_Root->prerender();
     }
 
     void Scene::render(const Sml::Rectangle<int32_t>& targetRegion)
     {
+        getContextRenderer()->setColor(Sml::COLOR_WHITE);
+        getContextRenderer()->clear();
+
         if (m_Root != nullptr)
         {
             m_Root->render(targetRegion);

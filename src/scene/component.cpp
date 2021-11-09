@@ -64,6 +64,11 @@ namespace Sgl
         m_Parent = parent;
     }
 
+    Sml::Rectangle<int32_t> Component::getOriginBounds() const
+    {
+        return Sml::Rectangle<int32_t>{{0, 0}, getLayoutWidth(), getLayoutHeight()};
+    }
+
     const Sml::Rectangle<int32_t>& Component::getLayoutBounds() const
     {
         return m_LayoutBounds;

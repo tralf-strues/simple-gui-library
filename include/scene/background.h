@@ -17,6 +17,10 @@ namespace Sgl
     class Background
     {
     public:
+        static void fillArea(const Background& background,
+                             const Sml::Rectangle<int32_t>& targetRegion);
+
+    public:
         Background(const std::initializer_list<const Fill*>& fills,
                    const std::initializer_list<const Image*>& images);
 

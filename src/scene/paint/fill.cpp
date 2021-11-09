@@ -29,12 +29,16 @@ namespace Sgl
     void ColorFill::fillArea(const Sml::Rectangle<int32_t>& area,
                              const Sml::Rectangle<int32_t>& targetRegion) const
     {
+        // Sml::Color savedColor = getContextRenderer()->getColor();
+
         getContextRenderer()->setColor(m_Color);
 
         Sml::Rectangle<int32_t> translatedArea = area;
         translatedArea.pos += targetRegion.pos;
 
         Sml::renderFilledRect(getContextRenderer(), translatedArea);
+
+        // getContextRenderer()->setColor(savedColor);
     }
 
     void ColorFill::fillPoint(const Sml::Vec2<int32_t>& point,

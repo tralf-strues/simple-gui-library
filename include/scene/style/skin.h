@@ -1,70 +1,63 @@
-//------------------------------------------------------------------------------
-//! @author Nikita Mochalov (github.com/tralf-strues)
-//! @file skin.h
-//! @date 2021-10-29
-//! 
-//! @copyright Copyright (c) 2021
-//------------------------------------------------------------------------------
+/**
+ * @author Nikita Mochalov (github.com/tralf-strues)
+ * @file skin.h
+ * @date 2021-10-29
+ * 
+ * @copyright Copyright (c) 2021
+ */
 
-#ifndef SKIN_H
-#define SKIN_H
+#pragma once
 
-#include "sml/containers/dynamic_array.h"
 #include "sml/graphics_wrapper/renderer.h"
+#include "../insets.h"
 
-class Control;
-
-class Skin
+namespace Sgl
 {
-public:
-    Skin(Control* control) : m_Control(control) { assert(control); };
+    class Control;
+    class Component;
 
-    //--------------------------------------------------------------------------
-    //! @brief Should be called by @ref Skinnable when this skin is replaced.
-    //--------------------------------------------------------------------------
-    virtual void dispose() {}
-
-    virtual void apply() = 0;
-
-    Control* getSkinnable() { return m_Control; }
-
-    virtual int32_t computePrefHeight() const { return 0; };
-    virtual int32_t computePrefWidth()  const { return 0; };
-    virtual void    layoutChildren()    const {};
-
-protected:
-    Control* m_Control = nullptr;
-};
-
-class Skinnable
-{
-public:
-    const Skin* getSkin() const
+    class Skin
     {
-        return m_Skin;
-    }
+    public:
+        /**
+         * @brief Should be called by @ref Control when this skin is replaced.
+         * 
+         * Must do things like removing its Components from the Control's
+         * children list, detaching its Listeners from the Control's dispatcher.
+         */
+        virtual void dispose() = 0;
+        virtual void apply() = 0;
 
-    void setSkin(Skin* skin)
+        virtual void attach() = 0;
+
+        virtual Component* getHitComponent(int32_t x, int32_t y);
+        virtual const Control* getControl() const = 0;
+        virtual Control* getModifiableControl() = 0;
+
+        virtual int32_t computePrefHeight(int32_t width = -1) const;
+        virtual int32_t computePrefWidth(int32_t height = -1) const;
+
+        virtual int32_t computeMinHeight(int32_t width = -1) const;
+        virtual int32_t computeMinWidth(int32_t height = -1) const;
+
+        virtual int32_t computeMaxHeight(int32_t width = -1) const;
+        virtual int32_t computeMaxWidth(int32_t height = -1) const;
+
+        virtual void layoutChildren();
+    };
+
+    class Skinnable
     {
-        if (m_Skin != nullptr)
-        {
-            m_Skin->dispose();
-        }
+    public:
+        Skin* getSkin();
+        void setSkin(Skin* skin);
 
-        m_Skin = skin;
-    }
+        void applySkin();
 
-    void applySkin()
-    {
-        if (m_Skin != nullptr)
-        {
-            m_Skin->apply();
-        }
-    }
-
-protected:
-    Skin* m_Skin = nullptr;
-};
+    protected:
+        Skin* m_Skin = nullptr;
+    };
+}
 
 // class IconSkin : public Skin
 // {
@@ -151,5 +144,3 @@ protected:
 // protected:
 //     DynamicArray<Patch> m_Patches;
 // };
-
-#endif // SKIN_H

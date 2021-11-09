@@ -36,4 +36,6 @@ namespace Sgl
     };
 
     void renderImage(const Image* image, const Sml::Rectangle<int32_t>& targetRegion);
+    void renderImage(const Image* image, const Sml::Rectangle<int32_t>& targetRegion,
+                     int32_t scaledWidth, int32_t scaledHeight);
 }

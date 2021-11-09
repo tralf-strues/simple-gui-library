@@ -1,3 +1,78 @@
+/**
+ * @author Nikita Mochalov (github.com/tralf-strues)
+ * @file default_skins.h
+ * @date 2021-11-08
+ * 
+ * @copyright Copyright (c) 2021
+ */
+
+#pragma once
+
+#include "sml/events/listener_notifier.h"
+#include "../shapes/text.h"
+#include "../media/image_view.h"
+#include "../background.h"
+#include "../border.h"
+#include "../insets.h"
+#include "skin.h"
+
+namespace Sgl
+{
+    class Button;
+
+namespace DefaultSkins
+{
+    class ButtonSkinEventListener;
+    class ButtonSkin;
+
+    extern Sml::Font* g_DefaultFont;
+
+    //------------------------------------------------------------------------------
+    // ButtonSkin
+    //------------------------------------------------------------------------------
+    class ButtonSkin : public Sgl::Skin
+    {
+    public:
+        static const Insets     PADDING;
+        static const int32_t    MARGIN;
+        static const Border     BORDER;
+
+        static const Sml::Color IDLE_FOREGROUND;
+        static const ColorFill  IDLE_BACKGROUND_FILL;
+        static const Background IDLE_BACKGROUND;
+
+        static const Sml::Color HOVERED_FOREGROUND;
+        static const ColorFill  HOVERED_BACKGROUND_FILL;
+        static const Background HOVERED_BACKGROUND;
+
+    public:
+        ButtonSkin(Sgl::Button* button);
+
+        virtual void dispose() override;
+        virtual void apply() override;
+
+        virtual void attach() override;
+
+        virtual const Control* getControl() const override;
+        virtual Control* getModifiableControl() override;
+
+        virtual int32_t computePrefHeight(int32_t width = -1) const override;
+        virtual int32_t computePrefWidth(int32_t height = -1) const override;
+
+        virtual void layoutChildren() override;
+
+        void setStyle(Sml::Color foreground, const Background& background);
+    private:
+        Sgl::Button*             m_Button = nullptr;
+
+        Sgl::Text                m_Text;
+        Sgl::ImageView           m_Icon;
+
+        ButtonSkinEventListener* m_Handler;
+    };
+}
+}
+
 // //------------------------------------------------------------------------------
 // //! @author Nikita Mochalov (github.com/tralf-strues)
 // //! @file default_skins.h

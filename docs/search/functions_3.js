@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sendthroughchain_0',['sendThroughChain',['../class_gui_event_dispatch_chain.html#a9758757c99c9797ca2ee3ff398fc7bca',1,'GuiEventDispatchChain']]]
+  ['prependdispatcher_0',['prependDispatcher',['../class_gui_event_dispatch_chain.html#a52ee73e07d350b772d8aeea25603a462',1,'GuiEventDispatchChain']]]
 ];

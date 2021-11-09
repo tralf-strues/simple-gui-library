@@ -9,12 +9,16 @@
 #pragma once
 
 #include "sml/graphics_wrapper/color.h"
+#include "sml/math/rectangle.h"
 #include "insets.h"
 
 namespace Sgl
 {
     class Border
     {
+    public:
+        static void encloseArea(const Border& border, const Sml::Rectangle<int32_t>& targetRegion);
+
     public:
         Border() = default;
         Border(int32_t thickness, Sml::Color color);
