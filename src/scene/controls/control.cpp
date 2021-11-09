@@ -22,7 +22,7 @@ namespace Sgl
     {
         for (Component* child : m_Children)
         {
-            if (child->getHitComponent(x + getLayoutX(), y + getLayoutY()))
+            if (child->getHitComponent(x - getLayoutX(), y - getLayoutY()))
             {
                 return child;
             }
@@ -56,7 +56,7 @@ namespace Sgl
         }
     }
 
-    int32_t Control::computePrefWidth(int32_t height) const
+    int32_t Control::computeCustomPrefWidth(int32_t height) const
     {
         if (m_Skin != nullptr)
         {
@@ -66,7 +66,7 @@ namespace Sgl
         return 0;
     }
 
-    int32_t Control::computePrefHeight(int32_t width) const
+    int32_t Control::computeCustomPrefHeight(int32_t width) const
     {
         if (m_Skin != nullptr)
         {
@@ -76,7 +76,7 @@ namespace Sgl
         return 0;
     }
 
-    int32_t Control::computeMinWidth(int32_t height) const
+    int32_t Control::computeCustomMinWidth(int32_t height) const
     {
         if (m_Skin != nullptr)
         {
@@ -86,7 +86,7 @@ namespace Sgl
         return 0;
     }
 
-    int32_t Control::computeMinHeight(int32_t width) const
+    int32_t Control::computeCustomMinHeight(int32_t width) const
     {
         if (m_Skin != nullptr)
         {
@@ -96,7 +96,7 @@ namespace Sgl
         return 0;
     }
 
-    int32_t Control::computeMaxWidth(int32_t height) const
+    int32_t Control::computeCustomMaxWidth(int32_t height) const
     {
         if (m_Skin != nullptr)
         {
@@ -106,7 +106,7 @@ namespace Sgl
         return 0;
     }
 
-    int32_t Control::computeMaxHeight(int32_t width) const
+    int32_t Control::computeCustomMaxHeight(int32_t width) const
     {
         if (m_Skin != nullptr)
         {

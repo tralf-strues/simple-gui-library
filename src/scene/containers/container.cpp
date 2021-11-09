@@ -23,7 +23,7 @@ namespace Sgl
     {
         for (Component* child : getChildren())
         {
-            Component* hitted = child->getHitComponent(x + getLayoutX(), y + getLayoutY());
+            Component* hitted = child->getHitComponent(x - getLayoutX(), y - getLayoutY());
 
             if (hitted != nullptr)
             {

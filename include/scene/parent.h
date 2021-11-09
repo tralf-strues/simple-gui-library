@@ -86,14 +86,14 @@ namespace Sgl
         int32_t getMaxHeight() const;
 
         /* Default computeSize functions don't account for insets! */
-        virtual int32_t computePrefWidth(int32_t height = -1) const override;
-        virtual int32_t computePrefHeight(int32_t width = -1) const override;
+        virtual int32_t computePrefWidth(int32_t height = -1) const override final;
+        virtual int32_t computePrefHeight(int32_t width = -1) const override final;
         
-        virtual int32_t computeMinWidth(int32_t height = -1) const override;
-        virtual int32_t computeMinHeight(int32_t width = -1) const override;
+        virtual int32_t computeMinWidth(int32_t height = -1) const override final;
+        virtual int32_t computeMinHeight(int32_t width = -1) const override final;
 
-        virtual int32_t computeMaxWidth(int32_t height = -1) const override;
-        virtual int32_t computeMaxHeight(int32_t width = -1) const override;
+        virtual int32_t computeMaxWidth(int32_t height = -1) const override final;
+        virtual int32_t computeMaxHeight(int32_t width = -1) const override final;
 
     protected:
         std::list<Component*> m_Children;
@@ -114,5 +114,14 @@ namespace Sgl
         virtual void layoutChildren();
         virtual void prerenderSelf();
         void updateSnapshotSize();
+
+        virtual int32_t computeCustomPrefWidth(int32_t height = -1) const;
+        virtual int32_t computeCustomPrefHeight(int32_t width = -1) const;
+        
+        virtual int32_t computeCustomMinWidth(int32_t height = -1) const;
+        virtual int32_t computeCustomMinHeight(int32_t width = -1) const;
+
+        virtual int32_t computeCustomMaxWidth(int32_t height = -1) const;
+        virtual int32_t computeCustomMaxHeight(int32_t width = -1) const;
     };
 }

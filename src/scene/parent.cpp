@@ -129,89 +129,58 @@ namespace Sgl
     int32_t Parent::getMaxWidth()  const { return m_MaxWidth;  }
     int32_t Parent::getMaxHeight() const { return m_MaxHeight; }
 
+    #define CHECK_ENABLED_SIZE(size) if (size != USE_COMPUTED_SIZE) { return size; }
+
     int32_t Parent::computePrefWidth(int32_t height) const
     {
-        COMPONENT_COMPUTE_DIMENSION(Pref, Width, height, X, m_Children, m_PrefWidth);
-
-        // CHECK_ENABLED_SIZE(m_PrefWidth);
-
-        // int32_t minX = INT32_MAX;
-        // int32_t maxX = 0;
-        // for (Component* child : m_Children)
-        // {
-        //     int32_t childX     = child->getLayoutX();
-        //     int32_t childWidth = child->computePrefWidth();
-
-        //     if (childWidth == UNLIMITED_SIZE)
-        //     {
-        //         return UNLIMITED_SIZE;
-        //     }
-
-        //     minX = std::min(minX, childX);
-        //     maxX = std::max(maxX, childX + childWidth);
-        // }
-
-        // if (minX != INT32_MAX)
-        // {
-        //     return maxX - minX;
-        // }
+        CHECK_ENABLED_SIZE(m_PrefWidth);
+        return computeCustomPrefWidth(height);
     }
 
     int32_t Parent::computePrefHeight(int32_t width) const
     {
-        COMPONENT_COMPUTE_DIMENSION(Pref, Height, width, Y, m_Children, m_PrefHeight);
-
-        // COMPONENT_COMPUTE_DIMENSION(Pref, Height, Y, m_Children)
-
-        // CHECK_ENABLED_SIZE(m_PrefHeight);
-
-        // int32_t minY = INT32_MAX;
-        // int32_t maxY = 0;
-        // for (Component* child : m_Children)
-        // {
-        //     int32_t childY      = child->getLayoutY();
-        //     int32_t childHeight = child->computePrefHeight();
-
-        //     if (childHeight == UNLIMITED_SIZE)
-        //     {
-        //         return UNLIMITED_SIZE;
-        //     }
-
-        //     minY = std::min(minY, childY);
-        //     maxY = std::max(maxY, childY + childHeight);
-        // }
-
-        // if (minY != INT32_MAX)
-        // {
-        //     return maxY - minY;
-        // }
+        CHECK_ENABLED_SIZE(m_PrefHeight);
+        return computeCustomPrefHeight(width);
     } 
     
-    #define CHECK_ENABLED_SIZE(size) if (size != USE_COMPUTED_SIZE) { return size; }
-
     int32_t Parent::computeMinWidth(int32_t height) const
     {
         CHECK_ENABLED_SIZE(m_MinWidth);
-        return computePrefWidth();
+        return computeCustomMinWidth(height);
     }
 
     int32_t Parent::computeMinHeight(int32_t width) const
     {
         CHECK_ENABLED_SIZE(m_MinHeight);
-        return computePrefHeight();
+        return computeCustomMinHeight(width);
     }
 
     int32_t Parent::computeMaxWidth(int32_t height) const
     { 
         CHECK_ENABLED_SIZE(m_MaxWidth);
-        return UNLIMITED_SIZE;
+        return computeCustomMaxWidth(height);
     }
 
     int32_t Parent::computeMaxHeight(int32_t width) const
     {
         CHECK_ENABLED_SIZE(m_MaxHeight);
-        return UNLIMITED_SIZE;
+        return computeCustomMaxHeight(width);
     }
+
+    int32_t Parent::computeCustomPrefWidth(int32_t height) const
+    {
+        COMPONENT_COMPUTE_DIMENSION(Pref, Width, height, X, m_Children, m_PrefWidth);
+    }
+    int32_t Parent::computeCustomPrefHeight(int32_t width) const
+    {
+        COMPONENT_COMPUTE_DIMENSION(Pref, Height, width, Y, m_Children, m_PrefHeight);
+    }
+    
+    int32_t Parent::computeCustomMinWidth(int32_t height) const { computePrefWidth();  }
+    int32_t Parent::computeCustomMinHeight(int32_t width) const { computePrefHeight(); }
+
+    int32_t Parent::computeCustomMaxWidth(int32_t height) const { return UNLIMITED_SIZE; }
+    int32_t Parent::computeCustomMaxHeight(int32_t width) const { return UNLIMITED_SIZE; }
 
     void Parent::updateSnapshotSize()
     {
