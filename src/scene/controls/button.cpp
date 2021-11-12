@@ -14,7 +14,6 @@ namespace Sgl
         : m_Label(label)
     {
         m_DefaultSkin = new DefaultSkins::ButtonSkin(this);
-        m_DefaultSkin->attach();
         setSkin(m_DefaultSkin);
     }
 

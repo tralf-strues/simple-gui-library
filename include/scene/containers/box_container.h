@@ -6,6 +6,8 @@
  * @copyright Copyright (c) 2021
  */
 
+#pragma once
+
 #include "container.h"
 
 namespace Sgl
@@ -31,11 +33,26 @@ namespace Sgl
         int32_t getSpacing() const;
         void setSpacing(int32_t spacing);
 
-    protected:
-        Direction m_Direction  = Direction::LEFT_TO_RIGHT;
-        bool      m_FillAcross = false;
+        void pushBackSpacer(uint32_t weight = 1);
+        void pushFrontSpacer(uint32_t weight = 1);
 
-        int32_t   m_Spacing    = 0;
+    protected:
+        struct Spacer
+        {
+            Spacer(Component* prevComponent = nullptr, uint32_t weight = 1)
+                : prevComponent(prevComponent), weight(weight) {}
+
+            Component* prevComponent = nullptr; ///< If nullptr than at the beginning.
+            uint32_t   weight        = 1;
+        };
+
+    protected:
+        Direction         m_Direction  = Direction::LEFT_TO_RIGHT;
+        bool              m_FillAcross = false;
+
+        int32_t           m_Spacing    = 0;
+
+        std::list<Spacer> m_Spacers;
 
     private:
         virtual void layoutChildren() override;
@@ -50,5 +67,9 @@ namespace Sgl
 
         int32_t computeTotalPrefSizeWithSpacing(SizeDimension sizeDimension) const;
         int32_t computeMaximumPrefSize(SizeDimension sizeDimension) const;
+
+        uint32_t computeTotalSpacersWeight() const;
+        int32_t computeSpacerSize(Component* prev, uint32_t totalWeight, int32_t totalSpacersSize) const;
+        void mergeSpacers(Component* prev);
     };
 }

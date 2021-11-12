@@ -62,6 +62,7 @@ namespace Sgl
     void Component::setParent(Parent* parent)
     {
         m_Parent = parent;
+        m_Scene  = m_Parent->getScene();
     }
 
     Sml::Rectangle<int32_t> Component::getOriginBounds() const
@@ -112,5 +113,19 @@ namespace Sgl
     void Component::setLayoutHeight(int32_t height)
     {
         m_LayoutBounds.height = height;
+    }
+
+    Sml::Vec2<int32_t> Component::computeScenePos()
+    {
+        Sml::Vec2<int32_t> scenePos = getLayoutBounds().pos;
+
+        Component* parent = getParent();
+        while (parent != nullptr)
+        {
+            scenePos += parent->getLayoutBounds().pos;
+            parent = parent->getParent();
+        }
+
+        return scenePos;
     }
 }

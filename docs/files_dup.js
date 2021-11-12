@@ -12,14 +12,28 @@ var files_dup =
     [ "component.h", "component_8h.html", [
       [ "Sgl::Component", "class_sgl_1_1_component.html", null ]
     ] ],
+    [ "box_container.h", "box__container_8h.html", [
+      [ "Sgl::BoxContainer", "class_sgl_1_1_box_container.html", "class_sgl_1_1_box_container" ],
+      [ "Sgl::BoxContainer::Spacer", "struct_sgl_1_1_box_container_1_1_spacer.html", "struct_sgl_1_1_box_container_1_1_spacer" ]
+    ] ],
     [ "container.h", "container_8h.html", [
       [ "Sgl::Container", "class_sgl_1_1_container.html", null ]
+    ] ],
+    [ "context_menu.h", "context__menu_8h.html", [
+      [ "Sgl::ContextMenu", "class_sgl_1_1_context_menu.html", null ]
+    ] ],
+    [ "menu_bar.h", "menu__bar_8h.html", [
+      [ "Sgl::Menu", "class_sgl_1_1_menu.html", null ],
+      [ "Sgl::MenuBar", "class_sgl_1_1_menu_bar.html", null ]
     ] ],
     [ "button.h", "button_8h.html", [
       [ "Sgl::Button", "class_sgl_1_1_button.html", null ]
     ] ],
     [ "control.h", "control_8h.html", [
       [ "Sgl::Control", "class_sgl_1_1_control.html", null ]
+    ] ],
+    [ "label.h", "label_8h.html", [
+      [ "Sgl::Label", "class_sgl_1_1_label.html", null ]
     ] ],
     [ "insets.h", "insets_8h.html", "insets_8h" ],
     [ "image.h", "image_8h.html", "image_8h" ],
@@ -53,7 +67,11 @@ var files_dup =
     [ "background.cpp", "background_8cpp.html", null ],
     [ "border.cpp", "border_8cpp.html", null ],
     [ "component.cpp", "component_8cpp.html", null ],
+    [ "box_container.cpp", "box__container_8cpp.html", null ],
     [ "container.cpp", "container_8cpp.html", null ],
+    [ "context_menu.cpp", "context__menu_8cpp.html", null ],
+    [ "hbox.cpp", "hbox_8cpp_source.html", null ],
+    [ "menu_bar.cpp", "menu__bar_8cpp.html", "menu__bar_8cpp" ],
     [ "button.cpp", "button_8cpp.html", null ],
     [ "control.cpp", "control_8cpp.html", null ],
     [ "insets.cpp", "insets_8cpp.html", null ],

@@ -17,6 +17,9 @@ namespace Sgl
         m_Images.insert(m_Images.end(), images);
     }
 
+    Background::Background(const Fill* fill)
+        : Background({fill}, {}) {}
+
     const std::vector<const Fill*>& Background::getFills() const
     {
         return m_Fills;

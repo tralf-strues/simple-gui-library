@@ -52,7 +52,7 @@ namespace Sgl
     {
         if (m_Skin != nullptr)
         {
-            m_Skin->apply();
+            m_Skin->prerenderControl();
         }
     }
 

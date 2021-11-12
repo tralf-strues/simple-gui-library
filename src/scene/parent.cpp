@@ -176,8 +176,8 @@ namespace Sgl
         COMPONENT_COMPUTE_DIMENSION(Pref, Height, width, Y, m_Children, m_PrefHeight);
     }
     
-    int32_t Parent::computeCustomMinWidth(int32_t height) const { computePrefWidth();  }
-    int32_t Parent::computeCustomMinHeight(int32_t width) const { computePrefHeight(); }
+    int32_t Parent::computeCustomMinWidth(int32_t height) const { return computePrefWidth();  }
+    int32_t Parent::computeCustomMinHeight(int32_t width) const { return computePrefHeight(); }
 
     int32_t Parent::computeCustomMaxWidth(int32_t height) const { return UNLIMITED_SIZE; }
     int32_t Parent::computeCustomMaxHeight(int32_t width) const { return UNLIMITED_SIZE; }

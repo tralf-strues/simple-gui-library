@@ -8,5 +8,6 @@ var searchData=
   ['imageview_5',['ImageView',['../class_sgl_1_1_image_view.html',1,'Sgl']]],
   ['insets_6',['Insets',['../struct_sgl_1_1_insets.html',1,'Sgl']]],
   ['insets_2ecpp_7',['insets.cpp',['../insets_8cpp.html',1,'']]],
-  ['insets_2eh_8',['insets.h',['../insets_8h.html',1,'']]]
+  ['insets_2eh_8',['insets.h',['../insets_8h.html',1,'']]],
+  ['interactionstyle_9',['InteractionStyle',['../struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_interaction_style.html',1,'Sgl::DefaultSkins::ButtonBaseSkin']]]
 ];

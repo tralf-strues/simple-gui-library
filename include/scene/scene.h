@@ -9,6 +9,7 @@
 #pragma once
 
 #include "../events/gui_event_dispatching.h"
+#include "containers/menu_bar.h"
 
 namespace Sgl
 {
@@ -43,15 +44,20 @@ namespace Sgl
         Component* getFocusOwner();
         void requestFocus(Component* component);
 
+        void registerContextMenu(ContextMenu* contextMenu);
+        void detachContextMenu(ContextMenu* contextMenu);
+
     private:
-        GuiEventDispatcher m_Dispatcher;
+        GuiEventDispatcher      m_Dispatcher;
 
-        int32_t            m_Width      = 0;
-        int32_t            m_Height     = 0;
+        int32_t                 m_Width      = 0;
+        int32_t                 m_Height     = 0;
 
-        Parent*            m_Root       = nullptr;
-        Component*         m_FocusOwner = nullptr;
-        Component*         m_HoverOwner = nullptr;
+        Parent*                 m_Root       = nullptr;
+        Component*              m_FocusOwner = nullptr;
+        Component*              m_HoverOwner = nullptr;
+
+        std::list<ContextMenu*> m_ContextMenus;
 
         Component* findHitComponent(int32_t x, int32_t y);
         void updateHoverOwner(Component* newHoverOwner, int32_t mouseX, int32_t mouseY);

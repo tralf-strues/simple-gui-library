@@ -22,36 +22,46 @@ namespace Sgl
 
 namespace DefaultSkins
 {
-    class ButtonSkinEventListener;
-    class ButtonSkin;
+    class ButtonBaseSkinEventListener;
 
     extern Sml::Font* g_DefaultFont;
 
     //------------------------------------------------------------------------------
-    // ButtonSkin
+    // ButtonBaseSkin
     //------------------------------------------------------------------------------
-    class ButtonSkin : public Sgl::Skin
+    class ButtonBaseSkin : public Sgl::Skin
     {
     public:
-        static const Insets     PADDING;
-        static const int32_t    MARGIN;
-        static const Border     BORDER;
+        struct StaticStyle
+        {
+            Insets  padding{0};
+            int32_t margin = 0;
+            Border  border{0, Sml::COLOR_BLACK};
+        };
 
-        static const Sml::Color IDLE_FOREGROUND;
-        static const ColorFill  IDLE_BACKGROUND_FILL;
-        static const Background IDLE_BACKGROUND;
+        struct InteractionStyle
+        {
+            enum class Type
+            {
+                IDLE,
+                HOVERED,
+                PRESSED
+            };
 
-        static const Sml::Color HOVERED_FOREGROUND;
-        static const ColorFill  HOVERED_BACKGROUND_FILL;
-        static const Background HOVERED_BACKGROUND;
+            Sml::Color        foreground;
+            const Background* background;
+        };
 
     public:
-        ButtonSkin(Sgl::Button* button);
+        ButtonBaseSkin(Sgl::Button* button,
+                       const StaticStyle* staticStyle,
+                       const InteractionStyle* idleStyle,
+                       const InteractionStyle* hoveredStyle,
+                       const InteractionStyle* pressedStyle);
 
         virtual void dispose() override;
-        virtual void apply() override;
 
-        virtual void attach() override;
+        virtual void prerenderControl() override;
 
         virtual const Control* getControl() const override;
         virtual Control* getModifiableControl() override;
@@ -61,15 +71,79 @@ namespace DefaultSkins
 
         virtual void layoutChildren() override;
 
-        void setStyle(Sml::Color foreground, const Background& background);
-    private:
-        Sgl::Button*             m_Button = nullptr;
+        void applyInteractionStyle(InteractionStyle::Type type);
 
-        Sgl::Text                m_Text;
-        Sgl::ImageView           m_Icon;
+    protected:
+        const StaticStyle*           m_StaticStyle  = nullptr;
 
-        ButtonSkinEventListener* m_Handler;
+        const InteractionStyle*      m_IdleStyle    = nullptr;
+        const InteractionStyle*      m_HoveredStyle = nullptr;
+        const InteractionStyle*      m_PressedStyle = nullptr;
+
+        Sgl::Button*                 m_Button       = nullptr;
+        ButtonBaseSkinEventListener* m_Handler      = nullptr;
+
+        Sgl::Text                    m_Text;
+        Sgl::ImageView               m_Icon;
+
+        int32_t getMargin() const;
+
+        void attach();
+        void applyStaticStyle();
     };
+
+    //------------------------------------------------------------------------------
+    // ButtonSkin
+    //------------------------------------------------------------------------------
+    class ButtonSkin : public ButtonBaseSkin
+    {
+    public:
+        static const Insets           PADDING;
+        static const int32_t          MARGIN;
+        static const Border           BORDER;
+        static const StaticStyle      STATIC_STYLE; 
+
+        static const Sml::Color       IDLE_FOREGROUND;
+        static const ColorFill        IDLE_BACKGROUND_FILL;
+        static const Background       IDLE_BACKGROUND;
+        static const InteractionStyle IDLE_STYLE;
+
+        static const Sml::Color       HOVERED_FOREGROUND;
+        static const ColorFill        HOVERED_BACKGROUND_FILL;
+        static const Background       HOVERED_BACKGROUND;
+        static const InteractionStyle HOVERED_STYLE;
+    
+    public:
+        ButtonSkin(Sgl::Button* button);
+    };
+
+    // class ButtonSkin : public Sgl::Skin
+    // {
+    // public:
+    //     static const Insets     PADDING;
+    //     static const int32_t    MARGIN;
+    //     static const Border     BORDER;
+
+    //     static const Sml::Color IDLE_FOREGROUND;
+    //     static const ColorFill  IDLE_BACKGROUND_FILL;
+    //     static const Background IDLE_BACKGROUND;
+
+    //     static const Sml::Color HOVERED_FOREGROUND;
+    //     static const ColorFill  HOVERED_BACKGROUND_FILL;
+    //     static const Background HOVERED_BACKGROUND;
+
+    // public:
+    //     ButtonSkin(Sgl::Button* button);
+
+
+    // private:
+    //     Sgl::Button*             m_Button = nullptr;
+
+    //     Sgl::Text                m_Text;
+    //     Sgl::ImageView           m_Icon;
+
+    //     ButtonSkinEventListener* m_Handler;
+    // };
 }
 }
 

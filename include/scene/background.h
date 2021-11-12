@@ -24,6 +24,8 @@ namespace Sgl
         Background(const std::initializer_list<const Fill*>& fills,
                    const std::initializer_list<const Image*>& images);
 
+        Background(const Fill* fill);
+
         const std::vector<const Fill*>& getFills()  const;
         const std::vector<const Image*> getImages() const;
 

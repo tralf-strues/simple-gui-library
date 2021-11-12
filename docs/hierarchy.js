@@ -15,9 +15,15 @@ var hierarchy =
       [ "Sgl::Component", "class_sgl_1_1_component.html", [
         [ "Sgl::ImageView", "class_sgl_1_1_image_view.html", null ],
         [ "Sgl::Parent", "class_sgl_1_1_parent.html", [
-          [ "Sgl::Container", "class_sgl_1_1_container.html", null ],
+          [ "Sgl::Container", "class_sgl_1_1_container.html", [
+            [ "Sgl::BoxContainer", "class_sgl_1_1_box_container.html", [
+              [ "Sgl::ContextMenu", "class_sgl_1_1_context_menu.html", null ],
+              [ "Sgl::MenuBar", "class_sgl_1_1_menu_bar.html", null ]
+            ] ]
+          ] ],
           [ "Sgl::Control", "class_sgl_1_1_control.html", [
-            [ "Sgl::Button", "class_sgl_1_1_button.html", null ]
+            [ "Sgl::Button", "class_sgl_1_1_button.html", null ],
+            [ "Sgl::Label", "class_sgl_1_1_label.html", null ]
           ] ]
         ] ],
         [ "Sgl::Shape", "class_sgl_1_1_shape.html", [
@@ -31,18 +37,25 @@ var hierarchy =
     ] ],
     [ "Sgl::Image", "class_sgl_1_1_image.html", null ],
     [ "Sgl::Insets", "struct_sgl_1_1_insets.html", null ],
+    [ "Sgl::DefaultSkins::ButtonBaseSkin::InteractionStyle", "struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_interaction_style.html", null ],
     [ "Sml::Listener", null, [
       [ "Sgl::ActionListener", "class_sgl_1_1_action_listener.html", null ],
-      [ "Sgl::DefaultSkins::ButtonSkinEventListener", "class_sgl_1_1_default_skins_1_1_button_skin_event_listener.html", null ]
+      [ "Sgl::DefaultSkins::ButtonBaseSkinEventListener", "class_sgl_1_1_default_skins_1_1_button_base_skin_event_listener.html", null ],
+      [ "Sgl::MenuSelectListener", "class_sgl_1_1_menu_select_listener.html", null ]
     ] ],
+    [ "Sgl::Menu", "class_sgl_1_1_menu.html", null ],
     [ "Sml::MouseEvent", null, [
       [ "Sgl::MouseEnteredEvent", "class_sgl_1_1_mouse_entered_event.html", null ],
       [ "Sgl::MouseExitedEvent", "class_sgl_1_1_mouse_exited_event.html", null ]
     ] ],
     [ "Sgl::Skin", "class_sgl_1_1_skin.html", [
-      [ "Sgl::DefaultSkins::ButtonSkin", "class_sgl_1_1_default_skins_1_1_button_skin.html", null ]
+      [ "Sgl::DefaultSkins::ButtonBaseSkin", "class_sgl_1_1_default_skins_1_1_button_base_skin.html", [
+        [ "Sgl::DefaultSkins::ButtonSkin", "class_sgl_1_1_default_skins_1_1_button_skin.html", null ]
+      ] ]
     ] ],
     [ "Sgl::Skinnable", "class_sgl_1_1_skinnable.html", [
       [ "Sgl::Control", "class_sgl_1_1_control.html", null ]
-    ] ]
+    ] ],
+    [ "Sgl::BoxContainer::Spacer", "struct_sgl_1_1_box_container_1_1_spacer.html", null ],
+    [ "Sgl::DefaultSkins::ButtonBaseSkin::StaticStyle", "struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_static_style.html", null ]
 ];

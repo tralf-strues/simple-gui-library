@@ -19,6 +19,8 @@ namespace Sgl
     class Skin
     {
     public:
+        virtual ~Skin() = default;
+
         /**
          * @brief Should be called by @ref Control when this skin is replaced.
          * 
@@ -26,9 +28,8 @@ namespace Sgl
          * children list, detaching its Listeners from the Control's dispatcher.
          */
         virtual void dispose() = 0;
-        virtual void apply() = 0;
 
-        virtual void attach() = 0;
+        virtual void prerenderControl() = 0;
 
         virtual Component* getHitComponent(int32_t x, int32_t y);
         virtual const Control* getControl() const = 0;
@@ -51,8 +52,6 @@ namespace Sgl
     public:
         Skin* getSkin();
         void setSkin(Skin* skin);
-
-        void applySkin();
 
     protected:
         Skin* m_Skin = nullptr;

@@ -96,7 +96,8 @@ Inheritance diagram for Sgl::Skin:</div>
  <div class="center">
   <img src="class_sgl_1_1_skin.png" usemap="#Sgl::Skin_map" alt=""/>
   <map id="Sgl::Skin_map" name="Sgl::Skin_map">
-<area href="class_sgl_1_1_default_skins_1_1_button_skin.html" alt="Sgl::DefaultSkins::ButtonSkin" shape="rect" coords="0,56,171,80"/>
+<area href="class_sgl_1_1_default_skins_1_1_button_base_skin.html" alt="Sgl::DefaultSkins::ButtonBaseSkin" shape="rect" coords="0,56,199,80"/>
+<area href="class_sgl_1_1_default_skins_1_1_button_skin.html" alt="Sgl::DefaultSkins::ButtonSkin" shape="rect" coords="0,112,199,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -105,12 +106,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1694770aeb3aa9843af51ad59874cf6f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_skin.html#a1694770aeb3aa9843af51ad59874cf6f">dispose</a> ()=0</td></tr>
 <tr class="memdesc:a1694770aeb3aa9843af51ad59874cf6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be called by <a class="el" href="class_sgl_1_1_control.html">Control</a> when this skin is replaced.  <a href="class_sgl_1_1_skin.html#a1694770aeb3aa9843af51ad59874cf6f">More...</a><br /></td></tr>
 <tr class="separator:a1694770aeb3aa9843af51ad59874cf6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe3381f25f1cd04905ca49f94234e309"><td class="memItemLeft" align="right" valign="top"><a id="afe3381f25f1cd04905ca49f94234e309" name="afe3381f25f1cd04905ca49f94234e309"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>apply</b> ()=0</td></tr>
-<tr class="separator:afe3381f25f1cd04905ca49f94234e309"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25980bf6ef5e387bba75221462e7969a"><td class="memItemLeft" align="right" valign="top"><a id="a25980bf6ef5e387bba75221462e7969a" name="a25980bf6ef5e387bba75221462e7969a"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>attach</b> ()=0</td></tr>
-<tr class="separator:a25980bf6ef5e387bba75221462e7969a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae47b81621bd41047abfaa4c30da2f248"><td class="memItemLeft" align="right" valign="top"><a id="ae47b81621bd41047abfaa4c30da2f248" name="ae47b81621bd41047abfaa4c30da2f248"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>prerenderControl</b> ()=0</td></tr>
+<tr class="separator:ae47b81621bd41047abfaa4c30da2f248"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af766324014bc5d08a0cd118c00d32350"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_sgl_1_1_component.html">Component</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_skin.html#af766324014bc5d08a0cd118c00d32350">getHitComponent</a> (int32_t x, int32_t y)</td></tr>
 <tr class="separator:af766324014bc5d08a0cd118c00d32350"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdae848998921e2f4a3b934e484c2a87"><td class="memItemLeft" align="right" valign="top"><a id="abdae848998921e2f4a3b934e484c2a87" name="abdae848998921e2f4a3b934e484c2a87"></a>
@@ -332,7 +330,7 @@ virtual <a class="el" href="class_sgl_1_1_control.html">Control</a> *&#160;</td>
 <p>Should be called by <a class="el" href="class_sgl_1_1_control.html">Control</a> when this skin is replaced. </p>
 <p >Must do things like removing its Components from the <a class="el" href="class_sgl_1_1_control.html">Control</a>'s children list, detaching its Listeners from the <a class="el" href="class_sgl_1_1_control.html">Control</a>'s dispatcher. </p>
 
-<p>Implemented in <a class="el" href="class_sgl_1_1_default_skins_1_1_button_skin.html#a5b7b34c6acd0148bca754a3af4ff0462">Sgl::DefaultSkins::ButtonSkin</a>.</p>
+<p>Implemented in <a class="el" href="class_sgl_1_1_default_skins_1_1_button_base_skin.html#a8b23b939018ce5e6466c3cbcd1088a35">Sgl::DefaultSkins::ButtonBaseSkin</a>.</p>
 
 </div>
 </div>

@@ -64,6 +64,8 @@ namespace Sgl
         void setLayoutWidth(int32_t width);
         void setLayoutHeight(int32_t height);
 
+        Sml::Vec2<int32_t> computeScenePos();
+
         virtual int32_t computePrefWidth(int32_t height = -1) const = 0;
         virtual int32_t computePrefHeight(int32_t width = -1) const = 0;
         
