@@ -117,6 +117,35 @@ namespace DefaultSkins
         ButtonSkin(Sgl::Button* button);
     };
 
+    //------------------------------------------------------------------------------
+    // MenuItemSkin
+    //------------------------------------------------------------------------------
+    class MenuItemSkin : public ButtonBaseSkin
+    {
+    public:
+        static const Insets           PADDING;
+        static const int32_t          MARGIN;
+        static const Border           BORDER;
+        static const StaticStyle      STATIC_STYLE; 
+
+        static const Sml::Color       IDLE_FOREGROUND;
+        static const ColorFill        IDLE_BACKGROUND_FILL;
+        static const Background       IDLE_BACKGROUND;
+        static const InteractionStyle IDLE_STYLE;
+
+        static const Sml::Color       HOVERED_FOREGROUND;
+        static const ColorFill        HOVERED_BACKGROUND_FILL;
+        static const Background       HOVERED_BACKGROUND;
+        static const InteractionStyle HOVERED_STYLE;
+    
+    public:
+        MenuItemSkin(Sgl::Button* button);
+    };
+
+    //------------------------------------------------------------------------------
+    // ButtonSkin
+    //------------------------------------------------------------------------------
+
     // class ButtonSkin : public Sgl::Skin
     // {
     // public:

@@ -16,6 +16,11 @@ namespace Sgl
         {
             delete m_DefaultSkin;
         }
+
+        if (m_Skin != m_DefaultSkin && m_Skin != nullptr)
+        {
+            delete m_Skin;
+        }
     }
 
     Component* Control::getHitComponent(int32_t x, int32_t y)

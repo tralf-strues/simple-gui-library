@@ -59,15 +59,15 @@ namespace Sgl
 
     Menu::Menu(Scene* scene, const char* title)
         : m_TitleButton(new Button{title}),
-          m_MenuItems(new ContextMenu(scene, m_TitleButton))
+          m_ContextMenu(new ContextMenu(scene, m_TitleButton))
     {
-        m_MenuItems->setFillAcross(true);
+        m_ContextMenu->setFillAcross(true);
     }
 
     Menu::~Menu()
     {
         delete m_TitleButton;
-        delete m_MenuItems;
+        delete m_ContextMenu;
     }
 
     const char* Menu::getTitle() const
@@ -80,9 +80,9 @@ namespace Sgl
         return m_TitleButton;
     }
 
-    ContextMenu* Menu::getMenuItems()
+    ContextMenu* Menu::getContextMenu()
     {
-        return m_MenuItems;
+        return m_ContextMenu;
     }
 
     const ColorFill  DEFAULT_CONTAINER_FILL      = {0xF5'F5'F5'FF};
@@ -112,7 +112,7 @@ namespace Sgl
 
         Menu* addedMenu = new Menu{getScene(), title};
         m_Menus.push_back(addedMenu);
-        addedMenu->getMenuItems()->setVisible(false);
+        addedMenu->getContextMenu()->setVisible(false);
         addedMenu->getTitleButton()->getEventDispatcher()->attachHandler(MENU_BAR_LISTENER_EVENTS,
                                                                         new MenuSelectListener{*this, title});
 
@@ -121,7 +121,7 @@ namespace Sgl
         // m_Components.insert(getFirstComponent(), addedMenu->getTitleButton());
         // m_Components.push_back(addedMenu->getMenuItems());
         addChild(addedMenu->getTitleButton());
-        getScene()->registerContextMenu(addedMenu->getMenuItems());
+        getScene()->registerContextMenu(addedMenu->getContextMenu());
 
         return addedMenu;
     }
@@ -148,7 +148,7 @@ namespace Sgl
         Menu* menu = getMenu(title);
         if (menu != nullptr)
         {
-            menu->getMenuItems()->setVisible(true);
+            menu->getContextMenu()->setVisible(true);
         }
     }
 
@@ -159,7 +159,7 @@ namespace Sgl
         Menu* menu = getMenu(title);
         if (menu != nullptr)
         {
-            menu->getMenuItems()->setVisible(false);
+            menu->getContextMenu()->setVisible(false);
         }
     }
 }

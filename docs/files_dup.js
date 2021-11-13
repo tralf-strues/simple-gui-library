@@ -22,7 +22,6 @@ var files_dup =
       [ "Sgl::Container", "class_sgl_1_1_container.html", null ]
     ] ],
     [ "context_menu.h", "context__menu_8h.html", [
-      [ "Sgl::MenuItem", "class_sgl_1_1_menu_item.html", null ],
       [ "Sgl::ContextMenu", "class_sgl_1_1_context_menu.html", null ]
     ] ],
     [ "menu_bar.h", "menu__bar_8h.html", [

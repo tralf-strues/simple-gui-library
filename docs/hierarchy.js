@@ -18,7 +18,7 @@ var hierarchy =
           [ "Sgl::Container", "class_sgl_1_1_container.html", [
             [ "Sgl::BoxContainer", "class_sgl_1_1_box_container.html", [
               [ "Sgl::HBox", "class_sgl_1_1_h_box.html", [
-                [ "Sgl::MenuItem", "class_sgl_1_1_menu_item.html", null ]
+                [ "Sgl::MenuBar", "class_sgl_1_1_menu_bar.html", null ]
               ] ],
               [ "Sgl::VBox", "class_sgl_1_1_v_box.html", [
                 [ "Sgl::ContextMenu", "class_sgl_1_1_context_menu.html", null ]
@@ -27,8 +27,7 @@ var hierarchy =
           ] ],
           [ "Sgl::Control", "class_sgl_1_1_control.html", [
             [ "Sgl::Button", "class_sgl_1_1_button.html", null ],
-            [ "Sgl::Label", "class_sgl_1_1_label.html", null ],
-            [ "Sgl::MenuBar", "class_sgl_1_1_menu_bar.html", null ]
+            [ "Sgl::Label", "class_sgl_1_1_label.html", null ]
           ] ]
         ] ],
         [ "Sgl::Shape", "class_sgl_1_1_shape.html", [
@@ -55,7 +54,8 @@ var hierarchy =
     ] ],
     [ "Sgl::Skin", "class_sgl_1_1_skin.html", [
       [ "Sgl::DefaultSkins::ButtonBaseSkin", "class_sgl_1_1_default_skins_1_1_button_base_skin.html", [
-        [ "Sgl::DefaultSkins::ButtonSkin", "class_sgl_1_1_default_skins_1_1_button_skin.html", null ]
+        [ "Sgl::DefaultSkins::ButtonSkin", "class_sgl_1_1_default_skins_1_1_button_skin.html", null ],
+        [ "Sgl::DefaultSkins::MenuItemSkin", "class_sgl_1_1_default_skins_1_1_menu_item_skin.html", null ]
       ] ]
     ] ],
     [ "Sgl::Skinnable", "class_sgl_1_1_skinnable.html", [

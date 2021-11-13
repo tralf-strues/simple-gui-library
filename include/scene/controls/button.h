@@ -17,6 +17,7 @@ namespace Sgl
     {
     public:
         Button(const char* label);
+        Button(Skin* skin, const char* label);
 
         const char* getLabel() const;
         void setLabel(const char* label);

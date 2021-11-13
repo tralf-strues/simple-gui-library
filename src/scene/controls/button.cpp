@@ -17,6 +17,14 @@ namespace Sgl
         setSkin(m_DefaultSkin);
     }
 
+    Button::Button(Skin* skin, const char* label)
+        : m_Label(label)
+    {
+        assert(skin);
+        setSkin(skin);
+    }
+
+
     const char* Button::getLabel() const { return m_Label; }
     void Button::setLabel(const char* label) { m_Label = label; }
 

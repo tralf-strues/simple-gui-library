@@ -14,12 +14,6 @@ namespace Sgl
 {
     class Scene;
 
-    class MenuItem : public HBox
-    {
-    public:
-        MenuItem(const char* label);
-    };
-
     class ContextMenu : public VBox
     {
     public:

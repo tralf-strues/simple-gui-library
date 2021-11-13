@@ -257,6 +257,31 @@ namespace DefaultSkins
 
     ButtonSkin::ButtonSkin(Sgl::Button* button)
         : ButtonBaseSkin(button, &STATIC_STYLE, &IDLE_STYLE, &HOVERED_STYLE, nullptr) {}
+
+    //------------------------------------------------------------------------------
+    // MenuItemSkin
+    //------------------------------------------------------------------------------
+    const Insets                           MenuItemSkin::PADDING                 = Insets{5, 10};
+    const int32_t                          MenuItemSkin::MARGIN                  = 5;
+    const Border                           MenuItemSkin::BORDER                  = Border{0, 0};
+    const ButtonBaseSkin::StaticStyle      MenuItemSkin::STATIC_STYLE            = {PADDING, MARGIN, BORDER}; 
+
+    /* Idle */
+    const Sml::Color                       MenuItemSkin::IDLE_FOREGROUND         = Sml::COLOR_BLACK;
+    const ColorFill                        MenuItemSkin::IDLE_BACKGROUND_FILL    = {0xFF'FF'FF'FF};
+    const Background                       MenuItemSkin::IDLE_BACKGROUND         = {&IDLE_BACKGROUND_FILL};
+    const ButtonBaseSkin::InteractionStyle MenuItemSkin::IDLE_STYLE              = {IDLE_FOREGROUND,
+                                                                                    &IDLE_BACKGROUND};
+
+    /* Hovered */
+    const Sml::Color                       MenuItemSkin::HOVERED_FOREGROUND      = 0xEF'F8'FF'FF;
+    const ColorFill                        MenuItemSkin::HOVERED_BACKGROUND_FILL = {0x5A'B9'FF'FF};
+    const Background                       MenuItemSkin::HOVERED_BACKGROUND      = {&HOVERED_BACKGROUND_FILL};
+    const ButtonBaseSkin::InteractionStyle MenuItemSkin::HOVERED_STYLE           = {HOVERED_FOREGROUND,
+                                                                                    &HOVERED_BACKGROUND};
+
+    MenuItemSkin::MenuItemSkin(Sgl::Button* button)
+        : ButtonBaseSkin(button, &STATIC_STYLE, &IDLE_STYLE, &HOVERED_STYLE, nullptr) {}
 }
 }
 

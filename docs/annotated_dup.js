@@ -4,7 +4,8 @@ var annotated_dup =
       [ "DefaultSkins", null, [
         [ "ButtonBaseSkin", "class_sgl_1_1_default_skins_1_1_button_base_skin.html", "class_sgl_1_1_default_skins_1_1_button_base_skin" ],
         [ "ButtonBaseSkinEventListener", "class_sgl_1_1_default_skins_1_1_button_base_skin_event_listener.html", null ],
-        [ "ButtonSkin", "class_sgl_1_1_default_skins_1_1_button_skin.html", null ]
+        [ "ButtonSkin", "class_sgl_1_1_default_skins_1_1_button_skin.html", null ],
+        [ "MenuItemSkin", "class_sgl_1_1_default_skins_1_1_menu_item_skin.html", null ]
       ] ],
       [ "ActionEvent", "class_sgl_1_1_action_event.html", null ],
       [ "ActionListener", "class_sgl_1_1_action_listener.html", null ],
@@ -25,7 +26,6 @@ var annotated_dup =
       [ "Label", "class_sgl_1_1_label.html", null ],
       [ "Menu", "class_sgl_1_1_menu.html", null ],
       [ "MenuBar", "class_sgl_1_1_menu_bar.html", null ],
-      [ "MenuItem", "class_sgl_1_1_menu_item.html", null ],
       [ "MenuSelectListener", "class_sgl_1_1_menu_select_listener.html", null ],
       [ "MouseEnteredEvent", "class_sgl_1_1_mouse_entered_event.html", null ],
       [ "MouseExitedEvent", "class_sgl_1_1_mouse_exited_event.html", null ],
