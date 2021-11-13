@@ -12,8 +12,7 @@
 namespace Sgl
 {
     ContextMenu::ContextMenu(Scene* scene, Component* sourceComponent)
-        : BoxContainer(BoxContainer::Direction::TOP_TO_BOTTOM),
-          m_Source(sourceComponent)
+        : m_Source(sourceComponent)
     {
         assert(scene);
 

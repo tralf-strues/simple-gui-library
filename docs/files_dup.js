@@ -14,12 +14,15 @@ var files_dup =
     ] ],
     [ "box_container.h", "box__container_8h.html", [
       [ "Sgl::BoxContainer", "class_sgl_1_1_box_container.html", "class_sgl_1_1_box_container" ],
-      [ "Sgl::BoxContainer::Spacer", "struct_sgl_1_1_box_container_1_1_spacer.html", "struct_sgl_1_1_box_container_1_1_spacer" ]
+      [ "Sgl::BoxContainer::Spacer", "struct_sgl_1_1_box_container_1_1_spacer.html", "struct_sgl_1_1_box_container_1_1_spacer" ],
+      [ "Sgl::HBox", "class_sgl_1_1_h_box.html", null ],
+      [ "Sgl::VBox", "class_sgl_1_1_v_box.html", null ]
     ] ],
     [ "container.h", "container_8h.html", [
       [ "Sgl::Container", "class_sgl_1_1_container.html", null ]
     ] ],
     [ "context_menu.h", "context__menu_8h.html", [
+      [ "Sgl::MenuItem", "class_sgl_1_1_menu_item.html", null ],
       [ "Sgl::ContextMenu", "class_sgl_1_1_context_menu.html", null ]
     ] ],
     [ "menu_bar.h", "menu__bar_8h.html", [

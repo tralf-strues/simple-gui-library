@@ -14,7 +14,13 @@ namespace Sgl
 {
     class Scene;
 
-    class ContextMenu : public BoxContainer
+    class MenuItem : public HBox
+    {
+    public:
+        MenuItem(const char* label);
+    };
+
+    class ContextMenu : public VBox
     {
     public:
         ContextMenu(Scene* scene, Component* sourceComponent = nullptr);

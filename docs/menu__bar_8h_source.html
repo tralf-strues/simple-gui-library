@@ -109,44 +109,42 @@ $(document).ready(function(){initNavTree('menu__bar_8h_source.html',''); initRes
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_class" href="class_sgl_1_1_menu.html">~Menu</a>();</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* getTitle() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_class" href="class_sgl_1_1_button.html">Button</a>* getTitleButton();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_class" href="class_sgl_1_1_context_menu.html">ContextMenu</a>* getMenuItems();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_class" href="class_sgl_1_1_button.html">Button</a>*      m_TitleButton = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_class" href="class_sgl_1_1_context_menu.html">ContextMenu</a>* m_MenuItems   = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    };</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_sgl_1_1_menu_bar.html">   31</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_sgl_1_1_menu_bar.html">MenuBar</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_sgl_1_1_box_container.html">BoxContainer</a></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_class" href="class_sgl_1_1_background.html">Background</a> DEFAULT_BACKGROUND;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_class" href="class_sgl_1_1_border.html">Border</a>     DEFAULT_BORDER;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_class" href="class_sgl_1_1_menu_bar.html">MenuBar</a>(<a class="code hl_class" href="class_sgl_1_1_scene.html">Scene</a>* scene);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">virtual</span> <a class="code hl_class" href="class_sgl_1_1_menu_bar.html">~MenuBar</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_class" href="class_sgl_1_1_menu.html">Menu</a>* addMenu(<span class="keyword">const</span> <span class="keywordtype">char</span>* title);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <a class="code hl_class" href="class_sgl_1_1_menu.html">Menu</a>* getMenu(<span class="keyword">const</span> <span class="keywordtype">char</span>* title);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordtype">void</span> showMenu(<span class="keyword">const</span> <span class="keywordtype">char</span>* title);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordtype">void</span> hideMenu(<span class="keyword">const</span> <span class="keywordtype">char</span>* title);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="comment">// virtual Component* getHitComponent(int32_t x, int32_t y) override;</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="comment">// virtual void updateGraphics() override;</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="comment">// virtual void render(Texture* target, const Rectangle&lt;int32_t&gt;&amp; targetRegion) override;</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        std::list&lt;Menu*&gt; m_Menus;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    };</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_class" href="class_sgl_1_1_context_menu.html">ContextMenu</a>* getContextMenu();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>*  m_Title       = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_class" href="class_sgl_1_1_context_menu.html">ContextMenu</a>* m_ContextMenu = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    };</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_sgl_1_1_menu_bar.html">   30</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_sgl_1_1_menu_bar.html">MenuBar</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_sgl_1_1_control.html">Control</a></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_class" href="class_sgl_1_1_background.html">Background</a> DEFAULT_BACKGROUND;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_class" href="class_sgl_1_1_border.html">Border</a>     DEFAULT_BORDER;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_class" href="class_sgl_1_1_menu_bar.html">MenuBar</a>(<a class="code hl_class" href="class_sgl_1_1_scene.html">Scene</a>* scene);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keyword">virtual</span> <a class="code hl_class" href="class_sgl_1_1_menu_bar.html">~MenuBar</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_class" href="class_sgl_1_1_menu.html">Menu</a>* addMenu(<span class="keyword">const</span> <span class="keywordtype">char</span>* title);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_class" href="class_sgl_1_1_menu.html">Menu</a>* getMenu(<span class="keyword">const</span> <span class="keywordtype">char</span>* title);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">void</span> showMenu(<span class="keyword">const</span> <span class="keywordtype">char</span>* title);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordtype">void</span> hideMenu(<span class="keyword">const</span> <span class="keywordtype">char</span>* title);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="comment">// virtual Component* getHitComponent(int32_t x, int32_t y) override;</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="comment">// virtual void updateGraphics() override;</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="comment">// virtual void render(Texture* target, const Rectangle&lt;int32_t&gt;&amp; targetRegion) override;</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        std::list&lt;Menu*&gt; m_Menus;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    };</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 <div class="ttc" id="aclass_sgl_1_1_background_html"><div class="ttname"><a href="class_sgl_1_1_background.html">Sgl::Background</a></div><div class="ttdef"><b>Definition:</b> <a href="background_8h_source.html#l00017">background.h:18</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_border_html"><div class="ttname"><a href="class_sgl_1_1_border.html">Sgl::Border</a></div><div class="ttdef"><b>Definition:</b> <a href="border_8h_source.html#l00017">border.h:18</a></div></div>
-<div class="ttc" id="aclass_sgl_1_1_box_container_html"><div class="ttname"><a href="class_sgl_1_1_box_container.html">Sgl::BoxContainer</a></div><div class="ttdef"><b>Definition:</b> <a href="box__container_8h_source.html#l00015">box_container.h:16</a></div></div>
-<div class="ttc" id="aclass_sgl_1_1_button_html"><div class="ttname"><a href="class_sgl_1_1_button.html">Sgl::Button</a></div><div class="ttdef"><b>Definition:</b> <a href="button_8h_source.html#l00016">button.h:17</a></div></div>
-<div class="ttc" id="aclass_sgl_1_1_context_menu_html"><div class="ttname"><a href="class_sgl_1_1_context_menu.html">Sgl::ContextMenu</a></div><div class="ttdef"><b>Definition:</b> <a href="context__menu_8h_source.html#l00017">context_menu.h:18</a></div></div>
-<div class="ttc" id="aclass_sgl_1_1_menu_bar_html"><div class="ttname"><a href="class_sgl_1_1_menu_bar.html">Sgl::MenuBar</a></div><div class="ttdef"><b>Definition:</b> <a href="menu__bar_8h_source.html#l00031">menu_bar.h:32</a></div></div>
+<div class="ttc" id="aclass_sgl_1_1_context_menu_html"><div class="ttname"><a href="class_sgl_1_1_context_menu.html">Sgl::ContextMenu</a></div><div class="ttdef"><b>Definition:</b> <a href="context__menu_8h_source.html#l00023">context_menu.h:24</a></div></div>
+<div class="ttc" id="aclass_sgl_1_1_control_html"><div class="ttname"><a href="class_sgl_1_1_control.html">Sgl::Control</a></div><div class="ttdef"><b>Definition:</b> <a href="control_8h_source.html#l00016">control.h:17</a></div></div>
+<div class="ttc" id="aclass_sgl_1_1_menu_bar_html"><div class="ttname"><a href="class_sgl_1_1_menu_bar.html">Sgl::MenuBar</a></div><div class="ttdef"><b>Definition:</b> <a href="menu__bar_8h_source.html#l00030">menu_bar.h:31</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_menu_html"><div class="ttname"><a href="class_sgl_1_1_menu.html">Sgl::Menu</a></div><div class="ttdef"><b>Definition:</b> <a href="menu__bar_8h_source.html#l00016">menu_bar.h:17</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_scene_html"><div class="ttname"><a href="class_sgl_1_1_scene.html">Sgl::Scene</a></div><div class="ttdef"><b>Definition:</b> <a href="scene_8h_source.html#l00019">scene.h:20</a></div></div>
 <div class="ttc" id="acontext__menu_8h_html"><div class="ttname"><a href="context__menu_8h.html">context_menu.h</a></div></div>

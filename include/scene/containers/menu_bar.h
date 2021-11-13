@@ -20,15 +20,14 @@ namespace Sgl
         ~Menu();
 
         const char* getTitle() const;
-        Button* getTitleButton();
-        ContextMenu* getMenuItems();
+        ContextMenu* getContextMenu();
 
     private:
-        Button*      m_TitleButton = nullptr;
-        ContextMenu* m_MenuItems   = nullptr;
+        const char*  m_Title       = nullptr;
+        ContextMenu* m_ContextMenu = nullptr;
     };
 
-    class MenuBar : public BoxContainer
+    class MenuBar : public Control
     {
     public:
         static const Background DEFAULT_BACKGROUND;

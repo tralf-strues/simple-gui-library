@@ -90,7 +90,6 @@ namespace Sgl
     const Border     MenuBar::DEFAULT_BORDER     = Border{1, 0xE9'E9'E9'FF};
 
     MenuBar::MenuBar(Scene* scene)
-        : BoxContainer(BoxContainer::Direction::LEFT_TO_RIGHT)
     {
         setScene(scene);
         setFillAcross(true);

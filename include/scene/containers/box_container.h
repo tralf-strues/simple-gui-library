@@ -72,4 +72,18 @@ namespace Sgl
         int32_t computeSpacerSize(Component* prev, uint32_t totalWeight, int32_t totalSpacersSize) const;
         void mergeSpacers(Component* prev);
     };
+
+    class HBox : public BoxContainer
+    {
+    public:
+        HBox();
+        virtual ~HBox() override = default;
+    };
+
+    class VBox : public BoxContainer
+    {
+    public:
+        VBox();
+        virtual ~VBox() override = default;
+    };
 }

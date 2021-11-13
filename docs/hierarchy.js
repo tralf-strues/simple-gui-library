@@ -17,13 +17,18 @@ var hierarchy =
         [ "Sgl::Parent", "class_sgl_1_1_parent.html", [
           [ "Sgl::Container", "class_sgl_1_1_container.html", [
             [ "Sgl::BoxContainer", "class_sgl_1_1_box_container.html", [
-              [ "Sgl::ContextMenu", "class_sgl_1_1_context_menu.html", null ],
-              [ "Sgl::MenuBar", "class_sgl_1_1_menu_bar.html", null ]
+              [ "Sgl::HBox", "class_sgl_1_1_h_box.html", [
+                [ "Sgl::MenuItem", "class_sgl_1_1_menu_item.html", null ]
+              ] ],
+              [ "Sgl::VBox", "class_sgl_1_1_v_box.html", [
+                [ "Sgl::ContextMenu", "class_sgl_1_1_context_menu.html", null ]
+              ] ]
             ] ]
           ] ],
           [ "Sgl::Control", "class_sgl_1_1_control.html", [
             [ "Sgl::Button", "class_sgl_1_1_button.html", null ],
-            [ "Sgl::Label", "class_sgl_1_1_label.html", null ]
+            [ "Sgl::Label", "class_sgl_1_1_label.html", null ],
+            [ "Sgl::MenuBar", "class_sgl_1_1_menu_bar.html", null ]
           ] ]
         ] ],
         [ "Sgl::Shape", "class_sgl_1_1_shape.html", [

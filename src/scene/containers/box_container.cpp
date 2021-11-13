@@ -234,4 +234,8 @@ namespace Sgl
             m_Spacers.push_back(newSpacer);
         }
     }
+
+    HBox::HBox() : BoxContainer(BoxContainer::Direction::LEFT_TO_RIGHT) {}
+
+    VBox::VBox() : BoxContainer(BoxContainer::Direction::TOP_TO_BOTTOM) {}
 }
