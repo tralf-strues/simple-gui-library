@@ -50,7 +50,15 @@ namespace Sgl
     void Parent::prerender()
     {
         updateSnapshotSize();
+
+        Sml::Texture* savedTarget = getContextRenderer()->getTarget();
+        getContextRenderer()->setTarget(m_Snapshot);
+
+        getContextRenderer()->setColor(Sml::COLOR_TRANSPARENT);
+        getContextRenderer()->clear();
         prerenderSelf();
+
+        getContextRenderer()->setTarget(savedTarget);
 
         for (Component* child : m_Children)
         {

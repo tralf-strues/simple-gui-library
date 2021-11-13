@@ -148,12 +148,14 @@ $(document).ready(function(){initNavTree('scene_8h_source.html',''); initResizab
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        std::list&lt;ContextMenu*&gt; m_ContextMenus;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_class" href="class_sgl_1_1_component.html">Component</a>* findHitComponent(int32_t x, int32_t y);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordtype">void</span> updateHoverOwner(<a class="code hl_class" href="class_sgl_1_1_component.html">Component</a>* newHoverOwner, int32_t mouseX, int32_t mouseY);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordtype">void</span> proccessKeyboardEvent(Sml::KeyEvent* keyEvent);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordtype">void</span> proccessMouseEvent(Sml::MouseEvent* mouseEvent);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    };</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_class" href="class_sgl_1_1_component.html">Component</a>* findHitComponentInContextMenus(int32_t x, int32_t y, <a class="code hl_class" href="class_sgl_1_1_context_menu.html">ContextMenu</a>** menu);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_class" href="class_sgl_1_1_component.html">Component</a>* findHitComponentInRoot(int32_t x, int32_t y);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordtype">void</span> updateHoverOwner(<a class="code hl_class" href="class_sgl_1_1_component.html">Component</a>* newHoverOwner, int32_t mouseX, int32_t mouseY);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordtype">void</span> updateFocusOwner(<a class="code hl_class" href="class_sgl_1_1_component.html">Component</a>* newFocusOwner);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordtype">void</span> proccessKeyboardEvent(Sml::KeyEvent* keyEvent);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordtype">void</span> proccessMouseEvent(Sml::MouseEvent* mouseEvent);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    };</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
 <div class="ttc" id="aclass_gui_event_dispatcher_html"><div class="ttname"><a href="class_gui_event_dispatcher.html">GuiEventDispatcher</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8h_source.html#l00063">gui_event_dispatching.h:64</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_component_html"><div class="ttname"><a href="class_sgl_1_1_component.html">Sgl::Component</a></div><div class="ttdef"><b>Definition:</b> <a href="component_8h_source.html#l00019">component.h:20</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_context_menu_html"><div class="ttname"><a href="class_sgl_1_1_context_menu.html">Sgl::ContextMenu</a></div><div class="ttdef"><b>Definition:</b> <a href="context__menu_8h_source.html#l00024">context_menu.h:25</a></div></div>

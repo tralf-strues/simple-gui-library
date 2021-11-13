@@ -59,8 +59,10 @@ namespace Sgl
 
         std::list<ContextMenu*> m_ContextMenus;
 
-        Component* findHitComponent(int32_t x, int32_t y);
+        Component* findHitComponentInContextMenus(int32_t x, int32_t y, ContextMenu** menu);
+        Component* findHitComponentInRoot(int32_t x, int32_t y);
         void updateHoverOwner(Component* newHoverOwner, int32_t mouseX, int32_t mouseY);
+        void updateFocusOwner(Component* newFocusOwner);
         void proccessKeyboardEvent(Sml::KeyEvent* keyEvent);
         void proccessMouseEvent(Sml::MouseEvent* mouseEvent);
     };

@@ -41,9 +41,6 @@ namespace Sgl
 
     void Container::prerenderSelf()
     {
-        Sml::Texture* savedTarget = getContextRenderer()->getTarget();
-        getContextRenderer()->setTarget(m_Snapshot);
-
         if (m_Background != nullptr)
         {
             Background::fillArea(*m_Background, getOriginBounds());
@@ -53,7 +50,5 @@ namespace Sgl
         {
             Border::encloseArea(*m_Border, getOriginBounds());
         }
-
-        getContextRenderer()->setTarget(savedTarget);
     }
 }

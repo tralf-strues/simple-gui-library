@@ -73,7 +73,9 @@ var files_dup =
     [ "component.cpp", "component_8cpp.html", null ],
     [ "box_container.cpp", "box__container_8cpp.html", null ],
     [ "container.cpp", "container_8cpp.html", null ],
-    [ "context_menu.cpp", "context__menu_8cpp.html", null ],
+    [ "context_menu.cpp", "context__menu_8cpp.html", [
+      [ "Sgl::ContextMenuFocusListener", "class_sgl_1_1_context_menu_focus_listener.html", null ]
+    ] ],
     [ "hbox.cpp", "hbox_8cpp_source.html", null ],
     [ "menu_bar.cpp", "menu__bar_8cpp.html", "menu__bar_8cpp" ],
     [ "button.cpp", "button_8cpp.html", null ],

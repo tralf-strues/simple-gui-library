@@ -18,6 +18,7 @@ namespace Sgl
         MOUSE_ENTERED = Sml::SML_EVENT_TYPE_FIRST_UNSPECIFIED,
         MOUSE_EXITED,
 
+        FOCUS_CHANGED,
         ACTION_PERFORMED
     };
 
@@ -29,9 +30,10 @@ namespace Sgl
     class MouseEnteredEvent : public Sml::MouseEvent
     {
     public:
-        MouseEnteredEvent(int32_t x = 0, int32_t y = 0) : Sml::MouseEvent(x, y)
+        MouseEnteredEvent(int32_t x = 0, int32_t y = 0, Sml::EventTarget* target = nullptr)
+            : Sml::MouseEvent(x, y, target)
         {
-            m_Type = getStaticType();
+            m_Type     = getStaticType();
             m_Category = getStaticCategory();
         }
 
@@ -42,7 +44,8 @@ namespace Sgl
     class MouseExitedEvent : public Sml::MouseEvent
     {
     public:
-        MouseExitedEvent(int32_t x = 0, int32_t y = 0) : Sml::MouseEvent(x, y)
+        MouseExitedEvent(int32_t x = 0, int32_t y = 0, Sml::EventTarget* target = nullptr)
+            : Sml::MouseEvent(x, y, target)
         {
             m_Type = getStaticType();
             m_Category = getStaticCategory();
@@ -50,6 +53,50 @@ namespace Sgl
 
         DEFINE_STATIC_EVENT_TYPE(MOUSE_EXITED)
         DEFINE_STATIC_EVENT_CATEGORY(EVENT_CATEGORY_GUI | Sml::MouseEvent::getStaticCategory())
+    };
+
+    class FocusEvent : public Sml::Event
+    {
+    public:
+        enum class Type
+        {
+            FOCUS_GOT,
+            FOCUS_LOST
+        };
+
+    public:
+        FocusEvent(Type type, Sml::EventTarget* target = nullptr)
+            : Sml::Event(getStaticType(), getStaticCategory(), target), m_Type(type) {}
+
+        bool gotFocus() const { return m_Type == Type::FOCUS_GOT; }
+        bool lostFocus() const { return m_Type == Type::FOCUS_LOST; }
+
+        DEFINE_STATIC_EVENT_TYPE(FOCUS_CHANGED)
+        DEFINE_STATIC_EVENT_CATEGORY(EVENT_CATEGORY_GUI)
+
+    private:
+        const Type m_Type;
+    };
+
+    class FocusListener : public Sml::Listener
+    {
+    public:
+        virtual void onEvent(Sml::Event* event) override final
+        {
+            FocusEvent* focusEvent = dynamic_cast<FocusEvent*>(event);
+
+            if (focusEvent->gotFocus())
+            {
+                onFocusGot(focusEvent);
+            }
+            else
+            {
+                onFocusLost(focusEvent);
+            }
+        }
+
+        virtual void onFocusGot(FocusEvent* event) {}
+        virtual void onFocusLost(FocusEvent* event) {}
     };
 
     class ActionEvent : public Sml::Event
@@ -67,9 +114,9 @@ namespace Sgl
     public:
         virtual void onEvent(Sml::Event* event) override final
         {
-            onActionPerformed(static_cast<ActionEvent*>(event));
+            onAction(dynamic_cast<ActionEvent*>(event));
         }
 
-        virtual void onActionPerformed(ActionEvent* event) = 0;
+        virtual void onAction(ActionEvent* event) = 0;
     };
 }

@@ -52,7 +52,7 @@ namespace DefaultSkins
     void ButtonBaseSkinEventListener::onEvent(Sml::Event* event)
     {
         ASSERT_CATEGORY(Sml::MouseEvent);
-        ButtonBaseSkin& skin = static_cast<ButtonBaseSkin&>(*button.getSkin());
+        ButtonBaseSkin& skin = dynamic_cast<ButtonBaseSkin&>(*button.getSkin());
         
         switch (event->getType())
         {
@@ -74,7 +74,7 @@ namespace DefaultSkins
                 {
                     // FIXME: Add event queue!
                     ActionEvent event{&button};
-                    button.getOnAction()->onActionPerformed(&event);
+                    button.getOnAction()->onAction(&event);
                 }
 
                 break;
@@ -278,10 +278,10 @@ namespace DefaultSkins
 
     /* Idle */
     const Sml::Color                       MenuItemSkin::IDLE_FOREGROUND         = Sml::COLOR_BLACK;
-    const ColorFill                        MenuItemSkin::IDLE_BACKGROUND_FILL    = {0xFF'FF'FF'FF};
+    const ColorFill                        MenuItemSkin::IDLE_BACKGROUND_FILL    = {Sml::COLOR_TRANSPARENT};
     const Background                       MenuItemSkin::IDLE_BACKGROUND         = {&IDLE_BACKGROUND_FILL};
     const ButtonBaseSkin::InteractionStyle MenuItemSkin::IDLE_STYLE              = {IDLE_FOREGROUND,
-                                                                                    &IDLE_BACKGROUND};
+                                                                                    nullptr};
 
     /* Hovered */
     const Sml::Color                       MenuItemSkin::HOVERED_FOREGROUND      = 0xEF'F8'FF'FF;

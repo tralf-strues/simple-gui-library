@@ -3,7 +3,8 @@ var hierarchy =
     [ "Sgl::Background", "class_sgl_1_1_background.html", null ],
     [ "Sgl::Border", "class_sgl_1_1_border.html", null ],
     [ "Sml::Event", null, [
-      [ "Sgl::ActionEvent", "class_sgl_1_1_action_event.html", null ]
+      [ "Sgl::ActionEvent", "class_sgl_1_1_action_event.html", null ],
+      [ "Sgl::FocusEvent", "class_sgl_1_1_focus_event.html", null ]
     ] ],
     [ "Sml::EventDispatchChain", null, [
       [ "GuiEventDispatchChain", "class_gui_event_dispatch_chain.html", null ]
@@ -47,6 +48,9 @@ var hierarchy =
     [ "Sml::Listener", null, [
       [ "Sgl::ActionListener", "class_sgl_1_1_action_listener.html", null ],
       [ "Sgl::DefaultSkins::ButtonBaseSkinEventListener", "class_sgl_1_1_default_skins_1_1_button_base_skin_event_listener.html", null ],
+      [ "Sgl::FocusListener", "class_sgl_1_1_focus_listener.html", [
+        [ "Sgl::ContextMenuFocusListener", "class_sgl_1_1_context_menu_focus_listener.html", null ]
+      ] ],
       [ "Sgl::MenuSelectListener", "class_sgl_1_1_menu_select_listener.html", null ]
     ] ],
     [ "Sgl::Menu", "class_sgl_1_1_menu.html", null ],

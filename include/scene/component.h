@@ -39,10 +39,11 @@ namespace Sgl
         void setVisible(bool visible);
 
         bool isFocused() const;
-        void requestFocus();
-
         bool isHovered() const;
+
         virtual bool isResizable() const = 0;
+
+        void requestFocus();
 
         GuiEventDispatcher* getEventDispatcher();
 

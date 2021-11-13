@@ -6,6 +6,7 @@
  * @copyright Copyright (c) 2021
  */
 
+#include "sml/events/system_events.h"
 #include "core.h"
 #include "scene/scene.h"
 #include "scene/parent.h"
@@ -56,9 +57,6 @@ namespace Sgl
 
     void Scene::render(const Sml::Rectangle<int32_t>& targetRegion)
     {
-        // getContextRenderer()->setColor(Sml::COLOR_WHITE);
-        // getContextRenderer()->clear();
-
         if (m_Root != nullptr)
         {
             m_Root->render(targetRegion);
@@ -76,11 +74,11 @@ namespace Sgl
 
         if (event->isInCategory(Sml::MouseEvent::getStaticCategory()))
         {
-            proccessMouseEvent(static_cast<Sml::MouseEvent*>(event));
+            proccessMouseEvent(dynamic_cast<Sml::MouseEvent*>(event));
         }
         else if (event->isInCategory(Sml::KeyEvent::getStaticCategory()))
         {
-            proccessKeyboardEvent(static_cast<Sml::KeyEvent*>(event));
+            proccessKeyboardEvent(dynamic_cast<Sml::KeyEvent*>(event));
         }
     }
 
@@ -107,16 +105,23 @@ namespace Sgl
 
     Component* Scene::getFocusOwner() { return m_FocusOwner; }
 
-    // TODO: Generate UnfocusedEvent and FocusedEvent
     void Scene::requestFocus(Component* component)
     {
-        assert(component);
-
-        component->m_Focused = true;
-
-        if (m_FocusOwner != nullptr)
+        if (m_FocusOwner != component)
         {
-            m_FocusOwner->m_Focused = false;
+            if (m_FocusOwner != nullptr)
+            {
+                FocusEvent focusEvent{FocusEvent::Type::FOCUS_LOST, m_FocusOwner};
+                m_FocusOwner->m_Focused = false;
+                fireEvent(&focusEvent);
+            }
+
+            if (component != nullptr)
+            {
+                FocusEvent focusEvent{FocusEvent::Type::FOCUS_GOT, component};
+                component->m_Focused = true;
+                fireEvent(&focusEvent);
+            }
         }
 
         m_FocusOwner = component;
@@ -134,17 +139,31 @@ namespace Sgl
         m_ContextMenus.remove(contextMenu);
     }
 
-    Component* Scene::findHitComponent(int32_t x, int32_t y)
+    Component* Scene::findHitComponentInContextMenus(int32_t x, int32_t y, ContextMenu** menu)
     {
+        Component* hitComponent = nullptr;
+        ContextMenu* hitMenu = nullptr;
+
         for (ContextMenu* contextMenu : m_ContextMenus)
         {
-            Component* hitComponent = contextMenu->getHitComponent(x, y);
+            hitComponent = contextMenu->getHitComponent(x, y);
             if (hitComponent != nullptr)
             {
-                return hitComponent;
+                hitMenu = contextMenu;
+                break;
             }
         }
 
+        if (menu != nullptr)
+        {
+            *menu = hitMenu;
+        }
+
+        return hitComponent;
+    }
+
+    Component* Scene::findHitComponentInRoot(int32_t x, int32_t y)
+    {
         if (m_Root != nullptr)
         {
             return m_Root->getHitComponent(x, y);
@@ -159,15 +178,15 @@ namespace Sgl
         {
             if (m_HoverOwner != nullptr)
             {
-                MouseExitedEvent mouseExitedEvent{mouseX, mouseY};
-                mouseExitedEvent.setTarget(m_HoverOwner);
+                MouseExitedEvent mouseExitedEvent{mouseX, mouseY, m_HoverOwner};
+                m_HoverOwner->m_Hovered = false;
                 fireEvent(&mouseExitedEvent);
             }
 
             if (newHoverOwner != nullptr)
             {
-                MouseEnteredEvent mouseEnteredEvent{mouseX, mouseY};
-                mouseEnteredEvent.setTarget(newHoverOwner);
+                MouseEnteredEvent mouseEnteredEvent{mouseX, mouseY, newHoverOwner};
+                newHoverOwner->m_Hovered = true;
                 fireEvent(&mouseEnteredEvent);
             }
         }
@@ -191,13 +210,26 @@ namespace Sgl
             return;
         }
 
-        Component* newHoverOwner = findHitComponent(mouseEvent->getX(), mouseEvent->getY());
+        ContextMenu* hitMenu = nullptr;
+        Component* newHoverOwner = findHitComponentInContextMenus(mouseEvent->getX(), mouseEvent->getY(),
+                                                                  &hitMenu);
+
+        if (newHoverOwner == nullptr)
+        {
+            newHoverOwner = findHitComponentInRoot(mouseEvent->getX(), mouseEvent->getY());
+        }
+
+        updateHoverOwner(newHoverOwner, mouseEvent->getX(), mouseEvent->getY());
+
+        if (mouseEvent->getType() == Sml::MouseButtonPressedEvent::getStaticType())
+        {
+            requestFocus(newHoverOwner);
+        }
+
         if (newHoverOwner != nullptr)
         {
             mouseEvent->setTarget(newHoverOwner);
             fireEvent(mouseEvent);
         }
-
-        updateHoverOwner(newHoverOwner, mouseEvent->getX(), mouseEvent->getY());
     }
 }

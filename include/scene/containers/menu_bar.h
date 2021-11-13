@@ -41,8 +41,8 @@ namespace Sgl
         Menu* addMenu(const char* title);
         Menu* getMenu(const char* title);
 
-        void showMenu(const char* title);
-        void hideMenu(const char* title);
+        void showMenu(Menu* menu);
+        void hideMenu(Menu* menu);
 
         // virtual Component* getHitComponent(int32_t x, int32_t y) override;
         // virtual void updateGraphics() override;

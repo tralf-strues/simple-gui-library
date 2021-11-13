@@ -155,7 +155,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:a75714587395ecb6ddf3b00c2aa6adf83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27f3ca88aeebdfa6c3d03ebcbdcbccba"><td class="memItemLeft" align="right" valign="top">static const Sml::Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_default_skins_1_1_menu_item_skin.html#a27f3ca88aeebdfa6c3d03ebcbdcbccba">IDLE_FOREGROUND</a> = Sml::COLOR_BLACK</td></tr>
 <tr class="separator:a27f3ca88aeebdfa6c3d03ebcbdcbccba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a111782061c9dd64e21c5954b4894cadd"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_sgl_1_1_color_fill.html">ColorFill</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_default_skins_1_1_menu_item_skin.html#a111782061c9dd64e21c5954b4894cadd">IDLE_BACKGROUND_FILL</a> = {0xFF'FF'FF'FF}</td></tr>
+<tr class="memitem:a111782061c9dd64e21c5954b4894cadd"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_sgl_1_1_color_fill.html">ColorFill</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_default_skins_1_1_menu_item_skin.html#a111782061c9dd64e21c5954b4894cadd">IDLE_BACKGROUND_FILL</a> = {Sml::COLOR_TRANSPARENT}</td></tr>
 <tr class="separator:a111782061c9dd64e21c5954b4894cadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67b054c187c53d790d083c31c13dc3bb"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_sgl_1_1_background.html">Background</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_default_skins_1_1_menu_item_skin.html#a67b054c187c53d790d083c31c13dc3bb">IDLE_BACKGROUND</a> = {&amp;IDLE_BACKGROUND_FILL}</td></tr>
 <tr class="separator:a67b054c187c53d790d083c31c13dc3bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -395,7 +395,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="class_sgl_1_1_color_fill.html">ColorFill</a> Sgl::DefaultSkins::MenuItemSkin::IDLE_BACKGROUND_FILL = {0xFF'FF'FF'FF}</td>
+          <td class="memname">const <a class="el" href="class_sgl_1_1_color_fill.html">ColorFill</a> Sgl::DefaultSkins::MenuItemSkin::IDLE_BACKGROUND_FILL = {Sml::COLOR_TRANSPARENT}</td>
         </tr>
       </table>
   </td>
@@ -453,7 +453,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {IDLE_FOREGROUND,</div>
-<div class="line">                                                                                    &amp;IDLE_BACKGROUND}</div>
+<div class="line">                                                                                    <span class="keyword">nullptr</span>}</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="default__skins_8h_source.html#l00140">140</a> of file <a class="el" href="default__skins_8h_source.html">default_skins.h</a>.</p>
 

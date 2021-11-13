@@ -29,15 +29,14 @@ namespace Sgl
     void Component::setVisible(bool visible) { m_Visible = visible; }
 
     bool Component::isFocused() const { return m_Focused; }
-    
+    bool Component::isHovered() const { return m_Hovered; }
+
     void Component::requestFocus()
     {
         assert(getScene());
 
         getScene()->requestFocus(this);
     }
-
-    bool Component::isHovered() const { return m_Hovered; }
 
     GuiEventDispatcher* Component::getEventDispatcher()
     {

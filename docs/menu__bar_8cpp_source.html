@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('menu__bar_8cpp_source.html',''); initR
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_sgl_1_1_menu_select_listener.html">   21</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_sgl_1_1_menu_select_listener.html">MenuSelectListener</a> : <span class="keyword">public</span> Sml::Listener</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_class" href="class_sgl_1_1_menu_select_listener.html">MenuSelectListener</a>(<a class="code hl_class" href="class_sgl_1_1_menu_bar.html">MenuBar</a>&amp; menuBar, <span class="keyword">const</span> <span class="keywordtype">char</span>* menu) : m_MenuBar(menuBar), m_Menu(menu) {}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_class" href="class_sgl_1_1_menu_select_listener.html">MenuSelectListener</a>(<a class="code hl_class" href="class_sgl_1_1_menu_bar.html">MenuBar</a>&amp; menuBar, <a class="code hl_class" href="class_sgl_1_1_menu.html">Menu</a>* menu) : m_MenuBar(menuBar), m_Menu(menu) {}</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onEvent(Sml::Event* event)<span class="keyword"> override</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">        </span>{</div>
@@ -142,8 +142,8 @@ $(document).ready(function(){initNavTree('menu__bar_8cpp_source.html',''); initR
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        }</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_class" href="class_sgl_1_1_menu_bar.html">MenuBar</a>&amp;    m_MenuBar;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* m_Menu;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_class" href="class_sgl_1_1_menu_bar.html">MenuBar</a>&amp; m_MenuBar;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_class" href="class_sgl_1_1_menu.html">Menu</a>*    m_Menu;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    };</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    Menu::Menu(<a class="code hl_class" href="class_sgl_1_1_scene.html">Scene</a>* scene, <span class="keyword">const</span> <span class="keywordtype">char</span>* title)</div>
@@ -199,20 +199,20 @@ $(document).ready(function(){initNavTree('menu__bar_8cpp_source.html',''); initR
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    {</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        assert(title);</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        Menu* addedMenu = <span class="keyword">new</span> Menu{getScene(), title};</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        m_Menus.push_back(addedMenu);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        addedMenu-&gt;getContextMenu()-&gt;setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        addedMenu-&gt;getTitleButton()-&gt;getEventDispatcher()-&gt;attachHandler(MENU_BAR_LISTENER_EVENTS,</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                                                                        <span class="keyword">new</span> MenuSelectListener{*<span class="keyword">this</span>, title});</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        Menu* menu = <span class="keyword">new</span> Menu{getScene(), title};</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        m_Menus.push_back(menu);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        menu-&gt;getContextMenu()-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        menu-&gt;getTitleButton()-&gt;getEventDispatcher()-&gt;attachHandler(MENU_BAR_LISTENER_EVENTS,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                                                                    <span class="keyword">new</span> MenuSelectListener{*<span class="keyword">this</span>, menu});</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="comment">// addedMenu-&gt;getTitleButton()-&gt;setWidth(addedMenu-&gt;getTitleButton().g);</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="comment">// menu-&gt;getTitleButton()-&gt;setWidth(menu-&gt;getTitleButton().g);</span></div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="comment">// FIXME:</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="comment">// m_Components.insert(getFirstComponent(), addedMenu-&gt;getTitleButton());</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="comment">// m_Components.push_back(addedMenu-&gt;getMenuItems());</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <a class="code hl_function" href="class_sgl_1_1_parent.html#a868d2b08da6aa1d751738d293d90ee98">addChild</a>(addedMenu-&gt;getTitleButton());</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        getScene()-&gt;registerContextMenu(addedMenu-&gt;getContextMenu());</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="comment">// m_Components.insert(getFirstComponent(), menu-&gt;getTitleButton());</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="comment">// m_Components.push_back(menu-&gt;getMenuItems());</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <a class="code hl_function" href="class_sgl_1_1_parent.html#a868d2b08da6aa1d751738d293d90ee98">addChild</a>(menu-&gt;getTitleButton());</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        getScene()-&gt;registerContextMenu(menu-&gt;getContextMenu());</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">return</span> addedMenu;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">return</span> menu;</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    Menu* MenuBar::getMenu(<span class="keyword">const</span> <span class="keywordtype">char</span>* title)</div>
@@ -230,34 +230,25 @@ $(document).ready(function(){initNavTree('menu__bar_8cpp_source.html',''); initR
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    }</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordtype">void</span> MenuBar::showMenu(<span class="keyword">const</span> <span class="keywordtype">char</span>* title)</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordtype">void</span> MenuBar::showMenu(Menu* menu)</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    {</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        assert(title);</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        Menu* menu = getMenu(title);</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <span class="keywordflow">if</span> (menu != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        {</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            menu-&gt;getContextMenu()-&gt;setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        }</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordtype">void</span> MenuBar::hideMenu(<span class="keyword">const</span> <span class="keywordtype">char</span>* title)</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    {</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        assert(title);</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        Menu* menu = getMenu(title);</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">if</span> (menu != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        {</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            menu-&gt;getContextMenu()-&gt;setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        }</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    }</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>}</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        assert(menu);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        menu-&gt;getContextMenu()-&gt;show();</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordtype">void</span> MenuBar::hideMenu(Menu* menu)</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        assert(menu);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        menu-&gt;getContextMenu()-&gt;hide();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    }</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>}</div>
 <div class="ttc" id="aborder_8h_html"><div class="ttname"><a href="border_8h.html">border.h</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_button_html"><div class="ttname"><a href="class_sgl_1_1_button.html">Sgl::Button</a></div><div class="ttdef"><b>Definition:</b> <a href="button_8h_source.html#l00016">button.h:17</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_context_menu_html"><div class="ttname"><a href="class_sgl_1_1_context_menu.html">Sgl::ContextMenu</a></div><div class="ttdef"><b>Definition:</b> <a href="context__menu_8h_source.html#l00024">context_menu.h:25</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_menu_bar_html"><div class="ttname"><a href="class_sgl_1_1_menu_bar.html">Sgl::MenuBar</a></div><div class="ttdef"><b>Definition:</b> <a href="menu__bar_8h_source.html#l00031">menu_bar.h:32</a></div></div>
+<div class="ttc" id="aclass_sgl_1_1_menu_html"><div class="ttname"><a href="class_sgl_1_1_menu.html">Sgl::Menu</a></div><div class="ttdef"><b>Definition:</b> <a href="menu__bar_8h_source.html#l00016">menu_bar.h:17</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_menu_select_listener_html"><div class="ttname"><a href="class_sgl_1_1_menu_select_listener.html">Sgl::MenuSelectListener</a></div><div class="ttdef"><b>Definition:</b> <a href="menu__bar_8cpp_source.html#l00021">menu_bar.cpp:22</a></div></div>
-<div class="ttc" id="aclass_sgl_1_1_parent_html_a868d2b08da6aa1d751738d293d90ee98"><div class="ttname"><a href="class_sgl_1_1_parent.html#a868d2b08da6aa1d751738d293d90ee98">Sgl::Parent::addChild</a></div><div class="ttdeci">void addChild(Component *child)</div><div class="ttdoc">Convenience method for adding a child to Parent.</div><div class="ttdef"><b>Definition:</b> <a href="parent_8cpp_source.html#l00074">parent.cpp:74</a></div></div>
+<div class="ttc" id="aclass_sgl_1_1_parent_html_a868d2b08da6aa1d751738d293d90ee98"><div class="ttname"><a href="class_sgl_1_1_parent.html#a868d2b08da6aa1d751738d293d90ee98">Sgl::Parent::addChild</a></div><div class="ttdeci">void addChild(Component *child)</div><div class="ttdoc">Convenience method for adding a child to Parent.</div><div class="ttdef"><b>Definition:</b> <a href="parent_8cpp_source.html#l00082">parent.cpp:82</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_scene_html"><div class="ttname"><a href="class_sgl_1_1_scene.html">Sgl::Scene</a></div><div class="ttdef"><b>Definition:</b> <a href="scene_8h_source.html#l00019">scene.h:20</a></div></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="core_8h.html">core.h</a></div></div>
 <div class="ttc" id="amenu__bar_8h_html"><div class="ttname"><a href="menu__bar_8h.html">menu_bar.h</a></div></div>

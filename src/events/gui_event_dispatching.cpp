@@ -18,7 +18,7 @@ Sml::Event* fireEvent(Sml::Event* event)
     static GuiEventDispatchChain baseDispatchChain;
 
     GuiEventDispatchChain* targetDispatchChain = 
-        static_cast<GuiEventDispatchChain*>(event->getTarget()->buildEventDispatchChain(&baseDispatchChain));
+        dynamic_cast<GuiEventDispatchChain*>(event->getTarget()->buildEventDispatchChain(&baseDispatchChain));
 
     Sml::Event* returnEvent = targetDispatchChain->sendThroughChain(event);
     baseDispatchChain.reset();
@@ -123,11 +123,11 @@ void GuiEventDispatchChain::prependDispatcher(Sml::EventDispatcher* dispatcher)
 
     if (m_ActiveCount >= m_Dispatchers.size())
     {
-        m_Dispatchers.push_back(static_cast<GuiEventDispatcher*>(dispatcher));
+        m_Dispatchers.push_back(dynamic_cast<GuiEventDispatcher*>(dispatcher));
     }
     else
     {
-        m_Dispatchers[m_ActiveCount] = static_cast<GuiEventDispatcher*>(dispatcher);
+        m_Dispatchers[m_ActiveCount] = dynamic_cast<GuiEventDispatcher*>(dispatcher);
     }
 
     ++m_ActiveCount;

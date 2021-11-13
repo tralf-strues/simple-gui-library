@@ -141,7 +141,7 @@ $(document).ready(function(){initNavTree('default__skins_8cpp_source.html',''); 
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> ButtonBaseSkinEventListener::onEvent(Sml::Event* event)</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        ASSERT_CATEGORY(Sml::MouseEvent);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        ButtonBaseSkin&amp; skin = <span class="keyword">static_cast&lt;</span>ButtonBaseSkin&amp;<span class="keyword">&gt;</span>(*button.getSkin());</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        ButtonBaseSkin&amp; skin = <span class="keyword">dynamic_cast&lt;</span>ButtonBaseSkin&amp;<span class="keyword">&gt;</span>(*button.getSkin());</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">switch</span> (event-&gt;getType())</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        {</div>
@@ -163,7 +163,7 @@ $(document).ready(function(){initNavTree('default__skins_8cpp_source.html',''); 
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                {</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                    <span class="comment">// FIXME: Add event queue!</span></div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                    ActionEvent <span class="keyword">event</span>{&amp;button};</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                    button.getOnAction()-&gt;onActionPerformed(&amp;event);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                    button.getOnAction()-&gt;onAction(&amp;event);</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                }</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                <span class="keywordflow">break</span>;</div>
@@ -367,10 +367,10 @@ $(document).ready(function(){initNavTree('default__skins_8cpp_source.html',''); 
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <span class="comment">/* Idle */</span></div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keyword">const</span> Sml::Color                       MenuItemSkin::IDLE_FOREGROUND         = Sml::COLOR_BLACK;</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keyword">const</span> ColorFill                        MenuItemSkin::IDLE_BACKGROUND_FILL    = {0xFF&#39;FF&#39;FF&#39;FF};</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keyword">const</span> ColorFill                        MenuItemSkin::IDLE_BACKGROUND_FILL    = {Sml::COLOR_TRANSPARENT};</div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="keyword">const</span> Background                       MenuItemSkin::IDLE_BACKGROUND         = {&amp;IDLE_BACKGROUND_FILL};</div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    <span class="keyword">const</span> ButtonBaseSkin::InteractionStyle MenuItemSkin::IDLE_STYLE              = {IDLE_FOREGROUND,</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>                                                                                    &amp;IDLE_BACKGROUND};</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>                                                                                    <span class="keyword">nullptr</span>};</div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <span class="comment">/* Hovered */</span></div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keyword">const</span> Sml::Color                       MenuItemSkin::HOVERED_FOREGROUND      = 0xEF&#39;F8&#39;FF&#39;FF;</div>
@@ -587,8 +587,8 @@ $(document).ready(function(){initNavTree('default__skins_8cpp_source.html',''); 
 <div class="ttc" id="aclass_sgl_1_1_button_html"><div class="ttname"><a href="class_sgl_1_1_button.html">Sgl::Button</a></div><div class="ttdef"><b>Definition:</b> <a href="button_8h_source.html#l00016">button.h:17</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_default_skins_1_1_button_base_skin_event_listener_html"><div class="ttname"><a href="class_sgl_1_1_default_skins_1_1_button_base_skin_event_listener.html">Sgl::DefaultSkins::ButtonBaseSkinEventListener</a></div><div class="ttdef"><b>Definition:</b> <a href="default__skins_8cpp_source.html#l00039">default_skins.cpp:40</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_default_skins_1_1_button_base_skin_html_a8b23b939018ce5e6466c3cbcd1088a35"><div class="ttname"><a href="class_sgl_1_1_default_skins_1_1_button_base_skin.html#a8b23b939018ce5e6466c3cbcd1088a35">Sgl::DefaultSkins::ButtonBaseSkin::dispose</a></div><div class="ttdeci">virtual void dispose() override</div><div class="ttdoc">Should be called by Control when this skin is replaced.</div><div class="ttdef"><b>Definition:</b> <a href="default__skins_8cpp_source.html#l00126">default_skins.cpp:126</a></div></div>
-<div class="ttc" id="aclass_sgl_1_1_parent_html_a868d2b08da6aa1d751738d293d90ee98"><div class="ttname"><a href="class_sgl_1_1_parent.html#a868d2b08da6aa1d751738d293d90ee98">Sgl::Parent::addChild</a></div><div class="ttdeci">void addChild(Component *child)</div><div class="ttdoc">Convenience method for adding a child to Parent.</div><div class="ttdef"><b>Definition:</b> <a href="parent_8cpp_source.html#l00074">parent.cpp:74</a></div></div>
-<div class="ttc" id="aclass_sgl_1_1_parent_html_a948ec0428d1eb6ad75b12bb180cd7d9d"><div class="ttname"><a href="class_sgl_1_1_parent.html#a948ec0428d1eb6ad75b12bb180cd7d9d">Sgl::Parent::removeChild</a></div><div class="ttdeci">void removeChild(Component *child)</div><div class="ttdoc">Convenience method for removing a child to Parent.</div><div class="ttdef"><b>Definition:</b> <a href="parent_8cpp_source.html#l00083">parent.cpp:83</a></div></div>
+<div class="ttc" id="aclass_sgl_1_1_parent_html_a868d2b08da6aa1d751738d293d90ee98"><div class="ttname"><a href="class_sgl_1_1_parent.html#a868d2b08da6aa1d751738d293d90ee98">Sgl::Parent::addChild</a></div><div class="ttdeci">void addChild(Component *child)</div><div class="ttdoc">Convenience method for adding a child to Parent.</div><div class="ttdef"><b>Definition:</b> <a href="parent_8cpp_source.html#l00082">parent.cpp:82</a></div></div>
+<div class="ttc" id="aclass_sgl_1_1_parent_html_a948ec0428d1eb6ad75b12bb180cd7d9d"><div class="ttname"><a href="class_sgl_1_1_parent.html#a948ec0428d1eb6ad75b12bb180cd7d9d">Sgl::Parent::removeChild</a></div><div class="ttdeci">void removeChild(Component *child)</div><div class="ttdoc">Convenience method for removing a child to Parent.</div><div class="ttdef"><b>Definition:</b> <a href="parent_8cpp_source.html#l00091">parent.cpp:91</a></div></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="core_8h.html">core.h</a></div></div>
 <div class="ttc" id="adefault__skins_8h_html"><div class="ttname"><a href="default__skins_8h.html">default_skins.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

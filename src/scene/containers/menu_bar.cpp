@@ -21,7 +21,7 @@ namespace Sgl
     class MenuSelectListener : public Sml::Listener
     {
     public:
-        MenuSelectListener(MenuBar& menuBar, const char* menu) : m_MenuBar(menuBar), m_Menu(menu) {}
+        MenuSelectListener(MenuBar& menuBar, Menu* menu) : m_MenuBar(menuBar), m_Menu(menu) {}
 
         virtual void onEvent(Sml::Event* event) override
         {
@@ -53,8 +53,8 @@ namespace Sgl
         }
 
     private:
-        MenuBar&    m_MenuBar;
-        const char* m_Menu;
+        MenuBar& m_MenuBar;
+        Menu*    m_Menu;
     };
 
     Menu::Menu(Scene* scene, const char* title)
@@ -110,20 +110,20 @@ namespace Sgl
     {
         assert(title);
 
-        Menu* addedMenu = new Menu{getScene(), title};
-        m_Menus.push_back(addedMenu);
-        addedMenu->getContextMenu()->setVisible(false);
-        addedMenu->getTitleButton()->getEventDispatcher()->attachHandler(MENU_BAR_LISTENER_EVENTS,
-                                                                        new MenuSelectListener{*this, title});
+        Menu* menu = new Menu{getScene(), title};
+        m_Menus.push_back(menu);
+        menu->getContextMenu()->setVisible(false);
+        menu->getTitleButton()->getEventDispatcher()->attachHandler(MENU_BAR_LISTENER_EVENTS,
+                                                                    new MenuSelectListener{*this, menu});
 
-        // addedMenu->getTitleButton()->setWidth(addedMenu->getTitleButton().g);
+        // menu->getTitleButton()->setWidth(menu->getTitleButton().g);
         // FIXME:
-        // m_Components.insert(getFirstComponent(), addedMenu->getTitleButton());
-        // m_Components.push_back(addedMenu->getMenuItems());
-        addChild(addedMenu->getTitleButton());
-        getScene()->registerContextMenu(addedMenu->getContextMenu());
+        // m_Components.insert(getFirstComponent(), menu->getTitleButton());
+        // m_Components.push_back(menu->getMenuItems());
+        addChild(menu->getTitleButton());
+        getScene()->registerContextMenu(menu->getContextMenu());
 
-        return addedMenu;
+        return menu;
     }
 
     Menu* MenuBar::getMenu(const char* title)
@@ -141,25 +141,15 @@ namespace Sgl
         return nullptr;
     }
 
-    void MenuBar::showMenu(const char* title)
+    void MenuBar::showMenu(Menu* menu)
     {
-        assert(title);
-        
-        Menu* menu = getMenu(title);
-        if (menu != nullptr)
-        {
-            menu->getContextMenu()->setVisible(true);
-        }
+        assert(menu);
+        menu->getContextMenu()->show();
     }
 
-    void MenuBar::hideMenu(const char* title)
+    void MenuBar::hideMenu(Menu* menu)
     {
-        assert(title);
-
-        Menu* menu = getMenu(title);
-        if (menu != nullptr)
-        {
-            menu->getContextMenu()->setVisible(false);
-        }
+        assert(menu);
+        menu->getContextMenu()->hide();
     }
 }
