@@ -22,6 +22,7 @@ var files_dup =
       [ "Sgl::Container", "class_sgl_1_1_container.html", null ]
     ] ],
     [ "context_menu.h", "context__menu_8h.html", [
+      [ "Sgl::MenuItem", "class_sgl_1_1_menu_item.html", null ],
       [ "Sgl::ContextMenu", "class_sgl_1_1_context_menu.html", null ]
     ] ],
     [ "menu_bar.h", "menu__bar_8h.html", [
@@ -61,6 +62,7 @@ var files_dup =
     [ "default_skins.h", "default__skins_8h.html", "default__skins_8h" ],
     [ "skin.h", "skin_8h.html", [
       [ "Sgl::Skin", "class_sgl_1_1_skin.html", "class_sgl_1_1_skin" ],
+      [ "Sgl::BaseSkin< C >", "class_sgl_1_1_base_skin.html", null ],
       [ "Sgl::Skinnable", "class_sgl_1_1_skinnable.html", null ]
     ] ],
     [ "utils.h", "utils_8h.html", null ],

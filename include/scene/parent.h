@@ -63,6 +63,7 @@ namespace Sgl
         void setBorder(const Border* border);
 
         Insets getInsets() const;
+        Sml::Rectangle<int32_t> getContentArea() const;
         
         Insets getPadding() const;
         void setPadding(const Insets& padding);

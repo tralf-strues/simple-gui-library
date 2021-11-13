@@ -10,17 +10,16 @@
 
 namespace Sgl
 {
-    Button::Button(const char* label)
-        : m_Label(label)
+    Button::Button(const char* label) : m_Label(label)
     {
         m_DefaultSkin = new DefaultSkins::ButtonSkin(this);
         setSkin(m_DefaultSkin);
     }
 
-    Button::Button(Skin* skin, const char* label)
-        : m_Label(label)
+    Button::Button(BaseSkin<Button>* skin, const char* label) : m_Label(label)
     {
         assert(skin);
+        skin->attach(this);
         setSkin(skin);
     }
 

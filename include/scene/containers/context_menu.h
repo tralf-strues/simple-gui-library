@@ -13,9 +13,19 @@
 namespace Sgl
 {
     class Scene;
+    class Button;
+
+    class MenuItem : public Button
+    {
+    public:
+        MenuItem(const char* label);
+    };
 
     class ContextMenu : public VBox
     {
+    public:
+        static const Border DEFAULT_BORDER;
+
     public:
         ContextMenu(Scene* scene, Component* sourceComponent = nullptr);
 

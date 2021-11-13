@@ -100,6 +100,7 @@ Inheritance diagram for Sgl::Button:</div>
 <area href="class_sgl_1_1_parent.html" alt="Sgl::Parent" shape="rect" coords="0,112,106,136"/>
 <area href="class_sgl_1_1_skinnable.html" alt="Sgl::Skinnable" shape="rect" coords="116,112,222,136"/>
 <area href="class_sgl_1_1_component.html" alt="Sgl::Component" shape="rect" coords="0,56,106,80"/>
+<area href="class_sgl_1_1_menu_item.html" alt="Sgl::MenuItem" shape="rect" coords="58,280,164,304"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -107,8 +108,8 @@ Inheritance diagram for Sgl::Button:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad6dabe3bd65a253addb95ff8361f2e25"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_button.html#ad6dabe3bd65a253addb95ff8361f2e25">Button</a> (const char *label)</td></tr>
 <tr class="separator:ad6dabe3bd65a253addb95ff8361f2e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a454758317f8e058be785fdf7d3ee4df2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_button.html#a454758317f8e058be785fdf7d3ee4df2">Button</a> (<a class="el" href="class_sgl_1_1_skin.html">Skin</a> *skin, const char *label)</td></tr>
-<tr class="separator:a454758317f8e058be785fdf7d3ee4df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa26d93cd1989dc6d1ec7c3d4bbf4401b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_button.html#aa26d93cd1989dc6d1ec7c3d4bbf4401b">Button</a> (<a class="el" href="class_sgl_1_1_base_skin.html">BaseSkin</a>&lt; <a class="el" href="class_sgl_1_1_button.html">Button</a> &gt; *skin, const char *label)</td></tr>
+<tr class="separator:aa26d93cd1989dc6d1ec7c3d4bbf4401b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae544ef06585a4941c5a88f0a874901dd"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_button.html#ae544ef06585a4941c5a88f0a874901dd">getLabel</a> () const</td></tr>
 <tr class="separator:ae544ef06585a4941c5a88f0a874901dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb676ddc6632560e5750aea3792908a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_button.html#adb676ddc6632560e5750aea3792908a5">setLabel</a> (const char *label)</td></tr>
@@ -159,6 +160,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa5654e19216252568d28efa04ef2aae1 inherit pub_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40e4b14d81e474781821d0326ec5d083 inherit pub_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_sgl_1_1_insets.html">Insets</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a40e4b14d81e474781821d0326ec5d083">getInsets</a> () const</td></tr>
 <tr class="separator:a40e4b14d81e474781821d0326ec5d083 inherit pub_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a280fa64059f7c726fa058ccc8fbf9906 inherit pub_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">Sml::Rectangle&lt; int32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a280fa64059f7c726fa058ccc8fbf9906">getContentArea</a> () const</td></tr>
+<tr class="separator:a280fa64059f7c726fa058ccc8fbf9906 inherit pub_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2260891a712bb4104b7e60c7ce2aafa inherit pub_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_sgl_1_1_insets.html">Insets</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#ad2260891a712bb4104b7e60c7ce2aafa">getPadding</a> () const</td></tr>
 <tr class="separator:ad2260891a712bb4104b7e60c7ce2aafa inherit pub_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb1b7228752933d193ce9a6233c22d42 inherit pub_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#acb1b7228752933d193ce9a6233c22d42">setPadding</a> (const <a class="el" href="struct_sgl_1_1_insets.html">Insets</a> &amp;padding)</td></tr>
@@ -351,8 +354,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a454758317f8e058be785fdf7d3ee4df2" name="a454758317f8e058be785fdf7d3ee4df2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a454758317f8e058be785fdf7d3ee4df2">&#9670;&nbsp;</a></span>Button() <span class="overload">[2/2]</span></h2>
+<a id="aa26d93cd1989dc6d1ec7c3d4bbf4401b" name="aa26d93cd1989dc6d1ec7c3d4bbf4401b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa26d93cd1989dc6d1ec7c3d4bbf4401b">&#9670;&nbsp;</a></span>Button() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -360,7 +363,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">Sgl::Button::Button </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_sgl_1_1_skin.html">Skin</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_sgl_1_1_base_skin.html">BaseSkin</a>&lt; <a class="el" href="class_sgl_1_1_button.html">Button</a> &gt; *&#160;</td>
           <td class="paramname"><em>skin</em>, </td>
         </tr>
         <tr>
@@ -377,7 +380,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00020">20</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00019">19</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
 
 </div>
 </div>
@@ -397,7 +400,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00031">31</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00030">30</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
 
 </div>
 </div>
@@ -416,7 +419,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00028">28</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00027">27</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
 
 </div>
 </div>
@@ -435,7 +438,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00041">41</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00040">40</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
 
 </div>
 </div>
@@ -455,7 +458,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00032">32</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00031">31</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
 
 </div>
 </div>
@@ -475,7 +478,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00029">29</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00028">28</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
 
 </div>
 </div>
@@ -495,7 +498,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00034">34</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="button_8cpp_source.html#l00033">33</a> of file <a class="el" href="button_8cpp_source.html">button.cpp</a>.</p>
 
 </div>
 </div>

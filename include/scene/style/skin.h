@@ -47,6 +47,13 @@ namespace Sgl
         virtual void layoutChildren();
     };
 
+    template<typename C>
+    class BaseSkin : public Skin
+    {
+    public:
+        virtual void attach(C* control) = 0;
+    };
+
     class Skinnable
     {
     public:
@@ -56,6 +63,95 @@ namespace Sgl
     protected:
         Skin* m_Skin = nullptr;
     };
+
+    // template<typename C>
+    // Component* Skin<C>::getHitComponent(int32_t x, int32_t y)
+    // {
+    //     if (Sml::isPointInsideRectangle({x, y}, getControl()->getLayoutBounds()))
+    //     {
+    //         return getModifiableControl();
+    //     }
+
+    //     return nullptr;
+    // }
+
+    // #define CHECK_ENABLED_SIZE(size) if (size != USE_COMPUTED_SIZE) { return size; }
+
+    // template<typename C>
+    // int32_t Skin<C>::computePrefHeight(int32_t width) const
+    // {
+    //     const Control* control = getControl();
+    //     assert(control);
+
+    //     COMPONENT_COMPUTE_DIMENSION(Pref, Height, width, Y, control->getChildrenReadonly(),
+    //                                 control->getPrefHeight());
+    // }
+
+    // template<typename C>
+    // int32_t Skin<C>::computePrefWidth(int32_t height) const
+    // {
+    //     const Control* control = getControl();
+    //     assert(control);
+
+    //     COMPONENT_COMPUTE_DIMENSION(Pref, Width, height, X, control->getChildrenReadonly(),
+    //                                 control->getPrefWidth());
+    // }
+
+    // template<typename C>
+    // int32_t Skin<C>::computeMinHeight(int32_t width) const
+    // {
+    //     const Control* control = getControl();
+    //     assert(control);
+
+    //     COMPONENT_COMPUTE_DIMENSION(Min, Height, width, Y, control->getChildrenReadonly(),
+    //                                 control->getMinHeight());
+    // }
+
+    // template<typename C>
+    // int32_t Skin<C>::computeMinWidth(int32_t height) const
+    // {
+    //     const Control* control = getControl();
+    //     assert(control);
+
+    //     COMPONENT_COMPUTE_DIMENSION(Min, Width, height, X, control->getChildrenReadonly(),
+    //                                 control->getMinWidth());
+    // }
+
+    // template<typename C>
+    // int32_t Skin<C>::computeMaxHeight(int32_t width) const { return Component::UNLIMITED_SIZE; }
+    
+    // template<typename C>
+    // int32_t Skin<C>::computeMaxWidth(int32_t height) const { return Component::UNLIMITED_SIZE; }
+
+    // template<typename C>
+    // void Skin<C>::layoutChildren()
+    // {
+    //     Control* control = getModifiableControl();
+    //     assert(control);
+
+    //     for (Component* child : control->getChildren())
+    //     {
+    //         child->setLayoutWidth(child->computePrefWidth());
+    //         child->setLayoutHeight(child->computePrefHeight());
+    //     }
+    // }
+
+    // template<typename C>
+    // Skin<C>* Skinnable<C>::getSkin()
+    // {
+    //     return m_Skin;
+    // }
+
+    // template<typename C>
+    // void Skinnable<C>::setSkin(Skin<C>* skin)
+    // {
+    //     if (m_Skin != nullptr)
+    //     {
+    //         m_Skin->dispose();
+    //     }
+
+    //     m_Skin = skin;
+    // }
 }
 
 // class IconSkin : public Skin

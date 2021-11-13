@@ -26,7 +26,9 @@ var hierarchy =
             ] ]
           ] ],
           [ "Sgl::Control", "class_sgl_1_1_control.html", [
-            [ "Sgl::Button", "class_sgl_1_1_button.html", null ],
+            [ "Sgl::Button", "class_sgl_1_1_button.html", [
+              [ "Sgl::MenuItem", "class_sgl_1_1_menu_item.html", null ]
+            ] ],
             [ "Sgl::Label", "class_sgl_1_1_label.html", null ]
           ] ]
         ] ],
@@ -53,10 +55,13 @@ var hierarchy =
       [ "Sgl::MouseExitedEvent", "class_sgl_1_1_mouse_exited_event.html", null ]
     ] ],
     [ "Sgl::Skin", "class_sgl_1_1_skin.html", [
-      [ "Sgl::DefaultSkins::ButtonBaseSkin", "class_sgl_1_1_default_skins_1_1_button_base_skin.html", [
-        [ "Sgl::DefaultSkins::ButtonSkin", "class_sgl_1_1_default_skins_1_1_button_skin.html", null ],
-        [ "Sgl::DefaultSkins::MenuItemSkin", "class_sgl_1_1_default_skins_1_1_menu_item_skin.html", null ]
-      ] ]
+      [ "Sgl::BaseSkin< Button >", "class_sgl_1_1_base_skin.html", [
+        [ "Sgl::DefaultSkins::ButtonBaseSkin", "class_sgl_1_1_default_skins_1_1_button_base_skin.html", [
+          [ "Sgl::DefaultSkins::ButtonSkin", "class_sgl_1_1_default_skins_1_1_button_skin.html", null ],
+          [ "Sgl::DefaultSkins::MenuItemSkin", "class_sgl_1_1_default_skins_1_1_menu_item_skin.html", null ]
+        ] ]
+      ] ],
+      [ "Sgl::BaseSkin< C >", "class_sgl_1_1_base_skin.html", null ]
     ] ],
     [ "Sgl::Skinnable", "class_sgl_1_1_skinnable.html", [
       [ "Sgl::Control", "class_sgl_1_1_control.html", null ]

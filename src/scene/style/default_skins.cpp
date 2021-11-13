@@ -88,8 +88,7 @@ namespace DefaultSkins
         }
     }
 
-    ButtonBaseSkin::ButtonBaseSkin(Button* button,
-                                   const StaticStyle* staticStyle,
+    ButtonBaseSkin::ButtonBaseSkin(const StaticStyle* staticStyle,
                                    const InteractionStyle* idleStyle,
                                    const InteractionStyle* hoveredStyle,
                                    const InteractionStyle* pressedStyle)
@@ -97,15 +96,23 @@ namespace DefaultSkins
           m_IdleStyle(idleStyle),
           m_HoveredStyle(hoveredStyle),
           m_PressedStyle(pressedStyle),
-          m_Button(button),
-          m_Text(*g_DefaultFont, nullptr)
+          m_Text(*g_DefaultFont, nullptr) {}
+
+    ButtonBaseSkin::ButtonBaseSkin(Button* button,
+                                   const StaticStyle* staticStyle,
+                                   const InteractionStyle* idleStyle,
+                                   const InteractionStyle* hoveredStyle,
+                                   const InteractionStyle* pressedStyle)
+        : ButtonBaseSkin(staticStyle, idleStyle, hoveredStyle, pressedStyle)
     {
-        assert(m_Button);
-        attach();
+        assert(button);
+        attach(button);
     }
 
-    void ButtonBaseSkin::attach()
+    void ButtonBaseSkin::attach(Button* button)
     {
+        m_Button = button;
+
         m_Handler = new ButtonBaseSkinEventListener(*m_Button);
         m_Button->getEventDispatcher()->attachHandler(BUTTON_SKIN_LISTENER_EVENTS, m_Handler);
 
@@ -255,6 +262,9 @@ namespace DefaultSkins
     const ButtonBaseSkin::InteractionStyle ButtonSkin::HOVERED_STYLE           = {HOVERED_FOREGROUND,
                                                                                   &HOVERED_BACKGROUND};
 
+    ButtonSkin::ButtonSkin()
+        : ButtonBaseSkin(&STATIC_STYLE, &IDLE_STYLE, &HOVERED_STYLE, nullptr) {}
+
     ButtonSkin::ButtonSkin(Sgl::Button* button)
         : ButtonBaseSkin(button, &STATIC_STYLE, &IDLE_STYLE, &HOVERED_STYLE, nullptr) {}
 
@@ -279,6 +289,9 @@ namespace DefaultSkins
     const Background                       MenuItemSkin::HOVERED_BACKGROUND      = {&HOVERED_BACKGROUND_FILL};
     const ButtonBaseSkin::InteractionStyle MenuItemSkin::HOVERED_STYLE           = {HOVERED_FOREGROUND,
                                                                                     &HOVERED_BACKGROUND};
+
+    MenuItemSkin::MenuItemSkin()
+        : ButtonBaseSkin(&STATIC_STYLE, &IDLE_STYLE, &HOVERED_STYLE, nullptr) {}
 
     MenuItemSkin::MenuItemSkin(Sgl::Button* button)
         : ButtonBaseSkin(button, &STATIC_STYLE, &IDLE_STYLE, &HOVERED_STYLE, nullptr) {}

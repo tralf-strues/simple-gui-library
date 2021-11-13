@@ -39,16 +39,16 @@ namespace Sgl
 
     void BoxContainer::layoutChildren()
     {
+        Sml::Rectangle<int32_t> contentArea = getContentArea();
+
         if (m_Direction == Direction::LEFT_TO_RIGHT)
         {
-            int32_t  widthForSpacers    = getLayoutWidth() - computeCustomPrefWidth();
+            int32_t  widthForSpacers    = contentArea.width - computeCustomPrefWidth();
             uint32_t totalSpacersWeight = computeTotalSpacersWeight();
 
-            int32_t curX = getInsets().left + computeSpacerSize(nullptr, totalSpacersWeight,
-                                                                widthForSpacers);
-
-            int32_t centerY = getInsets().top +
-                              (getLayoutHeight() - getInsets().top - getInsets().bottom) / 2;
+            int32_t curX    = contentArea.pos.x + computeSpacerSize(nullptr, totalSpacersWeight,
+                                                                    widthForSpacers);
+            int32_t centerY = contentArea.pos.y + contentArea.height / 2;
 
             for (Component* child : m_Children)
             {
@@ -57,22 +57,22 @@ namespace Sgl
                 curX += child->getLayoutWidth() + getSpacing() +
                         computeSpacerSize(child, totalSpacersWeight, widthForSpacers);
 
-                child->setLayoutHeight(m_FillAcross ? getLayoutHeight() : child->computePrefHeight());
+                child->setLayoutHeight(m_FillAcross ? contentArea.height : child->computePrefHeight());
                 child->setLayoutY(centerY - child->getLayoutHeight() / 2);
             }
         }
         else if (m_Direction == Direction::TOP_TO_BOTTOM)
         {
-            int32_t  heightForSpacers   = getLayoutHeight() - computeCustomPrefHeight();
+            int32_t  heightForSpacers   = contentArea.height - computeCustomPrefHeight();
             uint32_t totalSpacersWeight = computeTotalSpacersWeight();
 
-            int32_t curY = getInsets().top + computeSpacerSize(nullptr, totalSpacersWeight,
-                                                               heightForSpacers);
+            int32_t curY = contentArea.pos.y + computeSpacerSize(nullptr, totalSpacersWeight,
+                                                                 heightForSpacers);
 
             for (Component* child : m_Children)
             {
-                child->setLayoutX(0);
-                child->setLayoutWidth(m_FillAcross ? getLayoutWidth() : child->computePrefWidth());
+                child->setLayoutX(contentArea.pos.x);
+                child->setLayoutWidth(m_FillAcross ? contentArea.width : child->computePrefWidth());
 
                 child->setLayoutY(curY);
                 child->setLayoutHeight(child->computePrefHeight());

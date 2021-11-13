@@ -107,6 +107,17 @@ namespace Sgl
     {
         return (m_Border == nullptr ? Insets::EMPTY : m_Border->getInsets()) + getPadding();
     }
+
+    Sml::Rectangle<int32_t> Parent::getContentArea() const
+    {
+        Insets insets = getInsets();
+        Sml::Rectangle<int32_t> contentArea = getOriginBounds();
+        contentArea.pos    += {insets.left, insets.top};
+        contentArea.width  -= insets.left + insets.right;
+        contentArea.height -= insets.top + insets.bottom;
+
+        return contentArea;
+    }
     
     Insets Parent::getPadding() const { return m_Padding; }
     void Parent::setPadding(const Insets& padding) { m_Padding = padding; }

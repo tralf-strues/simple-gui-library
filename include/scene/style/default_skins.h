@@ -29,7 +29,7 @@ namespace DefaultSkins
     //------------------------------------------------------------------------------
     // ButtonBaseSkin
     //------------------------------------------------------------------------------
-    class ButtonBaseSkin : public Sgl::Skin
+    class ButtonBaseSkin : public Sgl::BaseSkin<Button>
     {
     public:
         struct StaticStyle
@@ -59,7 +59,13 @@ namespace DefaultSkins
                        const InteractionStyle* hoveredStyle,
                        const InteractionStyle* pressedStyle);
 
+        ButtonBaseSkin(const StaticStyle* staticStyle,
+                       const InteractionStyle* idleStyle,
+                       const InteractionStyle* hoveredStyle,
+                       const InteractionStyle* pressedStyle);
+
         virtual void dispose() override;
+        virtual void attach(Button* button) override;
 
         virtual void prerenderControl() override;
 
@@ -88,7 +94,6 @@ namespace DefaultSkins
 
         int32_t getMargin() const;
 
-        void attach();
         void applyStaticStyle();
     };
 
@@ -114,6 +119,7 @@ namespace DefaultSkins
         static const InteractionStyle HOVERED_STYLE;
     
     public:
+        ButtonSkin();
         ButtonSkin(Sgl::Button* button);
     };
 
@@ -139,6 +145,7 @@ namespace DefaultSkins
         static const InteractionStyle HOVERED_STYLE;
     
     public:
+        MenuItemSkin();
         MenuItemSkin(Sgl::Button* button);
     };
 
