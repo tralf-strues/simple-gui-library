@@ -112,6 +112,8 @@ namespace Sgl
         int32_t               m_MaxWidth       = USE_COMPUTED_SIZE;
         int32_t               m_MaxHeight      = USE_COMPUTED_SIZE;
 
+        virtual void setSceneInSceneTree(Scene* scene) override final;
+
         virtual void layoutChildren();
         virtual void prerenderSelf();
         void updateSnapshotSize();

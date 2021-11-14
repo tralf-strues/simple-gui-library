@@ -4,6 +4,11 @@ var hierarchy =
     [ "Sgl::Border", "class_sgl_1_1_border.html", null ],
     [ "Sml::Event", null, [
       [ "Sgl::ActionEvent", "class_sgl_1_1_action_event.html", null ],
+      [ "Sgl::DragEvent", "class_sgl_1_1_drag_event.html", [
+        [ "Sgl::DragEndEvent", "class_sgl_1_1_drag_end_event.html", null ],
+        [ "Sgl::DragMoveEvent", "class_sgl_1_1_drag_move_event.html", null ],
+        [ "Sgl::DragStartEvent", "class_sgl_1_1_drag_start_event.html", null ]
+      ] ],
       [ "Sgl::FocusEvent", "class_sgl_1_1_focus_event.html", null ]
     ] ],
     [ "Sml::EventDispatchChain", null, [
@@ -46,8 +51,9 @@ var hierarchy =
     [ "Sgl::Insets", "struct_sgl_1_1_insets.html", null ],
     [ "Sgl::DefaultSkins::ButtonBaseSkin::InteractionStyle", "struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_interaction_style.html", null ],
     [ "Sml::Listener", null, [
-      [ "Sgl::ActionListener", "class_sgl_1_1_action_listener.html", null ],
+      [ "Sgl::ActionListener< C >", "class_sgl_1_1_action_listener.html", null ],
       [ "Sgl::DefaultSkins::ButtonBaseSkinEventListener", "class_sgl_1_1_default_skins_1_1_button_base_skin_event_listener.html", null ],
+      [ "Sgl::DragListener", "class_sgl_1_1_drag_listener.html", null ],
       [ "Sgl::FocusListener", "class_sgl_1_1_focus_listener.html", [
         [ "Sgl::ContextMenuFocusListener", "class_sgl_1_1_context_menu_focus_listener.html", null ]
       ] ],

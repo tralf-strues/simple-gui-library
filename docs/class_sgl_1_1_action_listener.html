@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Simple GUI Library: Sgl::ActionListener Class Reference</title>
+<title>Simple GUI Library: Sgl::ActionListener&lt; C &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -87,11 +87,11 @@ $(document).ready(function(){initNavTree('class_sgl_1_1_action_listener.html',''
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_sgl_1_1_action_listener-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Sgl::ActionListener Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">Sgl::ActionListener&lt; C &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for Sgl::ActionListener:</div>
+Inheritance diagram for Sgl::ActionListener&lt; C &gt;:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_sgl_1_1_action_listener.png" alt=""/>
@@ -99,27 +99,96 @@ Inheritance diagram for Sgl::ActionListener:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a401c2ba993163cf541477ee9fb55851d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_action_listener.html#a401c2ba993163cf541477ee9fb55851d">onEvent</a> (Sml::Event *event) override final</td></tr>
-<tr class="separator:a401c2ba993163cf541477ee9fb55851d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b16572474e30a835eb47cc0b7e68d33"><td class="memItemLeft" align="right" valign="top"><a id="a5b16572474e30a835eb47cc0b7e68d33" name="a5b16572474e30a835eb47cc0b7e68d33"></a>
+<tr class="memitem:a74fa5aeaee58ed4fb3f4ef2b58de6c05"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_action_listener.html#a74fa5aeaee58ed4fb3f4ef2b58de6c05">ActionListener</a> (C *control=nullptr)</td></tr>
+<tr class="separator:a74fa5aeaee58ed4fb3f4ef2b58de6c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23dec2dd7c2abb52a750f9f840539680"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_action_listener.html#a23dec2dd7c2abb52a750f9f840539680">onEvent</a> (Sml::Event *event) override final</td></tr>
+<tr class="separator:a23dec2dd7c2abb52a750f9f840539680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b82e4881785e932313e14733af925b1"><td class="memItemLeft" align="right" valign="top"><a id="a5b82e4881785e932313e14733af925b1" name="a5b82e4881785e932313e14733af925b1"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onAction</b> (<a class="el" href="class_sgl_1_1_action_event.html">ActionEvent</a> *event)=0</td></tr>
-<tr class="separator:a5b16572474e30a835eb47cc0b7e68d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a5b82e4881785e932313e14733af925b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a606df4e698bc079c385542b868c8211a"><td class="memItemLeft" align="right" valign="top">C *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_action_listener.html#a606df4e698bc079c385542b868c8211a">getControl</a> ()</td></tr>
+<tr class="separator:a606df4e698bc079c385542b868c8211a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4daa0aee1029cb0627a5ee8285b1caad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_action_listener.html#a4daa0aee1029cb0627a5ee8285b1caad">setControl</a> (C *control)</td></tr>
+<tr class="separator:a4daa0aee1029cb0627a5ee8285b1caad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00112">112</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a401c2ba993163cf541477ee9fb55851d" name="a401c2ba993163cf541477ee9fb55851d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a401c2ba993163cf541477ee9fb55851d">&#9670;&nbsp;</a></span>onEvent()</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename C&gt;<br />
+class Sgl::ActionListener&lt; C &gt;</div>
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00124">124</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a74fa5aeaee58ed4fb3f4ef2b58de6c05" name="a74fa5aeaee58ed4fb3f4ef2b58de6c05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74fa5aeaee58ed4fb3f4ef2b58de6c05">&#9670;&nbsp;</a></span>ActionListener()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename C &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Sgl::ActionListener::onEvent </td>
+          <td class="memname"><a class="el" href="class_sgl_1_1_action_listener.html">Sgl::ActionListener</a>&lt; C &gt;::<a class="el" href="class_sgl_1_1_action_listener.html">ActionListener</a> </td>
+          <td>(</td>
+          <td class="paramtype">C *&#160;</td>
+          <td class="paramname"><em>control</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00127">127</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a606df4e698bc079c385542b868c8211a" name="a606df4e698bc079c385542b868c8211a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a606df4e698bc079c385542b868c8211a">&#9670;&nbsp;</a></span>getControl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename C &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">C * <a class="el" href="class_sgl_1_1_action_listener.html">Sgl::ActionListener</a>&lt; C &gt;::getControl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00137">137</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+
+</div>
+</div>
+<a id="a23dec2dd7c2abb52a750f9f840539680" name="a23dec2dd7c2abb52a750f9f840539680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23dec2dd7c2abb52a750f9f840539680">&#9670;&nbsp;</a></span>onEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename C &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_sgl_1_1_action_listener.html">Sgl::ActionListener</a>&lt; C &gt;::onEvent </td>
           <td>(</td>
           <td class="paramtype">Sml::Event *&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
@@ -133,7 +202,37 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onAction</b> 
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00115">115</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00129">129</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+
+</div>
+</div>
+<a id="a4daa0aee1029cb0627a5ee8285b1caad" name="a4daa0aee1029cb0627a5ee8285b1caad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4daa0aee1029cb0627a5ee8285b1caad">&#9670;&nbsp;</a></span>setControl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename C &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_sgl_1_1_action_listener.html">Sgl::ActionListener</a>&lt; C &gt;::setControl </td>
+          <td>(</td>
+          <td class="paramtype">C *&#160;</td>
+          <td class="paramname"><em>control</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00138">138</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
 
 </div>
 </div>

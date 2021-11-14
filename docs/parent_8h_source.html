@@ -201,20 +201,22 @@ $(document).ready(function(){initNavTree('parent_8h_source.html',''); initResiza
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        int32_t               m_MaxWidth       = USE_COMPUTED_SIZE;</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        int32_t               m_MaxHeight      = USE_COMPUTED_SIZE;</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> layoutChildren();</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> prerenderSelf();</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordtype">void</span> updateSnapshotSize();</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keyword">virtual</span> int32_t computeCustomPrefWidth(int32_t height = -1) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keyword">virtual</span> int32_t computeCustomPrefHeight(int32_t width = -1) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keyword">virtual</span> int32_t computeCustomMinWidth(int32_t height = -1) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keyword">virtual</span> int32_t computeCustomMinHeight(int32_t width = -1) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keyword">virtual</span> int32_t computeCustomMaxWidth(int32_t height = -1) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keyword">virtual</span> int32_t computeCustomMaxHeight(int32_t width = -1) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    };</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>}</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> setSceneInSceneTree(<a class="code hl_class" href="class_sgl_1_1_scene.html">Scene</a>* scene) <span class="keyword">override</span> <span class="keyword">final</span>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> layoutChildren();</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> prerenderSelf();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordtype">void</span> updateSnapshotSize();</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keyword">virtual</span> int32_t computeCustomPrefWidth(int32_t height = -1) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keyword">virtual</span> int32_t computeCustomPrefHeight(int32_t width = -1) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keyword">virtual</span> int32_t computeCustomMinWidth(int32_t height = -1) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keyword">virtual</span> int32_t computeCustomMinHeight(int32_t width = -1) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keyword">virtual</span> int32_t computeCustomMaxWidth(int32_t height = -1) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keyword">virtual</span> int32_t computeCustomMaxHeight(int32_t width = -1) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    };</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}</div>
 <div class="ttc" id="abackground_8h_html"><div class="ttname"><a href="background_8h.html">background.h</a></div></div>
 <div class="ttc" id="aborder_8h_html"><div class="ttname"><a href="border_8h.html">border.h</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_background_html"><div class="ttname"><a href="class_sgl_1_1_background.html">Sgl::Background</a></div><div class="ttdef"><b>Definition:</b> <a href="background_8h_source.html#l00017">background.h:18</a></div></div>
@@ -223,6 +225,7 @@ $(document).ready(function(){initNavTree('parent_8h_source.html',''); initResiza
 <div class="ttc" id="aclass_sgl_1_1_parent_html"><div class="ttname"><a href="class_sgl_1_1_parent.html">Sgl::Parent</a></div><div class="ttdef"><b>Definition:</b> <a href="parent_8h_source.html#l00017">parent.h:18</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_parent_html_a868d2b08da6aa1d751738d293d90ee98"><div class="ttname"><a href="class_sgl_1_1_parent.html#a868d2b08da6aa1d751738d293d90ee98">Sgl::Parent::addChild</a></div><div class="ttdeci">void addChild(Component *child)</div><div class="ttdoc">Convenience method for adding a child to Parent.</div><div class="ttdef"><b>Definition:</b> <a href="parent_8cpp_source.html#l00082">parent.cpp:82</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_parent_html_a948ec0428d1eb6ad75b12bb180cd7d9d"><div class="ttname"><a href="class_sgl_1_1_parent.html#a948ec0428d1eb6ad75b12bb180cd7d9d">Sgl::Parent::removeChild</a></div><div class="ttdeci">void removeChild(Component *child)</div><div class="ttdoc">Convenience method for removing a child to Parent.</div><div class="ttdef"><b>Definition:</b> <a href="parent_8cpp_source.html#l00091">parent.cpp:91</a></div></div>
+<div class="ttc" id="aclass_sgl_1_1_scene_html"><div class="ttname"><a href="class_sgl_1_1_scene.html">Sgl::Scene</a></div><div class="ttdef"><b>Definition:</b> <a href="scene_8h_source.html#l00019">scene.h:20</a></div></div>
 <div class="ttc" id="acomponent_8h_html"><div class="ttname"><a href="component_8h.html">component.h</a></div></div>
 <div class="ttc" id="astruct_sgl_1_1_insets_html"><div class="ttname"><a href="struct_sgl_1_1_insets.html">Sgl::Insets</a></div><div class="ttdef"><b>Definition:</b> <a href="insets_8h_source.html#l00015">insets.h:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

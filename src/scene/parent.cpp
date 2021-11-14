@@ -222,4 +222,14 @@ namespace Sgl
             m_Snapshot = new Sml::Texture(getContextRenderer(), width, height);
         }
     }
+
+    void Parent::setSceneInSceneTree(Scene* scene)
+    {
+        Component::setSceneInSceneTree(scene);
+
+        for (Component* child : m_Children)
+        {
+            child->setScene(scene);
+        }
+    }
 }

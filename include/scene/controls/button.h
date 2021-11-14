@@ -25,13 +25,13 @@ namespace Sgl
         const Image* getIcon() const;
         void setIcon(const Image* icon);
 
-        void setOnAction(ActionListener* listener);
-        ActionListener* getOnAction(); // TODO: get rid of
+        void setOnAction(ActionListener<Button>* listener);
+        ActionListener<Button>* getOnAction(); // TODO: get rid of
 
     private:
-        const char*     m_Label          = nullptr;
-        const Image*    m_Icon           = nullptr;
+        const char*             m_Label          = nullptr;
+        const Image*            m_Icon           = nullptr;
 
-        ActionListener* m_ActionListener = nullptr;
+        ActionListener<Button>* m_ActionListener = nullptr;
     };
 }

@@ -127,6 +127,31 @@ namespace Sgl
         m_FocusOwner = component;
     }
 
+    Component* Scene::getDragOwner() { return m_DragOwner; }
+
+    void Scene::requestDrag(Component* component)
+    {
+        assert(component);
+
+        finishDrag();
+
+        m_DragOwner = component;
+
+        DragStartEvent dragStartEvent{m_DragOwner};
+        fireEvent(&dragStartEvent);
+    }
+
+    void Scene::finishDrag()
+    {
+        if (m_DragOwner != nullptr)
+        {
+            DragEndEvent dragEndEvent{m_DragOwner};
+            fireEvent(&dragEndEvent);
+
+            m_DragOwner = nullptr;
+        }
+    }
+
     void Scene::registerContextMenu(ContextMenu* contextMenu)
     {
         assert(contextMenu);
@@ -221,9 +246,23 @@ namespace Sgl
 
         updateHoverOwner(newHoverOwner, mouseEvent->getX(), mouseEvent->getY());
 
+        if (mouseEvent->isInCategory(Sml::SystemEventCategory::EVENT_CATEGORY_MOUSE_BUTTON))
+        {
+            finishDrag();
+        }
+
         if (mouseEvent->getType() == Sml::MouseButtonPressedEvent::getStaticType())
         {
             requestFocus(newHoverOwner);
+        }
+
+        if (mouseEvent->getType() == Sml::MouseMovedEvent::getStaticType() && m_DragOwner != nullptr)
+        {
+            Sml::MouseMovedEvent* mouseMovedEvent = dynamic_cast<Sml::MouseMovedEvent*>(mouseEvent);
+            DragMoveEvent dragMoveEvent{mouseMovedEvent->getDeltaX(), mouseMovedEvent->getDeltaY(),
+                                        m_DragOwner};
+
+            fireEvent(&dragMoveEvent);
         }
 
         if (newHoverOwner != nullptr)

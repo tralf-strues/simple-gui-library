@@ -44,6 +44,10 @@ namespace Sgl
         Component* getFocusOwner();
         void requestFocus(Component* component);
 
+        Component* getDragOwner();
+        void requestDrag(Component* component);
+        void finishDrag();
+
         void registerContextMenu(ContextMenu* contextMenu);
         void detachContextMenu(ContextMenu* contextMenu);
 
@@ -56,6 +60,7 @@ namespace Sgl
         Parent*                 m_Root       = nullptr;
         Component*              m_FocusOwner = nullptr;
         Component*              m_HoverOwner = nullptr;
+        Component*              m_DragOwner  = nullptr;
 
         std::list<ContextMenu*> m_ContextMenus;
 

@@ -206,6 +206,8 @@ virtual <a class="el" href="class_sgl_1_1_component.html">Component</a> *&#160;<
 <tr class="separator:a62afe3f5b374e7da0b6f1a13a255bbcc inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8112f1f2cee3a84834667a19114a4e4c inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a8112f1f2cee3a84834667a19114a4e4c">requestFocus</a> ()</td></tr>
 <tr class="separator:a8112f1f2cee3a84834667a19114a4e4c inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a090b48636b473969391e553c91486911 inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a090b48636b473969391e553c91486911">requestDrag</a> ()</td></tr>
+<tr class="separator:a090b48636b473969391e553c91486911 inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec28afb111784f128c93626b0677aebc inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_gui_event_dispatcher.html">GuiEventDispatcher</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#aec28afb111784f128c93626b0677aebc">getEventDispatcher</a> ()</td></tr>
 <tr class="separator:aec28afb111784f128c93626b0677aebc inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31d58297cc79cfa7919a2af00ee5babb inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sgl_1_1_scene.html">Scene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a31d58297cc79cfa7919a2af00ee5babb">getScene</a> ()</td></tr>
@@ -241,6 +243,8 @@ virtual <a class="el" href="class_sgl_1_1_component.html">Component</a> *&#160;<
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:ab697ae62c5985c0fdc7e3d165161ee8b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#ab697ae62c5985c0fdc7e3d165161ee8b">setSceneInSceneTree</a> (<a class="el" href="class_sgl_1_1_scene.html">Scene</a> *scene) override final</td></tr>
+<tr class="separator:ab697ae62c5985c0fdc7e3d165161ee8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6241260932ed3412c9163a9d80d5adb4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a6241260932ed3412c9163a9d80d5adb4">layoutChildren</a> ()</td></tr>
 <tr class="separator:a6241260932ed3412c9163a9d80d5adb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83a8505edfb4f8a851ca528cc8106f35"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a83a8505edfb4f8a851ca528cc8106f35">prerenderSelf</a> ()</td></tr>
@@ -1375,6 +1379,36 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00133">133</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab697ae62c5985c0fdc7e3d165161ee8b" name="ab697ae62c5985c0fdc7e3d165161ee8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab697ae62c5985c0fdc7e3d165161ee8b">&#9670;&nbsp;</a></span>setSceneInSceneTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sgl::Parent::setSceneInSceneTree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_sgl_1_1_scene.html">Scene</a> *&#160;</td>
+          <td class="paramname"><em>scene</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00226">226</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
 
 </div>
 </div>

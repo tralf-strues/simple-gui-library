@@ -44,6 +44,7 @@ namespace Sgl
         virtual bool isResizable() const = 0;
 
         void requestFocus();
+        void requestDrag();
 
         GuiEventDispatcher* getEventDispatcher();
 
@@ -85,6 +86,8 @@ namespace Sgl
         Scene*                  m_Scene        = nullptr;
         Parent*                 m_Parent       = nullptr;
         Sml::Rectangle<int32_t> m_LayoutBounds = {{0, 0}, 0, 0};
+
+        virtual void setSceneInSceneTree(Scene* scene);
     };
 }
 

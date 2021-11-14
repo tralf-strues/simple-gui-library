@@ -19,14 +19,23 @@ namespace Sgl
         MOUSE_EXITED,
 
         FOCUS_CHANGED,
-        ACTION_PERFORMED
+        ACTION_PERFORMED,
+
+        /* Drag & drop events */
+        DRAG_START,
+        DRAG_END,
+        DRAG_MOVE
     };
 
     enum GuiEventCategory
     {
-        EVENT_CATEGORY_GUI = Sml::SML_EVENT_CATEGORY_FIRST_UNSPECIFIED
+        EVENT_CATEGORY_GUI = Sml::SML_EVENT_CATEGORY_FIRST_UNSPECIFIED,
+        EVENT_CATEGORY_DRAG_AND_DROP
     };
 
+    //------------------------------------------------------------------------------
+    // Event category [GUI]
+    //------------------------------------------------------------------------------
     class MouseEnteredEvent : public Sml::MouseEvent
     {
     public:
@@ -93,6 +102,8 @@ namespace Sgl
             {
                 onFocusLost(focusEvent);
             }
+
+            event->consume();
         }
 
         virtual void onFocusGot(FocusEvent* event) {}
@@ -109,14 +120,119 @@ namespace Sgl
         DEFINE_STATIC_EVENT_CATEGORY(EVENT_CATEGORY_GUI)
     };
 
+    template<typename C>
     class ActionListener : public Sml::Listener
     {
     public:
+        ActionListener(C* control = nullptr) : m_Control(control) { }
+
         virtual void onEvent(Sml::Event* event) override final
         {
             onAction(dynamic_cast<ActionEvent*>(event));
+            event->consume();
         }
 
         virtual void onAction(ActionEvent* event) = 0;
+    
+        C* getControl() { return m_Control; }
+        void setControl(C* control) { m_Control = control; }
+
+    private:
+        C* m_Control;
+    };
+
+    //------------------------------------------------------------------------------
+    // Event category [GUI->DRAG_AND_DROP]
+    //------------------------------------------------------------------------------
+    class DragEvent : public Sml::Event
+    {
+    public:
+        DragEvent(Sml::EventTarget* target = nullptr) 
+            : Sml::Event(getStaticType(), getStaticCategory(), target) {}
+
+        DEFINE_STATIC_EVENT_TYPE(Sml::INVALID_EVENT_TYPE)
+        DEFINE_STATIC_EVENT_CATEGORY(EVENT_CATEGORY_GUI | EVENT_CATEGORY_DRAG_AND_DROP)
+    };
+
+    class DragStartEvent : public DragEvent
+    {
+    public:
+        DragStartEvent(Sml::EventTarget* target = nullptr)
+            : DragEvent(target)
+        {
+            m_Type = getStaticType();
+            m_Category = getStaticCategory();
+        }
+
+        DEFINE_STATIC_EVENT_TYPE(DRAG_START)
+        DEFINE_STATIC_EVENT_CATEGORY(DragEvent::getStaticCategory())
+    };
+
+    class DragEndEvent : public DragEvent
+    {
+    public:
+        DragEndEvent(Sml::EventTarget* target = nullptr)
+            : DragEvent(target)
+        {
+            m_Type = getStaticType();
+            m_Category = getStaticCategory();
+        }
+
+        DEFINE_STATIC_EVENT_TYPE(DRAG_END)
+        DEFINE_STATIC_EVENT_CATEGORY(DragEvent::getStaticCategory())
+    };
+
+    class DragMoveEvent : public DragEvent
+    {
+    public:
+        DragMoveEvent(int32_t deltaX, int32_t deltaY, Sml::EventTarget* target = nullptr)
+            : DragEvent(target), m_DeltaX(deltaX), m_DeltaY(deltaY)
+        {
+            m_Type = getStaticType();
+            m_Category = getStaticCategory();
+        }
+
+        int32_t getDeltaX() const { return m_DeltaX; }
+        int32_t getDeltaY() const { return m_DeltaY; }
+
+        DEFINE_STATIC_EVENT_TYPE(DRAG_MOVE)
+        DEFINE_STATIC_EVENT_CATEGORY(DragEvent::getStaticCategory())
+    
+    private:
+        int32_t m_DeltaX = 0;
+        int32_t m_DeltaY = 0;
+    };
+
+    class DragListener : public Sml::Listener
+    {
+        virtual void onEvent(Sml::Event* event) override final
+        {
+            switch (event->getType())
+            {
+                case DragStartEvent::getStaticType():
+                {
+                    onDragStart(dynamic_cast<DragStartEvent*>(event));
+                    break;
+                }
+
+                case DragEndEvent::getStaticType():
+                {
+                    onDragEnd(dynamic_cast<DragEndEvent*>(event));
+                    break;
+                }
+
+                case DragMoveEvent::getStaticType():
+                {
+                    onDragMove(dynamic_cast<DragMoveEvent*>(event));
+                    break;
+                }
+            }
+
+            event->consume();
+        }
+
+        virtual void onDragStart(DragStartEvent* event) {}
+        virtual void onDragEnd(DragEndEvent* event) {}
+        virtual void onDragMove(DragMoveEvent* event) {}
     };
 }

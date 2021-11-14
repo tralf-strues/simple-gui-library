@@ -30,12 +30,13 @@ namespace Sgl
     const Image* Button::getIcon() const { return m_Icon; }
     void Button::setIcon(const Image* icon) { m_Icon = icon; }
 
-    void Button::setOnAction(ActionListener* listener)
+    void Button::setOnAction(ActionListener<Button>* listener)
     {
         assert(listener);
         m_ActionListener = listener;
+        m_ActionListener->setControl(this);
         m_Dispatcher.attachHandler({ActionEvent::getStaticType()}, listener);
     }
 
-    ActionListener* Button::getOnAction() { return m_ActionListener; }
+    ActionListener<Button>* Button::getOnAction() { return m_ActionListener; }
 }

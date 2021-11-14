@@ -38,6 +38,13 @@ namespace Sgl
         getScene()->requestFocus(this);
     }
 
+    void Component::requestDrag()
+    {
+        assert(getScene());
+
+        getScene()->requestDrag(this);
+    }
+
     GuiEventDispatcher* Component::getEventDispatcher()
     {
         return &m_Dispatcher;
@@ -50,7 +57,7 @@ namespace Sgl
 
     void Component::setScene(Scene* scene)
     {
-        m_Scene = scene;
+        setSceneInSceneTree(scene);
     }
 
     Parent* Component::getParent()
@@ -126,5 +133,10 @@ namespace Sgl
         }
 
         return scenePos;
+    }
+
+    void Component::setSceneInSceneTree(Scene* scene)
+    {
+        m_Scene = scene;
     }
 }
