@@ -121,8 +121,6 @@ namespace Sgl
                 FocusEvent focusEvent{FocusEvent::Type::FOCUS_GOT, component};
                 component->m_Focused = true;
                 fireEvent(&focusEvent);
-
-                // component->moveToFront();
             }
         }
 
@@ -139,7 +137,9 @@ namespace Sgl
 
         m_DragOwner = component;
 
-        DragStartEvent dragStartEvent{m_DragOwner};
+        DragStartEvent dragStartEvent{Sml::MouseState::getMouseState().x,
+                                      Sml::MouseState::getMouseState().y,
+                                      m_DragOwner};
         fireEvent(&dragStartEvent);
     }
 
@@ -147,7 +147,12 @@ namespace Sgl
     {
         if (m_DragOwner != nullptr)
         {
-            DragEndEvent dragEndEvent{m_DragOwner};
+            Sml::Vec2<int32_t> pos{Sml::MouseState::getMouseState().x, Sml::MouseState::getMouseState().y};
+            pos = m_DragOwner->computeSceneToLocalPos(pos);
+
+            DragEndEvent dragEndEvent{Sml::MouseState::getMouseState().x,
+                                      Sml::MouseState::getMouseState().y,
+                                      m_DragOwner};
             fireEvent(&dragEndEvent);
 
             m_DragOwner = nullptr;

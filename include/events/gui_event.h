@@ -220,8 +220,8 @@ namespace Sgl
     class DragStartEvent : public DragEvent
     {
     public:
-        DragStartEvent(Sml::EventTarget* target = nullptr)
-            : DragEvent(target)
+        DragStartEvent(int32_t x, int32_t y, Sml::EventTarget* target = nullptr)
+            : DragEvent(target), m_X(x), m_Y(y)
         {
             m_Type = getStaticType();
             m_Category = getStaticCategory();
@@ -229,13 +229,23 @@ namespace Sgl
 
         DEFINE_STATIC_EVENT_TYPE(DRAG_START)
         DEFINE_STATIC_EVENT_CATEGORY(DragEvent::getStaticCategory())
+    
+        int32_t getX() const { return m_X; }
+        void setX(int32_t x) { m_X = x; }
+
+        int32_t getY() const { return m_Y; }
+        void setY(int32_t y) { m_Y = y; }
+
+    private:
+        int32_t m_X = 0;
+        int32_t m_Y = 0;
     };
 
     class DragEndEvent : public DragEvent
     {
     public:
-        DragEndEvent(Sml::EventTarget* target = nullptr)
-            : DragEvent(target)
+        DragEndEvent(int32_t x, int32_t y, Sml::EventTarget* target = nullptr)
+            : DragEvent(target), m_X(x), m_Y(y)
         {
             m_Type = getStaticType();
             m_Category = getStaticCategory();
@@ -243,6 +253,16 @@ namespace Sgl
 
         DEFINE_STATIC_EVENT_TYPE(DRAG_END)
         DEFINE_STATIC_EVENT_CATEGORY(DragEvent::getStaticCategory())
+    
+        int32_t getX() const { return m_X; }
+        void setX(int32_t x) { m_X = x; }
+
+        int32_t getY() const { return m_Y; }
+        void setY(int32_t y) { m_Y = y; }
+
+    private:
+        int32_t m_X = 0;
+        int32_t m_Y = 0;
     };
 
     class DragMoveEvent : public DragEvent

@@ -17,7 +17,7 @@ namespace Sgl
         : Button(new DefaultSkins::MenuItemSkin(), label) {}
 
     const Border     ContextMenu::DEFAULT_BORDER          = {1, 0xCF'CF'CF'FF};
-    const ColorFill  ContextMenu::DEFAULT_BACKGROUND_FILL = {0xE8'E6'EB'FF};
+    const ColorFill  ContextMenu::DEFAULT_BACKGROUND_FILL = {0xEE'EE'EE'FF};
     const Background ContextMenu::DEFAULT_BACKGROUND      = {&DEFAULT_BACKGROUND_FILL};
 
     class ContextMenuFocusListener : public FocusListener<ContextMenu>

@@ -11,6 +11,16 @@
 
 namespace Sgl
 {
+    Component* Component::getHitComponent(int32_t x, int32_t y)
+    {
+        if (Sml::isPointInsideRectangle({x, y}, getLayoutBounds()))
+        {
+            return this;
+        }
+
+        return nullptr;
+    }
+
     Sml::EventDispatchChain* Component::buildEventDispatchChain(Sml::EventDispatchChain* chain)
     {
         assert(chain);
@@ -81,6 +91,36 @@ namespace Sgl
         m_Scene  = m_Parent->getScene();
     }
 
+    Sml::Vec2<int32_t> Component::computeLocalToScenePos(const Sml::Vec2<int32_t>& localPos)
+    {
+        if (getParent() == nullptr) { return localPos; }
+        return getParent()->computeLocalToScenePos(localPos + getLayoutPos());
+    }
+
+    Sml::Vec2<int32_t> Component::computeSceneToLocalPos(const Sml::Vec2<int32_t>& scenePos)
+    {
+        if (getParent() == nullptr) { return scenePos; }
+        return getParent()->computeSceneToLocalPos(scenePos - getLayoutPos());
+
+        // static std::vector<Component*> parents;
+        // parents.clear();
+
+        // parents.push_back();
+
+        // Component* curParent = getParent();
+        // while (curParent != nullptr)
+        // {
+        //     parents.push_back(curParent);
+        //     curParent = curParent->getParent();
+        // }
+
+        // Sml::Vec2<int32_t> localPos = scenePos;
+        // while (!parents.empty())
+        // {
+        //     localPos -= parents.back()->getLayoutPos();
+        // }
+    }
+
     Sml::Rectangle<int32_t> Component::getOriginBounds() const
     {
         return Sml::Rectangle<int32_t>{{0, 0}, getLayoutWidth(), getLayoutHeight()};
@@ -89,6 +129,11 @@ namespace Sgl
     const Sml::Rectangle<int32_t>& Component::getLayoutBounds() const
     {
         return m_LayoutBounds;
+    }
+
+    const Sml::Vec2<int32_t>& Component::getLayoutPos() const
+    {
+        return m_LayoutBounds.pos;
     }
 
     int32_t Component::getLayoutX() const

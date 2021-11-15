@@ -28,7 +28,7 @@ namespace Sgl
         Component() = default;
         virtual ~Component() = default;
 
-        virtual Component* getHitComponent(int32_t x, int32_t y) = 0;
+        virtual Component* getHitComponent(int32_t x, int32_t y);
         virtual void render(const Sml::Rectangle<int32_t>& targetRegion) = 0;
         virtual void layout() = 0;
         virtual void prerender() = 0;
@@ -56,8 +56,12 @@ namespace Sgl
         Parent* getParent();
         void setParent(Parent* parent);
 
+        Sml::Vec2<int32_t> computeLocalToScenePos(const Sml::Vec2<int32_t>& localPos);
+        Sml::Vec2<int32_t> computeSceneToLocalPos(const Sml::Vec2<int32_t>& scenePos);
+
         Sml::Rectangle<int32_t> getOriginBounds() const;
         const Sml::Rectangle<int32_t>& getLayoutBounds() const;
+        const Sml::Vec2<int32_t>& getLayoutPos() const;
         int32_t getLayoutX() const;
         int32_t getLayoutY() const;
         int32_t getLayoutWidth() const;
