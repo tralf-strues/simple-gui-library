@@ -30,15 +30,15 @@ namespace Sgl
         return m_Images;
     }
 
-    void Background::fillArea(const Background& background,
+    void Background::fillArea(const Background* background,
                               const Sml::Rectangle<int32_t>& targetRegion)
     {
-        for (const Fill* fill : background.getFills())
+        for (const Fill* fill : background->getFills())
         {
             fill->fillArea(targetRegion, targetRegion);
         }
 
-        for (const Image* image : background.getImages())
+        for (const Image* image : background->getImages())
         {
             renderImage(image, targetRegion);
         }

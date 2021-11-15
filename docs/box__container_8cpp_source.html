@@ -132,7 +132,7 @@ $(document).ready(function(){initNavTree('box__container_8cpp_source.html',''); 
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">if</span> (m_Direction == Direction::LEFT_TO_RIGHT)</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            int32_t  widthForSpacers    = contentArea.width - computeCustomPrefWidth();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            int32_t  widthForSpacers    = getLayoutWidth() - computeCustomPrefWidth();</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            uint32_t totalSpacersWeight = computeTotalSpacersWeight();</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            int32_t curX    = contentArea.pos.x + computeSpacerSize(<span class="keyword">nullptr</span>, totalSpacersWeight,</div>
@@ -152,7 +152,7 @@ $(document).ready(function(){initNavTree('box__container_8cpp_source.html',''); 
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (m_Direction == Direction::TOP_TO_BOTTOM)</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            int32_t  heightForSpacers   = contentArea.height - computeCustomPrefHeight();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            int32_t  heightForSpacers   = getLayoutHeight() - computeCustomPrefHeight();</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            uint32_t totalSpacersWeight = computeTotalSpacersWeight();</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            int32_t curY = contentArea.pos.y + computeSpacerSize(<span class="keyword">nullptr</span>, totalSpacersWeight,</div>

@@ -15,7 +15,11 @@ namespace Sgl
     Border::Border(int32_t thickness, Sml::Color color)
         : m_Thickness(thickness), m_Color(color) {}
 
-    int32_t Border::getThickness() const
+    Border::Border(const Insets& thickness, Sml::Color color)
+        : m_Thickness(thickness), m_Color(color) {}
+
+
+    const Insets& Border::getThickness() const
     {
         return m_Thickness;
     }
@@ -25,16 +29,45 @@ namespace Sgl
         return m_Color;
     }
 
-    Insets Border::getInsets() const
+    void Border::encloseArea(const Border* border, const Sml::Rectangle<int32_t>& targetRegion)
     {
-        return Insets{m_Thickness};
-    }
+        if (border == nullptr) { return; }
 
-    void Border::encloseArea(const Border& border, const Sml::Rectangle<int32_t>& targetRegion)
-    {
-        if (border.getThickness() == 0) { return; }
+        Sml::Rectangle<int32_t> topBorder{targetRegion.pos, targetRegion.width, border->getThickness().top};
+        Sml::Rectangle<int32_t> leftBorder{targetRegion.pos, border->getThickness().left, targetRegion.height};
 
-        getContextRenderer()->setColor(border.getColor());
-        Sml::renderRect(getContextRenderer(), targetRegion, border.getThickness());
+        Sml::Rectangle<int32_t> bottomBorder;
+        bottomBorder.pos.x  = targetRegion.pos.x;
+        bottomBorder.pos.y  = targetRegion.pos.y + targetRegion.height - border->getThickness().bottom;
+        bottomBorder.width  = targetRegion.width;
+        bottomBorder.height = border->getThickness().bottom;
+
+        Sml::Rectangle<int32_t> rightBorder;
+        rightBorder.pos.x  = targetRegion.pos.x + targetRegion.width - border->getThickness().right;
+        rightBorder.pos.y  = targetRegion.pos.y;
+        rightBorder.width  = border->getThickness().right;
+        rightBorder.height = targetRegion.width;
+
+        getContextRenderer()->setColor(border->getColor());
+     
+        if (border->getThickness().top > 0)
+        {
+            Sml::renderFilledRect(getContextRenderer(), topBorder);
+        }
+
+        if (border->getThickness().right > 0)
+        {
+            Sml::renderFilledRect(getContextRenderer(), rightBorder);
+        }
+
+        if (border->getThickness().bottom > 0)
+        {
+            Sml::renderFilledRect(getContextRenderer(), bottomBorder);
+        }
+
+        if (border->getThickness().left > 0)
+        {
+            Sml::renderFilledRect(getContextRenderer(), leftBorder);
+        }
     }
 }

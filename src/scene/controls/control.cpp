@@ -25,12 +25,13 @@ namespace Sgl
 
     Component* Control::getHitComponent(int32_t x, int32_t y)
     {
-        for (Component* child : m_Children)
+        if (!isVisible()) { return nullptr; }
+
+        Component* hitted = Parent::getHitComponent(x, y);
+
+        if (hitted != nullptr)
         {
-            if (child->getHitComponent(x - getLayoutX(), y - getLayoutY()))
-            {
-                return child;
-            }
+            return hitted;
         }
 
         if (m_Skin != nullptr)

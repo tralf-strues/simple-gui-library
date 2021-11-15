@@ -51,11 +51,17 @@ var hierarchy =
     [ "Sgl::Insets", "struct_sgl_1_1_insets.html", null ],
     [ "Sgl::DefaultSkins::ButtonBaseSkin::InteractionStyle", "struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_interaction_style.html", null ],
     [ "Sml::Listener", null, [
-      [ "Sgl::ActionListener< C >", "class_sgl_1_1_action_listener.html", null ],
-      [ "Sgl::DefaultSkins::ButtonBaseSkinEventListener", "class_sgl_1_1_default_skins_1_1_button_base_skin_event_listener.html", null ],
-      [ "Sgl::DragListener", "class_sgl_1_1_drag_listener.html", null ],
-      [ "Sgl::FocusListener", "class_sgl_1_1_focus_listener.html", [
-        [ "Sgl::ContextMenuFocusListener", "class_sgl_1_1_context_menu_focus_listener.html", null ]
+      [ "Sgl::ComponentEventListener< Button >", "class_sgl_1_1_component_event_listener.html", [
+        [ "Sgl::DefaultSkins::ButtonBaseSkinEventListener", "class_sgl_1_1_default_skins_1_1_button_base_skin_event_listener.html", null ]
+      ] ],
+      [ "Sgl::ComponentEventListener< C >", "class_sgl_1_1_component_event_listener.html", [
+        [ "Sgl::FocusListener< ContextMenu >", "class_sgl_1_1_focus_listener.html", [
+          [ "Sgl::ContextMenuFocusListener", "class_sgl_1_1_context_menu_focus_listener.html", null ]
+        ] ],
+        [ "Sgl::ActionListener< C >", "class_sgl_1_1_action_listener.html", null ],
+        [ "Sgl::DragListener< C >", "class_sgl_1_1_drag_listener.html", null ],
+        [ "Sgl::FocusListener< C >", "class_sgl_1_1_focus_listener.html", null ],
+        [ "Sgl::HoverListener< C >", "class_sgl_1_1_hover_listener.html", null ]
       ] ],
       [ "Sgl::MenuSelectListener", "class_sgl_1_1_menu_select_listener.html", null ]
     ] ],
@@ -67,6 +73,7 @@ var hierarchy =
     [ "Sgl::Skin", "class_sgl_1_1_skin.html", [
       [ "Sgl::BaseSkin< Button >", "class_sgl_1_1_base_skin.html", [
         [ "Sgl::DefaultSkins::ButtonBaseSkin", "class_sgl_1_1_default_skins_1_1_button_base_skin.html", [
+          [ "Sgl::DefaultSkins::ButtonPlaneSkin", "class_sgl_1_1_default_skins_1_1_button_plane_skin.html", null ],
           [ "Sgl::DefaultSkins::ButtonSkin", "class_sgl_1_1_default_skins_1_1_button_skin.html", null ],
           [ "Sgl::DefaultSkins::MenuItemSkin", "class_sgl_1_1_default_skins_1_1_menu_item_skin.html", null ]
         ] ]

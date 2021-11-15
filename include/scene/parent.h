@@ -20,6 +20,7 @@ namespace Sgl
         Parent() = default;
         virtual ~Parent() override = default;
 
+        virtual Component* getHitComponent(int32_t x, int32_t y) override;
         virtual void render(const Sml::Rectangle<int32_t>& targetRegion) override final;
         virtual void layout() override final;
         virtual void prerender() override final;
@@ -86,7 +87,6 @@ namespace Sgl
         int32_t getMaxWidth() const;
         int32_t getMaxHeight() const;
 
-        /* Default computeSize functions don't account for insets! */
         virtual int32_t computePrefWidth(int32_t height = -1) const override final;
         virtual int32_t computePrefHeight(int32_t width = -1) const override final;
         

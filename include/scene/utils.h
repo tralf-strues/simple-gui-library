@@ -14,7 +14,7 @@
  * axis      = {X, Y}
  * children  = children container
  */
-#define COMPONENT_COMPUTE_DIMENSION(type, dimension, dependency, axis, children, enabledValue)  \
+#define COMPONENT_COMPUTE_DIMENSION(type, dimension, dependency, axis, children, enabledValue, addition)  \
     if (enabledValue != Sgl::Component::USE_COMPUTED_SIZE) { return enabledValue; } \
                                                                                     \
     int32_t min##axis = INT32_MAX;                                                  \
@@ -35,7 +35,7 @@
                                                                                     \
     if (min##axis != INT32_MAX)                                                     \
     {                                                                               \
-        return max##axis - min##axis;                                               \
+        return max##axis - min##axis + addition;                                    \
     }                                                                               \
                                                                                     \
-    return 0;
+    return addition;

@@ -86,24 +86,30 @@ $(document).ready(function(){initNavTree('gui__event_8h.html',''); initResizable
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">gui_event.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;sml/events/event.h&quot;</code><br />
 <code>#include &quot;sml/events/system_events.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="core_8h_source.html">../core.h</a>&quot;</code><br />
 </div>
 <p><a href="gui__event_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component_event_listener.html">Sgl::ComponentEventListener&lt; C &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_mouse_entered_event.html">Sgl::MouseEnteredEvent</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_mouse_exited_event.html">Sgl::MouseExitedEvent</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_hover_listener.html">Sgl::HoverListener&lt; C &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_focus_event.html">Sgl::FocusEvent</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_focus_listener.html">Sgl::FocusListener</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_focus_listener.html">Sgl::FocusListener&lt; C &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_action_event.html">Sgl::ActionEvent</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,8 +123,15 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_drag_move_event.html">Sgl::DragMoveEvent</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_drag_listener.html">Sgl::DragListener</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_drag_listener.html">Sgl::DragListener&lt; C &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a20e77cf622fa5e03c3df0239290f5e56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gui__event_8h.html#a20e77cf622fa5e03c3df0239290f5e56">DEFINE_STATIC_LISTENED_EVENT_TYPES</a>(...)&#160;&#160;&#160;        static constexpr std::initializer_list&lt;Sml::EventType&gt; EVENT_TYPES{__VA_ARGS__};</td></tr>
+<tr class="separator:a20e77cf622fa5e03c3df0239290f5e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ecd5e85a95ce224bf6fca37e7c299e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gui__event_8h.html#a1ecd5e85a95ce224bf6fca37e7c299e7">DEFINE_STATIC_LISTENED_EVENT_TYPES_FROM_BASE_CLASS</a>(baseClass)&#160;&#160;&#160;        static constexpr std::initializer_list&lt;Sml::EventType&gt; EVENT_TYPES = baseClass::EVENT_TYPES;</td></tr>
+<tr class="separator:a1ecd5e85a95ce224bf6fca37e7c299e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -145,7 +158,48 @@ Enumerations</h2></td></tr>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a20e77cf622fa5e03c3df0239290f5e56" name="a20e77cf622fa5e03c3df0239290f5e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20e77cf622fa5e03c3df0239290f5e56">&#9670;&nbsp;</a></span>DEFINE_STATIC_LISTENED_EVENT_TYPES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEFINE_STATIC_LISTENED_EVENT_TYPES</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;        static constexpr std::initializer_list&lt;Sml::EventType&gt; EVENT_TYPES{__VA_ARGS__};</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00037">37</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+
+</div>
+</div>
+<a id="a1ecd5e85a95ce224bf6fca37e7c299e7" name="a1ecd5e85a95ce224bf6fca37e7c299e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ecd5e85a95ce224bf6fca37e7c299e7">&#9670;&nbsp;</a></span>DEFINE_STATIC_LISTENED_EVENT_TYPES_FROM_BASE_CLASS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEFINE_STATIC_LISTENED_EVENT_TYPES_FROM_BASE_CLASS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">baseClass</td><td>)</td>
+          <td>&#160;&#160;&#160;        static constexpr std::initializer_list&lt;Sml::EventType&gt; EVENT_TYPES = baseClass::EVENT_TYPES;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00040">40</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a40ea15e959de9c49968b43e11ba8d1ee" name="a40ea15e959de9c49968b43e11ba8d1ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a40ea15e959de9c49968b43e11ba8d1ee">&#9670;&nbsp;</a></span>GuiEventCategory</h2>
 
@@ -158,7 +212,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00030">30</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00031">31</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
 
 </div>
 </div>
@@ -174,7 +228,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00016">16</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00017">17</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
 
 </div>
 </div>

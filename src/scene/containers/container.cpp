@@ -21,14 +21,13 @@ namespace Sgl
 
     Component* Container::getHitComponent(int32_t x, int32_t y)
     {
-        for (Component* child : getChildren())
-        {
-            Component* hitted = child->getHitComponent(x - getLayoutX(), y - getLayoutY());
+        if (!isVisible()) { return nullptr; }
 
-            if (hitted != nullptr)
-            {
-                return hitted;
-            }
+        Component* hitted = Parent::getHitComponent(x, y);
+
+        if (hitted != nullptr)
+        {
+            return hitted;
         }
 
         if (Sml::isPointInsideRectangle({x, y}, getLayoutBounds()))
@@ -43,12 +42,12 @@ namespace Sgl
     {
         if (m_Background != nullptr)
         {
-            Background::fillArea(*m_Background, getOriginBounds());
+            Background::fillArea(m_Background, getOriginBounds());
         }
 
         if (m_Border != nullptr)
         {
-            Border::encloseArea(*m_Border, getOriginBounds());
+            Border::encloseArea(m_Border, getOriginBounds());
         }
     }
 }

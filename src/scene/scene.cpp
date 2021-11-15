@@ -121,6 +121,8 @@ namespace Sgl
                 FocusEvent focusEvent{FocusEvent::Type::FOCUS_GOT, component};
                 component->m_Focused = true;
                 fireEvent(&focusEvent);
+
+                // component->moveToFront();
             }
         }
 

@@ -8,5 +8,6 @@ var searchData=
   ['button_5',['Button',['../class_sgl_1_1_button.html',1,'Sgl']]],
   ['buttonbaseskin_6',['ButtonBaseSkin',['../class_sgl_1_1_default_skins_1_1_button_base_skin.html',1,'Sgl::DefaultSkins']]],
   ['buttonbaseskineventlistener_7',['ButtonBaseSkinEventListener',['../class_sgl_1_1_default_skins_1_1_button_base_skin_event_listener.html',1,'Sgl::DefaultSkins']]],
-  ['buttonskin_8',['ButtonSkin',['../class_sgl_1_1_default_skins_1_1_button_skin.html',1,'Sgl::DefaultSkins']]]
+  ['buttonplaneskin_8',['ButtonPlaneSkin',['../class_sgl_1_1_default_skins_1_1_button_plane_skin.html',1,'Sgl::DefaultSkins']]],
+  ['buttonskin_9',['ButtonSkin',['../class_sgl_1_1_default_skins_1_1_button_skin.html',1,'Sgl::DefaultSkins']]]
 ];

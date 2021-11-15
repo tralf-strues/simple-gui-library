@@ -10,6 +10,7 @@
 
 #include "sml/events/event.h"
 #include "sml/events/system_events.h"
+#include "../core.h"
 
 namespace Sgl
 {
@@ -33,9 +34,27 @@ namespace Sgl
         EVENT_CATEGORY_DRAG_AND_DROP
     };
 
+    #define DEFINE_STATIC_LISTENED_EVENT_TYPES(...) \
+        static constexpr std::initializer_list<Sml::EventType> EVENT_TYPES{__VA_ARGS__};
+
+    #define DEFINE_STATIC_LISTENED_EVENT_TYPES_FROM_BASE_CLASS(baseClass) \
+        static constexpr std::initializer_list<Sml::EventType> EVENT_TYPES = baseClass::EVENT_TYPES;
+
     //------------------------------------------------------------------------------
     // Event category [GUI]
     //------------------------------------------------------------------------------
+    template<typename C>
+    class ComponentEventListener : public Sml::Listener
+    {
+    public:
+        ComponentEventListener(C* component) : m_Component(component) {}
+        C* getComponent() { return m_Component; }
+        void setComponent(C* component) { m_Component = component; }
+
+    private:
+        C* m_Component = nullptr;
+    };
+
     class MouseEnteredEvent : public Sml::MouseEvent
     {
     public:
@@ -64,6 +83,47 @@ namespace Sgl
         DEFINE_STATIC_EVENT_CATEGORY(EVENT_CATEGORY_GUI | Sml::MouseEvent::getStaticCategory())
     };
 
+    template<typename C>
+    class HoverListener : public ComponentEventListener<C>
+    {
+    public:
+        DEFINE_STATIC_LISTENED_EVENT_TYPES(MouseEnteredEvent::getStaticType(),
+                                           MouseExitedEvent::getStaticType())
+    public:
+        HoverListener(C* component) : ComponentEventListener<C>(component) {}
+
+        virtual void onEvent(Sml::Event* event) override final
+        {
+            switch (event->getType())
+            {
+                case MouseEnteredEvent::getStaticType():
+                {
+                    onMouseEntered(dynamic_cast<MouseEnteredEvent*>(event));
+                    break;
+                }
+
+                case MouseExitedEvent::getStaticType():
+                {
+                    onMouseExited(dynamic_cast<MouseExitedEvent*>(event));
+                    break;
+                }
+
+                default:
+                {
+                    LOG_ERROR("HoverListener got invalid Event with type %" PRIu32, event->getType());
+                    break;
+                }
+            };
+
+            event->consume();
+        }
+
+        virtual void onMouseEntered(MouseEnteredEvent* event) {}
+        virtual void onMouseExited(MouseExitedEvent* event) {}
+
+    private:
+    };
+
     class FocusEvent : public Sml::Event
     {
     public:
@@ -87,9 +147,15 @@ namespace Sgl
         const Type m_Type;
     };
 
-    class FocusListener : public Sml::Listener
+    template<typename C>
+    class FocusListener : public ComponentEventListener<C>
     {
     public:
+        DEFINE_STATIC_LISTENED_EVENT_TYPES(FocusEvent::getStaticType())
+
+    public:
+        FocusListener(C* component) : ComponentEventListener<C>(component) {}
+
         virtual void onEvent(Sml::Event* event) override final
         {
             FocusEvent* focusEvent = dynamic_cast<FocusEvent*>(event);
@@ -121,10 +187,13 @@ namespace Sgl
     };
 
     template<typename C>
-    class ActionListener : public Sml::Listener
+    class ActionListener : public ComponentEventListener<C>
     {
     public:
-        ActionListener(C* control = nullptr) : m_Control(control) { }
+        DEFINE_STATIC_LISTENED_EVENT_TYPES(ActionEvent::getStaticType())
+
+    public:
+        ActionListener(C* component = nullptr) : ComponentEventListener<C>(component) {}
 
         virtual void onEvent(Sml::Event* event) override final
         {
@@ -133,12 +202,6 @@ namespace Sgl
         }
 
         virtual void onAction(ActionEvent* event) = 0;
-    
-        C* getControl() { return m_Control; }
-        void setControl(C* control) { m_Control = control; }
-
-    private:
-        C* m_Control;
     };
 
     //------------------------------------------------------------------------------
@@ -203,8 +266,17 @@ namespace Sgl
         int32_t m_DeltaY = 0;
     };
 
-    class DragListener : public Sml::Listener
+    template<typename C>
+    class DragListener : public ComponentEventListener<C>
     {
+    public:
+        DEFINE_STATIC_LISTENED_EVENT_TYPES(DragStartEvent::getStaticType(),
+                                           DragEndEvent::getStaticType(),
+                                           DragMoveEvent::getStaticType())
+
+    public:
+        DragListener(C* component) : ComponentEventListener<C>(component) {}
+
         virtual void onEvent(Sml::Event* event) override final
         {
             switch (event->getType())

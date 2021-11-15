@@ -30,63 +30,57 @@ namespace DefaultSkins
     //------------------------------------------------------------------------------
     // ButtonBaseSkin
     //------------------------------------------------------------------------------
-    const std::initializer_list<Sml::EventType> BUTTON_SKIN_LISTENER_EVENTS = {
-            MouseEnteredEvent::getStaticType(),
-            MouseExitedEvent::getStaticType(),
-            Sml::MouseButtonPressedEvent::getStaticType()
-        };
-
-    class ButtonBaseSkinEventListener : public Sml::Listener
+    class ButtonBaseSkinEventListener : public ComponentEventListener<Button>
     {
     public:
-        Button& button;
-        
-        ButtonBaseSkinEventListener(Button& button);
+        DEFINE_STATIC_LISTENED_EVENT_TYPES(MouseEnteredEvent::getStaticType(),
+                                           MouseExitedEvent::getStaticType(),
+                                           Sml::MouseButtonPressedEvent::getStaticType())
 
-        virtual void onEvent(Sml::Event* event) override;
-    };
+    public:
+        ButtonBaseSkinEventListener(Button* button) : ComponentEventListener<Button>(button) {}
 
-    ButtonBaseSkinEventListener::ButtonBaseSkinEventListener(Button& button)
-        : button(button) {}
-
-    void ButtonBaseSkinEventListener::onEvent(Sml::Event* event)
-    {
-        ASSERT_CATEGORY(Sml::MouseEvent);
-        ButtonBaseSkin& skin = dynamic_cast<ButtonBaseSkin&>(*button.getSkin());
-        
-        switch (event->getType())
+        virtual void onEvent(Sml::Event* event) override
         {
-            case MouseEnteredEvent::getStaticType():
+            ASSERT_CATEGORY(Sml::MouseEvent);
+            ButtonBaseSkin& skin = dynamic_cast<ButtonBaseSkin&>(*getComponent()->getSkin());
+            
+            switch (event->getType())
             {
-                skin.applyInteractionStyle(ButtonBaseSkin::InteractionStyle::Type::HOVERED);
-                break;
-            }
-
-            case MouseExitedEvent::getStaticType():
-            {
-                skin.applyInteractionStyle(ButtonBaseSkin::InteractionStyle::Type::IDLE);
-                break;
-            }
-
-            case Sml::MouseButtonPressedEvent::getStaticType():
-            {
-                if (button.getOnAction() != nullptr)
+                case MouseEnteredEvent::getStaticType():
                 {
-                    // FIXME: Add event queue!
-                    ActionEvent event{&button};
-                    button.getOnAction()->onAction(&event);
+                    skin.applyInteractionStyle(ButtonBaseSkin::InteractionStyle::Type::HOVERED);
+                    break;
                 }
 
-                break;
+                case MouseExitedEvent::getStaticType():
+                {
+                    skin.applyInteractionStyle(ButtonBaseSkin::InteractionStyle::Type::IDLE);
+                    break;
+                }
+
+                case Sml::MouseButtonPressedEvent::getStaticType():
+                {
+                    if (getComponent()->getOnAction() != nullptr)
+                    {
+                        // FIXME: Add event queue!
+                        ActionEvent event{getComponent()};
+                        getComponent()->getOnAction()->onAction(&event);
+                    }
+
+                    break;
+                }
+
+                default:
+                {
+                    INVALID_EVENT_TYPE(ButtonBaseSkinEventListener);
+                    break;
+                }
             }
 
-            default:
-            {
-                INVALID_EVENT_TYPE(ButtonBaseSkinEventListener);
-                break;
-            }
+            event->consume();
         }
-    }
+    };
 
     ButtonBaseSkin::ButtonBaseSkin(const StaticStyle* staticStyle,
                                    const InteractionStyle* idleStyle,
@@ -113,8 +107,8 @@ namespace DefaultSkins
     {
         m_Button = button;
 
-        m_Handler = new ButtonBaseSkinEventListener(*m_Button);
-        m_Button->getEventDispatcher()->attachHandler(BUTTON_SKIN_LISTENER_EVENTS, m_Handler);
+        m_Handler = new ButtonBaseSkinEventListener(m_Button);
+        m_Button->getEventDispatcher()->attachHandler(ButtonBaseSkinEventListener::EVENT_TYPES, m_Handler);
 
         m_Button->addChild(&m_Icon);
         m_Button->addChild(&m_Text);
@@ -134,20 +128,17 @@ namespace DefaultSkins
 
     void ButtonBaseSkin::prerenderControl()
     {
-        m_Text.setString(m_Button->getLabel());
-        m_Icon.setImage(m_Button->getIcon());
-
         Sml::Texture* savedTarget = getContextRenderer()->getTarget();
         getContextRenderer()->setTarget(m_Button->getSnapshot());
 
         if (m_Button->getBackground() != nullptr)
         {
-            Background::fillArea(*m_Button->getBackground(), m_Button->getOriginBounds());
+            Background::fillArea(m_Button->getBackground(), m_Button->getOriginBounds());
         }
 
         if (m_Button->getBorder() != nullptr)
         {
-            Border::encloseArea(*m_Button->getBorder(), m_Button->getOriginBounds());
+            Border::encloseArea(m_Button->getBorder(), m_Button->getOriginBounds());
         }
 
         getContextRenderer()->setTarget(savedTarget);
@@ -158,37 +149,42 @@ namespace DefaultSkins
 
     int32_t ButtonBaseSkin::computePrefHeight(int32_t width) const
     {
-        const Insets& padding = m_Button->getPadding();
+        Insets insets = m_Button->getInsets();
 
-        return padding.top + padding.bottom +
+        return insets.top + insets.bottom +
                std::max(m_Text.computePrefHeight(width), m_Icon.computePrefHeight(width));
     }
 
     int32_t ButtonBaseSkin::computePrefWidth(int32_t height) const
     {
-        const Insets& padding = m_Button->getPadding();
+        Insets insets = m_Button->getInsets();
 
         int32_t textPrefWidth = m_Text.computePrefWidth(height);
         int32_t iconPrefWidth = m_Icon.computePrefWidth(height);
 
-        return padding.left + padding.right +
+        return insets.left + insets.right +
                ((textPrefWidth != 0 && iconPrefWidth != 0) ? getMargin() : 0) +
                textPrefWidth + iconPrefWidth;
     }
 
     void ButtonBaseSkin::layoutChildren()
     {
+        m_Text.setString(m_Button->getLabel());
+        m_Icon.setImage(m_Button->getIcon());
+
         m_Text.setLayoutWidth(m_Text.computePrefWidth());
         m_Text.setLayoutHeight(m_Text.computePrefHeight());
 
         m_Icon.setLayoutWidth(m_Icon.computePrefWidth());
         m_Icon.setLayoutHeight(m_Icon.computePrefHeight());
 
-        const Insets& padding = m_Button->getPadding();
-        Sml::Rectangle<int32_t> contentArea = m_Button->getOriginBounds();
-        contentArea.pos    += {padding.left, padding.top};
-        contentArea.width  -= padding.left + padding.right;
-        contentArea.height -= padding.top + padding.bottom;
+        // const Insets& padding = m_Button->getPadding();
+        Sml::Rectangle<int32_t> contentArea = m_Button->getContentArea();
+        // contentArea.pos    += {padding.left, padding.top};
+        // contentArea.width  -= padding.left + padding.right;
+        // contentArea.height -= padding.top + padding.bottom;
+
+        // Insets insets = m_Button->getInsets();
 
         int32_t centerY = contentArea.pos.y + contentArea.height / 2;
 
@@ -239,6 +235,15 @@ namespace DefaultSkins
             m_Button->setBackground(nullptr);
         }
     }
+
+    //------------------------------------------------------------------------------
+    // ButtonPlaneSkin
+    //------------------------------------------------------------------------------
+    ButtonPlaneSkin::ButtonPlaneSkin()
+        : ButtonBaseSkin(nullptr, nullptr, nullptr, nullptr) {}
+
+    ButtonPlaneSkin::ButtonPlaneSkin(Sgl::Button* button)
+        : ButtonBaseSkin(button, nullptr, nullptr, nullptr, nullptr) {}
 
     //------------------------------------------------------------------------------
     // ButtonSkin
@@ -295,6 +300,10 @@ namespace DefaultSkins
 
     MenuItemSkin::MenuItemSkin(Sgl::Button* button)
         : ButtonBaseSkin(button, &STATIC_STYLE, &IDLE_STYLE, &HOVERED_STYLE, nullptr) {}
+
+    //------------------------------------------------------------------------------
+    // ButtonIconSkin
+    //------------------------------------------------------------------------------
 }
 }
 

@@ -17,18 +17,18 @@ namespace Sgl
     class Border
     {
     public:
-        static void encloseArea(const Border& border, const Sml::Rectangle<int32_t>& targetRegion);
+        static void encloseArea(const Border* border, const Sml::Rectangle<int32_t>& targetRegion);
 
     public:
         Border() = default;
         Border(int32_t thickness, Sml::Color color);
+        Border(const Insets& thickness, Sml::Color color);
 
-        int32_t getThickness() const;
+        const Insets& getThickness() const;
         Sml::Color getColor() const;
-        Insets getInsets() const;
 
     private:
-        int32_t    m_Thickness = 0;
+        Insets     m_Thickness = 0;
         Sml::Color m_Color     = Sml::COLOR_TRANSPARENT;
     };
 }

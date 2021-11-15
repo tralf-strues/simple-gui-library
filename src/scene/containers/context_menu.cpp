@@ -20,19 +20,16 @@ namespace Sgl
     const ColorFill  ContextMenu::DEFAULT_BACKGROUND_FILL = {0xE8'E6'EB'FF};
     const Background ContextMenu::DEFAULT_BACKGROUND      = {&DEFAULT_BACKGROUND_FILL};
 
-    class ContextMenuFocusListener : public FocusListener
+    class ContextMenuFocusListener : public FocusListener<ContextMenu>
     {
     public:
-        ContextMenuFocusListener(ContextMenu* menu) : m_Menu(menu) {}
+        ContextMenuFocusListener(ContextMenu* menu) : FocusListener(menu) {}
 
         virtual void onFocusLost(FocusEvent* event) override
         {
             LOG_INFO("Hide ContextMenu!");
-            m_Menu->hide();
+            getComponent()->hide();
         }
-
-    private:
-        ContextMenu* m_Menu = nullptr;
     };
 
     ContextMenu::ContextMenu(Scene* scene, Component* sourceComponent)
@@ -47,8 +44,8 @@ namespace Sgl
 
         setScene(scene);
         scene->registerContextMenu(this);
-        getEventDispatcher()->attachHandler({FocusEvent::getStaticType()},
-                                             new ContextMenuFocusListener(this));
+        getEventDispatcher()->attachHandler(FocusListener<ContextMenu>::EVENT_TYPES,
+                                            new ContextMenuFocusListener(this));
     }
 
     Component* ContextMenu::getSource() { return m_Source; }

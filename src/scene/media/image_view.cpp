@@ -27,7 +27,9 @@ namespace Sgl
     {
         if (m_Image != nullptr)
         {
-            renderImage(m_Image, targetRegion, m_LayoutBounds.width, m_LayoutBounds.height);
+            Sml::Rectangle<int32_t> translatedRegion = targetRegion;
+            translatedRegion.pos += {getLayoutX(), getLayoutY()};
+            renderImage(m_Image, translatedRegion, getLayoutWidth(), getLayoutHeight());
         }
     }
 
@@ -61,14 +63,14 @@ namespace Sgl
     {
         if (m_Image == nullptr) { return 0; }
 
-        return (m_FitWidth == USE_COMPUTED_SIZE) ? m_FitWidth : getImage()->getWidth();
+        return (m_FitWidth != USE_COMPUTED_SIZE) ? m_FitWidth : getImage()->getWidth();
     }
 
     int32_t ImageView::computePrefHeight(int32_t width) const
     {
         if (m_Image == nullptr) { return 0; }
 
-        return (m_FitHeight == USE_COMPUTED_SIZE) ? m_FitHeight : getImage()->getHeight();
+        return (m_FitHeight != USE_COMPUTED_SIZE) ? m_FitHeight : getImage()->getHeight();
     }
     
     int32_t ImageView::computeMinWidth(int32_t height) const { return 0; }

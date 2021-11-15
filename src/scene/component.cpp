@@ -45,6 +45,16 @@ namespace Sgl
         getScene()->requestDrag(this);
     }
 
+    // void Component::moveToFront()
+    // {
+    //     if (getParent() == nullptr) { return; }
+
+    //     getParent()->getChildren().remove(this);
+    //     getParent()->getChildren().push_back(this);
+
+    //     getParent()->moveToFront();
+    // }
+
     GuiEventDispatcher* Component::getEventDispatcher()
     {
         return &m_Dispatcher;

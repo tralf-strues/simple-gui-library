@@ -44,10 +44,6 @@ namespace Sgl
         void showMenu(Menu* menu);
         void hideMenu(Menu* menu);
 
-        // virtual Component* getHitComponent(int32_t x, int32_t y) override;
-        // virtual void updateGraphics() override;
-        // virtual void render(Texture* target, const Rectangle<int32_t>& targetRegion) override;
-
     private:
         std::list<Menu*> m_Menus;
     };

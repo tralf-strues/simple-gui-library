@@ -4,6 +4,7 @@ var annotated_dup =
       [ "DefaultSkins", null, [
         [ "ButtonBaseSkin", "class_sgl_1_1_default_skins_1_1_button_base_skin.html", "class_sgl_1_1_default_skins_1_1_button_base_skin" ],
         [ "ButtonBaseSkinEventListener", "class_sgl_1_1_default_skins_1_1_button_base_skin_event_listener.html", null ],
+        [ "ButtonPlaneSkin", "class_sgl_1_1_default_skins_1_1_button_plane_skin.html", null ],
         [ "ButtonSkin", "class_sgl_1_1_default_skins_1_1_button_skin.html", null ],
         [ "MenuItemSkin", "class_sgl_1_1_default_skins_1_1_menu_item_skin.html", null ]
       ] ],
@@ -16,6 +17,7 @@ var annotated_dup =
       [ "Button", "class_sgl_1_1_button.html", null ],
       [ "ColorFill", "class_sgl_1_1_color_fill.html", null ],
       [ "Component", "class_sgl_1_1_component.html", null ],
+      [ "ComponentEventListener", "class_sgl_1_1_component_event_listener.html", null ],
       [ "Container", "class_sgl_1_1_container.html", null ],
       [ "ContextMenu", "class_sgl_1_1_context_menu.html", null ],
       [ "ContextMenuFocusListener", "class_sgl_1_1_context_menu_focus_listener.html", null ],
@@ -29,6 +31,7 @@ var annotated_dup =
       [ "FocusEvent", "class_sgl_1_1_focus_event.html", null ],
       [ "FocusListener", "class_sgl_1_1_focus_listener.html", null ],
       [ "HBox", "class_sgl_1_1_h_box.html", null ],
+      [ "HoverListener", "class_sgl_1_1_hover_listener.html", null ],
       [ "Image", "class_sgl_1_1_image.html", null ],
       [ "ImageView", "class_sgl_1_1_image_view.html", null ],
       [ "Insets", "struct_sgl_1_1_insets.html", null ],

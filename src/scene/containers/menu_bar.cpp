@@ -13,13 +13,12 @@
 
 namespace Sgl
 {
-    const std::initializer_list<Sml::EventType> MENU_BAR_LISTENER_EVENTS = {
-            Sml::MouseButtonPressedEvent::getStaticType(),
-            MouseExitedEvent::getStaticType(),
-        };
-
     class MenuSelectListener : public Sml::Listener
     {
+    public:
+        DEFINE_STATIC_LISTENED_EVENT_TYPES(Sml::MouseButtonPressedEvent::getStaticType(),
+                                           MouseExitedEvent::getStaticType())
+
     public:
         MenuSelectListener(MenuBar& menuBar, Menu* menu) : m_MenuBar(menuBar), m_Menu(menu) {}
 
@@ -87,7 +86,7 @@ namespace Sgl
 
     const ColorFill  DEFAULT_CONTAINER_FILL      = {0xF5'F5'F5'FF};
     const Background MenuBar::DEFAULT_BACKGROUND = {{&DEFAULT_CONTAINER_FILL}, {}};
-    const Border     MenuBar::DEFAULT_BORDER     = Border{1, 0xE9'E9'E9'FF};
+    const Border     MenuBar::DEFAULT_BORDER     = Border{Insets{0, 0, 1, 0}, 0xE9'E9'E9'FF};
 
     MenuBar::MenuBar(Scene* scene)
     {
@@ -109,11 +108,12 @@ namespace Sgl
     Menu* MenuBar::addMenu(const char* title)
     {
         assert(title);
+        assert(getScene());
 
         Menu* menu = new Menu{getScene(), title};
         m_Menus.push_back(menu);
         menu->getContextMenu()->setVisible(false);
-        menu->getTitleButton()->getEventDispatcher()->attachHandler(MENU_BAR_LISTENER_EVENTS,
+        menu->getTitleButton()->getEventDispatcher()->attachHandler(MenuSelectListener::EVENT_TYPES,
                                                                     new MenuSelectListener{*this, menu});
 
         // menu->getTitleButton()->setWidth(menu->getTitleButton().g);

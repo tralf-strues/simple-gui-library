@@ -31,7 +31,8 @@ namespace Sgl
         assert(control);
 
         COMPONENT_COMPUTE_DIMENSION(Pref, Height, width, Y, control->getChildrenReadonly(),
-                                    control->getPrefHeight());
+                                    control->getPrefHeight(),
+                                    control->getInsets().top + control->getInsets().bottom);
     }
 
     int32_t Skin::computePrefWidth(int32_t height) const
@@ -40,7 +41,8 @@ namespace Sgl
         assert(control);
 
         COMPONENT_COMPUTE_DIMENSION(Pref, Width, height, X, control->getChildrenReadonly(),
-                                    control->getPrefWidth());
+                                    control->getPrefWidth(),
+                                    control->getInsets().left + control->getInsets().right);
     }
 
     int32_t Skin::computeMinHeight(int32_t width) const
@@ -49,7 +51,8 @@ namespace Sgl
         assert(control);
 
         COMPONENT_COMPUTE_DIMENSION(Min, Height, width, Y, control->getChildrenReadonly(),
-                                    control->getMinHeight());
+                                    control->getMinHeight(),
+                                    control->getInsets().top + control->getInsets().bottom);
     }
 
     int32_t Skin::computeMinWidth(int32_t height) const
@@ -58,7 +61,8 @@ namespace Sgl
         assert(control);
 
         COMPONENT_COMPUTE_DIMENSION(Min, Width, height, X, control->getChildrenReadonly(),
-                                    control->getMinWidth());
+                                    control->getMinWidth(),
+                                    control->getInsets().left + control->getInsets().right);
     }
 
     int32_t Skin::computeMaxHeight(int32_t width) const { return Component::UNLIMITED_SIZE; }

@@ -16,8 +16,11 @@ namespace Sgl
     class Button : public Control
     {
     public:
+        Button();
         Button(const char* label);
+        Button(const Image* icon);
         Button(BaseSkin<Button>* skin, const char* label);
+        Button(BaseSkin<Button>* skin, const Image* icon);
 
         const char* getLabel() const;
         void setLabel(const char* label);

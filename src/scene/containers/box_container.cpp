@@ -43,7 +43,7 @@ namespace Sgl
 
         if (m_Direction == Direction::LEFT_TO_RIGHT)
         {
-            int32_t  widthForSpacers    = contentArea.width - computeCustomPrefWidth();
+            int32_t  widthForSpacers    = getLayoutWidth() - computeCustomPrefWidth();
             uint32_t totalSpacersWeight = computeTotalSpacersWeight();
 
             int32_t curX    = contentArea.pos.x + computeSpacerSize(nullptr, totalSpacersWeight,
@@ -63,7 +63,7 @@ namespace Sgl
         }
         else if (m_Direction == Direction::TOP_TO_BOTTOM)
         {
-            int32_t  heightForSpacers   = contentArea.height - computeCustomPrefHeight();
+            int32_t  heightForSpacers   = getLayoutHeight() - computeCustomPrefHeight();
             uint32_t totalSpacersWeight = computeTotalSpacersWeight();
 
             int32_t curY = contentArea.pos.y + computeSpacerSize(nullptr, totalSpacersWeight,

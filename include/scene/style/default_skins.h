@@ -22,13 +22,14 @@ namespace Sgl
 
 namespace DefaultSkins
 {
-    class ButtonBaseSkinEventListener;
 
     extern Sml::Font* g_DefaultFont;
 
     //------------------------------------------------------------------------------
     // ButtonBaseSkin
     //------------------------------------------------------------------------------
+    class ButtonBaseSkinEventListener;
+
     class ButtonBaseSkin : public Sgl::BaseSkin<Button>
     {
     public:
@@ -98,6 +99,16 @@ namespace DefaultSkins
     };
 
     //------------------------------------------------------------------------------
+    // ButtonPlaneSkin
+    //------------------------------------------------------------------------------
+    class ButtonPlaneSkin : public ButtonBaseSkin
+    {
+    public:
+        ButtonPlaneSkin();
+        ButtonPlaneSkin(Sgl::Button* button);
+    };
+
+    //------------------------------------------------------------------------------
     // ButtonSkin
     //------------------------------------------------------------------------------
     class ButtonSkin : public ButtonBaseSkin
@@ -148,10 +159,6 @@ namespace DefaultSkins
         MenuItemSkin();
         MenuItemSkin(Sgl::Button* button);
     };
-
-    //------------------------------------------------------------------------------
-    // ButtonSkin
-    //------------------------------------------------------------------------------
 
     // class ButtonSkin : public Sgl::Skin
     // {

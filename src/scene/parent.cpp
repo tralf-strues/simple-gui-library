@@ -12,6 +12,28 @@
 
 namespace Sgl
 {
+    Component* Parent::getHitComponent(int32_t x, int32_t y)
+    {
+        if (!isVisible()) { return nullptr; }
+
+        for (auto child = m_Children.rbegin(); child != m_Children.rend(); ++child)
+        {
+            if (!(*child)->isVisible())
+            {
+                continue;
+            }
+
+            Component* hitted = (*child)->getHitComponent(x - getLayoutX(), y - getLayoutY());
+
+            if (hitted != nullptr)
+            {
+                return hitted;
+            }
+        }
+
+        return nullptr;
+    }
+
     void Parent::render(const Sml::Rectangle<int32_t>& targetRegion)
     {
         if (!isVisible())
@@ -113,7 +135,7 @@ namespace Sgl
 
     Insets Parent::getInsets() const
     {
-        return (m_Border == nullptr ? Insets::EMPTY : m_Border->getInsets()) + getPadding();
+        return (m_Border == nullptr ? Insets::EMPTY : m_Border->getThickness()) + getPadding();
     }
 
     Sml::Rectangle<int32_t> Parent::getContentArea() const
@@ -188,11 +210,13 @@ namespace Sgl
 
     int32_t Parent::computeCustomPrefWidth(int32_t height) const
     {
-        COMPONENT_COMPUTE_DIMENSION(Pref, Width, height, X, m_Children, m_PrefWidth);
+        COMPONENT_COMPUTE_DIMENSION(Pref, Width, height, X, m_Children, m_PrefWidth,
+                                    getInsets().left + getInsets().right);
     }
     int32_t Parent::computeCustomPrefHeight(int32_t width) const
     {
-        COMPONENT_COMPUTE_DIMENSION(Pref, Height, width, Y, m_Children, m_PrefHeight);
+        COMPONENT_COMPUTE_DIMENSION(Pref, Height, width, Y, m_Children, m_PrefHeight,
+                                    getInsets().top + getInsets().bottom);
     }
     
     int32_t Parent::computeCustomMinWidth(int32_t height) const { return computePrefWidth();  }
