@@ -95,7 +95,7 @@ Inheritance diagram for Sgl::HBox:</div>
  <div class="center">
   <img src="class_sgl_1_1_h_box.png" usemap="#Sgl::HBox_map" alt=""/>
   <map id="Sgl::HBox_map" name="Sgl::HBox_map">
-<area href="class_sgl_1_1_box_container.html" alt="Sgl::BoxContainer" shape="rect" coords="0,224,112,248"/>
+<area href="class_sgl_1_1_box_container.html" title="Basic list-like container which lays out children in a line one after another." alt="Sgl::BoxContainer" shape="rect" coords="0,224,112,248"/>
 <area href="class_sgl_1_1_container.html" alt="Sgl::Container" shape="rect" coords="0,168,112,192"/>
 <area href="class_sgl_1_1_parent.html" alt="Sgl::Parent" shape="rect" coords="0,112,112,136"/>
 <area href="class_sgl_1_1_component.html" alt="Sgl::Component" shape="rect" coords="0,56,112,80"/>
@@ -110,6 +110,10 @@ Additional Inherited Members</h2></td></tr>
 , <b>TOP_TO_BOTTOM</b>
  }</td></tr>
 <tr class="separator:af0c96e3dc29b49b1fccf49132c8ba8cb inherit pub_types_class_sgl_1_1_box_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd563198e77d661cd4e700314576703e inherit pub_types_class_sgl_1_1_box_container"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><b>GrowPriority</b> { <b>NEVER</b>
+, <b>ALWAYS</b>
+ }</td></tr>
+<tr class="separator:acd563198e77d661cd4e700314576703e inherit pub_types_class_sgl_1_1_box_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_sgl_1_1_box_container"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_sgl_1_1_box_container')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_sgl_1_1_box_container.html">Sgl::BoxContainer</a></td></tr>
 <tr class="memitem:ad5873e4dc5b160d34864db57e8ed5163 inherit pub_methods_class_sgl_1_1_box_container"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_box_container.html#ad5873e4dc5b160d34864db57e8ed5163">BoxContainer</a> (Direction direction)</td></tr>
 <tr class="separator:ad5873e4dc5b160d34864db57e8ed5163 inherit pub_methods_class_sgl_1_1_box_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,6 +129,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a4b2bc344631594562a38bf169bd7da1e inherit pub_methods_class_sgl_1_1_box_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a330dfae1def0d959a8435987cc7d680d inherit pub_methods_class_sgl_1_1_box_container"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_box_container.html#a330dfae1def0d959a8435987cc7d680d">setSpacing</a> (int32_t spacing)</td></tr>
 <tr class="separator:a330dfae1def0d959a8435987cc7d680d inherit pub_methods_class_sgl_1_1_box_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa271b3269356521365f98a76643c8565 inherit pub_methods_class_sgl_1_1_box_container"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_box_container.html#aa271b3269356521365f98a76643c8565">setGrowPriority</a> (<a class="el" href="class_sgl_1_1_component.html">Component</a> *component, GrowPriority priority)</td></tr>
+<tr class="separator:aa271b3269356521365f98a76643c8565 inherit pub_methods_class_sgl_1_1_box_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcc6cf4c5f393dcb0ef1fd21459bb854 inherit pub_methods_class_sgl_1_1_box_container"><td class="memItemLeft" align="right" valign="top">GrowPriority&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_box_container.html#adcc6cf4c5f393dcb0ef1fd21459bb854">getGrowPriority</a> (<a class="el" href="class_sgl_1_1_component.html">Component</a> *component) const</td></tr>
+<tr class="separator:adcc6cf4c5f393dcb0ef1fd21459bb854 inherit pub_methods_class_sgl_1_1_box_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb79526c0c3488d60b5db95845407e50 inherit pub_methods_class_sgl_1_1_box_container"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_box_container.html#acb79526c0c3488d60b5db95845407e50">pushBackSpacer</a> (uint32_t weight=1)</td></tr>
 <tr class="separator:acb79526c0c3488d60b5db95845407e50 inherit pub_methods_class_sgl_1_1_box_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a766fec27542d9e35cc26d95c2e52f4b1 inherit pub_methods_class_sgl_1_1_box_container"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_box_container.html#a766fec27542d9e35cc26d95c2e52f4b1">pushFrontSpacer</a> (uint32_t weight=1)</td></tr>
@@ -296,6 +304,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a2b2f1137bdc6079650132aab68167736 inherit pro_attribs_class_sgl_1_1_box_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2d4b00eb8ac91a33fd9e81a1e66a082 inherit pro_attribs_class_sgl_1_1_box_container"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="struct_sgl_1_1_box_container_1_1_spacer.html">Spacer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_box_container.html#ac2d4b00eb8ac91a33fd9e81a1e66a082">m_Spacers</a></td></tr>
 <tr class="separator:ac2d4b00eb8ac91a33fd9e81a1e66a082 inherit pro_attribs_class_sgl_1_1_box_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee902d2ba894363d0d06e622e4fa99b8 inherit pro_attribs_class_sgl_1_1_box_container"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="class_sgl_1_1_component.html">Component</a> *, GrowPriority &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_box_container.html#aee902d2ba894363d0d06e622e4fa99b8">m_GrowPriorities</a></td></tr>
+<tr class="separator:aee902d2ba894363d0d06e622e4fa99b8 inherit pro_attribs_class_sgl_1_1_box_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_sgl_1_1_parent"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_sgl_1_1_parent')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_sgl_1_1_parent.html">Sgl::Parent</a></td></tr>
 <tr class="memitem:a9f0eb88d7982b2fe31538446de95a75a inherit pro_attribs_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="class_sgl_1_1_component.html">Component</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a9f0eb88d7982b2fe31538446de95a75a">m_Children</a></td></tr>
 <tr class="separator:a9f0eb88d7982b2fe31538446de95a75a inherit pro_attribs_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -339,7 +349,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="box__container_8h_source.html#l00076">76</a> of file <a class="el" href="box__container_8h_source.html">box_container.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="box__container_8h_source.html#l00105">105</a> of file <a class="el" href="box__container_8h_source.html">box_container.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a73b416c279a078dc18ff1ff040637906" name="a73b416c279a078dc18ff1ff040637906"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a73b416c279a078dc18ff1ff040637906">&#9670;&nbsp;</a></span>HBox()</h2>
@@ -356,7 +366,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="box__container_8cpp_source.html#l00238">238</a> of file <a class="el" href="box__container_8cpp_source.html">box_container.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="box__container_8cpp_source.html#l00272">272</a> of file <a class="el" href="box__container_8cpp_source.html">box_container.cpp</a>.</p>
 
 </div>
 </div>

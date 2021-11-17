@@ -8,16 +8,31 @@
 
 #pragma once
 
+#include <unordered_map>
 #include "container.h"
+#include "sys/syscall.h"
 
 namespace Sgl
 {
+    /**
+     * @brief Basic list-like container which lays out children in a line one after another.
+     * 
+     * Direction specifies how to lay out children - vertically vs. horizontally and
+     * normal vs. reverse order (still-in-progress).
+     * 
+     * Spacing specifies how much space to put between children (@note: t)
+     */
     class BoxContainer : public Container
     {
     public:
         enum class Direction
         {
             LEFT_TO_RIGHT, TOP_TO_BOTTOM
+        };
+
+        enum class GrowPriority
+        {
+            NEVER, ALWAYS
         };
 
     public:
@@ -32,6 +47,9 @@ namespace Sgl
 
         int32_t getSpacing() const;
         void setSpacing(int32_t spacing);
+
+        void setGrowPriority(Component* component, GrowPriority priority);
+        GrowPriority getGrowPriority(Component* component) const;
 
         void pushBackSpacer(uint32_t weight = 1);
         void pushFrontSpacer(uint32_t weight = 1);
@@ -49,10 +67,16 @@ namespace Sgl
     protected:
         Direction         m_Direction  = Direction::LEFT_TO_RIGHT;
         bool              m_FillAcross = false;
-
         int32_t           m_Spacing    = 0;
 
         std::list<Spacer> m_Spacers;
+
+        /**
+         * By default, only components with GrowPriority::ALWAYS will share free space.
+         * Neither components with GrowPriority::NEVER, nor components with no GrowPriority
+         * set will get any free space.
+         */
+        std::unordered_map<Component*, GrowPriority> m_GrowPriorities;
 
     private:
         virtual void layoutChildren() override;
@@ -68,9 +92,14 @@ namespace Sgl
         int32_t computeTotalPrefSizeWithSpacing(SizeDimension sizeDimension) const;
         int32_t computeMaximumPrefSize(SizeDimension sizeDimension) const;
 
+        void splitFreeSpace(int32_t freeSpace, size_t countSpacers, size_t countGrowingComponents,
+                            int32_t* totalSpacersSpace, int32_t* totalGrowingComponentsSpace) const;
+
         uint32_t computeTotalSpacersWeight() const;
         int32_t computeSpacerSize(Component* prev, uint32_t totalWeight, int32_t totalSpacersSize) const;
         void mergeSpacers(Component* prev);
+
+        size_t computeGrowingComponentsCount(GrowPriority priority) const;
     };
 
     class HBox : public BoxContainer

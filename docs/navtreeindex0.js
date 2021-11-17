@@ -26,6 +26,7 @@ var NAVTREEINDEX0 =
 "class_sgl_1_1_base_skin.html":[1,0,0,4],
 "class_sgl_1_1_border.html":[1,0,0,5],
 "class_sgl_1_1_box_container.html":[1,0,0,6],
+"class_sgl_1_1_box_container.html#aee902d2ba894363d0d06e622e4fa99b8":[1,0,0,6,1],
 "class_sgl_1_1_button.html":[1,0,0,7],
 "class_sgl_1_1_color_fill.html":[1,0,0,8],
 "class_sgl_1_1_component.html":[1,0,0,9],
