@@ -38,6 +38,33 @@ namespace Sgl
         return nullptr;
     }
 
+    void Container::render(const Sml::Rectangle<int32_t>& targetRegion)
+    {
+        if (!isVisible())
+        {
+            return;
+        }
+
+        Sml::Rectangle<int32_t> translatedTargetRegion = getLayoutBounds();
+        translatedTargetRegion.pos += targetRegion.pos;
+
+        if (m_Shadow != nullptr)
+        {
+            Shadow::renderRectangular(m_Shadow, getLayoutBounds(), targetRegion);
+        }
+
+        if (m_Snapshot != nullptr)
+        {
+            Sml::Rectangle<int32_t> originBounds = getOriginBounds();
+            renderTexture(getContextRenderer(), *m_Snapshot, &translatedTargetRegion, &originBounds);
+        }
+
+        for (Component* child : getChildren())
+        {
+            child->render(translatedTargetRegion);
+        }
+    }
+
     void Container::prerenderSelf()
     {
         if (m_Background != nullptr)

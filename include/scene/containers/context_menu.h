@@ -8,6 +8,7 @@
 
 #pragma once
 
+#include "../style/shadow.h"
 #include "box_container.h"
 
 namespace Sgl
@@ -27,9 +28,12 @@ namespace Sgl
         static const Border     DEFAULT_BORDER;
         static const ColorFill  DEFAULT_BACKGROUND_FILL;
         static const Background DEFAULT_BACKGROUND;
+        static const Shadow     DEFAULT_SHADOW;
 
     public:
         ContextMenu(Scene* scene, Component* sourceComponent = nullptr);
+
+        virtual void render(const Sml::Rectangle<int32_t>& targetRegion) override;
 
         Component* getSource();
         void setSource(Component* source);

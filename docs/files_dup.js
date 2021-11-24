@@ -60,6 +60,9 @@ var files_dup =
       [ "Sgl::Text", "class_sgl_1_1_text.html", null ]
     ] ],
     [ "default_skins.h", "default__skins_8h.html", "default__skins_8h" ],
+    [ "shadow.h", "shadow_8h.html", [
+      [ "Sgl::Shadow", "class_sgl_1_1_shadow.html", null ]
+    ] ],
     [ "skin.h", "skin_8h.html", [
       [ "Sgl::Skin", "class_sgl_1_1_skin.html", "class_sgl_1_1_skin" ],
       [ "Sgl::BaseSkin< C >", "class_sgl_1_1_base_skin.html", null ],
@@ -89,5 +92,6 @@ var files_dup =
     [ "shape.cpp", "shape_8cpp.html", null ],
     [ "text.cpp", "text_8cpp.html", null ],
     [ "default_skins.cpp", "default__skins_8cpp.html", "default__skins_8cpp" ],
+    [ "shadow.cpp", "shadow_8cpp.html", null ],
     [ "skin.cpp", "skin_8cpp.html", null ]
 ];

@@ -109,6 +109,8 @@ Inheritance diagram for Sgl::ContextMenu:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a41dadeae796f2bc0d20205f23faabd7e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_context_menu.html#a41dadeae796f2bc0d20205f23faabd7e">ContextMenu</a> (<a class="el" href="class_sgl_1_1_scene.html">Scene</a> *scene, <a class="el" href="class_sgl_1_1_component.html">Component</a> *sourceComponent=nullptr)</td></tr>
 <tr class="separator:a41dadeae796f2bc0d20205f23faabd7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99aa7919e6615be2b64b2fff04e59d44"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_context_menu.html#a99aa7919e6615be2b64b2fff04e59d44">render</a> (const Sml::Rectangle&lt; int32_t &gt; &amp;targetRegion) override</td></tr>
+<tr class="separator:a99aa7919e6615be2b64b2fff04e59d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa78085544d1ff7574aea7904768fe19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sgl_1_1_component.html">Component</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_context_menu.html#aaa78085544d1ff7574aea7904768fe19">getSource</a> ()</td></tr>
 <tr class="separator:aaa78085544d1ff7574aea7904768fe19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ede06f93e1847740d4791ac69345bd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_context_menu.html#a4ede06f93e1847740d4791ac69345bd4">setSource</a> (<a class="el" href="class_sgl_1_1_component.html">Component</a> *source)</td></tr>
@@ -144,8 +146,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0950651be3fe450a1a90bd315212fad9 inherit pub_methods_class_sgl_1_1_container"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_sgl_1_1_component.html">Component</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_container.html#a0950651be3fe450a1a90bd315212fad9">getHitComponent</a> (int32_t x, int32_t y) override</td></tr>
 <tr class="separator:a0950651be3fe450a1a90bd315212fad9 inherit pub_methods_class_sgl_1_1_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_sgl_1_1_parent"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_sgl_1_1_parent')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_sgl_1_1_parent.html">Sgl::Parent</a></td></tr>
-<tr class="memitem:a137857f7f026c36a0d16a10d9ab71c73 inherit pub_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a137857f7f026c36a0d16a10d9ab71c73">render</a> (const Sml::Rectangle&lt; int32_t &gt; &amp;targetRegion) override final</td></tr>
-<tr class="separator:a137857f7f026c36a0d16a10d9ab71c73 inherit pub_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18a9a8909ee502b88b59b1e4392d0d02 inherit pub_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a18a9a8909ee502b88b59b1e4392d0d02">layout</a> () override final</td></tr>
 <tr class="separator:a18a9a8909ee502b88b59b1e4392d0d02 inherit pub_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dc938bda805e18ad732cc5a54d3c01a inherit pub_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a0dc938bda805e18ad732cc5a54d3c01a">prerender</a> () override final</td></tr>
@@ -176,6 +176,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a78f4daf249441f4b10ff20d1d53ce930 inherit pub_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5654e19216252568d28efa04ef2aae1 inherit pub_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#aa5654e19216252568d28efa04ef2aae1">setBorder</a> (const <a class="el" href="class_sgl_1_1_border.html">Border</a> *border)</td></tr>
 <tr class="separator:aa5654e19216252568d28efa04ef2aae1 inherit pub_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a106a9829eb36d2ade3480d56144a1a0e inherit pub_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_sgl_1_1_shadow.html">Shadow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a106a9829eb36d2ade3480d56144a1a0e">getShadow</a> () const</td></tr>
+<tr class="separator:a106a9829eb36d2ade3480d56144a1a0e inherit pub_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a986b72aa67430964b05e2f2b4eb5005a inherit pub_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a986b72aa67430964b05e2f2b4eb5005a">setShadow</a> (const <a class="el" href="class_sgl_1_1_shadow.html">Shadow</a> *shadow)</td></tr>
+<tr class="separator:a986b72aa67430964b05e2f2b4eb5005a inherit pub_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40e4b14d81e474781821d0326ec5d083 inherit pub_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_sgl_1_1_insets.html">Insets</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a40e4b14d81e474781821d0326ec5d083">getInsets</a> () const</td></tr>
 <tr class="separator:a40e4b14d81e474781821d0326ec5d083 inherit pub_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a280fa64059f7c726fa058ccc8fbf9906 inherit pub_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">Sml::Rectangle&lt; int32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a280fa64059f7c726fa058ccc8fbf9906">getContentArea</a> () const</td></tr>
@@ -282,6 +286,8 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:aa511e7b04b59af2d46e815a2757ef3c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d5234286fec10984261d877bf8605f0"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_sgl_1_1_background.html">Background</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_context_menu.html#a9d5234286fec10984261d877bf8605f0">DEFAULT_BACKGROUND</a> = {&amp;DEFAULT_BACKGROUND_FILL}</td></tr>
 <tr class="separator:a9d5234286fec10984261d877bf8605f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b0ef115a48a06f43ad218a907c74604"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_sgl_1_1_shadow.html">Shadow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_context_menu.html#a3b0ef115a48a06f43ad218a907c74604">DEFAULT_SHADOW</a> = {{3, 3}, 3, 0x00'00'00'FF}</td></tr>
+<tr class="separator:a3b0ef115a48a06f43ad218a907c74604"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_attribs_class_sgl_1_1_container"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_class_sgl_1_1_container')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="class_sgl_1_1_container.html">Sgl::Container</a></td></tr>
 <tr class="memitem:a6ed243a5e337043f1e39c642e928b7ee inherit pub_static_attribs_class_sgl_1_1_container"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_sgl_1_1_color_fill.html">ColorFill</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_container.html#a6ed243a5e337043f1e39c642e928b7ee">DEFAULT_FILL</a> = <a class="el" href="class_sgl_1_1_color_fill.html">ColorFill</a>{Sml::COLOR_WHITE}</td></tr>
 <tr class="separator:a6ed243a5e337043f1e39c642e928b7ee inherit pub_static_attribs_class_sgl_1_1_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -341,6 +347,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:ac3753bab025a0927acea7bdc9d1484c2 inherit pro_attribs_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a592bbb46efaac002a00b973792f765ea inherit pro_attribs_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_sgl_1_1_border.html">Border</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a592bbb46efaac002a00b973792f765ea">m_Border</a> = nullptr</td></tr>
 <tr class="separator:a592bbb46efaac002a00b973792f765ea inherit pro_attribs_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab986f0f5ba491e5d7aa09717dfac3197 inherit pro_attribs_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_sgl_1_1_shadow.html">Shadow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#ab986f0f5ba491e5d7aa09717dfac3197">m_Shadow</a> = nullptr</td></tr>
+<tr class="separator:ab986f0f5ba491e5d7aa09717dfac3197 inherit pro_attribs_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a793e2ef5170b7d47576ca7197994f4b4 inherit pro_attribs_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_sgl_1_1_insets.html">Insets</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a793e2ef5170b7d47576ca7197994f4b4">m_Padding</a> = Insets::EMPTY</td></tr>
 <tr class="separator:a793e2ef5170b7d47576ca7197994f4b4 inherit pro_attribs_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae697e11f8b6e69a02d2244fbd6f1f48 inherit pro_attribs_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#aae697e11f8b6e69a02d2244fbd6f1f48">m_PrefWidth</a> = USE_COMPUTED_SIZE</td></tr>
@@ -373,7 +381,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="context__menu_8h_source.html#l00024">24</a> of file <a class="el" href="context__menu_8h_source.html">context_menu.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="context__menu_8h_source.html#l00025">25</a> of file <a class="el" href="context__menu_8h_source.html">context_menu.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a41dadeae796f2bc0d20205f23faabd7e" name="a41dadeae796f2bc0d20205f23faabd7e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41dadeae796f2bc0d20205f23faabd7e">&#9670;&nbsp;</a></span>ContextMenu()</h2>
@@ -401,7 +409,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="context__menu_8cpp_source.html#l00035">35</a> of file <a class="el" href="context__menu_8cpp_source.html">context_menu.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="context__menu_8cpp_source.html#l00037">37</a> of file <a class="el" href="context__menu_8cpp_source.html">context_menu.cpp</a>.</p>
 
 </div>
 </div>
@@ -421,7 +429,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="context__menu_8cpp_source.html#l00051">51</a> of file <a class="el" href="context__menu_8cpp_source.html">context_menu.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="context__menu_8cpp_source.html#l00062">62</a> of file <a class="el" href="context__menu_8cpp_source.html">context_menu.cpp</a>.</p>
 
 </div>
 </div>
@@ -440,7 +448,37 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="context__menu_8cpp_source.html#l00060">60</a> of file <a class="el" href="context__menu_8cpp_source.html">context_menu.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="context__menu_8cpp_source.html#l00071">71</a> of file <a class="el" href="context__menu_8cpp_source.html">context_menu.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a99aa7919e6615be2b64b2fff04e59d44" name="a99aa7919e6615be2b64b2fff04e59d44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99aa7919e6615be2b64b2fff04e59d44">&#9670;&nbsp;</a></span>render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sgl::ContextMenu::render </td>
+          <td>(</td>
+          <td class="paramtype">const Sml::Rectangle&lt; int32_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>targetRegion</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_sgl_1_1_container.html">Sgl::Container</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="context__menu_8cpp_source.html#l00054">54</a> of file <a class="el" href="context__menu_8cpp_source.html">context_menu.cpp</a>.</p>
 
 </div>
 </div>
@@ -460,7 +498,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="context__menu_8cpp_source.html#l00052">52</a> of file <a class="el" href="context__menu_8cpp_source.html">context_menu.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="context__menu_8cpp_source.html#l00063">63</a> of file <a class="el" href="context__menu_8cpp_source.html">context_menu.cpp</a>.</p>
 
 </div>
 </div>
@@ -479,7 +517,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="context__menu_8cpp_source.html#l00054">54</a> of file <a class="el" href="context__menu_8cpp_source.html">context_menu.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="context__menu_8cpp_source.html#l00065">65</a> of file <a class="el" href="context__menu_8cpp_source.html">context_menu.cpp</a>.</p>
 
 </div>
 </div>
@@ -504,7 +542,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="context__menu_8h_source.html#l00029">29</a> of file <a class="el" href="context__menu_8h_source.html">context_menu.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="context__menu_8h_source.html#l00030">30</a> of file <a class="el" href="context__menu_8h_source.html">context_menu.h</a>.</p>
 
 </div>
 </div>
@@ -528,7 +566,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="context__menu_8h_source.html#l00028">28</a> of file <a class="el" href="context__menu_8h_source.html">context_menu.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="context__menu_8h_source.html#l00029">29</a> of file <a class="el" href="context__menu_8h_source.html">context_menu.h</a>.</p>
 
 </div>
 </div>
@@ -552,7 +590,31 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="context__menu_8h_source.html#l00027">27</a> of file <a class="el" href="context__menu_8h_source.html">context_menu.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="context__menu_8h_source.html#l00028">28</a> of file <a class="el" href="context__menu_8h_source.html">context_menu.h</a>.</p>
+
+</div>
+</div>
+<a id="a3b0ef115a48a06f43ad218a907c74604" name="a3b0ef115a48a06f43ad218a907c74604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b0ef115a48a06f43ad218a907c74604">&#9670;&nbsp;</a></span>DEFAULT_SHADOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_sgl_1_1_shadow.html">Shadow</a> Sgl::ContextMenu::DEFAULT_SHADOW = {{3, 3}, 3, 0x00'00'00'FF}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="context__menu_8h_source.html#l00031">31</a> of file <a class="el" href="context__menu_8h_source.html">context_menu.h</a>.</p>
 
 </div>
 </div>

@@ -23,6 +23,7 @@ namespace Sgl
         virtual ~Container() override = default;
 
         virtual Component* getHitComponent(int32_t x, int32_t y) override;
+        virtual void render(const Sml::Rectangle<int32_t>& targetRegion) override;
 
     protected:
         virtual void prerenderSelf() override;

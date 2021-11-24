@@ -133,6 +133,9 @@ namespace Sgl
     const Border* Parent::getBorder() const { return m_Border; }
     void Parent::setBorder(const Border* border) { m_Border = border; }
 
+    const Shadow* Parent::getShadow() const { return m_Shadow; }
+    void Parent::setShadow(const Shadow* shadow) { m_Shadow = shadow; }
+
     Insets Parent::getInsets() const
     {
         return (m_Border == nullptr ? Insets::EMPTY : m_Border->getThickness()) + getPadding();
