@@ -30,7 +30,8 @@ var hierarchy =
               [ "Sgl::VBox", "class_sgl_1_1_v_box.html", [
                 [ "Sgl::ContextMenu", "class_sgl_1_1_context_menu.html", null ]
               ] ]
-            ] ]
+            ] ],
+            [ "Sgl::TilePane", "class_sgl_1_1_tile_pane.html", null ]
           ] ],
           [ "Sgl::Control", "class_sgl_1_1_control.html", [
             [ "Sgl::Button", "class_sgl_1_1_button.html", [

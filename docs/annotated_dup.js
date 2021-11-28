@@ -50,6 +50,7 @@ var annotated_dup =
       [ "Skinnable", "class_sgl_1_1_skinnable.html", null ],
       [ "Text", "class_sgl_1_1_text.html", null ],
       [ "TextureImpl", "class_sgl_1_1_texture_impl.html", null ],
+      [ "TilePane", "class_sgl_1_1_tile_pane.html", null ],
       [ "VBox", "class_sgl_1_1_v_box.html", null ]
     ] ],
     [ "Buffer", "struct_buffer.html", null ],

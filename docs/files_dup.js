@@ -32,6 +32,9 @@ var files_dup =
       [ "Sgl::Menu", "class_sgl_1_1_menu.html", null ],
       [ "Sgl::MenuBar", "class_sgl_1_1_menu_bar.html", null ]
     ] ],
+    [ "tile_pane.h", "tile__pane_8h.html", [
+      [ "Sgl::TilePane", "class_sgl_1_1_tile_pane.html", null ]
+    ] ],
     [ "button.h", "button_8h.html", [
       [ "Sgl::Button", "class_sgl_1_1_button.html", null ]
     ] ],
@@ -84,6 +87,7 @@ var files_dup =
     ] ],
     [ "hbox.cpp", "hbox_8cpp_source.html", null ],
     [ "menu_bar.cpp", "menu__bar_8cpp.html", "menu__bar_8cpp" ],
+    [ "tile_pane.cpp", "tile__pane_8cpp.html", null ],
     [ "button.cpp", "button_8cpp.html", null ],
     [ "control.cpp", "control_8cpp.html", null ],
     [ "insets.cpp", "insets_8cpp.html", null ],
