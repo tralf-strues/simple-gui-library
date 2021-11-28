@@ -11,11 +11,12 @@ var searchData=
   ['box_5fcontainer_2ecpp_8',['box_container.cpp',['../box__container_8cpp.html',1,'']]],
   ['box_5fcontainer_2eh_9',['box_container.h',['../box__container_8h.html',1,'']]],
   ['boxcontainer_10',['BoxContainer',['../class_sgl_1_1_box_container.html',1,'Sgl']]],
-  ['button_11',['Button',['../class_sgl_1_1_button.html',1,'Sgl']]],
-  ['button_2ecpp_12',['button.cpp',['../button_8cpp.html',1,'']]],
-  ['button_2eh_13',['button.h',['../button_8h.html',1,'']]],
-  ['buttonbaseskin_14',['ButtonBaseSkin',['../class_sgl_1_1_default_skins_1_1_button_base_skin.html',1,'Sgl::DefaultSkins']]],
-  ['buttonbaseskineventlistener_15',['ButtonBaseSkinEventListener',['../class_sgl_1_1_default_skins_1_1_button_base_skin_event_listener.html',1,'Sgl::DefaultSkins']]],
-  ['buttonplaneskin_16',['ButtonPlaneSkin',['../class_sgl_1_1_default_skins_1_1_button_plane_skin.html',1,'Sgl::DefaultSkins']]],
-  ['buttonskin_17',['ButtonSkin',['../class_sgl_1_1_default_skins_1_1_button_skin.html',1,'Sgl::DefaultSkins']]]
+  ['buffer_11',['Buffer',['../struct_buffer.html',1,'']]],
+  ['button_12',['Button',['../class_sgl_1_1_button.html',1,'Sgl']]],
+  ['button_2ecpp_13',['button.cpp',['../button_8cpp.html',1,'']]],
+  ['button_2eh_14',['button.h',['../button_8h.html',1,'']]],
+  ['buttonbaseskin_15',['ButtonBaseSkin',['../class_sgl_1_1_default_skins_1_1_button_base_skin.html',1,'Sgl::DefaultSkins']]],
+  ['buttonbaseskineventlistener_16',['ButtonBaseSkinEventListener',['../class_sgl_1_1_default_skins_1_1_button_base_skin_event_listener.html',1,'Sgl::DefaultSkins']]],
+  ['buttonplaneskin_17',['ButtonPlaneSkin',['../class_sgl_1_1_default_skins_1_1_button_plane_skin.html',1,'Sgl::DefaultSkins']]],
+  ['buttonskin_18',['ButtonSkin',['../class_sgl_1_1_default_skins_1_1_button_skin.html',1,'Sgl::DefaultSkins']]]
 ];

@@ -6,7 +6,6 @@
  * @copyright Copyright (c) 2021
  */
 
-#include "core.h"
 #include "scene/utils.h"
 #include "scene/parent.h"
 
@@ -47,7 +46,7 @@ namespace Sgl
         if (m_Snapshot != nullptr)
         {
             Sml::Rectangle<int32_t> originBounds = getOriginBounds();
-            renderTexture(getContextRenderer(), *m_Snapshot, &translatedTargetRegion, &originBounds);
+            renderTexture(*m_Snapshot, &translatedTargetRegion, &originBounds);
         }
 
         for (Component* child : getChildren())
@@ -73,14 +72,14 @@ namespace Sgl
     {
         updateSnapshotSize();
 
-        Sml::Texture* savedTarget = getContextRenderer()->getTarget();
-        getContextRenderer()->setTarget(m_Snapshot);
+        Sml::Renderer::getInstance().pushTarget();
+        Sml::Renderer::getInstance().setTarget(m_Snapshot);
 
-        getContextRenderer()->setColor(Sml::COLOR_TRANSPARENT);
-        getContextRenderer()->clear();
+        Sml::Renderer::getInstance().setColor(Sml::COLOR_TRANSPARENT);
+        Sml::Renderer::getInstance().clear();
         prerenderSelf();
 
-        getContextRenderer()->setTarget(savedTarget);
+        Sml::Renderer::getInstance().popTarget();
 
         for (Component* child : m_Children)
         {
@@ -240,13 +239,13 @@ namespace Sgl
 
         if (m_Snapshot == nullptr)
         {
-            m_Snapshot = new Sml::Texture(getContextRenderer(), width, height);
+            m_Snapshot = new Sml::Texture(width, height);
         }
         else if (static_cast<int32_t>(m_Snapshot->getWidth()) < width ||
                  static_cast<int32_t>(m_Snapshot->getHeight()) < height)
         {
             delete m_Snapshot;
-            m_Snapshot = new Sml::Texture(getContextRenderer(), width, height);
+            m_Snapshot = new Sml::Texture(width, height);
         }
     }
 

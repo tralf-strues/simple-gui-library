@@ -6,7 +6,6 @@
  * @copyright Copyright (c) 2021
  */
 
-#include "core.h"
 #include "scene/containers/container.h"
 
 namespace Sgl
@@ -56,7 +55,7 @@ namespace Sgl
         if (m_Snapshot != nullptr)
         {
             Sml::Rectangle<int32_t> originBounds = getOriginBounds();
-            renderTexture(getContextRenderer(), *m_Snapshot, &translatedTargetRegion, &originBounds);
+            renderTexture(*m_Snapshot, &translatedTargetRegion, &originBounds);
         }
 
         for (Component* child : getChildren())

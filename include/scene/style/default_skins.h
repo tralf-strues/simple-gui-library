@@ -22,7 +22,6 @@ namespace Sgl
 
 namespace DefaultSkins
 {
-
     extern Sml::Font* g_DefaultFont;
 
     //------------------------------------------------------------------------------

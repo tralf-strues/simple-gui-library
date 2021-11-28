@@ -6,8 +6,6 @@
  * @copyright Copyright (c) 2021
  */
 
-#include "sml/math/blur.h" // FIXME:
-#include "core.h"
 #include "scene/scene.h"
 #include "scene/containers/context_menu.h"
 #include "scene/controls/button.h"
@@ -20,7 +18,7 @@ namespace Sgl
     const Border     ContextMenu::DEFAULT_BORDER          = {1, 0xCF'CF'CF'FF};
     const ColorFill  ContextMenu::DEFAULT_BACKGROUND_FILL = {0xEE'EE'EE'FF};
     const Background ContextMenu::DEFAULT_BACKGROUND      = {&DEFAULT_BACKGROUND_FILL};
-    const Shadow     ContextMenu::DEFAULT_SHADOW          = {{3, 3}, 3, 0x00'00'00'FF};
+    const Shadow     ContextMenu::DEFAULT_SHADOW          = {{0, 2}, {1.018, 1}, 3, 0x44'44'44'88};
 
     class ContextMenuFocusListener : public FocusListener<ContextMenu>
     {
@@ -29,7 +27,7 @@ namespace Sgl
 
         virtual void onFocusLost(FocusEvent* event) override
         {
-            LOG_INFO("Hide ContextMenu!");
+            LOG_LIB_INFO("Hide ContextMenu!");
             getComponent()->hide();
         }
     };
@@ -41,7 +39,7 @@ namespace Sgl
 
         setBorder(&DEFAULT_BORDER);
         setBackground(&DEFAULT_BACKGROUND);
-        // setShadow(&DEFAULT_SHADOW);
+        setShadow(&DEFAULT_SHADOW);
 
         setFillAcross(true);
 
@@ -54,8 +52,6 @@ namespace Sgl
     void ContextMenu::render(const Sml::Rectangle<int32_t>& targetRegion)
     {
         Container::render(targetRegion);
-
-        // Sml::applyGaussianBlur(getContextRenderer(), getLayoutBounds(), 5);
     }
 
 

@@ -7,7 +7,6 @@
  */
 
 #include "sml/events/system_events.h"
-#include "core.h"
 #include "scene/scene.h"
 #include "scene/parent.h"
 

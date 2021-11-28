@@ -15,7 +15,5 @@ var searchData=
   ['contextmenufocuslistener_12',['ContextMenuFocusListener',['../class_sgl_1_1_context_menu_focus_listener.html',1,'Sgl']]],
   ['control_13',['Control',['../class_sgl_1_1_control.html',1,'Sgl']]],
   ['control_2ecpp_14',['control.cpp',['../control_8cpp.html',1,'']]],
-  ['control_2eh_15',['control.h',['../control_8h.html',1,'']]],
-  ['core_2ecpp_16',['core.cpp',['../core_8cpp.html',1,'']]],
-  ['core_2eh_17',['core.h',['../core_8h.html',1,'']]]
+  ['control_2eh_15',['control.h',['../control_8h.html',1,'']]]
 ];

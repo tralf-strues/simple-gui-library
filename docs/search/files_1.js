@@ -7,7 +7,5 @@ var searchData=
   ['context_5fmenu_2ecpp_4',['context_menu.cpp',['../context__menu_8cpp.html',1,'']]],
   ['context_5fmenu_2eh_5',['context_menu.h',['../context__menu_8h.html',1,'']]],
   ['control_2ecpp_6',['control.cpp',['../control_8cpp.html',1,'']]],
-  ['control_2eh_7',['control.h',['../control_8h.html',1,'']]],
-  ['core_2ecpp_8',['core.cpp',['../core_8cpp.html',1,'']]],
-  ['core_2eh_9',['core.h',['../core_8h.html',1,'']]]
+  ['control_2eh_7',['control.h',['../control_8h.html',1,'']]]
 ];

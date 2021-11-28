@@ -7,7 +7,6 @@
  */
 
 #include "sml/graphics_wrapper/primitives.h"
-#include "core.h"
 #include "scene/border.h"
 
 namespace Sgl
@@ -46,28 +45,28 @@ namespace Sgl
         rightBorder.pos.x  = targetRegion.pos.x + targetRegion.width - border->getThickness().right;
         rightBorder.pos.y  = targetRegion.pos.y;
         rightBorder.width  = border->getThickness().right;
-        rightBorder.height = targetRegion.width;
+        rightBorder.height = targetRegion.height;
 
-        getContextRenderer()->setColor(border->getColor());
+        Sml::Renderer::getInstance().setColor(border->getColor());
      
         if (border->getThickness().top > 0)
         {
-            Sml::renderFilledRect(getContextRenderer(), topBorder);
+            Sml::renderFilledRect(topBorder);
         }
 
         if (border->getThickness().right > 0)
         {
-            Sml::renderFilledRect(getContextRenderer(), rightBorder);
+            Sml::renderFilledRect(rightBorder);
         }
 
         if (border->getThickness().bottom > 0)
         {
-            Sml::renderFilledRect(getContextRenderer(), bottomBorder);
+            Sml::renderFilledRect(bottomBorder);
         }
 
         if (border->getThickness().left > 0)
         {
-            Sml::renderFilledRect(getContextRenderer(), leftBorder);
+            Sml::renderFilledRect(leftBorder);
         }
     }
 }

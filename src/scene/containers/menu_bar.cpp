@@ -6,7 +6,6 @@
  * @copyright Copyright (c) 2021
  */
 
-#include "core.h"
 #include "scene/containers/menu_bar.h"
 #include "scene/border.h"
 #include "scene/scene.h"
@@ -26,26 +25,27 @@ namespace Sgl
         {
             assert(event->isInCategory(Sml::MouseEvent::getStaticCategory()));
 
-            LOG_INFO("MenuSelectListener triggered");
+            LOG_LIB_INFO("MenuSelectListener triggered");
 
             switch (event->getType())
             {
                 case Sml::MouseButtonPressedEvent::getStaticType():
                 {
-                    // m_Menu->getMenuItems()->setVisible(!m_Menu->getMenuItems()->isVisible());
                     m_MenuBar.showMenu(m_Menu);
                     break;
                 }
 
                 case MouseExitedEvent::getStaticType():
                 {
-                    // m_Menu->getMenuItems()->setVisible(false);
+                    /* TODO:
+                     * Check if the hover transffered to another menu in order to switch
+                     * visible menu's context menu with the adjacent one. */
                     break;
                 }
 
                 default:
                 {
-                    assert(! "Invalid MenuSelectListener event type!");
+                    LOG_LIB_ERROR("Invalid MenuSelectListener event type!");
                     break;
                 }
             }
@@ -57,8 +57,7 @@ namespace Sgl
     };
 
     Menu::Menu(Scene* scene, const char* title)
-        : m_TitleButton(new Button{title}),
-          m_ContextMenu(new ContextMenu(scene, m_TitleButton))
+        : m_TitleButton(new Button{title}), m_ContextMenu(new ContextMenu(scene, m_TitleButton))
     {
         m_ContextMenu->setFillAcross(true);
     }

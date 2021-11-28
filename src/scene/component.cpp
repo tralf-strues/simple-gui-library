@@ -101,24 +101,6 @@ namespace Sgl
     {
         if (getParent() == nullptr) { return scenePos; }
         return getParent()->computeSceneToLocalPos(scenePos - getLayoutPos());
-
-        // static std::vector<Component*> parents;
-        // parents.clear();
-
-        // parents.push_back();
-
-        // Component* curParent = getParent();
-        // while (curParent != nullptr)
-        // {
-        //     parents.push_back(curParent);
-        //     curParent = curParent->getParent();
-        // }
-
-        // Sml::Vec2<int32_t> localPos = scenePos;
-        // while (!parents.empty())
-        // {
-        //     localPos -= parents.back()->getLayoutPos();
-        // }
     }
 
     Sml::Rectangle<int32_t> Component::getOriginBounds() const

@@ -1,8 +1,11 @@
 var files_dup =
 [
-    [ "core.h", "core_8h.html", null ],
     [ "gui_event.h", "gui__event_8h.html", "gui__event_8h" ],
     [ "gui_event_dispatching.h", "gui__event__dispatching_8h.html", "gui__event__dispatching_8h" ],
+    [ "plugin.hpp", "plugin_8hpp_source.html", null ],
+    [ "plugin_impl.h", "plugin__impl_8h.html", [
+      [ "Sgl::TextureImpl", "class_sgl_1_1_texture_impl.html", null ]
+    ] ],
     [ "background.h", "background_8h.html", [
       [ "Sgl::Background", "class_sgl_1_1_background.html", null ]
     ] ],
@@ -69,8 +72,8 @@ var files_dup =
       [ "Sgl::Skinnable", "class_sgl_1_1_skinnable.html", null ]
     ] ],
     [ "utils.h", "utils_8h.html", null ],
-    [ "core.cpp", "core_8cpp.html", null ],
     [ "gui_event_dispatching.cpp", "gui__event__dispatching_8cpp.html", "gui__event__dispatching_8cpp" ],
+    [ "plugin.cpp", "plugin_8cpp.html", null ],
     [ "background.cpp", "background_8cpp.html", null ],
     [ "border.cpp", "border_8cpp.html", null ],
     [ "component.cpp", "component_8cpp.html", null ],

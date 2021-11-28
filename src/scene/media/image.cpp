@@ -6,13 +6,13 @@
  * @copyright Copyright (c) 2021
  */
 
-#include "core.h"
+#include "sml/graphics_wrapper/renderer.h"
 #include "scene/media/image.h"
 
 namespace Sgl
 {
     Image::Image(const char* filename, ImageFormat format)
-        : m_Format(format), m_Texture(getContextRenderer())
+        : m_Format(format), m_Texture()
     {
         m_Texture.loadFromImage(filename);
     }
@@ -27,9 +27,7 @@ namespace Sgl
         assert(image);
         assert(image->getTexture());
 
-        Sml::Renderer* contextRenderer = getContextRenderer();
-
-        image->getTexture()->copyTo(contextRenderer->getTarget(), &targetRegion, nullptr);
+        image->getTexture()->copyTo(Sml::Renderer::getInstance().getTarget(), &targetRegion, nullptr);
     }
 
     void renderImage(const Image* image, const Sml::Rectangle<int32_t>& targetRegion,
@@ -37,12 +35,10 @@ namespace Sgl
     {
         assert(image);
         assert(image->getTexture());
-        assert(scaledWidth > 0);
+        assert(scaledWidth  > 0);
         assert(scaledHeight > 0);
 
-        Sml::Renderer* contextRenderer = getContextRenderer();
-
         Sml::Rectangle<int32_t> scaledRegion{targetRegion.pos, scaledWidth, scaledHeight};
-        image->getTexture()->copyTo(contextRenderer->getTarget(), &scaledRegion, nullptr);
+        image->getTexture()->copyTo(Sml::Renderer::getInstance().getTarget(), &scaledRegion, nullptr);
     }
 }

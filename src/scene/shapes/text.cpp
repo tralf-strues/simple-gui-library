@@ -6,7 +6,6 @@
  * @copyright Copyright (c) 2021
  */
 
-#include "core.h"
 #include "sml/math/rectangle.h"
 #include "scene/shapes/text.h"
 
@@ -27,14 +26,14 @@ namespace Sgl
 
     void Text::render(const Sml::Rectangle<int32_t>& targetRegion)
     {
-        m_Text.render(getContextRenderer(), targetRegion.pos + m_LayoutBounds.pos);
+        m_Text.render(targetRegion.pos + m_LayoutBounds.pos);
     }
 
     void Text::prerender()
     {
         if (getStr() != nullptr)
         {
-            m_Text.load(getContextRenderer());
+            m_Text.load();
         }
     }
 

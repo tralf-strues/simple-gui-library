@@ -46,8 +46,6 @@ namespace Sgl
         void requestFocus();
         void requestDrag();
 
-        // void moveToFront();
-
         GuiEventDispatcher* getEventDispatcher();
 
         Scene* getScene();

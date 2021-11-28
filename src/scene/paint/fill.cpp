@@ -7,7 +7,6 @@
  */
 
 #include "sml/graphics_wrapper/primitives.h"
-#include "core.h"
 #include "scene/paint/fill.h"
 
 namespace Sgl
@@ -18,36 +17,31 @@ namespace Sgl
     void ColorFill::fillLine(const Sml::Vec2<int32_t>& start, const Sml::Vec2<int32_t>& end,
                              const Sml::Rectangle<int32_t>& targetRegion) const
     {
-        getContextRenderer()->setColor(m_Color);
+        Sml::Renderer::getInstance().setColor(m_Color);
 
         Sml::Vec2<int32_t> translatedStart = start + targetRegion.pos;
         Sml::Vec2<int32_t> translatedEnd   = end + targetRegion.pos;
 
-        Sml::renderLine(getContextRenderer(), translatedStart, translatedEnd);
+        Sml::renderLine(translatedStart, translatedEnd);
     }
 
     void ColorFill::fillArea(const Sml::Rectangle<int32_t>& area,
                              const Sml::Rectangle<int32_t>& targetRegion) const
     {
-        // Sml::Color savedColor = getContextRenderer()->getColor();
-
-        getContextRenderer()->setColor(m_Color);
+        Sml::Renderer::getInstance().setColor(m_Color);
 
         Sml::Rectangle<int32_t> translatedArea = area;
         translatedArea.pos += targetRegion.pos;
 
-        Sml::renderFilledRect(getContextRenderer(), translatedArea);
-
-        // getContextRenderer()->setColor(savedColor);
+        Sml::renderFilledRect(translatedArea);
     }
 
     void ColorFill::fillPoint(const Sml::Vec2<int32_t>& point,
                               const Sml::Rectangle<int32_t>& targetRegion) const
     {
-        getContextRenderer()->setColor(m_Color);
+        Sml::Renderer::getInstance().setColor(m_Color);
 
         Sml::Vec2<int32_t> translatedPoint = point + targetRegion.pos;
-
-        Sml::renderPoint(getContextRenderer(), translatedPoint);
+        Sml::renderPoint(translatedPoint);
     }
 }

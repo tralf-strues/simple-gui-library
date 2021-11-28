@@ -92,7 +92,6 @@ $(document).ready(function(){initNavTree('default__skins_8cpp.html',''); initRes
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="default__skins_8h_source.html">scene/style/default_skins.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="button_8h_source.html">scene/controls/button.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="core_8h_source.html">core.h</a>&quot;</code><br />
 </div>
 <p><a href="default__skins_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -107,7 +106,7 @@ Macros</h2></td></tr>
 <tr class="separator:a02bb77b2b67dc14ecceccff1e07bac6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ece60572d50cfad1b143eefd4d8c9e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__skins_8cpp.html#a9ece60572d50cfad1b143eefd4d8c9e9">ASSERT_EITHER_CATEGORY</a>(eventClass1,  eventClass2)</td></tr>
 <tr class="separator:a9ece60572d50cfad1b143eefd4d8c9e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a525b6540928298bf108580948bb774f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__skins_8cpp.html#a525b6540928298bf108580948bb774f8">INVALID_EVENT_TYPE</a>(handler)&#160;&#160;&#160;LOG_ERROR(&quot;Invalid event type in &quot; #handler)</td></tr>
+<tr class="memitem:a525b6540928298bf108580948bb774f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default__skins_8cpp.html#a525b6540928298bf108580948bb774f8">INVALID_EVENT_TYPE</a>(handler)&#160;&#160;&#160;LOG_LIB_ERROR(&quot;Invalid event type in &quot; #handler)</td></tr>
 <tr class="separator:a525b6540928298bf108580948bb774f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -135,7 +134,7 @@ Macros</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">        assert(event != <span class="keyword">nullptr</span>);       \</div>
 <div class="line">        assert(event-&gt;isInCategory(eventClass::getStaticCategory()))</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00019">19</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00018">18</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
 
 </div>
 </div>
@@ -168,7 +167,7 @@ Macros</h2></td></tr>
 <div class="line">        assert(event-&gt;isInCategory(eventClass1::getStaticCategory() || \</div>
 <div class="line">                                   eventClass2::getStaticCategory()))</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00023">23</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00022">22</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
 
 </div>
 </div>
@@ -183,12 +182,12 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">handler</td><td>)</td>
-          <td>&#160;&#160;&#160;LOG_ERROR(&quot;Invalid event type in &quot; #handler)</td>
+          <td>&#160;&#160;&#160;LOG_LIB_ERROR(&quot;Invalid event type in &quot; #handler)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00028">28</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00027">27</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
 
 </div>
 </div>

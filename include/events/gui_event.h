@@ -10,7 +10,7 @@
 
 #include "sml/events/event.h"
 #include "sml/events/system_events.h"
-#include "../core.h"
+#include "sml/sml_log.h"
 
 namespace Sgl
 {
@@ -110,7 +110,7 @@ namespace Sgl
 
                 default:
                 {
-                    LOG_ERROR("HoverListener got invalid Event with type %" PRIu32, event->getType());
+                    LOG_LIB_ERROR("HoverListener got invalid Event with type %" PRIu32, event->getType());
                     break;
                 }
             };
