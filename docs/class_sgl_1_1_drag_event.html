@@ -104,15 +104,23 @@ Inheritance diagram for Sgl::DragEvent:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa529389cc669d25e54c694e637086a7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_drag_event.html#aa529389cc669d25e54c694e637086a7c">DragEvent</a> (Sml::EventTarget *target=nullptr)</td></tr>
-<tr class="separator:aa529389cc669d25e54c694e637086a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc3cc3b3135dc6dc195743bf2accb1ea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_drag_event.html#adc3cc3b3135dc6dc195743bf2accb1ea">DragEvent</a> (int32_t x, int32_t y, Sml::EventTarget *target=nullptr)</td></tr>
+<tr class="separator:adc3cc3b3135dc6dc195743bf2accb1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a683e76ddc83c3a9a0844416b035bd202"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_drag_event.html#a683e76ddc83c3a9a0844416b035bd202">getX</a> () const</td></tr>
+<tr class="separator:a683e76ddc83c3a9a0844416b035bd202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a877936c153355e1ffe79f3d467e992a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_drag_event.html#a877936c153355e1ffe79f3d467e992a1">setX</a> (int32_t x)</td></tr>
+<tr class="separator:a877936c153355e1ffe79f3d467e992a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21f90c7f75a5ac6d329f735eb6e0e909"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_drag_event.html#a21f90c7f75a5ac6d329f735eb6e0e909">getY</a> () const</td></tr>
+<tr class="separator:a21f90c7f75a5ac6d329f735eb6e0e909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c5221a0e36237b9ad13c21c7113f108"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_drag_event.html#a9c5221a0e36237b9ad13c21c7113f108">setY</a> (int32_t y)</td></tr>
+<tr class="separator:a9c5221a0e36237b9ad13c21c7113f108"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00210">210</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00204">204</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa529389cc669d25e54c694e637086a7c" name="aa529389cc669d25e54c694e637086a7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa529389cc669d25e54c694e637086a7c">&#9670;&nbsp;</a></span>DragEvent()</h2>
+<a id="adc3cc3b3135dc6dc195743bf2accb1ea" name="adc3cc3b3135dc6dc195743bf2accb1ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc3cc3b3135dc6dc195743bf2accb1ea">&#9670;&nbsp;</a></span>DragEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -123,9 +131,53 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">Sgl::DragEvent::DragEvent </td>
           <td>(</td>
-          <td class="paramtype">Sml::EventTarget *&#160;</td>
-          <td class="paramname"><em>target</em> = <code>nullptr</code></td><td>)</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Sml::EventTarget *&#160;</td>
+          <td class="paramname"><em>target</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00207">207</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a683e76ddc83c3a9a0844416b035bd202" name="a683e76ddc83c3a9a0844416b035bd202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a683e76ddc83c3a9a0844416b035bd202">&#9670;&nbsp;</a></span>getX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t Sgl::DragEvent::getX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -136,6 +188,89 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00213">213</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+
+</div>
+</div>
+<a id="a21f90c7f75a5ac6d329f735eb6e0e909" name="a21f90c7f75a5ac6d329f735eb6e0e909"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21f90c7f75a5ac6d329f735eb6e0e909">&#9670;&nbsp;</a></span>getY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t Sgl::DragEvent::getY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00216">216</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+
+</div>
+</div>
+<a id="a877936c153355e1ffe79f3d467e992a1" name="a877936c153355e1ffe79f3d467e992a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a877936c153355e1ffe79f3d467e992a1">&#9670;&nbsp;</a></span>setX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sgl::DragEvent::setX </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00214">214</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+
+</div>
+</div>
+<a id="a9c5221a0e36237b9ad13c21c7113f108" name="a9c5221a0e36237b9ad13c21c7113f108"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c5221a0e36237b9ad13c21c7113f108">&#9670;&nbsp;</a></span>setY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sgl::DragEvent::setY </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>y</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00217">217</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
 
 </div>
 </div>

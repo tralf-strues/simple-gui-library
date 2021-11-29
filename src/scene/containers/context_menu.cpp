@@ -18,7 +18,7 @@ namespace Sgl
     const Border     ContextMenu::DEFAULT_BORDER          = {1, 0xCF'CF'CF'FF};
     const ColorFill  ContextMenu::DEFAULT_BACKGROUND_FILL = {0xEE'EE'EE'FF};
     const Background ContextMenu::DEFAULT_BACKGROUND      = {&DEFAULT_BACKGROUND_FILL};
-    const Shadow     ContextMenu::DEFAULT_SHADOW          = {{0, 2}, {1.018, 1}, 3, 0x44'44'44'88};
+    const Shadow     ContextMenu::DEFAULT_SHADOW          = {{0, 3}, {1.018, 1}, 3, 0x55'55'55'22};
 
     class ContextMenuFocusListener : public FocusListener<ContextMenu>
     {

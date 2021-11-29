@@ -265,7 +265,8 @@ namespace Sgl
         if (mouseEvent->getType() == Sml::MouseMovedEvent::getStaticType() && m_DragOwner != nullptr)
         {
             Sml::MouseMovedEvent* mouseMovedEvent = dynamic_cast<Sml::MouseMovedEvent*>(mouseEvent);
-            DragMoveEvent dragMoveEvent{mouseMovedEvent->getDeltaX(), mouseMovedEvent->getDeltaY(),
+            DragMoveEvent dragMoveEvent{mouseMovedEvent->getX(), mouseMovedEvent->getY(),
+                                        mouseMovedEvent->getDeltaX(), mouseMovedEvent->getDeltaY(),
                                         m_DragOwner};
 
             fireEvent(&dragMoveEvent);

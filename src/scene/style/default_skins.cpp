@@ -8,6 +8,7 @@
 
 #include "scene/style/default_skins.h"
 #include "scene/controls/button.h"
+#include "scene/controls/slider.h"
 
 namespace Sgl
 {
@@ -301,7 +302,143 @@ namespace DefaultSkins
         : ButtonBaseSkin(button, &STATIC_STYLE, &IDLE_STYLE, &HOVERED_STYLE, nullptr) {}
 
     //------------------------------------------------------------------------------
-    // ButtonIconSkin
+    // SliderSkin
     //------------------------------------------------------------------------------
+    const Shadow     SliderSkin::SHADOW             = {{0, 2}, {1.01, 1}, 3, 0x44'44'44'88};
+    const Sml::Color SliderSkin::NOT_SELECTED_COLOR = 0xE0'E0'E0'FF;
+    const Sml::Color SliderSkin::SELECTED_COLOR     = 0x32'73'F6'FF;
+    const Sml::Color SliderSkin::KNOB_COLOR         = 0x27'5B'E1'FF;
+    const int32_t    SliderSkin::THICKNESS          = 6;
+    const int32_t    SliderSkin::KNOB_WIDTH         = 6;
+    const int32_t    SliderSkin::KNOB_HEIGHT        = 11;
+
+    class SliderSkinDragListener : public DragListener<Slider>
+    {
+    public:
+        SliderSkinDragListener(Slider* slider) : DragListener<Slider>(slider) {}
+
+        virtual void onDragMove(DragMoveEvent* event)
+        {
+            LOG_LIB_INFO("SliderSkinDragListener::onDragMove() called");
+
+            Slider&     slider = *getComponent();
+            SliderSkin& skin   = dynamic_cast<SliderSkin&>(*slider.getSkin());
+
+            Sml::Vec2<int32_t> localPos = slider.computeSceneToLocalPos({event->getX(), event->getY()});
+
+            slider.setValue(slider.getRangeMin() +
+                            (static_cast<float>(localPos.x - SliderSkin::KNOB_WIDTH / 2) /
+                             static_cast<float>(skin.getLineRect().width - SliderSkin::KNOB_WIDTH)) *
+                            (slider.getRangeMax() - slider.getRangeMin()));
+        }
+    };
+
+    class SliderSkinMousePressListener : public Sgl::ComponentEventListener<Slider>
+    {
+    public:
+        DEFINE_STATIC_LISTENED_EVENT_TYPES(Sml::MouseButtonPressedEvent::getStaticType())
+
+    public:
+        SliderSkinMousePressListener(Slider* slider) : Sgl::ComponentEventListener<Slider>(slider) {}
+
+        virtual void onEvent(Sml::Event* event) override
+        {
+            LOG_LIB_INFO("SliderSkinMousePressListener called");
+            getComponent()->requestDrag();
+        }
+    };
+    
+    SliderSkin::SliderSkin(Slider* slider)
+    {
+        assert(slider);
+        attach(slider);
+    }
+
+    void SliderSkin::dispose()
+    {
+        m_Slider->getEventDispatcher()->detachHandler(m_MousePressListener);
+        delete m_MousePressListener;
+
+        m_Slider->getEventDispatcher()->detachHandler(m_DragListener);
+        delete m_DragListener;
+    }
+
+    void SliderSkin::attach(Slider* slider)
+    {
+        assert(slider);
+
+        m_Slider = slider;
+
+        m_MousePressListener = new SliderSkinMousePressListener(m_Slider);
+        m_Slider->getEventDispatcher()->attachHandler(SliderSkinMousePressListener::EVENT_TYPES, m_MousePressListener);
+
+        m_DragListener = new SliderSkinDragListener(m_Slider);
+        m_Slider->getEventDispatcher()->attachHandler(SliderSkinDragListener::EVENT_TYPES, m_DragListener);
+    }
+
+    Component* SliderSkin::getHitComponent(int32_t x, int32_t y)
+    {
+        Sml::Rectangle<int32_t> translatedRect = getLineRect();
+        translatedRect.pos += m_Slider->getLayoutPos();
+
+        if (Sml::isPointInsideRectangle({x, y}, translatedRect))
+        {
+            return m_Slider;
+        }
+
+        translatedRect = getKnobRect();
+        translatedRect.pos += m_Slider->getLayoutPos();
+        if (Sml::isPointInsideRectangle({x, y}, translatedRect))
+        {
+            return m_Slider;
+        }
+
+        return nullptr;
+    }
+
+    void SliderSkin::prerenderControl()
+    {
+        Sml::Rectangle<int32_t> lineRect = getLineRect();
+
+        Sml::Renderer::getInstance().setColor(NOT_SELECTED_COLOR);
+        Sml::renderFilledRect(lineRect);
+
+        lineRect.width *= getPercentage();
+        Sml::Renderer::getInstance().setColor(SELECTED_COLOR);
+        Sml::renderFilledRect(lineRect);
+
+        Sml::Renderer::getInstance().setColor(KNOB_COLOR);
+        Sml::renderFilledRect(getKnobRect());
+    }
+
+    const Control* SliderSkin::getControl() const { return m_Slider; }
+    Control* SliderSkin::getModifiableControl()   { return m_Slider; }
+
+    int32_t SliderSkin::computePrefHeight(int32_t width) const { return KNOB_HEIGHT; }
+
+    void SliderSkin::layoutChildren() {}
+
+    Sml::Rectangle<int32_t> SliderSkin::getLineRect()
+    {
+        Sml::Rectangle<int32_t> originBounds = m_Slider->getOriginBounds();
+        int32_t                 centerY      = originBounds.height / 2;
+
+        return Sml::Rectangle<int32_t>{0, centerY - THICKNESS / 2, originBounds.width, THICKNESS};
+    }
+
+    Sml::Rectangle<int32_t> SliderSkin::getKnobRect()
+    {
+        Sml::Rectangle<int32_t> originBounds = m_Slider->getOriginBounds();
+        int32_t                 centerY      = originBounds.height / 2;
+        int32_t                 knobCenterX  = KNOB_WIDTH / 2 + getPercentage() * (originBounds.width - KNOB_WIDTH);
+
+        return Sml::Rectangle<int32_t>{knobCenterX - KNOB_WIDTH / 2, centerY - KNOB_HEIGHT / 2,
+                                       KNOB_WIDTH, KNOB_HEIGHT};
+    }
+
+    float SliderSkin::getPercentage()
+    {
+        return (m_Slider->getValue() - m_Slider->getRangeMin()) / (m_Slider->getRangeMax() - m_Slider->getRangeMin());
+    }
 }
 }

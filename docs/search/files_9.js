@@ -7,5 +7,7 @@ var searchData=
   ['shape_2ecpp_4',['shape.cpp',['../shape_8cpp.html',1,'']]],
   ['shape_2eh_5',['shape.h',['../shape_8h.html',1,'']]],
   ['skin_2ecpp_6',['skin.cpp',['../skin_8cpp.html',1,'']]],
-  ['skin_2eh_7',['skin.h',['../skin_8h.html',1,'']]]
+  ['skin_2eh_7',['skin.h',['../skin_8h.html',1,'']]],
+  ['slider_2ecpp_8',['slider.cpp',['../slider_8cpp.html',1,'']]],
+  ['slider_2eh_9',['slider.h',['../slider_8h.html',1,'']]]
 ];

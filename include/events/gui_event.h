@@ -34,12 +34,6 @@ namespace Sgl
         EVENT_CATEGORY_DRAG_AND_DROP
     };
 
-    #define DEFINE_STATIC_LISTENED_EVENT_TYPES(...) \
-        static constexpr std::initializer_list<Sml::EventType> EVENT_TYPES{__VA_ARGS__};
-
-    #define DEFINE_STATIC_LISTENED_EVENT_TYPES_FROM_BASE_CLASS(baseClass) \
-        static constexpr std::initializer_list<Sml::EventType> EVENT_TYPES = baseClass::EVENT_TYPES;
-
     //------------------------------------------------------------------------------
     // Event category [GUI]
     //------------------------------------------------------------------------------
@@ -210,25 +204,11 @@ namespace Sgl
     class DragEvent : public Sml::Event
     {
     public:
-        DragEvent(Sml::EventTarget* target = nullptr) 
-            : Sml::Event(getStaticType(), getStaticCategory(), target) {}
+        DragEvent(int32_t x, int32_t y, Sml::EventTarget* target = nullptr) 
+            : Sml::Event(getStaticType(), getStaticCategory(), target), m_X(x), m_Y(y) {}
 
         DEFINE_STATIC_EVENT_TYPE(Sml::INVALID_EVENT_TYPE)
         DEFINE_STATIC_EVENT_CATEGORY(EVENT_CATEGORY_GUI | EVENT_CATEGORY_DRAG_AND_DROP)
-    };
-
-    class DragStartEvent : public DragEvent
-    {
-    public:
-        DragStartEvent(int32_t x, int32_t y, Sml::EventTarget* target = nullptr)
-            : DragEvent(target), m_X(x), m_Y(y)
-        {
-            m_Type = getStaticType();
-            m_Category = getStaticCategory();
-        }
-
-        DEFINE_STATIC_EVENT_TYPE(DRAG_START)
-        DEFINE_STATIC_EVENT_CATEGORY(DragEvent::getStaticCategory())
     
         int32_t getX() const { return m_X; }
         void setX(int32_t x) { m_X = x; }
@@ -241,11 +221,23 @@ namespace Sgl
         int32_t m_Y = 0;
     };
 
+    class DragStartEvent : public DragEvent
+    {
+    public:
+        DragStartEvent(int32_t x, int32_t y, Sml::EventTarget* target = nullptr) : DragEvent(x, y, target)
+        {
+            m_Type = getStaticType();
+            m_Category = getStaticCategory();
+        }
+
+        DEFINE_STATIC_EVENT_TYPE(DRAG_START)
+        DEFINE_STATIC_EVENT_CATEGORY(DragEvent::getStaticCategory())
+    };
+
     class DragEndEvent : public DragEvent
     {
     public:
-        DragEndEvent(int32_t x, int32_t y, Sml::EventTarget* target = nullptr)
-            : DragEvent(target), m_X(x), m_Y(y)
+        DragEndEvent(int32_t x, int32_t y, Sml::EventTarget* target = nullptr) : DragEvent(x, y, target)
         {
             m_Type = getStaticType();
             m_Category = getStaticCategory();
@@ -268,8 +260,8 @@ namespace Sgl
     class DragMoveEvent : public DragEvent
     {
     public:
-        DragMoveEvent(int32_t deltaX, int32_t deltaY, Sml::EventTarget* target = nullptr)
-            : DragEvent(target), m_DeltaX(deltaX), m_DeltaY(deltaY)
+        DragMoveEvent(int32_t x, int32_t y, int32_t deltaX, int32_t deltaY, Sml::EventTarget* target = nullptr)
+            : DragEvent(x, y, target), m_DeltaX(deltaX), m_DeltaY(deltaY)
         {
             m_Type = getStaticType();
             m_Category = getStaticCategory();

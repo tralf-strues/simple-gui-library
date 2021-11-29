@@ -354,19 +354,20 @@ $(document).ready(function(){initNavTree('scene_8cpp_source.html',''); initResiz
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        <span class="keywordflow">if</span> (mouseEvent-&gt;getType() == Sml::MouseMovedEvent::getStaticType() &amp;&amp; m_DragOwner != <span class="keyword">nullptr</span>)</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        {</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            Sml::MouseMovedEvent* mouseMovedEvent = <span class="keyword">dynamic_cast&lt;</span>Sml::MouseMovedEvent*<span class="keyword">&gt;</span>(mouseEvent);</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            DragMoveEvent dragMoveEvent{mouseMovedEvent-&gt;getDeltaX(), mouseMovedEvent-&gt;getDeltaY(),</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                                        m_DragOwner};</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>            <a class="code hl_function" href="gui__event__dispatching_8h.html#a7d411ff938b8ac676119ec6f232fbf19">fireEvent</a>(&amp;dragMoveEvent);</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        }</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        <span class="keywordflow">if</span> (newHoverOwner != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        {</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            mouseEvent-&gt;setTarget(newHoverOwner);</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            <a class="code hl_function" href="gui__event__dispatching_8h.html#a7d411ff938b8ac676119ec6f232fbf19">fireEvent</a>(mouseEvent);</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        }</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    }</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>}</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            DragMoveEvent dragMoveEvent{mouseMovedEvent-&gt;getX(), mouseMovedEvent-&gt;getY(),</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                                        mouseMovedEvent-&gt;getDeltaX(), mouseMovedEvent-&gt;getDeltaY(),</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>                                        m_DragOwner};</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>            <a class="code hl_function" href="gui__event__dispatching_8h.html#a7d411ff938b8ac676119ec6f232fbf19">fireEvent</a>(&amp;dragMoveEvent);</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        }</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keywordflow">if</span> (newHoverOwner != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        {</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            mouseEvent-&gt;setTarget(newHoverOwner);</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>            <a class="code hl_function" href="gui__event__dispatching_8h.html#a7d411ff938b8ac676119ec6f232fbf19">fireEvent</a>(mouseEvent);</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        }</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    }</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>}</div>
 <div class="ttc" id="aclass_gui_event_dispatcher_html"><div class="ttname"><a href="class_gui_event_dispatcher.html">GuiEventDispatcher</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8h_source.html#l00063">gui_event_dispatching.h:64</a></div></div>
 <div class="ttc" id="agui__event__dispatching_8h_html_a7d411ff938b8ac676119ec6f232fbf19"><div class="ttname"><a href="gui__event__dispatching_8h.html#a7d411ff938b8ac676119ec6f232fbf19">fireEvent</a></div><div class="ttdeci">Sml::Event * fireEvent(Sml::Event *event)</div><div class="ttdoc">Fire the event from the specified.</div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8cpp_source.html#l00013">gui_event_dispatching.cpp:13</a></div></div>
 <div class="ttc" id="aparent_8h_html"><div class="ttname"><a href="parent_8h.html">parent.h</a></div></div>

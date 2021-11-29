@@ -1,21 +1,7 @@
 var searchData=
 [
-  ['iapi_0',['IAPI',['../class_i_a_p_i.html',1,'']]],
-  ['ibutton_1',['IButton',['../class_i_button.html',1,'']]],
-  ['iclickcallback_2',['IClickCallback',['../class_i_click_callback.html',1,'']]],
-  ['ifilter_3',['IFilter',['../class_i_filter.html',1,'']]],
-  ['ilabel_4',['ILabel',['../class_i_label.html',1,'']]],
-  ['image_5',['Image',['../class_sgl_1_1_image.html',1,'Sgl']]],
-  ['imageview_6',['ImageView',['../class_sgl_1_1_image_view.html',1,'Sgl']]],
-  ['insets_7',['Insets',['../struct_sgl_1_1_insets.html',1,'Sgl']]],
-  ['interactionstyle_8',['InteractionStyle',['../struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_interaction_style.html',1,'Sgl::DefaultSkins::ButtonBaseSkin']]],
-  ['iplugin_9',['IPlugin',['../class_i_plugin.html',1,'']]],
-  ['ipreferencespanel_10',['IPreferencesPanel',['../class_i_preferences_panel.html',1,'']]],
-  ['islider_11',['ISlider',['../class_i_slider.html',1,'']]],
-  ['islidercallback_12',['ISliderCallback',['../class_i_slider_callback.html',1,'']]],
-  ['itexture_13',['ITexture',['../class_i_texture.html',1,'']]],
-  ['itexturefactory_14',['ITextureFactory',['../class_i_texture_factory.html',1,'']]],
-  ['itool_15',['ITool',['../class_i_tool.html',1,'']]],
-  ['iwidget_16',['IWidget',['../class_i_widget.html',1,'']]],
-  ['iwidgetfactory_17',['IWidgetFactory',['../class_i_widget_factory.html',1,'']]]
+  ['image_0',['Image',['../class_sgl_1_1_image.html',1,'Sgl']]],
+  ['imageview_1',['ImageView',['../class_sgl_1_1_image_view.html',1,'Sgl']]],
+  ['insets_2',['Insets',['../struct_sgl_1_1_insets.html',1,'Sgl']]],
+  ['interactionstyle_3',['InteractionStyle',['../struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_interaction_style.html',1,'Sgl::DefaultSkins::ButtonBaseSkin']]]
 ];

@@ -2,10 +2,6 @@ var files_dup =
 [
     [ "gui_event.h", "gui__event_8h.html", "gui__event_8h" ],
     [ "gui_event_dispatching.h", "gui__event__dispatching_8h.html", "gui__event__dispatching_8h" ],
-    [ "plugin.hpp", "plugin_8hpp_source.html", null ],
-    [ "plugin_impl.h", "plugin__impl_8h.html", [
-      [ "Sgl::TextureImpl", "class_sgl_1_1_texture_impl.html", null ]
-    ] ],
     [ "background.h", "background_8h.html", [
       [ "Sgl::Background", "class_sgl_1_1_background.html", null ]
     ] ],
@@ -44,6 +40,9 @@ var files_dup =
     [ "label.h", "label_8h.html", [
       [ "Sgl::Label", "class_sgl_1_1_label.html", null ]
     ] ],
+    [ "slider.h", "slider_8h.html", [
+      [ "Sgl::Slider", "class_sgl_1_1_slider.html", null ]
+    ] ],
     [ "insets.h", "insets_8h.html", "insets_8h" ],
     [ "image.h", "image_8h.html", "image_8h" ],
     [ "image_view.h", "image__view_8h.html", [
@@ -76,7 +75,6 @@ var files_dup =
     ] ],
     [ "utils.h", "utils_8h.html", null ],
     [ "gui_event_dispatching.cpp", "gui__event__dispatching_8cpp.html", "gui__event__dispatching_8cpp" ],
-    [ "plugin.cpp", "plugin_8cpp.html", null ],
     [ "background.cpp", "background_8cpp.html", null ],
     [ "border.cpp", "border_8cpp.html", null ],
     [ "component.cpp", "component_8cpp.html", null ],
@@ -90,6 +88,7 @@ var files_dup =
     [ "tile_pane.cpp", "tile__pane_8cpp.html", null ],
     [ "button.cpp", "button_8cpp.html", null ],
     [ "control.cpp", "control_8cpp.html", null ],
+    [ "slider.cpp", "slider_8cpp.html", null ],
     [ "insets.cpp", "insets_8cpp.html", null ],
     [ "image.cpp", "image_8cpp.html", null ],
     [ "image_view.cpp", "image__view_8cpp.html", null ],

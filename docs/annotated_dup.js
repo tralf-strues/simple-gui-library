@@ -6,7 +6,10 @@ var annotated_dup =
         [ "ButtonBaseSkinEventListener", "class_sgl_1_1_default_skins_1_1_button_base_skin_event_listener.html", null ],
         [ "ButtonPlaneSkin", "class_sgl_1_1_default_skins_1_1_button_plane_skin.html", null ],
         [ "ButtonSkin", "class_sgl_1_1_default_skins_1_1_button_skin.html", null ],
-        [ "MenuItemSkin", "class_sgl_1_1_default_skins_1_1_menu_item_skin.html", null ]
+        [ "MenuItemSkin", "class_sgl_1_1_default_skins_1_1_menu_item_skin.html", null ],
+        [ "SliderSkin", "class_sgl_1_1_default_skins_1_1_slider_skin.html", "class_sgl_1_1_default_skins_1_1_slider_skin" ],
+        [ "SliderSkinDragListener", "class_sgl_1_1_default_skins_1_1_slider_skin_drag_listener.html", null ],
+        [ "SliderSkinMousePressListener", "class_sgl_1_1_default_skins_1_1_slider_skin_mouse_press_listener.html", null ]
       ] ],
       [ "ActionEvent", "class_sgl_1_1_action_event.html", null ],
       [ "ActionListener", "class_sgl_1_1_action_listener.html", null ],
@@ -48,26 +51,11 @@ var annotated_dup =
       [ "Shape", "class_sgl_1_1_shape.html", null ],
       [ "Skin", "class_sgl_1_1_skin.html", "class_sgl_1_1_skin" ],
       [ "Skinnable", "class_sgl_1_1_skinnable.html", null ],
+      [ "Slider", "class_sgl_1_1_slider.html", null ],
       [ "Text", "class_sgl_1_1_text.html", null ],
-      [ "TextureImpl", "class_sgl_1_1_texture_impl.html", null ],
       [ "TilePane", "class_sgl_1_1_tile_pane.html", null ],
       [ "VBox", "class_sgl_1_1_v_box.html", null ]
     ] ],
-    [ "Buffer", "struct_buffer.html", null ],
     [ "GuiEventDispatchChain", "class_gui_event_dispatch_chain.html", "class_gui_event_dispatch_chain" ],
-    [ "GuiEventDispatcher", "class_gui_event_dispatcher.html", null ],
-    [ "IAPI", "class_i_a_p_i.html", null ],
-    [ "IButton", "class_i_button.html", null ],
-    [ "IClickCallback", "class_i_click_callback.html", null ],
-    [ "IFilter", "class_i_filter.html", null ],
-    [ "ILabel", "class_i_label.html", null ],
-    [ "IPlugin", "class_i_plugin.html", null ],
-    [ "IPreferencesPanel", "class_i_preferences_panel.html", null ],
-    [ "ISlider", "class_i_slider.html", null ],
-    [ "ISliderCallback", "class_i_slider_callback.html", null ],
-    [ "ITexture", "class_i_texture.html", null ],
-    [ "ITextureFactory", "class_i_texture_factory.html", null ],
-    [ "ITool", "class_i_tool.html", null ],
-    [ "IWidget", "class_i_widget.html", null ],
-    [ "IWidgetFactory", "class_i_widget_factory.html", null ]
+    [ "GuiEventDispatcher", "class_gui_event_dispatcher.html", null ]
 ];

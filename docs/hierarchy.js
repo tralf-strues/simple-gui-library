@@ -2,7 +2,6 @@ var hierarchy =
 [
     [ "Sgl::Background", "class_sgl_1_1_background.html", null ],
     [ "Sgl::Border", "class_sgl_1_1_border.html", null ],
-    [ "Buffer", "struct_buffer.html", null ],
     [ "Sml::Event", null, [
       [ "Sgl::ActionEvent", "class_sgl_1_1_action_event.html", null ],
       [ "Sgl::DragEvent", "class_sgl_1_1_drag_event.html", [
@@ -37,7 +36,8 @@ var hierarchy =
             [ "Sgl::Button", "class_sgl_1_1_button.html", [
               [ "Sgl::MenuItem", "class_sgl_1_1_menu_item.html", null ]
             ] ],
-            [ "Sgl::Label", "class_sgl_1_1_label.html", null ]
+            [ "Sgl::Label", "class_sgl_1_1_label.html", null ],
+            [ "Sgl::Slider", "class_sgl_1_1_slider.html", null ]
           ] ]
         ] ],
         [ "Sgl::Shape", "class_sgl_1_1_shape.html", [
@@ -49,29 +49,18 @@ var hierarchy =
     [ "Sgl::Fill", "class_sgl_1_1_fill.html", [
       [ "Sgl::ColorFill", "class_sgl_1_1_color_fill.html", null ]
     ] ],
-    [ "IAPI", "class_i_a_p_i.html", null ],
-    [ "IClickCallback", "class_i_click_callback.html", null ],
-    [ "IFilter", "class_i_filter.html", null ],
     [ "Sgl::Image", "class_sgl_1_1_image.html", null ],
     [ "Sgl::Insets", "struct_sgl_1_1_insets.html", null ],
     [ "Sgl::DefaultSkins::ButtonBaseSkin::InteractionStyle", "struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_interaction_style.html", null ],
-    [ "IPlugin", "class_i_plugin.html", null ],
-    [ "ISliderCallback", "class_i_slider_callback.html", null ],
-    [ "ITexture", "class_i_texture.html", [
-      [ "Sgl::TextureImpl", "class_sgl_1_1_texture_impl.html", null ]
-    ] ],
-    [ "ITextureFactory", "class_i_texture_factory.html", null ],
-    [ "ITool", "class_i_tool.html", null ],
-    [ "IWidget", "class_i_widget.html", [
-      [ "IButton", "class_i_button.html", null ],
-      [ "ILabel", "class_i_label.html", null ],
-      [ "IPreferencesPanel", "class_i_preferences_panel.html", null ],
-      [ "ISlider", "class_i_slider.html", null ]
-    ] ],
-    [ "IWidgetFactory", "class_i_widget_factory.html", null ],
     [ "Sml::Listener", null, [
       [ "Sgl::ComponentEventListener< Button >", "class_sgl_1_1_component_event_listener.html", [
         [ "Sgl::DefaultSkins::ButtonBaseSkinEventListener", "class_sgl_1_1_default_skins_1_1_button_base_skin_event_listener.html", null ]
+      ] ],
+      [ "Sgl::ComponentEventListener< Slider >", "class_sgl_1_1_component_event_listener.html", [
+        [ "Sgl::DragListener< Slider >", "class_sgl_1_1_drag_listener.html", [
+          [ "Sgl::DefaultSkins::SliderSkinDragListener", "class_sgl_1_1_default_skins_1_1_slider_skin_drag_listener.html", null ]
+        ] ],
+        [ "Sgl::DefaultSkins::SliderSkinMousePressListener", "class_sgl_1_1_default_skins_1_1_slider_skin_mouse_press_listener.html", null ]
       ] ],
       [ "Sgl::ComponentEventListener< C >", "class_sgl_1_1_component_event_listener.html", [
         [ "Sgl::FocusListener< ContextMenu >", "class_sgl_1_1_focus_listener.html", [
@@ -97,6 +86,9 @@ var hierarchy =
           [ "Sgl::DefaultSkins::ButtonSkin", "class_sgl_1_1_default_skins_1_1_button_skin.html", null ],
           [ "Sgl::DefaultSkins::MenuItemSkin", "class_sgl_1_1_default_skins_1_1_menu_item_skin.html", null ]
         ] ]
+      ] ],
+      [ "Sgl::BaseSkin< Slider >", "class_sgl_1_1_base_skin.html", [
+        [ "Sgl::DefaultSkins::SliderSkin", "class_sgl_1_1_default_skins_1_1_slider_skin.html", null ]
       ] ],
       [ "Sgl::BaseSkin< C >", "class_sgl_1_1_base_skin.html", null ]
     ] ],
