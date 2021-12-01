@@ -304,13 +304,13 @@ namespace DefaultSkins
     //------------------------------------------------------------------------------
     // SliderSkin
     //------------------------------------------------------------------------------
-    const Shadow     SliderSkin::SHADOW             = {{0, 2}, {1.01, 1}, 3, 0x44'44'44'88};
-    const Sml::Color SliderSkin::NOT_SELECTED_COLOR = 0xE0'E0'E0'FF;
-    const Sml::Color SliderSkin::SELECTED_COLOR     = 0x32'73'F6'FF;
-    const Sml::Color SliderSkin::KNOB_COLOR         = 0x27'5B'E1'FF;
-    const int32_t    SliderSkin::THICKNESS          = 6;
-    const int32_t    SliderSkin::KNOB_WIDTH         = 6;
-    const int32_t    SliderSkin::KNOB_HEIGHT        = 11;
+    const ShadowSpecification SliderSkin::SHADOW             = {{0, 2}, {1.01, 1}, 3, 0x44'44'44'88};
+    const Sml::Color          SliderSkin::NOT_SELECTED_COLOR = 0xE0'E0'E0'FF;
+    const Sml::Color          SliderSkin::SELECTED_COLOR     = 0x32'73'F6'FF;
+    const Sml::Color          SliderSkin::KNOB_COLOR         = 0x27'5B'E1'FF;
+    const int32_t             SliderSkin::THICKNESS          = 6;
+    const int32_t             SliderSkin::KNOB_WIDTH         = 6;
+    const int32_t             SliderSkin::KNOB_HEIGHT        = 11;
 
     class SliderSkinDragListener : public DragListener<Slider>
     {

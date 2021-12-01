@@ -25,10 +25,10 @@ namespace Sgl
     class ContextMenu : public VBox
     {
     public:
-        static const Border     DEFAULT_BORDER;
-        static const ColorFill  DEFAULT_BACKGROUND_FILL;
-        static const Background DEFAULT_BACKGROUND;
-        static const Shadow     DEFAULT_SHADOW;
+        static const Border              DEFAULT_BORDER;
+        static const ColorFill           DEFAULT_BACKGROUND_FILL;
+        static const Background          DEFAULT_BACKGROUND;
+        static const ShadowSpecification DEFAULT_SHADOW;
 
     public:
         ContextMenu(Scene* scene, Component* sourceComponent = nullptr);

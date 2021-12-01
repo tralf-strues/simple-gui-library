@@ -15,10 +15,10 @@ namespace Sgl
     MenuItem::MenuItem(const char* label)
         : Button(new DefaultSkins::MenuItemSkin(), label) {}
 
-    const Border     ContextMenu::DEFAULT_BORDER          = {1, 0xCF'CF'CF'FF};
-    const ColorFill  ContextMenu::DEFAULT_BACKGROUND_FILL = {0xEE'EE'EE'FF};
-    const Background ContextMenu::DEFAULT_BACKGROUND      = {&DEFAULT_BACKGROUND_FILL};
-    const Shadow     ContextMenu::DEFAULT_SHADOW          = {{0, 3}, {1.018, 1}, 3, 0x55'55'55'22};
+    const Border              ContextMenu::DEFAULT_BORDER          = {1, 0x99'99'99'66};
+    const ColorFill           ContextMenu::DEFAULT_BACKGROUND_FILL = {0xEE'EE'EE'FF};
+    const Background          ContextMenu::DEFAULT_BACKGROUND      = {&DEFAULT_BACKGROUND_FILL};
+    const ShadowSpecification ContextMenu::DEFAULT_SHADOW          = {{0, 2}, {1.02, 1}, 6, 0x22'22'22'18};
 
     class ContextMenuFocusListener : public FocusListener<ContextMenu>
     {

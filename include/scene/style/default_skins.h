@@ -170,13 +170,13 @@ namespace DefaultSkins
     class SliderSkin : public Sgl::BaseSkin<Slider>
     {
     public:
-        static const Shadow     SHADOW;
-        static const Sml::Color NOT_SELECTED_COLOR;
-        static const Sml::Color SELECTED_COLOR;
-        static const Sml::Color KNOB_COLOR;
-        static const int32_t    THICKNESS;
-        static const int32_t    KNOB_WIDTH;
-        static const int32_t    KNOB_HEIGHT;
+        static const ShadowSpecification SHADOW;
+        static const Sml::Color          NOT_SELECTED_COLOR;
+        static const Sml::Color          SELECTED_COLOR;
+        static const Sml::Color          KNOB_COLOR;
+        static const int32_t             THICKNESS;
+        static const int32_t             KNOB_WIDTH;
+        static const int32_t             KNOB_HEIGHT;
 
     public:
         SliderSkin(Slider* slider);

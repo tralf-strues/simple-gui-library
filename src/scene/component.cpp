@@ -55,15 +55,17 @@ namespace Sgl
         getScene()->requestDrag(this);
     }
 
-    // void Component::moveToFront()
-    // {
-    //     if (getParent() == nullptr) { return; }
+    const Shadow& Component::getShadow() const
+    {
+        return m_Shadow;
+    }
 
-    //     getParent()->getChildren().remove(this);
-    //     getParent()->getChildren().push_back(this);
-
-    //     getParent()->moveToFront();
-    // }
+    void Component::setShadow(const ShadowSpecification* specification)
+    {
+        assert(specification);
+        
+        m_Shadow.setSpecification(specification);
+    }
 
     GuiEventDispatcher* Component::getEventDispatcher()
     {
@@ -170,6 +172,41 @@ namespace Sgl
         }
 
         return scenePos;
+    }
+
+    void Component::updateShadow()
+    {
+        if (getLayoutWidth() == 0 || getLayoutHeight() == 0 || m_Shadow.getSpecification() == nullptr)
+        {
+            return;
+        }
+
+        Sml::Renderer& renderer = Sml::Renderer::getInstance();
+
+        Sml::Texture* renderedComponent = new Sml::Texture(m_LayoutBounds.width, m_LayoutBounds.height);
+        
+        renderer.pushTarget();
+
+        renderer.setTarget(renderedComponent);
+
+        Sml::Vec2<int32_t> savedLayoutPos = m_LayoutBounds.pos;
+        m_LayoutBounds.pos = {0, 0};
+        render(getOriginBounds());
+        m_LayoutBounds.pos = savedLayoutPos;
+
+        renderer.popTarget();
+
+        m_Shadow.update(renderedComponent, getLayoutBounds());
+
+        delete renderedComponent;
+    }
+
+    void Component::renderShadow(const Sml::Rectangle<int32_t>& targetRegion)
+    {
+        if (isVisible())
+        {   
+            m_Shadow.render(getLayoutBounds(), targetRegion);
+        }
     }
 
     void Component::setSceneInSceneTree(Scene* scene)

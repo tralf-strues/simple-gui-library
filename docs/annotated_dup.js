@@ -48,6 +48,7 @@ var annotated_dup =
       [ "Parent", "class_sgl_1_1_parent.html", "class_sgl_1_1_parent" ],
       [ "Scene", "class_sgl_1_1_scene.html", null ],
       [ "Shadow", "class_sgl_1_1_shadow.html", null ],
+      [ "ShadowSpecification", "class_sgl_1_1_shadow_specification.html", null ],
       [ "Shape", "class_sgl_1_1_shape.html", null ],
       [ "Skin", "class_sgl_1_1_skin.html", "class_sgl_1_1_skin" ],
       [ "Skinnable", "class_sgl_1_1_skinnable.html", null ],

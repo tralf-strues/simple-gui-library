@@ -66,6 +66,7 @@ var files_dup =
     ] ],
     [ "default_skins.h", "default__skins_8h.html", "default__skins_8h" ],
     [ "shadow.h", "shadow_8h.html", [
+      [ "Sgl::ShadowSpecification", "class_sgl_1_1_shadow_specification.html", null ],
       [ "Sgl::Shadow", "class_sgl_1_1_shadow.html", null ]
     ] ],
     [ "skin.h", "skin_8h.html", [

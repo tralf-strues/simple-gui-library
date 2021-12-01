@@ -79,6 +79,7 @@ var hierarchy =
       [ "Sgl::MouseExitedEvent", "class_sgl_1_1_mouse_exited_event.html", null ]
     ] ],
     [ "Sgl::Shadow", "class_sgl_1_1_shadow.html", null ],
+    [ "Sgl::ShadowSpecification", "class_sgl_1_1_shadow_specification.html", null ],
     [ "Sgl::Skin", "class_sgl_1_1_skin.html", [
       [ "Sgl::BaseSkin< Button >", "class_sgl_1_1_base_skin.html", [
         [ "Sgl::DefaultSkins::ButtonBaseSkin", "class_sgl_1_1_default_skins_1_1_button_base_skin.html", [

@@ -64,9 +64,6 @@ namespace Sgl
         const Border* getBorder() const;
         void setBorder(const Border* border);
 
-        const Shadow* getShadow() const;
-        void setShadow(const Shadow* shadow);
-
         Insets getInsets() const;
         Sml::Rectangle<int32_t> getContentArea() const;
         
@@ -107,7 +104,6 @@ namespace Sgl
         bool                  m_NeedLayoutPass = false;
         const Background*     m_Background     = nullptr;
         const Border*         m_Border         = nullptr;
-        const Shadow*         m_Shadow         = nullptr;
         Insets                m_Padding        = Insets::EMPTY;
 
         int32_t               m_PrefWidth      = USE_COMPUTED_SIZE;

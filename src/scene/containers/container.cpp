@@ -44,13 +44,10 @@ namespace Sgl
             return;
         }
 
+        renderShadow(targetRegion);
+
         Sml::Rectangle<int32_t> translatedTargetRegion = getLayoutBounds();
         translatedTargetRegion.pos += targetRegion.pos;
-
-        if (m_Shadow != nullptr)
-        {
-            Shadow::renderRectangular(m_Shadow, getLayoutBounds(), targetRegion);
-        }
 
         if (m_Snapshot != nullptr)
         {
