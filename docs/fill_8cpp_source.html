@@ -103,13 +103,13 @@ $(document).ready(function(){initNavTree('fill_8cpp_source.html',''); initResiza
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    ColorFill::ColorFill(Sml::Color color)</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        : m_Color(color) {}</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">void</span> ColorFill::fillLine(<span class="keyword">const</span> Sml::Vec2&lt;int32_t&gt;&amp; start, <span class="keyword">const</span> Sml::Vec2&lt;int32_t&gt;&amp; end,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">void</span> ColorFill::fillLine(<span class="keyword">const</span> Sml::Vec2i&amp; start, <span class="keyword">const</span> Sml::Vec2i&amp; end,</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                             <span class="keyword">const</span> Sml::Rectangle&lt;int32_t&gt;&amp; targetRegion)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">    </span>{</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        Sml::Renderer::getInstance().setColor(m_Color);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        Sml::Vec2&lt;int32_t&gt; translatedStart = start + targetRegion.pos;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        Sml::Vec2&lt;int32_t&gt; translatedEnd   = end + targetRegion.pos;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        Sml::Vec2i translatedStart = start + targetRegion.pos;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        Sml::Vec2i translatedEnd   = end + targetRegion.pos;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        Sml::renderLine(translatedStart, translatedEnd);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
@@ -125,12 +125,12 @@ $(document).ready(function(){initNavTree('fill_8cpp_source.html',''); initResiza
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        Sml::renderFilledRect(translatedArea);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> ColorFill::fillPoint(<span class="keyword">const</span> Sml::Vec2&lt;int32_t&gt;&amp; point,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> ColorFill::fillPoint(<span class="keyword">const</span> Sml::Vec2i&amp; point,</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                              <span class="keyword">const</span> Sml::Rectangle&lt;int32_t&gt;&amp; targetRegion)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">    </span>{</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        Sml::Renderer::getInstance().setColor(m_Color);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        Sml::Vec2&lt;int32_t&gt; translatedPoint = point + targetRegion.pos;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        Sml::Vec2i translatedPoint = point + targetRegion.pos;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        Sml::renderPoint(translatedPoint);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>

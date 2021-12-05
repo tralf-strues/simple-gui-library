@@ -93,13 +93,13 @@ namespace Sgl
         m_Scene  = m_Parent->getScene();
     }
 
-    Sml::Vec2<int32_t> Component::computeLocalToScenePos(const Sml::Vec2<int32_t>& localPos)
+    Sml::Vec2i Component::computeLocalToScenePos(const Sml::Vec2i& localPos)
     {
         if (getParent() == nullptr) { return localPos; }
         return getParent()->computeLocalToScenePos(localPos + getLayoutPos());
     }
 
-    Sml::Vec2<int32_t> Component::computeSceneToLocalPos(const Sml::Vec2<int32_t>& scenePos)
+    Sml::Vec2i Component::computeSceneToLocalPos(const Sml::Vec2i& scenePos)
     {
         if (getParent() == nullptr) { return scenePos; }
         return getParent()->computeSceneToLocalPos(scenePos - getLayoutPos());
@@ -115,7 +115,7 @@ namespace Sgl
         return m_LayoutBounds;
     }
 
-    const Sml::Vec2<int32_t>& Component::getLayoutPos() const
+    const Sml::Vec2i& Component::getLayoutPos() const
     {
         return m_LayoutBounds.pos;
     }
@@ -160,9 +160,9 @@ namespace Sgl
         m_LayoutBounds.height = height;
     }
 
-    Sml::Vec2<int32_t> Component::computeScenePos()
+    Sml::Vec2i Component::computeScenePos()
     {
-        Sml::Vec2<int32_t> scenePos = getLayoutBounds().pos;
+        Sml::Vec2i scenePos = getLayoutBounds().pos;
 
         Component* parent = getParent();
         while (parent != nullptr)
@@ -189,7 +189,7 @@ namespace Sgl
 
         renderer.setTarget(renderedComponent);
 
-        Sml::Vec2<int32_t> savedLayoutPos = m_LayoutBounds.pos;
+        Sml::Vec2i savedLayoutPos = m_LayoutBounds.pos;
         m_LayoutBounds.pos = {0, 0};
         render(getOriginBounds());
         m_LayoutBounds.pos = savedLayoutPos;

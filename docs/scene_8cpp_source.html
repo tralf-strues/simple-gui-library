@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('scene_8cpp_source.html',''); initResiz
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            }</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                Sml::Vec2&lt;int32_t&gt; bottomLeftCorner = source-&gt;computeScenePos();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                Sml::Vec2i bottomLeftCorner = source-&gt;computeScenePos();</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                bottomLeftCorner.y += source-&gt;getLayoutHeight();</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                contextMenu-&gt;setLayoutX(bottomLeftCorner.x);</div>
@@ -235,7 +235,7 @@ $(document).ready(function(){initNavTree('scene_8cpp_source.html',''); initResiz
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    {</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordflow">if</span> (m_DragOwner != <span class="keyword">nullptr</span>)</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        {</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            Sml::Vec2&lt;int32_t&gt; pos{Sml::MouseState::getMouseState().x, Sml::MouseState::getMouseState().y};</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            Sml::Vec2i pos{Sml::MouseState::getMouseState().x, Sml::MouseState::getMouseState().y};</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            pos = m_DragOwner-&gt;computeSceneToLocalPos(pos);</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            DragEndEvent dragEndEvent{Sml::MouseState::getMouseState().x,</div>

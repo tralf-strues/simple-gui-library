@@ -42,7 +42,7 @@ namespace Sgl
             }
             else
             {
-                Sml::Vec2<int32_t> bottomLeftCorner = source->computeScenePos();
+                Sml::Vec2i bottomLeftCorner = source->computeScenePos();
                 bottomLeftCorner.y += source->getLayoutHeight();
 
                 contextMenu->setLayoutX(bottomLeftCorner.x);
@@ -146,7 +146,7 @@ namespace Sgl
     {
         if (m_DragOwner != nullptr)
         {
-            Sml::Vec2<int32_t> pos{Sml::MouseState::getMouseState().x, Sml::MouseState::getMouseState().y};
+            Sml::Vec2i pos{Sml::MouseState::getMouseState().x, Sml::MouseState::getMouseState().y};
             pos = m_DragOwner->computeSceneToLocalPos(pos);
 
             DragEndEvent dragEndEvent{Sml::MouseState::getMouseState().x,

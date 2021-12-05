@@ -58,12 +58,12 @@ namespace Sgl
         Parent* getParent();
         void setParent(Parent* parent);
 
-        Sml::Vec2<int32_t> computeLocalToScenePos(const Sml::Vec2<int32_t>& localPos);
-        Sml::Vec2<int32_t> computeSceneToLocalPos(const Sml::Vec2<int32_t>& scenePos);
+        Sml::Vec2i computeLocalToScenePos(const Sml::Vec2i& localPos);
+        Sml::Vec2i computeSceneToLocalPos(const Sml::Vec2i& scenePos);
 
         Sml::Rectangle<int32_t> getOriginBounds() const;
         const Sml::Rectangle<int32_t>& getLayoutBounds() const;
-        const Sml::Vec2<int32_t>& getLayoutPos() const;
+        const Sml::Vec2i& getLayoutPos() const;
         int32_t getLayoutX() const;
         int32_t getLayoutY() const;
         int32_t getLayoutWidth() const;
@@ -74,7 +74,7 @@ namespace Sgl
         void setLayoutWidth(int32_t width);
         void setLayoutHeight(int32_t height);
 
-        Sml::Vec2<int32_t> computeScenePos();
+        Sml::Vec2i computeScenePos();
 
         virtual int32_t computePrefWidth(int32_t height = -1) const = 0;
         virtual int32_t computePrefHeight(int32_t width = -1) const = 0;

@@ -10,7 +10,7 @@
 
 namespace Sgl
 {
-    ShadowSpecification::ShadowSpecification(const Sml::Vec2<int32_t>& offset, const Sml::Vec2<float>& scale,
+    ShadowSpecification::ShadowSpecification(const Sml::Vec2i& offset, const Sml::Vec2f& scale,
                                              int32_t blurRadius, Sml::Color color)
         : m_Offset(offset), m_Scale(scale), m_Color(color)
     {
@@ -26,8 +26,8 @@ namespace Sgl
         }        
     }
 
-    const Sml::Vec2<int32_t>& ShadowSpecification::getOffset() const { return m_Offset; }
-    const Sml::Vec2<float>& ShadowSpecification::getScale() const { return m_Scale; }
+    const Sml::Vec2i& ShadowSpecification::getOffset() const { return m_Offset; }
+    const Sml::Vec2f& ShadowSpecification::getScale() const { return m_Scale; }
     int32_t ShadowSpecification::getBlurRadius() const { return m_BlurKernel->getRadius(); }
     Sml::Color ShadowSpecification::getColor() const { return m_Color; }
 

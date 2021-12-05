@@ -16,7 +16,7 @@ namespace Sgl
 
     Component* Text::getHitComponent(int32_t x, int32_t y)
     {
-        if (Sml::isPointInsideRectangle(Sml::Vec2<int32_t>{x, y}, getLayoutBounds()))
+        if (Sml::isPointInsideRectangle(Sml::Vec2i{x, y}, getLayoutBounds()))
         {
             return this;
         }

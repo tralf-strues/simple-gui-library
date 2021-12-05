@@ -17,14 +17,14 @@ namespace Sgl
     class Fill
     {
     public:
-        virtual void fillLine(const Sml::Vec2<int32_t>& start,
-                              const Sml::Vec2<int32_t>& end,
+        virtual void fillLine(const Sml::Vec2i& start,
+                              const Sml::Vec2i& end,
                               const Sml::Rectangle<int32_t>& targetRegion) const = 0;
 
         virtual void fillArea(const Sml::Rectangle<int32_t>& area,
                               const Sml::Rectangle<int32_t>& targetRegion) const = 0;
 
-        virtual void fillPoint(const Sml::Vec2<int32_t>& point,
+        virtual void fillPoint(const Sml::Vec2i& point,
                                const Sml::Rectangle<int32_t>& targetRegion) const = 0;
     };
 
@@ -33,14 +33,14 @@ namespace Sgl
     public:
         ColorFill(Sml::Color color = Sml::COLOR_TRANSPARENT);
 
-        virtual void fillLine(const Sml::Vec2<int32_t>& start,
-                              const Sml::Vec2<int32_t>& end,
+        virtual void fillLine(const Sml::Vec2i& start,
+                              const Sml::Vec2i& end,
                               const Sml::Rectangle<int32_t>& targetRegion) const override;
 
         virtual void fillArea(const Sml::Rectangle<int32_t>& area,
                               const Sml::Rectangle<int32_t>& targetRegion) const override;
 
-        virtual void fillPoint(const Sml::Vec2<int32_t>& point,
+        virtual void fillPoint(const Sml::Vec2i& point,
                                const Sml::Rectangle<int32_t>& targetRegion) const override;
 
         Sml::Color getColor() const;

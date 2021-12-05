@@ -324,7 +324,7 @@ namespace DefaultSkins
             Slider&     slider = *getComponent();
             SliderSkin& skin   = dynamic_cast<SliderSkin&>(*slider.getSkin());
 
-            Sml::Vec2<int32_t> localPos = slider.computeSceneToLocalPos({event->getX(), event->getY()});
+            Sml::Vec2i localPos = slider.computeSceneToLocalPos({event->getX(), event->getY()});
 
             slider.setValue(slider.getRangeMin() +
                             (static_cast<float>(localPos.x - SliderSkin::KNOB_WIDTH / 2) /
