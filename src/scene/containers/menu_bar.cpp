@@ -7,7 +7,6 @@
  */
 
 #include "scene/containers/menu_bar.h"
-#include "scene/border.h"
 #include "scene/scene.h"
 
 namespace Sgl

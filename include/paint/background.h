@@ -9,11 +9,15 @@
 #pragma once
 
 #include <vector>
-#include "paint/fill.h"
-#include "media/image.h"
+#include "sml/math/rectangle.h"
+#include "fill.h"
+#include "../media/image.h"
 
 namespace Sgl
 {
+    class Fill;
+    class Image;
+
     class Background
     {
     public:

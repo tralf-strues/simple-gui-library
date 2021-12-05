@@ -6,7 +6,7 @@
  * @copyright Copyright (c) 2021
  */
 
-#include "scene/insets.h"
+#include "paint/insets.h"
 
 namespace Sgl
 {

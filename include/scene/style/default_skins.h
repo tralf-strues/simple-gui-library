@@ -9,13 +9,13 @@
 #pragma once
 
 #include "sml/events/listener_notifier.h"
+#include "../image_view.h"
 #include "../shapes/text.h"
-#include "../media/image_view.h"
-#include "../background.h"
-#include "../border.h"
-#include "../insets.h"
+#include "../../paint/background.h"
+#include "../../paint/border.h"
+#include "../../paint/insets.h"
+#include "../../paint/shadow.h"
 #include "skin.h"
-#include "shadow.h"
 
 namespace Sgl
 {

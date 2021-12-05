@@ -2,11 +2,21 @@ var files_dup =
 [
     [ "gui_event.h", "gui__event_8h.html", "gui__event_8h" ],
     [ "gui_event_dispatching.h", "gui__event__dispatching_8h.html", "gui__event__dispatching_8h" ],
+    [ "image.h", "image_8h.html", "image_8h" ],
     [ "background.h", "background_8h.html", [
       [ "Sgl::Background", "class_sgl_1_1_background.html", null ]
     ] ],
     [ "border.h", "border_8h.html", [
       [ "Sgl::Border", "class_sgl_1_1_border.html", null ]
+    ] ],
+    [ "fill.h", "fill_8h.html", [
+      [ "Sgl::Fill", "class_sgl_1_1_fill.html", null ],
+      [ "Sgl::ColorFill", "class_sgl_1_1_color_fill.html", null ]
+    ] ],
+    [ "insets.h", "insets_8h.html", "insets_8h" ],
+    [ "shadow.h", "shadow_8h.html", [
+      [ "Sgl::ShadowSpecification", "class_sgl_1_1_shadow_specification.html", null ],
+      [ "Sgl::Shadow", "class_sgl_1_1_shadow.html", null ]
     ] ],
     [ "component.h", "component_8h.html", [
       [ "Sgl::Component", "class_sgl_1_1_component.html", null ]
@@ -47,14 +57,8 @@ var files_dup =
     [ "slider.h", "slider_8h.html", [
       [ "Sgl::Slider", "class_sgl_1_1_slider.html", null ]
     ] ],
-    [ "insets.h", "insets_8h.html", "insets_8h" ],
-    [ "image.h", "image_8h.html", "image_8h" ],
     [ "image_view.h", "image__view_8h.html", [
       [ "Sgl::ImageView", "class_sgl_1_1_image_view.html", null ]
-    ] ],
-    [ "fill.h", "fill_8h.html", [
-      [ "Sgl::Fill", "class_sgl_1_1_fill.html", null ],
-      [ "Sgl::ColorFill", "class_sgl_1_1_color_fill.html", null ]
     ] ],
     [ "parent.h", "parent_8h.html", [
       [ "Sgl::Parent", "class_sgl_1_1_parent.html", "class_sgl_1_1_parent" ]
@@ -69,10 +73,6 @@ var files_dup =
       [ "Sgl::Text", "class_sgl_1_1_text.html", null ]
     ] ],
     [ "default_skins.h", "default__skins_8h.html", "default__skins_8h" ],
-    [ "shadow.h", "shadow_8h.html", [
-      [ "Sgl::ShadowSpecification", "class_sgl_1_1_shadow_specification.html", null ],
-      [ "Sgl::Shadow", "class_sgl_1_1_shadow.html", null ]
-    ] ],
     [ "skin.h", "skin_8h.html", [
       [ "Sgl::Skin", "class_sgl_1_1_skin.html", "class_sgl_1_1_skin" ],
       [ "Sgl::BaseSkin< C >", "class_sgl_1_1_base_skin.html", null ],
@@ -80,8 +80,13 @@ var files_dup =
     ] ],
     [ "utils.h", "utils_8h.html", null ],
     [ "gui_event_dispatching.cpp", "gui__event__dispatching_8cpp.html", "gui__event__dispatching_8cpp" ],
+    [ "image.cpp", "image_8cpp.html", null ],
+    [ "image_view.cpp", "image__view_8cpp.html", null ],
     [ "background.cpp", "background_8cpp.html", null ],
     [ "border.cpp", "border_8cpp.html", null ],
+    [ "fill.cpp", "fill_8cpp.html", null ],
+    [ "insets.cpp", "insets_8cpp.html", null ],
+    [ "shadow.cpp", "shadow_8cpp.html", null ],
     [ "component.cpp", "component_8cpp.html", null ],
     [ "anchor_pane.cpp", "anchor__pane_8cpp.html", null ],
     [ "box_container.cpp", "box__container_8cpp.html", null ],
@@ -94,15 +99,10 @@ var files_dup =
     [ "button.cpp", "button_8cpp.html", null ],
     [ "control.cpp", "control_8cpp.html", null ],
     [ "slider.cpp", "slider_8cpp.html", null ],
-    [ "insets.cpp", "insets_8cpp.html", null ],
-    [ "image.cpp", "image_8cpp.html", null ],
-    [ "image_view.cpp", "image__view_8cpp.html", null ],
-    [ "fill.cpp", "fill_8cpp.html", null ],
     [ "parent.cpp", "parent_8cpp.html", null ],
     [ "scene.cpp", "scene_8cpp.html", null ],
     [ "shape.cpp", "shape_8cpp.html", null ],
     [ "text.cpp", "text_8cpp.html", null ],
     [ "default_skins.cpp", "default__skins_8cpp.html", "default__skins_8cpp" ],
-    [ "shadow.cpp", "shadow_8cpp.html", null ],
     [ "skin.cpp", "skin_8cpp.html", null ]
 ];

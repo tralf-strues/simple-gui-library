@@ -6,7 +6,7 @@
  * @copyright Copyright (c) 2021
  */
 
-#include "scene/style/shadow.h"
+#include "paint/shadow.h"
 
 namespace Sgl
 {

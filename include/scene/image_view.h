@@ -8,8 +8,8 @@
 
 #pragma once
 
-#include "../component.h"
-#include "image.h"
+#include "component.h"
+#include "../media/image.h"
 
 namespace Sgl
 {

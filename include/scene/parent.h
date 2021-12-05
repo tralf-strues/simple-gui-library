@@ -9,9 +9,9 @@
 #pragma once
 
 #include "component.h"
-#include "background.h"
-#include "border.h"
-#include "style/shadow.h"
+#include "../paint/insets.h"
+#include "../paint/border.h"
+#include "../paint/background.h"
 
 namespace Sgl
 {

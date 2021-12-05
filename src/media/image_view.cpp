@@ -6,7 +6,7 @@
  * @copyright Copyright (c) 2021
  */
 
-#include "scene/media/image_view.h"
+#include "scene/image_view.h"
 
 namespace Sgl
 {

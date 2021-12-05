@@ -9,7 +9,7 @@
 #pragma once
 
 #include "../component.h"
-#include "../paint/fill.h"
+#include "../../paint/fill.h"
 
 namespace Sgl
 {

@@ -8,7 +8,6 @@
 
 #pragma once
 
-#include "../style/shadow.h"
 #include "box_container.h"
 
 namespace Sgl

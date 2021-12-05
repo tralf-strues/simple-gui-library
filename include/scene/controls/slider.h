@@ -9,7 +9,6 @@
 #pragma once
 
 #include "control.h"
-#include "../style/shadow.h"
 
 namespace Sgl
 {

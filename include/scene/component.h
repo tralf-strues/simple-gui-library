@@ -10,7 +10,7 @@
 
 #include "sml/sml_graphics_wrapper.h"
 #include "../events/gui_event_dispatching.h"
-#include "style/shadow.h"
+#include "../paint/shadow.h"
 
 namespace Sgl
 {

@@ -7,7 +7,7 @@
  */
 
 #include "sml/graphics_wrapper/primitives.h"
-#include "scene/border.h"
+#include "paint/border.h"
 
 namespace Sgl
 {

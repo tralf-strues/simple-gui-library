@@ -9,7 +9,7 @@
 #pragma once
 
 #include "sml/graphics_wrapper/renderer.h"
-#include "../insets.h"
+#include "../../paint/insets.h"
 
 namespace Sgl
 {

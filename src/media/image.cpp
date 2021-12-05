@@ -7,7 +7,7 @@
  */
 
 #include "sml/graphics_wrapper/renderer.h"
-#include "scene/media/image.h"
+#include "media/image.h"
 
 namespace Sgl
 {
@@ -15,6 +15,8 @@ namespace Sgl
         : m_Format(format), m_Texture()
     {
         m_Texture.loadFromImage(filename);
+        assert(m_Texture.getWidth()  > 0);
+        assert(m_Texture.getHeight() > 0);
     }
 
     int32_t             Image::getWidth()   const { return m_Texture.getWidth();  }

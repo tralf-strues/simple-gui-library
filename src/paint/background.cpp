@@ -6,7 +6,9 @@
  * @copyright Copyright (c) 2021
  */
 
-#include "scene/background.h"
+#include "paint/background.h"
+#include "paint/fill.h"
+#include "media/image.h"
 
 namespace Sgl
 {
