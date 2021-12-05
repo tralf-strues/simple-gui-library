@@ -11,9 +11,13 @@ var files_dup =
     [ "component.h", "component_8h.html", [
       [ "Sgl::Component", "class_sgl_1_1_component.html", null ]
     ] ],
+    [ "anchor_pane.h", "anchor__pane_8h.html", [
+      [ "Sgl::AnchorPane", "class_sgl_1_1_anchor_pane.html", "class_sgl_1_1_anchor_pane" ],
+      [ "Sgl::AnchorPane::Anchors", "struct_sgl_1_1_anchor_pane_1_1_anchors.html", null ],
+      [ "Sgl::AnchorPane::Constraints", "struct_sgl_1_1_anchor_pane_1_1_constraints.html", null ]
+    ] ],
     [ "box_container.h", "box__container_8h.html", [
-      [ "Sgl::BoxContainer", "class_sgl_1_1_box_container.html", "class_sgl_1_1_box_container" ],
-      [ "Sgl::BoxContainer::Spacer", "struct_sgl_1_1_box_container_1_1_spacer.html", "struct_sgl_1_1_box_container_1_1_spacer" ],
+      [ "Sgl::BoxContainer", "class_sgl_1_1_box_container.html", null ],
       [ "Sgl::HBox", "class_sgl_1_1_h_box.html", null ],
       [ "Sgl::VBox", "class_sgl_1_1_v_box.html", null ]
     ] ],
@@ -79,12 +83,12 @@ var files_dup =
     [ "background.cpp", "background_8cpp.html", null ],
     [ "border.cpp", "border_8cpp.html", null ],
     [ "component.cpp", "component_8cpp.html", null ],
+    [ "anchor_pane.cpp", "anchor__pane_8cpp.html", null ],
     [ "box_container.cpp", "box__container_8cpp.html", null ],
     [ "container.cpp", "container_8cpp.html", null ],
     [ "context_menu.cpp", "context__menu_8cpp.html", [
       [ "Sgl::ContextMenuFocusListener", "class_sgl_1_1_context_menu_focus_listener.html", null ]
     ] ],
-    [ "hbox.cpp", "hbox_8cpp_source.html", null ],
     [ "menu_bar.cpp", "menu__bar_8cpp.html", "menu__bar_8cpp" ],
     [ "tile_pane.cpp", "tile__pane_8cpp.html", null ],
     [ "button.cpp", "button_8cpp.html", null ],

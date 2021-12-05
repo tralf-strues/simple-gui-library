@@ -176,7 +176,7 @@ namespace Sgl
 
     void Component::updateShadow()
     {
-        if (getLayoutWidth() == 0 || getLayoutHeight() == 0 || m_Shadow.getSpecification() == nullptr)
+        if (getLayoutWidth() == 0 || getLayoutHeight() == 0 || m_Shadow.getSpecification() == nullptr || !isVisible())
         {
             return;
         }

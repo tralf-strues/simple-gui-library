@@ -54,7 +54,7 @@ namespace Sgl
         void pushBackSpacer(uint32_t weight = 1);
         void pushFrontSpacer(uint32_t weight = 1);
 
-    protected:
+    private:
         struct Spacer
         {
             Spacer(Component* prevComponent = nullptr, uint32_t weight = 1)
@@ -64,7 +64,7 @@ namespace Sgl
             uint32_t   weight        = 1;
         };
 
-    protected:
+    private:
         Direction         m_Direction  = Direction::LEFT_TO_RIGHT;
         bool              m_FillAcross = false;
         int32_t           m_Spacing    = 0;

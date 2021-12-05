@@ -143,17 +143,17 @@ $(document).ready(function(){initNavTree('box__container_8h_source.html',''); in
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordtype">void</span> pushBackSpacer(uint32_t weight = 1);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordtype">void</span> pushFrontSpacer(uint32_t weight = 1);</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="struct_sgl_1_1_box_container_1_1_spacer.html">   58</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="struct_sgl_1_1_box_container_1_1_spacer.html">Spacer</a></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keyword">struct </span>Spacer</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <a class="code hl_struct" href="struct_sgl_1_1_box_container_1_1_spacer.html">Spacer</a>(<a class="code hl_class" href="class_sgl_1_1_component.html">Component</a>* <a class="code hl_variable" href="struct_sgl_1_1_box_container_1_1_spacer.html#abe957605a7afd007e1029d49ab46132a">prevComponent</a> = <span class="keyword">nullptr</span>, uint32_t weight = 1)</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                : <a class="code hl_variable" href="struct_sgl_1_1_box_container_1_1_spacer.html#abe957605a7afd007e1029d49ab46132a">prevComponent</a>(<a class="code hl_variable" href="struct_sgl_1_1_box_container_1_1_spacer.html#abe957605a7afd007e1029d49ab46132a">prevComponent</a>), weight(weight) {}</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            Spacer(<a class="code hl_class" href="class_sgl_1_1_component.html">Component</a>* prevComponent = <span class="keyword">nullptr</span>, uint32_t weight = 1)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                : prevComponent(prevComponent), weight(weight) {}</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="struct_sgl_1_1_box_container_1_1_spacer.html#abe957605a7afd007e1029d49ab46132a">   63</a></span>            <a class="code hl_class" href="class_sgl_1_1_component.html">Component</a>* <a class="code hl_variable" href="struct_sgl_1_1_box_container_1_1_spacer.html#abe957605a7afd007e1029d49ab46132a">prevComponent</a> = <span class="keyword">nullptr</span>; <span class="comment">///&lt; If nullptr than at the beginning.</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <a class="code hl_class" href="class_sgl_1_1_component.html">Component</a>* prevComponent = <span class="keyword">nullptr</span>; <span class="comment">///&lt; If nullptr than at the beginning.</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            uint32_t   weight        = 1;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        };</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        Direction         m_Direction  = Direction::LEFT_TO_RIGHT;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordtype">bool</span>              m_FillAcross = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        int32_t           m_Spacing    = 0;</div>
@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('box__container_8h_source.html',''); in
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">         * Neither components with GrowPriority::NEVER, nor components with no GrowPriority</span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">         * set will get any free space.</span></div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">         */</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_sgl_1_1_box_container.html#aee902d2ba894363d0d06e622e4fa99b8">   79</a></span>        std::unordered_map&lt;Component*, GrowPriority&gt; <a class="code hl_variable" href="class_sgl_1_1_box_container.html#aee902d2ba894363d0d06e622e4fa99b8">m_GrowPriorities</a>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        std::unordered_map&lt;Component*, GrowPriority&gt; m_GrowPriorities;</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> layoutChildren() <span class="keyword">override</span>;</div>
@@ -206,14 +206,11 @@ $(document).ready(function(){initNavTree('box__container_8h_source.html',''); in
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    };</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
 <div class="ttc" id="aclass_sgl_1_1_box_container_html"><div class="ttname"><a href="class_sgl_1_1_box_container.html">Sgl::BoxContainer</a></div><div class="ttdoc">Basic list-like container which lays out children in a line one after another.</div><div class="ttdef"><b>Definition:</b> <a href="box__container_8h_source.html#l00025">box_container.h:26</a></div></div>
-<div class="ttc" id="aclass_sgl_1_1_box_container_html_aee902d2ba894363d0d06e622e4fa99b8"><div class="ttname"><a href="class_sgl_1_1_box_container.html#aee902d2ba894363d0d06e622e4fa99b8">Sgl::BoxContainer::m_GrowPriorities</a></div><div class="ttdeci">std::unordered_map&lt; Component *, GrowPriority &gt; m_GrowPriorities</div><div class="ttdef"><b>Definition:</b> <a href="box__container_8h_source.html#l00079">box_container.h:79</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_component_html"><div class="ttname"><a href="class_sgl_1_1_component.html">Sgl::Component</a></div><div class="ttdef"><b>Definition:</b> <a href="component_8h_source.html#l00020">component.h:21</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_container_html"><div class="ttname"><a href="class_sgl_1_1_container.html">Sgl::Container</a></div><div class="ttdef"><b>Definition:</b> <a href="container_8h_source.html#l00015">container.h:16</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_h_box_html"><div class="ttname"><a href="class_sgl_1_1_h_box.html">Sgl::HBox</a></div><div class="ttdef"><b>Definition:</b> <a href="box__container_8h_source.html#l00105">box_container.h:106</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_v_box_html"><div class="ttname"><a href="class_sgl_1_1_v_box.html">Sgl::VBox</a></div><div class="ttdef"><b>Definition:</b> <a href="box__container_8h_source.html#l00112">box_container.h:113</a></div></div>
 <div class="ttc" id="acontainer_8h_html"><div class="ttname"><a href="container_8h.html">container.h</a></div></div>
-<div class="ttc" id="astruct_sgl_1_1_box_container_1_1_spacer_html"><div class="ttname"><a href="struct_sgl_1_1_box_container_1_1_spacer.html">Sgl::BoxContainer::Spacer</a></div><div class="ttdef"><b>Definition:</b> <a href="box__container_8h_source.html#l00058">box_container.h:59</a></div></div>
-<div class="ttc" id="astruct_sgl_1_1_box_container_1_1_spacer_html_abe957605a7afd007e1029d49ab46132a"><div class="ttname"><a href="struct_sgl_1_1_box_container_1_1_spacer.html#abe957605a7afd007e1029d49ab46132a">Sgl::BoxContainer::Spacer::prevComponent</a></div><div class="ttdeci">Component * prevComponent</div><div class="ttdoc">If nullptr than at the beginning.</div><div class="ttdef"><b>Definition:</b> <a href="box__container_8h_source.html#l00063">box_container.h:63</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

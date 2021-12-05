@@ -1,7 +1,9 @@
 var hierarchy =
 [
+    [ "Sgl::AnchorPane::Anchors", "struct_sgl_1_1_anchor_pane_1_1_anchors.html", null ],
     [ "Sgl::Background", "class_sgl_1_1_background.html", null ],
     [ "Sgl::Border", "class_sgl_1_1_border.html", null ],
+    [ "Sgl::AnchorPane::Constraints", "struct_sgl_1_1_anchor_pane_1_1_constraints.html", null ],
     [ "Sml::Event", null, [
       [ "Sgl::ActionEvent", "class_sgl_1_1_action_event.html", null ],
       [ "Sgl::DragEvent", "class_sgl_1_1_drag_event.html", [
@@ -22,6 +24,7 @@ var hierarchy =
         [ "Sgl::ImageView", "class_sgl_1_1_image_view.html", null ],
         [ "Sgl::Parent", "class_sgl_1_1_parent.html", [
           [ "Sgl::Container", "class_sgl_1_1_container.html", [
+            [ "Sgl::AnchorPane", "class_sgl_1_1_anchor_pane.html", null ],
             [ "Sgl::BoxContainer", "class_sgl_1_1_box_container.html", [
               [ "Sgl::HBox", "class_sgl_1_1_h_box.html", [
                 [ "Sgl::MenuBar", "class_sgl_1_1_menu_bar.html", null ]
@@ -96,6 +99,5 @@ var hierarchy =
     [ "Sgl::Skinnable", "class_sgl_1_1_skinnable.html", [
       [ "Sgl::Control", "class_sgl_1_1_control.html", null ]
     ] ],
-    [ "Sgl::BoxContainer::Spacer", "struct_sgl_1_1_box_container_1_1_spacer.html", null ],
     [ "Sgl::DefaultSkins::ButtonBaseSkin::StaticStyle", "struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_static_style.html", null ]
 ];

@@ -21,6 +21,5 @@ var searchData=
   ['sliderskin_18',['SliderSkin',['../class_sgl_1_1_default_skins_1_1_slider_skin.html',1,'Sgl::DefaultSkins']]],
   ['sliderskindraglistener_19',['SliderSkinDragListener',['../class_sgl_1_1_default_skins_1_1_slider_skin_drag_listener.html',1,'Sgl::DefaultSkins']]],
   ['sliderskinmousepresslistener_20',['SliderSkinMousePressListener',['../class_sgl_1_1_default_skins_1_1_slider_skin_mouse_press_listener.html',1,'Sgl::DefaultSkins']]],
-  ['spacer_21',['Spacer',['../struct_sgl_1_1_box_container_1_1_spacer.html',1,'Sgl::BoxContainer']]],
-  ['staticstyle_22',['StaticStyle',['../struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_static_style.html',1,'Sgl::DefaultSkins::ButtonBaseSkin']]]
+  ['staticstyle_21',['StaticStyle',['../struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_static_style.html',1,'Sgl::DefaultSkins::ButtonBaseSkin']]]
 ];

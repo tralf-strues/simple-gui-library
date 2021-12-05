@@ -188,13 +188,13 @@ namespace Sgl
         return prefHeight;
     }
     
-    // FIXME: implement
+    // TODO: implement
     int32_t BoxContainer::computeCustomMinWidth(int32_t height) const
     {
         return 0;
     }
 
-    // FIXME: implement
+    // TODO: implement
     int32_t BoxContainer::computeCustomMinHeight(int32_t width) const
     {
         return 0;

@@ -222,8 +222,8 @@ namespace Sgl
                                     getInsets().top + getInsets().bottom);
     }
     
-    int32_t Parent::computeCustomMinWidth(int32_t height) const { return computePrefWidth();  }
-    int32_t Parent::computeCustomMinHeight(int32_t width) const { return computePrefHeight(); }
+    int32_t Parent::computeCustomMinWidth(int32_t height) const { return computePrefWidth(height);  }
+    int32_t Parent::computeCustomMinHeight(int32_t width) const { return computePrefHeight(width); }
 
     int32_t Parent::computeCustomMaxWidth(int32_t height) const { return UNLIMITED_SIZE; }
     int32_t Parent::computeCustomMaxHeight(int32_t width) const { return UNLIMITED_SIZE; }
