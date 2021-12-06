@@ -12,13 +12,19 @@
 
 namespace Sgl
 {
-    MenuItem::MenuItem(const char* label)
-        : Button(new DefaultSkins::MenuItemSkin(), label) {}
+    MenuItem::MenuItem(const char* label) : Button(new DefaultSkins::MenuItemSkin(), label) {}
 
     const Border              ContextMenu::DEFAULT_BORDER          = {1, 0x99'99'99'66};
     const ColorFill           ContextMenu::DEFAULT_BACKGROUND_FILL = {0xEE'EE'EE'FF};
     const Background          ContextMenu::DEFAULT_BACKGROUND      = {&DEFAULT_BACKGROUND_FILL};
     const ShadowSpecification ContextMenu::DEFAULT_SHADOW          = {{0, 2}, {1.02, 1}, 6, 0x22'22'22'18};
+
+    void MenuItem::setOnAction(ActionListener<MenuItem>* listener)
+    {
+        assert(listener);
+
+        Button::setOnAction(reinterpret_cast<ActionListener<Button>*>(listener));
+    }
 
     class ContextMenuFocusListener : public FocusListener<ContextMenu>
     {

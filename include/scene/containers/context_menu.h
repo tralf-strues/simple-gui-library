@@ -19,6 +19,11 @@ namespace Sgl
     {
     public:
         MenuItem(const char* label);
+
+        void setOnAction(ActionListener<MenuItem>* listener);
+    
+    private:
+        void setOnAction(ActionListener<Button>* listener);
     };
 
     class ContextMenu : public VBox
