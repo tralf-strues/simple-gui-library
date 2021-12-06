@@ -191,7 +191,13 @@ namespace DefaultSkins
         m_Icon.setLayoutX(contentArea.pos.x);
         m_Icon.setLayoutY(centerY - m_Icon.getLayoutHeight() / 2);
 
-        m_Text.setLayoutX(contentArea.pos.x + contentArea.width - m_Text.getLayoutWidth());
+        // m_Text.setLayoutX(contentArea.pos.x + contentArea.width - m_Text.getLayoutWidth());
+        m_Text.setLayoutX(m_Icon.getLayoutX() + m_Icon.getLayoutWidth());
+        if (m_Icon.getLayoutWidth() != 0)
+        {
+            m_Text.setLayoutX(m_Text.getLayoutX() + getMargin());
+        }
+
         m_Text.setLayoutY(centerY - m_Text.getLayoutHeight() / 2);
     }
 
