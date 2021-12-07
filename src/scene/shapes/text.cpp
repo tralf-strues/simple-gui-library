@@ -8,11 +8,12 @@
 
 #include "sml/math/rectangle.h"
 #include "scene/shapes/text.h"
+#include "scene/style/default_skins.h"
 
 namespace Sgl
 {
-    Text::Text(const Sml::Font& font, const char* string, Sml::Color color)
-        : m_Text(font, string, color) {}
+    Text::Text(const Sml::Font& font, const char* string, Sml::Color color) : m_Text(font, string, color) {}
+    Text::Text(const char* string, Sml::Color color) : Text(*DefaultSkins::g_DefaultFont, string, color) {}
 
     Component* Text::getHitComponent(int32_t x, int32_t y)
     {
