@@ -14,10 +14,11 @@ namespace Sgl
 {
     MenuItem::MenuItem(const char* label) : Button(new DefaultSkins::MenuItemSkin(), label) {}
 
-    const Border              ContextMenu::DEFAULT_BORDER          = {1, 0x99'99'99'66};
+    const Insets              ContextMenu::DEFAULT_PADDING         = {2};
+    const Border              ContextMenu::DEFAULT_BORDER          = {1, 0xC9'C9'C9'66};
     const ColorFill           ContextMenu::DEFAULT_BACKGROUND_FILL = {0xEE'EE'EE'FF};
     const Background          ContextMenu::DEFAULT_BACKGROUND      = {&DEFAULT_BACKGROUND_FILL};
-    const ShadowSpecification ContextMenu::DEFAULT_SHADOW          = {{0, 2}, {1.02, 1}, 6, 0x22'22'22'18};
+    const ShadowSpecification ContextMenu::DEFAULT_SHADOW          = {{0, 3}, {1.05, 0.95}, 7, 0x22'22'22'18};
 
     void MenuItem::setOnAction(ActionListener<MenuItem>* listener)
     {
@@ -43,6 +44,7 @@ namespace Sgl
     {
         assert(scene);
 
+        setPadding(DEFAULT_PADDING);
         setBorder(&DEFAULT_BORDER);
         setBackground(&DEFAULT_BACKGROUND);
         setShadow(&DEFAULT_SHADOW);

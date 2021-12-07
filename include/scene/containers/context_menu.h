@@ -29,6 +29,7 @@ namespace Sgl
     class ContextMenu : public VBox
     {
     public:
+        static const Insets              DEFAULT_PADDING;
         static const Border              DEFAULT_BORDER;
         static const ColorFill           DEFAULT_BACKGROUND_FILL;
         static const Background          DEFAULT_BACKGROUND;

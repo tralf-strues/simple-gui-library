@@ -169,7 +169,7 @@ namespace Sgl
 
     int32_t BoxContainer::computeCustomPrefHeight(int32_t width) const
     {
-        int32_t prefHeight = getInsets().left + getInsets().right;
+        int32_t prefHeight = getInsets().top + getInsets().bottom;
         
         if (m_Children.empty())
         { 
