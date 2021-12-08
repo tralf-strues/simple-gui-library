@@ -79,6 +79,7 @@ namespace Sgl
 
     public:
         LinearGradientFill() = default;
+        LinearGradientFill(const std::initializer_list<Stop>& stops);
 
         void addStop(const Stop& stop);
 

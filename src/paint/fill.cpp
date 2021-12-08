@@ -67,6 +67,12 @@ bool LinearGradientFill::Stop::operator<(const LinearGradientFill::Stop& other) 
 //------------------------------------------------------------------------------
 // LinearGradientFill
 //------------------------------------------------------------------------------
+LinearGradientFill::LinearGradientFill(const std::initializer_list<Stop>& stops)
+{
+    m_Stops.insert(m_Stops.end(), stops);
+    std::sort(m_Stops.begin(), m_Stops.end());
+}
+
 void LinearGradientFill::addStop(const Stop& stop)
 {
     m_Stops.push_back(stop);
