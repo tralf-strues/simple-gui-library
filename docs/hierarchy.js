@@ -44,6 +44,7 @@ var hierarchy =
           ] ]
         ] ],
         [ "Sgl::Shape", "class_sgl_1_1_shape.html", [
+          [ "Sgl::Rectangle", "class_sgl_1_1_rectangle.html", null ],
           [ "Sgl::Text", "class_sgl_1_1_text.html", null ]
         ] ]
       ] ],

@@ -47,6 +47,7 @@ var annotated_dup =
       [ "MouseEnteredEvent", "class_sgl_1_1_mouse_entered_event.html", null ],
       [ "MouseExitedEvent", "class_sgl_1_1_mouse_exited_event.html", null ],
       [ "Parent", "class_sgl_1_1_parent.html", "class_sgl_1_1_parent" ],
+      [ "Rectangle", "class_sgl_1_1_rectangle.html", null ],
       [ "Scene", "class_sgl_1_1_scene.html", null ],
       [ "Shadow", "class_sgl_1_1_shadow.html", null ],
       [ "ShadowSpecification", "class_sgl_1_1_shadow_specification.html", null ],

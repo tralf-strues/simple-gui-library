@@ -21,6 +21,9 @@ namespace Sgl
         return nullptr;
     }
 
+    void Component::layout() {}
+    void Component::prerender() {}
+
     Sml::EventDispatchChain* Component::buildEventDispatchChain(Sml::EventDispatchChain* chain)
     {
         assert(chain);

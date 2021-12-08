@@ -19,7 +19,6 @@ namespace Sgl
         Text(const Sml::Font& font, const char* string, Sml::Color color = Sml::COLOR_BLACK);
         Text(const char* string, Sml::Color color = Sml::COLOR_BLACK);
 
-        virtual Component* getHitComponent(int32_t x, int32_t y) override;
         virtual void render(const Sml::Rectangle<int32_t>& targetRegion) override;
         virtual void prerender() override;
 

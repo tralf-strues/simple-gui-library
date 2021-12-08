@@ -66,6 +66,9 @@ var files_dup =
     [ "scene.h", "scene_8h.html", [
       [ "Sgl::Scene", "class_sgl_1_1_scene.html", null ]
     ] ],
+    [ "rectangle.h", "rectangle_8h.html", [
+      [ "Sgl::Rectangle", "class_sgl_1_1_rectangle.html", null ]
+    ] ],
     [ "shape.h", "shape_8h.html", [
       [ "Sgl::Shape", "class_sgl_1_1_shape.html", null ]
     ] ],
@@ -101,6 +104,7 @@ var files_dup =
     [ "slider.cpp", "slider_8cpp.html", null ],
     [ "parent.cpp", "parent_8cpp.html", null ],
     [ "scene.cpp", "scene_8cpp.html", null ],
+    [ "rectangle.cpp", "rectangle_8cpp.html", null ],
     [ "shape.cpp", "shape_8cpp.html", null ],
     [ "text.cpp", "text_8cpp.html", null ],
     [ "default_skins.cpp", "default__skins_8cpp.html", "default__skins_8cpp" ],

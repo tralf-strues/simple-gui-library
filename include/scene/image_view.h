@@ -28,9 +28,10 @@ namespace Sgl
         const Image* getImage() const;
         void setImage(const Image* image);
 
-        // TODO:
-        // bool getPreserveRatio() const;
-        // void setPreserveRatio(bool preserveRatio);
+        float getRatio() const;
+
+        bool getPreserveRatio() const;
+        void setPreserveRatio(bool preserveRatio);
 
         int32_t getFitWidth() const;
         void setFitWidth(int32_t width);
@@ -48,9 +49,10 @@ namespace Sgl
         virtual int32_t computeMaxHeight(int32_t width = -1) const override;
 
     private:
-        const Image* m_Image     = nullptr;
+        const Image* m_Image         = nullptr;
 
-        int32_t      m_FitWidth  = USE_COMPUTED_SIZE;
-        int32_t      m_FitHeight = USE_COMPUTED_SIZE;
+        bool         m_PreserveRatio = true;
+        int32_t      m_FitWidth      = USE_COMPUTED_SIZE;
+        int32_t      m_FitHeight     = USE_COMPUTED_SIZE;
     };
 };

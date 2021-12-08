@@ -16,7 +16,11 @@ namespace Sgl
     bool Shape::isResizable() const { return false; }
 
     const Fill* Shape::getFill() const { return m_Fill; }
-    void Shape::setFill(Fill* fill) { m_Fill = fill; }
+    void Shape::setFill(const Fill* fill) { m_Fill = fill; }
+
+    const Border* Shape::getBorder() const { return m_Border; }
+    void Shape::setBorder(const Border* border) { m_Border = border; }
+
     
     int32_t Shape::computeMinWidth(int32_t height) const { return getLayoutWidth();  }
     int32_t Shape::computeMinHeight(int32_t width) const { return getLayoutHeight(); }

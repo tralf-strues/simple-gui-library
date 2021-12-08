@@ -30,6 +30,20 @@ namespace DefaultSkins
     //------------------------------------------------------------------------------
     // ButtonBaseSkin
     //------------------------------------------------------------------------------
+    ButtonBaseSkin::StaticStyle::StaticStyle(const Insets& paddingLabelOnly,
+                                             const Insets& paddingIconOnly,
+                                             const Insets& paddingIconAndLabel,
+                                             int32_t margin,
+                                             const Border& border)
+        : paddingLabelOnly(paddingLabelOnly),
+          paddingIconOnly(paddingIconOnly),
+          paddingIconAndLabel(paddingIconAndLabel),
+          margin(margin),
+          border(border) {}
+
+    ButtonBaseSkin::StaticStyle::StaticStyle(const Insets& padding, int32_t margin, const Border& border)
+        : StaticStyle(padding, padding, padding, margin, border) {}
+
     class ButtonBaseSkinEventListener : public ComponentEventListener<Button>
     {
     public:
@@ -128,9 +142,6 @@ namespace DefaultSkins
 
     void ButtonBaseSkin::prerenderControl()
     {
-        Sml::Renderer::getInstance().pushTarget();
-        Sml::Renderer::getInstance().setTarget(m_Button->getSnapshot());
-
         if (m_Button->getBackground() != nullptr)
         {
             Background::fillArea(m_Button->getBackground(), m_Button->getOriginBounds());
@@ -140,8 +151,6 @@ namespace DefaultSkins
         {
             Border::encloseArea(m_Button->getBorder(), m_Button->getOriginBounds());
         }
-
-        Sml::Renderer::getInstance().popTarget();
     }
 
     const Control* ButtonBaseSkin::getControl() const { return m_Button; }
@@ -169,29 +178,25 @@ namespace DefaultSkins
 
     void ButtonBaseSkin::layoutChildren()
     {
+        Sml::Rectangle<int32_t> contentArea = m_Button->getContentArea();
+
         m_Text.setString(m_Button->getLabel());
         m_Icon.setImage(m_Button->getIcon());
+        applyStaticStyle(); // FIXME: move somewhere else, no need to update this each layout pass (or not?..)
 
         m_Text.setLayoutWidth(m_Text.computePrefWidth());
         m_Text.setLayoutHeight(m_Text.computePrefHeight());
 
-        m_Icon.setLayoutWidth(m_Icon.computePrefWidth());
-        m_Icon.setLayoutHeight(m_Icon.computePrefHeight());
-
-        // const Insets& padding = m_Button->getPadding();
-        Sml::Rectangle<int32_t> contentArea = m_Button->getContentArea();
-        // contentArea.pos    += {padding.left, padding.top};
-        // contentArea.width  -= padding.left + padding.right;
-        // contentArea.height -= padding.top + padding.bottom;
-
-        // Insets insets = m_Button->getInsets();
+        int32_t iconHeight = std::min(m_Icon.computePrefHeight(), contentArea.height);
+        int32_t iconWidth  = m_Icon.computePrefWidth(iconHeight);
+        m_Icon.setLayoutWidth(iconWidth);
+        m_Icon.setLayoutHeight(iconHeight);
 
         int32_t centerY = contentArea.pos.y + contentArea.height / 2;
 
         m_Icon.setLayoutX(contentArea.pos.x);
         m_Icon.setLayoutY(centerY - m_Icon.getLayoutHeight() / 2);
 
-        // m_Text.setLayoutX(contentArea.pos.x + contentArea.width - m_Text.getLayoutWidth());
         m_Text.setLayoutX(m_Icon.getLayoutX() + m_Icon.getLayoutWidth());
         if (m_Icon.getLayoutWidth() != 0)
         {
@@ -210,7 +215,22 @@ namespace DefaultSkins
     {
         if (m_StaticStyle != nullptr)
         {
-            m_Button->setPadding(m_StaticStyle->padding);
+            bool isLabelSet = m_Button->getLabel() != nullptr;
+            bool isIconSet  = m_Button->getIcon()  != nullptr;
+
+            if (isLabelSet && !isIconSet)
+            {
+                m_Button->setPadding(m_StaticStyle->paddingLabelOnly);
+            }
+            else if (!isLabelSet && isIconSet)
+            {
+                m_Button->setPadding(m_StaticStyle->paddingIconOnly);
+            }
+            else if (isLabelSet && isIconSet)
+            {
+                m_Button->setPadding(m_StaticStyle->paddingIconAndLabel);
+            }
+            
             m_Button->setBorder(&m_StaticStyle->border);
         }
         else
@@ -254,10 +274,16 @@ namespace DefaultSkins
     //------------------------------------------------------------------------------
     // ButtonSkin
     //------------------------------------------------------------------------------
-    const Insets                           ButtonSkin::PADDING                 = Insets{5, 10};
+    const Insets                           ButtonSkin::PADDING_LABEL_ONLY      = Insets{5, 10};
+    const Insets                           ButtonSkin::PADDING_ICON_ONLY       = Insets{5};
+    const Insets                           ButtonSkin::PADDING_LABEL_AND_ICON  = Insets{5, 10};
     const int32_t                          ButtonSkin::MARGIN                  = 5;
     const Border                           ButtonSkin::BORDER                  = Border{1, 0xE9'E9'E9'FF};
-    const ButtonBaseSkin::StaticStyle      ButtonSkin::STATIC_STYLE            = {PADDING, MARGIN, BORDER}; 
+    const ButtonBaseSkin::StaticStyle      ButtonSkin::STATIC_STYLE            = {PADDING_LABEL_ONLY,
+                                                                                  PADDING_ICON_ONLY,
+                                                                                  PADDING_LABEL_AND_ICON,
+                                                                                  MARGIN,
+                                                                                  BORDER}; 
 
     /* Idle */
     const Sml::Color                       ButtonSkin::IDLE_FOREGROUND         = Sml::COLOR_BLACK;

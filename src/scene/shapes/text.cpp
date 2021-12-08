@@ -15,16 +15,6 @@ namespace Sgl
     Text::Text(const Sml::Font& font, const char* string, Sml::Color color) : m_Text(font, string, color) {}
     Text::Text(const char* string, Sml::Color color) : Text(*DefaultSkins::g_DefaultFont, string, color) {}
 
-    Component* Text::getHitComponent(int32_t x, int32_t y)
-    {
-        if (Sml::isPointInsideRectangle(Sml::Vec2i{x, y}, getLayoutBounds()))
-        {
-            return this;
-        }
-
-        return nullptr;
-    }
-
     void Text::render(const Sml::Rectangle<int32_t>& targetRegion)
     {
         m_Text.render(targetRegion.pos + m_LayoutBounds.pos);

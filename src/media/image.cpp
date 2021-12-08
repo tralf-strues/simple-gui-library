@@ -37,8 +37,8 @@ namespace Sgl
     {
         assert(image);
         assert(image->getTexture());
-        assert(scaledWidth  > 0);
-        assert(scaledHeight > 0);
+
+        if (scaledWidth <= 0 || scaledHeight <= 0) { return; }
 
         Sml::Rectangle<int32_t> scaledRegion{targetRegion.pos, scaledWidth, scaledHeight};
         image->getTexture()->copyTo(Sml::Renderer::getInstance().getTarget(), &scaledRegion, nullptr);

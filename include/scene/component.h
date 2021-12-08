@@ -31,8 +31,8 @@ namespace Sgl
 
         virtual Component* getHitComponent(int32_t x, int32_t y);
         virtual void render(const Sml::Rectangle<int32_t>& targetRegion) = 0;
-        virtual void layout() = 0;
-        virtual void prerender() = 0;
+        virtual void layout();
+        virtual void prerender();
 
         virtual Sml::EventDispatchChain* buildEventDispatchChain(Sml::EventDispatchChain* chain) override;
 

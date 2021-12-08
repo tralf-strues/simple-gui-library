@@ -36,9 +36,19 @@ namespace DefaultSkins
     public:
         struct StaticStyle
         {
-            Insets  padding{0};
+            Insets  paddingLabelOnly{0};
+            Insets  paddingIconOnly{0};
+            Insets  paddingIconAndLabel{0};
             int32_t margin = 0;
             Border  border{0, Sml::COLOR_BLACK};
+
+            StaticStyle(const Insets& padding, int32_t margin, const Border& border);
+
+            StaticStyle(const Insets& paddingLabelOnly,
+                        const Insets& paddingIconOnly,
+                        const Insets& paddingIconAndLabel,
+                        int32_t margin,
+                        const Border& border);
         };
 
         struct InteractionStyle
@@ -115,7 +125,9 @@ namespace DefaultSkins
     class ButtonSkin : public ButtonBaseSkin
     {
     public:
-        static const Insets           PADDING;
+        static const Insets           PADDING_LABEL_ONLY;
+        static const Insets           PADDING_ICON_ONLY;
+        static const Insets           PADDING_LABEL_AND_ICON;
         static const int32_t          MARGIN;
         static const Border           BORDER;
         static const StaticStyle      STATIC_STYLE; 

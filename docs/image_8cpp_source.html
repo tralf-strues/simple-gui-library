@@ -126,8 +126,8 @@ $(document).ready(function(){initNavTree('image_8cpp_source.html',''); initResiz
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        assert(image);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        assert(image-&gt;getTexture());</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        assert(scaledWidth  &gt; 0);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        assert(scaledHeight &gt; 0);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">if</span> (scaledWidth &lt;= 0 || scaledHeight &lt;= 0) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        Sml::Rectangle&lt;int32_t&gt; scaledRegion{targetRegion.pos, scaledWidth, scaledHeight};</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        image-&gt;getTexture()-&gt;copyTo(Sml::Renderer::getInstance().getTarget(), &amp;scaledRegion, <span class="keyword">nullptr</span>);</div>

@@ -97,8 +97,9 @@ Inheritance diagram for Sgl::Shape:</div>
  <div class="center">
   <img src="class_sgl_1_1_shape.png" usemap="#Sgl::Shape_map" alt=""/>
   <map id="Sgl::Shape_map" name="Sgl::Shape_map">
-<area href="class_sgl_1_1_component.html" alt="Sgl::Component" shape="rect" coords="0,56,106,80"/>
-<area href="class_sgl_1_1_text.html" alt="Sgl::Text" shape="rect" coords="0,168,106,192"/>
+<area href="class_sgl_1_1_component.html" alt="Sgl::Component" shape="rect" coords="58,56,164,80"/>
+<area href="class_sgl_1_1_rectangle.html" alt="Sgl::Rectangle" shape="rect" coords="0,168,106,192"/>
+<area href="class_sgl_1_1_text.html" alt="Sgl::Text" shape="rect" coords="116,168,222,192"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -112,8 +113,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a40dfba4eda326657cfe834fe5818c281"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb50f4ce95fcb194063654eac17264b3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_sgl_1_1_fill.html">Fill</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_shape.html#afb50f4ce95fcb194063654eac17264b3">getFill</a> () const</td></tr>
 <tr class="separator:afb50f4ce95fcb194063654eac17264b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5e409c1fda48d48e84d7ef4bdb71a35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_shape.html#af5e409c1fda48d48e84d7ef4bdb71a35">setFill</a> (<a class="el" href="class_sgl_1_1_fill.html">Fill</a> *fill)</td></tr>
-<tr class="separator:af5e409c1fda48d48e84d7ef4bdb71a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10f85e6cdc24dc029c7a2613ff444c8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_shape.html#a10f85e6cdc24dc029c7a2613ff444c8f">setFill</a> (const <a class="el" href="class_sgl_1_1_fill.html">Fill</a> *fill)</td></tr>
+<tr class="separator:a10f85e6cdc24dc029c7a2613ff444c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88941a0df89f1bf4820a7d7835b561b1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_sgl_1_1_border.html">Border</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_shape.html#a88941a0df89f1bf4820a7d7835b561b1">getBorder</a> () const</td></tr>
+<tr class="separator:a88941a0df89f1bf4820a7d7835b561b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a228cbb23533007a96f703d2acd6cf442"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_shape.html#a228cbb23533007a96f703d2acd6cf442">setBorder</a> (const <a class="el" href="class_sgl_1_1_border.html">Border</a> *border)</td></tr>
+<tr class="separator:a228cbb23533007a96f703d2acd6cf442"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02367c7f209889b9b1146c7e46f68b39"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_shape.html#a02367c7f209889b9b1146c7e46f68b39">computeMinWidth</a> (int32_t height=-1) const override final</td></tr>
 <tr class="separator:a02367c7f209889b9b1146c7e46f68b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae7de21cf0fb7e5830b31667e33d8816"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_shape.html#aae7de21cf0fb7e5830b31667e33d8816">computeMinHeight</a> (int32_t width=-1) const override final</td></tr>
@@ -128,9 +133,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad74de28dc15ab1c40ed9120ed7c5c613 inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="ad74de28dc15ab1c40ed9120ed7c5c613" name="ad74de28dc15ab1c40ed9120ed7c5c613"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> (const Sml::Rectangle&lt; int32_t &gt; &amp;targetRegion)=0</td></tr>
 <tr class="separator:ad74de28dc15ab1c40ed9120ed7c5c613 inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd0aaa876b0ce4e9784dbd4b65e61162 inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="afd0aaa876b0ce4e9784dbd4b65e61162" name="afd0aaa876b0ce4e9784dbd4b65e61162"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>prerender</b> ()=0</td></tr>
-<tr class="separator:afd0aaa876b0ce4e9784dbd4b65e61162 inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99a855b8999ab492ac69979a0e2c3fd5 inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a99a855b8999ab492ac69979a0e2c3fd5">prerender</a> ()</td></tr>
+<tr class="separator:a99a855b8999ab492ac69979a0e2c3fd5 inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20f0c167092df2fff6c4b311045f2b7e inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">virtual Sml::EventDispatchChain *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a20f0c167092df2fff6c4b311045f2b7e">buildEventDispatchChain</a> (Sml::EventDispatchChain *chain) override</td></tr>
 <tr class="separator:a20f0c167092df2fff6c4b311045f2b7e inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4017dc04f85e757c85c07fae118d7fca inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a4017dc04f85e757c85c07fae118d7fca">isVisible</a> () const</td></tr>
@@ -196,8 +200,10 @@ virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>computePre
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a1a181e1d9ca1a34e8e72cebaa1ea5438"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sgl_1_1_fill.html">Fill</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_shape.html#a1a181e1d9ca1a34e8e72cebaa1ea5438">m_Fill</a> = nullptr</td></tr>
-<tr class="separator:a1a181e1d9ca1a34e8e72cebaa1ea5438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add64123fc620e21e011eac83790ae8bc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_sgl_1_1_fill.html">Fill</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_shape.html#add64123fc620e21e011eac83790ae8bc">m_Fill</a> = nullptr</td></tr>
+<tr class="separator:add64123fc620e21e011eac83790ae8bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13159e42a908edba128bdc846c173ef7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_sgl_1_1_border.html">Border</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_shape.html#a13159e42a908edba128bdc846c173ef7">m_Border</a> = nullptr</td></tr>
+<tr class="separator:a13159e42a908edba128bdc846c173ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_sgl_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_sgl_1_1_component')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a></td></tr>
 <tr class="memitem:a7fd0ed8f4d4a85c1dbc1bd4e38e9ed92 inherit pro_attribs_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a7fd0ed8f4d4a85c1dbc1bd4e38e9ed92">m_Visible</a> = true</td></tr>
 <tr class="separator:a7fd0ed8f4d4a85c1dbc1bd4e38e9ed92 inherit pro_attribs_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -236,7 +242,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="shape_8h_source.html#l00016">16</a> of file <a class="el" href="shape_8h_source.html">shape.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shape_8h_source.html#l00017">17</a> of file <a class="el" href="shape_8h_source.html">shape.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1a5f1e7aa30cfc1769ceb912faac3f9c" name="a1a5f1e7aa30cfc1769ceb912faac3f9c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1a5f1e7aa30cfc1769ceb912faac3f9c">&#9670;&nbsp;</a></span>Shape()</h2>
@@ -285,7 +291,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="shape_8cpp_source.html#l00025">25</a> of file <a class="el" href="shape_8cpp_source.html">shape.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shape_8cpp_source.html#l00029">29</a> of file <a class="el" href="shape_8cpp_source.html">shape.cpp</a>.</p>
 
 </div>
 </div>
@@ -315,7 +321,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="shape_8cpp_source.html#l00024">24</a> of file <a class="el" href="shape_8cpp_source.html">shape.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shape_8cpp_source.html#l00028">28</a> of file <a class="el" href="shape_8cpp_source.html">shape.cpp</a>.</p>
 
 </div>
 </div>
@@ -345,7 +351,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="shape_8cpp_source.html#l00022">22</a> of file <a class="el" href="shape_8cpp_source.html">shape.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shape_8cpp_source.html#l00026">26</a> of file <a class="el" href="shape_8cpp_source.html">shape.cpp</a>.</p>
 
 </div>
 </div>
@@ -374,6 +380,25 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="shape_8cpp_source.html#l00025">25</a> of file <a class="el" href="shape_8cpp_source.html">shape.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a88941a0df89f1bf4820a7d7835b561b1" name="a88941a0df89f1bf4820a7d7835b561b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88941a0df89f1bf4820a7d7835b561b1">&#9670;&nbsp;</a></span>getBorder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_sgl_1_1_border.html">Border</a> * Sgl::Shape::getBorder </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="shape_8cpp_source.html#l00021">21</a> of file <a class="el" href="shape_8cpp_source.html">shape.cpp</a>.</p>
 
@@ -450,14 +475,34 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
+<p>Reimplemented from <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="shape_8cpp_source.html#l00015">15</a> of file <a class="el" href="shape_8cpp_source.html">shape.cpp</a>.</p>
 
 </div>
 </div>
-<a id="af5e409c1fda48d48e84d7ef4bdb71a35" name="af5e409c1fda48d48e84d7ef4bdb71a35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5e409c1fda48d48e84d7ef4bdb71a35">&#9670;&nbsp;</a></span>setFill()</h2>
+<a id="a228cbb23533007a96f703d2acd6cf442" name="a228cbb23533007a96f703d2acd6cf442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a228cbb23533007a96f703d2acd6cf442">&#9670;&nbsp;</a></span>setBorder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sgl::Shape::setBorder </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_sgl_1_1_border.html">Border</a> *&#160;</td>
+          <td class="paramname"><em>border</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="shape_8cpp_source.html#l00022">22</a> of file <a class="el" href="shape_8cpp_source.html">shape.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a10f85e6cdc24dc029c7a2613ff444c8f" name="a10f85e6cdc24dc029c7a2613ff444c8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10f85e6cdc24dc029c7a2613ff444c8f">&#9670;&nbsp;</a></span>setFill()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -465,7 +510,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void Sgl::Shape::setFill </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_sgl_1_1_fill.html">Fill</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_sgl_1_1_fill.html">Fill</a> *&#160;</td>
           <td class="paramname"><em>fill</em></td><td>)</td>
           <td></td>
         </tr>
@@ -477,8 +522,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a1a181e1d9ca1a34e8e72cebaa1ea5438" name="a1a181e1d9ca1a34e8e72cebaa1ea5438"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a181e1d9ca1a34e8e72cebaa1ea5438">&#9670;&nbsp;</a></span>m_Fill</h2>
+<a id="a13159e42a908edba128bdc846c173ef7" name="a13159e42a908edba128bdc846c173ef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13159e42a908edba128bdc846c173ef7">&#9670;&nbsp;</a></span>m_Border</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -487,7 +532,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_sgl_1_1_fill.html">Fill</a>* Sgl::Shape::m_Fill = nullptr</td>
+          <td class="memname">const <a class="el" href="class_sgl_1_1_border.html">Border</a>* Sgl::Shape::m_Border = nullptr</td>
         </tr>
       </table>
   </td>
@@ -497,7 +542,31 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shape_8h_source.html#l00035">35</a> of file <a class="el" href="shape_8h_source.html">shape.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="shape_8h_source.html#l00040">40</a> of file <a class="el" href="shape_8h_source.html">shape.h</a>.</p>
+
+</div>
+</div>
+<a id="add64123fc620e21e011eac83790ae8bc" name="add64123fc620e21e011eac83790ae8bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add64123fc620e21e011eac83790ae8bc">&#9670;&nbsp;</a></span>m_Fill</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_sgl_1_1_fill.html">Fill</a>* Sgl::Shape::m_Fill = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="shape_8h_source.html#l00039">39</a> of file <a class="el" href="shape_8h_source.html">shape.h</a>.</p>
 
 </div>
 </div>

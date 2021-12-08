@@ -41,6 +41,14 @@ namespace Sgl
     const Image* ImageView::getImage() const { return m_Image; }
     void ImageView::setImage(const Image* image) { m_Image = image; }
 
+    float ImageView::getRatio() const
+    {
+        return getImage()->getHeight() == 0 ? 0 : getImage()->getWidth() / getImage()->getHeight();
+    }
+
+    bool ImageView::getPreserveRatio() const { return m_PreserveRatio; }
+    void ImageView::setPreserveRatio(bool preserveRatio) { m_PreserveRatio = preserveRatio; }
+
     int32_t ImageView::getFitWidth() const { return m_FitWidth; }
     void ImageView::setFitWidth(int32_t width) { m_FitWidth = width; }
 
@@ -63,14 +71,24 @@ namespace Sgl
     {
         if (m_Image == nullptr) { return 0; }
 
-        return (m_FitWidth != USE_COMPUTED_SIZE) ? m_FitWidth : getImage()->getWidth();
+        if (!getPreserveRatio() || height == -1)
+        {
+            return (m_FitWidth != USE_COMPUTED_SIZE) ? m_FitWidth : getImage()->getWidth();
+        }
+        
+        return (m_FitWidth != USE_COMPUTED_SIZE) ? m_FitWidth : getWidthFixedRatio(height, getRatio());
     }
 
     int32_t ImageView::computePrefHeight(int32_t width) const
     {
         if (m_Image == nullptr) { return 0; }
 
-        return (m_FitHeight != USE_COMPUTED_SIZE) ? m_FitHeight : getImage()->getHeight();
+        if (!getPreserveRatio() || width == -1)
+        {
+            return (m_FitHeight != USE_COMPUTED_SIZE) ? m_FitHeight : getImage()->getHeight();
+        }
+        
+        return (m_FitHeight != USE_COMPUTED_SIZE) ? m_FitHeight : getHeightFixedRatio(width, getRatio());
     }
     
     int32_t ImageView::computeMinWidth(int32_t height) const { return 0; }
