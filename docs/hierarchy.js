@@ -51,7 +51,8 @@ var hierarchy =
       [ "Sgl::Scene", "class_sgl_1_1_scene.html", null ]
     ] ],
     [ "Sgl::Fill", "class_sgl_1_1_fill.html", [
-      [ "Sgl::ColorFill", "class_sgl_1_1_color_fill.html", null ]
+      [ "Sgl::ColorFill", "class_sgl_1_1_color_fill.html", null ],
+      [ "Sgl::LinearGradientFill", "class_sgl_1_1_linear_gradient_fill.html", null ]
     ] ],
     [ "Sgl::Image", "class_sgl_1_1_image.html", null ],
     [ "Sgl::Insets", "struct_sgl_1_1_insets.html", null ],
@@ -100,5 +101,6 @@ var hierarchy =
     [ "Sgl::Skinnable", "class_sgl_1_1_skinnable.html", [
       [ "Sgl::Control", "class_sgl_1_1_control.html", null ]
     ] ],
-    [ "Sgl::DefaultSkins::ButtonBaseSkin::StaticStyle", "struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_static_style.html", null ]
+    [ "Sgl::DefaultSkins::ButtonBaseSkin::StaticStyle", "struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_static_style.html", null ],
+    [ "Sgl::LinearGradientFill::Stop", "class_sgl_1_1_linear_gradient_fill_1_1_stop.html", null ]
 ];

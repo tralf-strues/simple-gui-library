@@ -11,7 +11,7 @@
 namespace Sgl
 {
     const ColorFill  Container::DEFAULT_FILL       = ColorFill{Sml::COLOR_WHITE};
-    const Background Container::DEFAULT_BACKGROUND = Background{{&Container::DEFAULT_FILL}, {}};
+    const Background Container::DEFAULT_BACKGROUND = Background{&Container::DEFAULT_FILL};
 
     Container::Container() : Parent()
     {

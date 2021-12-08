@@ -11,7 +11,9 @@ var files_dup =
     ] ],
     [ "fill.h", "fill_8h.html", [
       [ "Sgl::Fill", "class_sgl_1_1_fill.html", null ],
-      [ "Sgl::ColorFill", "class_sgl_1_1_color_fill.html", null ]
+      [ "Sgl::ColorFill", "class_sgl_1_1_color_fill.html", null ],
+      [ "Sgl::LinearGradientFill", "class_sgl_1_1_linear_gradient_fill.html", "class_sgl_1_1_linear_gradient_fill" ],
+      [ "Sgl::LinearGradientFill::Stop", "class_sgl_1_1_linear_gradient_fill_1_1_stop.html", null ]
     ] ],
     [ "insets.h", "insets_8h.html", "insets_8h" ],
     [ "shadow.h", "shadow_8h.html", [

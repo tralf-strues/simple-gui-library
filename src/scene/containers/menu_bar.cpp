@@ -83,7 +83,7 @@ namespace Sgl
     }
 
     const ColorFill  DEFAULT_CONTAINER_FILL      = {0xF5'F5'F5'FF};
-    const Background MenuBar::DEFAULT_BACKGROUND = {{&DEFAULT_CONTAINER_FILL}, {}};
+    const Background MenuBar::DEFAULT_BACKGROUND = {&DEFAULT_CONTAINER_FILL};
     const Border     MenuBar::DEFAULT_BORDER     = Border{Insets{0, 0, 1, 0}, 0xE9'E9'E9'FF};
 
     MenuBar::MenuBar(Scene* scene)

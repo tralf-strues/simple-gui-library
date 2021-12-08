@@ -40,6 +40,7 @@ var annotated_dup =
       [ "ImageView", "class_sgl_1_1_image_view.html", null ],
       [ "Insets", "struct_sgl_1_1_insets.html", null ],
       [ "Label", "class_sgl_1_1_label.html", null ],
+      [ "LinearGradientFill", "class_sgl_1_1_linear_gradient_fill.html", "class_sgl_1_1_linear_gradient_fill" ],
       [ "Menu", "class_sgl_1_1_menu.html", null ],
       [ "MenuBar", "class_sgl_1_1_menu_bar.html", null ],
       [ "MenuItem", "class_sgl_1_1_menu_item.html", null ],

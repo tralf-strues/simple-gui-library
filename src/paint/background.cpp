@@ -19,8 +19,13 @@ namespace Sgl
         m_Images.insert(m_Images.end(), images);
     }
 
+    Background::Background(const std::initializer_list<const Fill*>& fills)
+    {
+        m_Fills.insert(m_Fills.end(), fills);
+    }
+
     Background::Background(const Fill* fill)
-        : Background({fill}, {}) {}
+        : Background({fill}) {}
 
     const std::vector<const Fill*>& Background::getFills() const
     {

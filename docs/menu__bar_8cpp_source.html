@@ -172,7 +172,7 @@ $(document).ready(function(){initNavTree('menu__bar_8cpp_source.html',''); initR
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">const</span> ColorFill  DEFAULT_CONTAINER_FILL      = {0xF5&#39;F5&#39;F5&#39;FF};</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">const</span> Background MenuBar::DEFAULT_BACKGROUND = {{&amp;DEFAULT_CONTAINER_FILL}, {}};</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">const</span> Background MenuBar::DEFAULT_BACKGROUND = {&amp;DEFAULT_CONTAINER_FILL};</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keyword">const</span> Border     MenuBar::DEFAULT_BORDER     = Border{Insets{0, 0, 1, 0}, 0xE9&#39;E9&#39;E9&#39;FF};</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    MenuBar::MenuBar(Scene* scene)</div>

@@ -10,5 +10,6 @@ var searchData=
   ['sliderskin_7',['SliderSkin',['../class_sgl_1_1_default_skins_1_1_slider_skin.html',1,'Sgl::DefaultSkins']]],
   ['sliderskindraglistener_8',['SliderSkinDragListener',['../class_sgl_1_1_default_skins_1_1_slider_skin_drag_listener.html',1,'Sgl::DefaultSkins']]],
   ['sliderskinmousepresslistener_9',['SliderSkinMousePressListener',['../class_sgl_1_1_default_skins_1_1_slider_skin_mouse_press_listener.html',1,'Sgl::DefaultSkins']]],
-  ['staticstyle_10',['StaticStyle',['../struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_static_style.html',1,'Sgl::DefaultSkins::ButtonBaseSkin']]]
+  ['staticstyle_10',['StaticStyle',['../struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_static_style.html',1,'Sgl::DefaultSkins::ButtonBaseSkin']]],
+  ['stop_11',['Stop',['../class_sgl_1_1_linear_gradient_fill_1_1_stop.html',1,'Sgl::LinearGradientFill']]]
 ];
