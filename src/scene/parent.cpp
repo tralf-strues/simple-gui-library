@@ -111,6 +111,7 @@ namespace Sgl
 
         m_Children.push_back(child);
         child->setParent(this);
+        child->setScene(getScene());
     }
     
     void Parent::removeChild(Component* child)

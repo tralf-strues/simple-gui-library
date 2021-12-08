@@ -17,13 +17,16 @@ namespace Sgl
     class Shape : public Component
     {
     public:
-        Shape(Fill* fill = nullptr);
+        Shape() = default;
+        Shape(const Fill* fill);
         virtual ~Shape() override = default;
 
         virtual void layout() override final;
         virtual bool isResizable() const override final;
 
-        const Fill* getFill() const;
+        const std::vector<const Fill*>& getFills() const;
+        void addFill(const Fill* fill);
+
         void setFill(const Fill* fill);
 
         const Border* getBorder() const;
@@ -36,8 +39,8 @@ namespace Sgl
         virtual int32_t computeMaxHeight(int32_t width = -1) const override final;
 
     protected:
-        const Fill*   m_Fill   = nullptr;
-        const Border* m_Border = nullptr;
+        std::vector<const Fill*> m_Fills;
+        const Border*            m_Border = nullptr;
         // TODO: border, etc.
     };
 }

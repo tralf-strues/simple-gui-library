@@ -34,8 +34,11 @@ namespace Sgl
 
         virtual void onFocusLost(FocusEvent* event) override
         {
-            LOG_LIB_INFO("Hide ContextMenu!");
-            getComponent()->hide();
+            if (getComponent()->isAutoHide())
+            {
+                LOG_LIB_INFO("Hide ContextMenu!");
+                getComponent()->hide();
+            }
         }
     };
 
@@ -57,14 +60,23 @@ namespace Sgl
                                             new ContextMenuFocusListener(this));
     }
 
+    ContextMenu::~ContextMenu()
+    {
+        VBox::~VBox();
+
+        m_Source->getScene()->detachContextMenu(this);
+    }
+
     void ContextMenu::render(const Sml::Rectangle<int32_t>& targetRegion)
     {
         Container::render(targetRegion);
     }
 
-
     Component* ContextMenu::getSource() { return m_Source; }
     void ContextMenu::setSource(Component* source) { m_Source = source; }
+
+    bool ContextMenu::isAutoHide() const { return m_AutoHide; }
+    void ContextMenu::setAutoHide(bool autoHide) { m_AutoHide = autoHide; }
 
     void ContextMenu::show()
     {

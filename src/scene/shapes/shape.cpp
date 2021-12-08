@@ -10,13 +10,24 @@
 
 namespace Sgl
 {
-    Shape::Shape(Fill* fill) : m_Fill(fill) {}
+    Shape::Shape(const Fill* fill)
+    {
+        assert(fill);
+        addFill(fill);
+    }
 
     void Shape::layout() {}
     bool Shape::isResizable() const { return false; }
 
-    const Fill* Shape::getFill() const { return m_Fill; }
-    void Shape::setFill(const Fill* fill) { m_Fill = fill; }
+    const std::vector<const Fill*>& Shape::getFills() const { return m_Fills; }
+    void Shape::addFill(const Fill* fill) { assert(fill); m_Fills.push_back(fill); }
+
+    void Shape::setFill(const Fill* fill)
+    {
+        assert(fill);
+        m_Fills.clear();
+        m_Fills.push_back(fill);
+    }
 
     const Border* Shape::getBorder() const { return m_Border; }
     void Shape::setBorder(const Border* border) { m_Border = border; }

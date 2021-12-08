@@ -37,16 +37,21 @@ namespace Sgl
 
     public:
         ContextMenu(Scene* scene, Component* sourceComponent = nullptr);
+        virtual ~ContextMenu() override;
 
         virtual void render(const Sml::Rectangle<int32_t>& targetRegion) override;
 
         Component* getSource();
         void setSource(Component* source);
 
+        bool isAutoHide() const;
+        void setAutoHide(bool autoHide);
+
         void show();
         void hide();
 
     private:
-        Component* m_Source = nullptr;
+        Component* m_Source   = nullptr;
+        bool       m_AutoHide = true;
     };
 }

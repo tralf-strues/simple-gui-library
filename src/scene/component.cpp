@@ -65,8 +65,6 @@ namespace Sgl
 
     void Component::setShadow(const ShadowSpecification* specification)
     {
-        assert(specification);
-        
         m_Shadow.setSpecification(specification);
     }
 
@@ -104,7 +102,7 @@ namespace Sgl
 
     Sml::Vec2i Component::computeSceneToLocalPos(const Sml::Vec2i& scenePos)
     {
-        if (getParent() == nullptr) { return scenePos; }
+        if (getParent() == nullptr) { return scenePos - getLayoutPos(); }
         return getParent()->computeSceneToLocalPos(scenePos - getLayoutPos());
     }
 

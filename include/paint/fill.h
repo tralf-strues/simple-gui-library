@@ -74,17 +74,23 @@ namespace Sgl
 
         private:
             float      m_Offset = 0.0; ///< Number ranging from 0 to 1
-            Sml::Vec4f m_Color  = Sml::COLOR_TRANSPARENT;
+            Sml::Vec4f m_Color  = Sml::colorToNormalized(Sml::COLOR_TRANSPARENT);
+        };
+
+        enum class Direction
+        {
+            HORIZONTAL,
+            VERTICAL
         };
 
     public:
         LinearGradientFill() = default;
         LinearGradientFill(const std::initializer_list<Stop>& stops);
+        LinearGradientFill(Direction direction, const std::initializer_list<Stop>& stops);
 
         void addStop(const Stop& stop);
 
-        void setVertical();
-        void setHorizontal();
+        void setDirection(Direction direction);
 
         virtual void fillLine(const Sml::Vec2i& start,
                               const Sml::Vec2i& end,
@@ -98,6 +104,6 @@ namespace Sgl
 
     private:
         std::vector<Stop> m_Stops;
-        bool              m_IsVertical = false;
+        Direction         m_Direction = Direction::HORIZONTAL;
     };
 }

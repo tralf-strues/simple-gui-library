@@ -73,20 +73,21 @@ LinearGradientFill::LinearGradientFill(const std::initializer_list<Stop>& stops)
     std::sort(m_Stops.begin(), m_Stops.end());
 }
 
+LinearGradientFill::LinearGradientFill(Direction direction, const std::initializer_list<Stop>& stops)
+    : LinearGradientFill(stops)
+{
+    setDirection(direction);
+}
+
 void LinearGradientFill::addStop(const Stop& stop)
 {
     m_Stops.push_back(stop);
     std::sort(m_Stops.begin(), m_Stops.end());
 }
 
-void LinearGradientFill::setVertical()
+void LinearGradientFill::setDirection(Direction direction)
 {
-    m_IsVertical = true;
-}
-
-void LinearGradientFill::setHorizontal()
-{
-    m_IsVertical = false;
+    m_Direction = direction;
 }
 
 void LinearGradientFill::fillLine(const Sml::Vec2i& start,
@@ -163,7 +164,7 @@ void LinearGradientFill::fillArea(const Sml::Rectangle<int32_t>& area,
 {
     if (m_Stops.size() < 2) { return; }
 
-    if (!m_IsVertical)
+    if (m_Direction == Direction::HORIZONTAL)
     {
         for (int32_t row = 0; row < area.height; ++row)
         {
