@@ -9,7 +9,7 @@
 #pragma once
 
 #include <unordered_map>
-#include "container.h"
+#include "layered_container.h"
 
 namespace Sgl
 {
@@ -34,7 +34,7 @@ namespace Sgl
      * absolute top offset = 1000 * 1 / (1 + 4) = 200,
      * absolute bottom offset = 1000 * 4 / (1 + 4) = 800.
      */
-    class AnchorPane : public Container
+    class AnchorPane : public LayeredContainer
     {
     public:
         static constexpr int32_t ANCHOR_NOT_ENABLED = -1;

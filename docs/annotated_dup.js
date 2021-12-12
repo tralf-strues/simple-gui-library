@@ -43,6 +43,7 @@ var annotated_dup =
       [ "ImageView", "class_sgl_1_1_image_view.html", null ],
       [ "Insets", "struct_sgl_1_1_insets.html", null ],
       [ "Label", "class_sgl_1_1_label.html", null ],
+      [ "LayeredContainer", "class_sgl_1_1_layered_container.html", null ],
       [ "LinearGradientFill", "class_sgl_1_1_linear_gradient_fill.html", "class_sgl_1_1_linear_gradient_fill" ],
       [ "Menu", "class_sgl_1_1_menu.html", null ],
       [ "MenuBar", "class_sgl_1_1_menu_bar.html", null ],
@@ -63,6 +64,7 @@ var annotated_dup =
       [ "TilePane", "class_sgl_1_1_tile_pane.html", null ],
       [ "VBox", "class_sgl_1_1_v_box.html", null ]
     ] ],
+    [ "FocusReceivedFilter", "class_focus_received_filter.html", null ],
     [ "GuiEventDispatchChain", "class_gui_event_dispatch_chain.html", "class_gui_event_dispatch_chain" ],
     [ "GuiEventDispatcher", "class_gui_event_dispatcher.html", null ]
 ];

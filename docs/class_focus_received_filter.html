@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Simple GUI Library: Sgl::ActionListener&lt; C &gt; Class Template Reference</title>
+<title>Simple GUI Library: FocusReceivedFilter Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,7 +65,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_sgl_1_1_action_listener.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('class_focus_received_filter.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -86,29 +86,34 @@ $(document).ready(function(){initNavTree('class_sgl_1_1_action_listener.html',''
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class_sgl_1_1_action_listener-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Sgl::ActionListener&lt; C &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+<a href="class_focus_received_filter-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">FocusReceivedFilter Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for Sgl::ActionListener&lt; C &gt;:</div>
+Inheritance diagram for FocusReceivedFilter:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="class_sgl_1_1_action_listener.png" usemap="#Sgl::ActionListener_3C_20C_20_3E_map" alt=""/>
-  <map id="Sgl::ActionListener_3C_20C_20_3E_map" name="Sgl::ActionListener_3C_20C_20_3E_map">
-<area href="class_sgl_1_1_component_event_listener.html" alt="Sgl::ComponentEventListener&lt; C &gt;" shape="rect" coords="0,56,209,80"/>
+  <img src="class_focus_received_filter.png" usemap="#FocusReceivedFilter_map" alt=""/>
+  <map id="FocusReceivedFilter_map" name="FocusReceivedFilter_map">
+<area href="class_sgl_1_1_focus_listener.html" alt="Sgl::FocusListener&lt; LayeredContainer &gt;" shape="rect" coords="0,112,302,136"/>
+<area href="class_sgl_1_1_component_event_listener.html" alt="Sgl::ComponentEventListener&lt; C &gt;" shape="rect" coords="0,56,302,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5786d837529fb33f7588ef86ab33fb4d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_action_listener.html#a5786d837529fb33f7588ef86ab33fb4d">ActionListener</a> (C *component=nullptr)</td></tr>
-<tr class="separator:a5786d837529fb33f7588ef86ab33fb4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23dec2dd7c2abb52a750f9f840539680"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_action_listener.html#a23dec2dd7c2abb52a750f9f840539680">onEvent</a> (Sml::Event *event) override final</td></tr>
-<tr class="separator:a23dec2dd7c2abb52a750f9f840539680"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b82e4881785e932313e14733af925b1"><td class="memItemLeft" align="right" valign="top"><a id="a5b82e4881785e932313e14733af925b1" name="a5b82e4881785e932313e14733af925b1"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onAction</b> (<a class="el" href="class_sgl_1_1_action_event.html">ActionEvent</a> *event)=0</td></tr>
-<tr class="separator:a5b82e4881785e932313e14733af925b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3781a716ef6932fee6e14d7055237a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_focus_received_filter.html#aa3781a716ef6932fee6e14d7055237a9">FocusReceivedFilter</a> (<a class="el" href="class_sgl_1_1_layered_container.html">LayeredContainer</a> *component)</td></tr>
+<tr class="separator:aa3781a716ef6932fee6e14d7055237a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa0b512d7e7fb80727698099cb0fe5d3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_focus_received_filter.html#aaa0b512d7e7fb80727698099cb0fe5d3">onFocusReceived</a> (<a class="el" href="class_sgl_1_1_focus_received_event.html">FocusReceivedEvent</a> *event) override</td></tr>
+<tr class="separator:aaa0b512d7e7fb80727698099cb0fe5d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_sgl_1_1_focus_listener"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_sgl_1_1_focus_listener')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_sgl_1_1_focus_listener.html">Sgl::FocusListener&lt; LayeredContainer &gt;</a></td></tr>
+<tr class="memitem:a255ccd7a3f8e0265a921df516ff87519 inherit pub_methods_class_sgl_1_1_focus_listener"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_focus_listener.html#a255ccd7a3f8e0265a921df516ff87519">DEFINE_STATIC_LISTENED_EVENT_TYPES</a> (FocusReceivedEvent::getStaticType(), FocusLostEvent::getStaticType()) public</td></tr>
+<tr class="separator:a255ccd7a3f8e0265a921df516ff87519 inherit pub_methods_class_sgl_1_1_focus_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade124f5631cf027895f4dcae90f04f5f inherit pub_methods_class_sgl_1_1_focus_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_focus_listener.html#ade124f5631cf027895f4dcae90f04f5f">onEvent</a> (Sml::Event *event) override final</td></tr>
+<tr class="separator:ade124f5631cf027895f4dcae90f04f5f inherit pub_methods_class_sgl_1_1_focus_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d7e6e4cc7afa794d4e29c10e7574efe inherit pub_methods_class_sgl_1_1_focus_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_focus_listener.html#a2d7e6e4cc7afa794d4e29c10e7574efe">onFocusLost</a> (<a class="el" href="class_sgl_1_1_focus_lost_event.html">FocusLostEvent</a> *event)</td></tr>
+<tr class="separator:a2d7e6e4cc7afa794d4e29c10e7574efe inherit pub_methods_class_sgl_1_1_focus_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_sgl_1_1_component_event_listener"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_sgl_1_1_component_event_listener')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_sgl_1_1_component_event_listener.html">Sgl::ComponentEventListener&lt; C &gt;</a></td></tr>
 <tr class="memitem:a3f016e62cce8760d08bd7116648472bb inherit pub_methods_class_sgl_1_1_component_event_listener"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component_event_listener.html#a3f016e62cce8760d08bd7116648472bb">ComponentEventListener</a> (C *component)</td></tr>
 <tr class="separator:a3f016e62cce8760d08bd7116648472bb inherit pub_methods_class_sgl_1_1_component_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,26 +123,23 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onAction</b> 
 <tr class="separator:a5dc9a6b9d636c1bd6268c1e35860727e inherit pub_methods_class_sgl_1_1_component_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename C&gt;<br />
-class Sgl::ActionListener&lt; C &gt;</div>
-<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00205">205</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="layered__container_8cpp_source.html#l00013">13</a> of file <a class="el" href="layered__container_8cpp_source.html">layered_container.cpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a5786d837529fb33f7588ef86ab33fb4d" name="a5786d837529fb33f7588ef86ab33fb4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5786d837529fb33f7588ef86ab33fb4d">&#9670;&nbsp;</a></span>ActionListener()</h2>
+<a id="aa3781a716ef6932fee6e14d7055237a9" name="aa3781a716ef6932fee6e14d7055237a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3781a716ef6932fee6e14d7055237a9">&#9670;&nbsp;</a></span>FocusReceivedFilter()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename C &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_sgl_1_1_action_listener.html">Sgl::ActionListener</a>&lt; C &gt;::<a class="el" href="class_sgl_1_1_action_listener.html">ActionListener</a> </td>
+          <td class="memname">FocusReceivedFilter::FocusReceivedFilter </td>
           <td>(</td>
-          <td class="paramtype">C *&#160;</td>
-          <td class="paramname"><em>component</em> = <code>nullptr</code></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_sgl_1_1_layered_container.html">LayeredContainer</a> *&#160;</td>
+          <td class="paramname"><em>component</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -148,50 +150,50 @@ template&lt;typename C &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00211">211</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="layered__container_8cpp_source.html#l00016">16</a> of file <a class="el" href="layered__container_8cpp_source.html">layered_container.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a23dec2dd7c2abb52a750f9f840539680" name="a23dec2dd7c2abb52a750f9f840539680"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23dec2dd7c2abb52a750f9f840539680">&#9670;&nbsp;</a></span>onEvent()</h2>
+<a id="aaa0b512d7e7fb80727698099cb0fe5d3" name="aaa0b512d7e7fb80727698099cb0fe5d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa0b512d7e7fb80727698099cb0fe5d3">&#9670;&nbsp;</a></span>onFocusReceived()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename C &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_sgl_1_1_action_listener.html">Sgl::ActionListener</a>&lt; C &gt;::onEvent </td>
+          <td class="memname">virtual void FocusReceivedFilter::onFocusReceived </td>
           <td>(</td>
-          <td class="paramtype">Sml::Event *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_sgl_1_1_focus_received_event.html">FocusReceivedEvent</a> *&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00213">213</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+<p>Reimplemented from <a class="el" href="class_sgl_1_1_focus_listener.html">Sgl::FocusListener&lt; LayeredContainer &gt;</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="layered__container_8cpp_source.html#l00018">18</a> of file <a class="el" href="layered__container_8cpp_source.html">layered_container.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="gui__event_8h_source.html">gui_event.h</a></li>
+<li><a class="el" href="layered__container_8cpp_source.html">layered_container.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>Sgl</b></li><li class="navelem"><a class="el" href="class_sgl_1_1_action_listener.html">ActionListener</a></li>
+    <li class="navelem"><a class="el" href="class_focus_received_filter.html">FocusReceivedFilter</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>

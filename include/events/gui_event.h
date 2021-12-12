@@ -121,29 +121,6 @@ namespace Sgl
     private:
     };
 
-    // class FocusEvent : public Sml::Event
-    // {
-    // public:
-    //     enum class Type
-    //     {
-    //         FOCUS_GOT,
-    //         FOCUS_LOST
-    //     };
-
-    // public:
-    //     FocusEvent(Type type, Sml::EventTarget* target = nullptr)
-    //         : Sml::Event(getStaticType(), getStaticCategory(), target), m_Type(type) {}
-
-    //     bool gotFocus() const { return m_Type == Type::FOCUS_GOT; }
-    //     bool lostFocus() const { return m_Type == Type::FOCUS_LOST; }
-
-    //     DEFINE_STATIC_EVENT_TYPE(FOCUS_CHANGED)
-    //     DEFINE_STATIC_EVENT_CATEGORY(EVENT_CATEGORY_GUI)
-
-    // private:
-    //     const Type m_Type;
-    // };
-
     class FocusReceivedEvent : public Sml::Event
     {
     public:
@@ -151,6 +128,7 @@ namespace Sgl
             : Sml::Event(getStaticType(), getStaticCategory(), target), m_PreviousFocus(prevFocus) {}
 
         Component* getPreviousFocus() { return m_PreviousFocus; }
+        Component* getNewFocus() { return reinterpret_cast<Component*>(m_Target); }
 
         DEFINE_STATIC_EVENT_TYPE(FOCUS_RECEIVED)
         DEFINE_STATIC_EVENT_CATEGORY(EVENT_CATEGORY_GUI)
@@ -165,6 +143,7 @@ namespace Sgl
         FocusLostEvent(Component* newFocus, Sml::EventTarget* target = nullptr)
             : Sml::Event(getStaticType(), getStaticCategory(), target), m_NewFocus(newFocus) {}
 
+        Component* getPreviousFocus() { return reinterpret_cast<Component*>(m_Target); }
         Component* getNewFocus() { return m_NewFocus; }
 
         DEFINE_STATIC_EVENT_TYPE(FOCUS_LOST)

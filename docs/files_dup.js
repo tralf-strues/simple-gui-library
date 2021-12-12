@@ -41,6 +41,9 @@ var files_dup =
       [ "Sgl::MenuItem", "class_sgl_1_1_menu_item.html", null ],
       [ "Sgl::ContextMenu", "class_sgl_1_1_context_menu.html", null ]
     ] ],
+    [ "layered_container.h", "layered__container_8h.html", [
+      [ "Sgl::LayeredContainer", "class_sgl_1_1_layered_container.html", null ]
+    ] ],
     [ "menu_bar.h", "menu__bar_8h.html", [
       [ "Sgl::Menu", "class_sgl_1_1_menu.html", null ],
       [ "Sgl::MenuBar", "class_sgl_1_1_menu_bar.html", null ]
@@ -102,6 +105,9 @@ var files_dup =
     [ "container.cpp", "container_8cpp.html", null ],
     [ "context_menu.cpp", "context__menu_8cpp.html", [
       [ "Sgl::ContextMenuFocusFilter", "class_sgl_1_1_context_menu_focus_filter.html", null ]
+    ] ],
+    [ "layered_container.cpp", "layered__container_8cpp.html", [
+      [ "FocusReceivedFilter", "class_focus_received_filter.html", null ]
     ] ],
     [ "menu_bar.cpp", "menu__bar_8cpp.html", "menu__bar_8cpp" ],
     [ "tile_pane.cpp", "tile__pane_8cpp.html", null ],
