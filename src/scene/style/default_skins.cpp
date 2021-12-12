@@ -343,8 +343,8 @@ namespace DefaultSkins
     const ColorFill           SliderSkin::SELECTED_FILL      = {0x32'73'F6'FF};
     const Sml::Color          SliderSkin::KNOB_COLOR         = 0x27'5B'E1'FF;
     const int32_t             SliderSkin::THICKNESS          = 6;
-    const int32_t             SliderSkin::KNOB_WIDTH         = 6;
-    const int32_t             SliderSkin::KNOB_HEIGHT        = 11;
+    const int32_t             SliderSkin::KNOB_SIZE_ALONG    = 6;
+    const int32_t             SliderSkin::KNOB_SIZE_ACROSS   = 11;
 
     class SliderSkinDragListener : public DragListener<Slider>
     {
@@ -358,9 +358,13 @@ namespace DefaultSkins
 
             Sml::Vec2i localPos = slider.computeSceneToLocalPos(mousePos);
 
+            int32_t posAlong   = slider.getOrientation() == Orientation::HORIZONTAL ? localPos.x : localPos.y;
+            int32_t lineLength = slider.getOrientation() == Orientation::HORIZONTAL ? skin.getLineRect().width :
+                                                                                      skin.getLineRect().height;
+
             slider.setValue(slider.getRangeMin() +
-                            (static_cast<float>(localPos.x - SliderSkin::KNOB_WIDTH / 2) /
-                             static_cast<float>(skin.getLineRect().width - SliderSkin::KNOB_WIDTH)) *
+                            (static_cast<float>(posAlong - SliderSkin::KNOB_SIZE_ALONG / 2) /
+                             static_cast<float>(lineLength - SliderSkin::KNOB_SIZE_ALONG)) *
                             (slider.getRangeMax() - slider.getRangeMin()));
         }
 
@@ -398,13 +402,13 @@ namespace DefaultSkins
                            const Fill* selectedFill,
                            Sml::Color knobColor,
                            int32_t thickness,
-                           int32_t knobWidth,
-                           int32_t knobHeight)
+                           int32_t knobSizeAlong,
+                           int32_t knobSizeAcross)
         : m_NotSelectedFill(notSelectedFill),
           m_SelectedFill(selectedFill),
           m_Thickness(thickness),
-          m_KnobWidth(knobWidth),
-          m_KnobHeight(knobHeight),
+          m_KnobSizeAlong(knobSizeAlong),
+          m_KnobSizeAcross(knobSizeAcross),
           m_KnobRect(new Sgl::Rectangle())
     {
         m_KnobRect->setFillColor(knobColor);
@@ -472,7 +476,15 @@ namespace DefaultSkins
             m_NotSelectedFill->fillArea(lineRect, m_Slider->getOriginBounds());
         }
 
-        lineRect.width *= getPercentage();
+        if (m_Slider->getOrientation() == Orientation::HORIZONTAL)
+        {
+            lineRect.width *= getPercentage();
+        }
+        else
+        {
+            lineRect.height *= getPercentage();
+        }
+
         if (m_SelectedFill != nullptr)
         {
             m_SelectedFill->fillArea(lineRect, m_Slider->getOriginBounds());
@@ -482,7 +494,25 @@ namespace DefaultSkins
     const Control* SliderSkin::getControl() const { return m_Slider; }
     Control* SliderSkin::getModifiableControl()   { return m_Slider; }
 
-    int32_t SliderSkin::computePrefHeight(int32_t width) const { return m_KnobHeight; }
+    int32_t SliderSkin::computePrefWidth(int32_t height) const
+    {
+        if (m_Slider->getOrientation() == Orientation::HORIZONTAL)
+        {
+            return m_KnobSizeAlong;
+        }
+
+        return m_KnobSizeAcross;
+    }
+
+    int32_t SliderSkin::computePrefHeight(int32_t width) const
+    {
+        if (m_Slider->getOrientation() == Orientation::VERTICAL)
+        {
+            return m_KnobSizeAlong;
+        }
+
+        return m_KnobSizeAcross;
+    }
 
     void SliderSkin::layoutChildren()
     {
@@ -497,30 +527,52 @@ namespace DefaultSkins
     int32_t SliderSkin::getThickness() const { return m_Thickness; }
     void SliderSkin::setThickness(int32_t thickness) { m_Thickness = thickness; }
 
-    int32_t SliderSkin::getKnobWidth() const { return m_KnobWidth; }
-    void SliderSkin::setKnobWidth(int32_t knobWidth) { m_KnobWidth = knobWidth; }
+    int32_t SliderSkin::getKnobSizeAlong() const { return m_KnobSizeAlong; }
+    void SliderSkin::setKnobSizeAlong(int32_t knobSizeAlong) { m_KnobSizeAlong = knobSizeAlong; }
 
-    int32_t SliderSkin::getKnobHeight() const { return m_KnobHeight; }
-    void SliderSkin::setKnobHeight(int32_t knobHeight) { m_KnobHeight = knobHeight; }
+    int32_t SliderSkin::getKnobSizeAcross() const { return m_KnobSizeAcross; }
+    void SliderSkin::setKnobSizeAcross(int32_t knobSizeAcross) { m_KnobSizeAcross = knobSizeAcross; }
 
     void SliderSkin::setKnobShadow(const ShadowSpecification* shadow) { m_KnobRect->setShadow(shadow); }
 
     Sml::Rectangle<int32_t> SliderSkin::getLineRect()
     {
-        Sml::Rectangle<int32_t> originBounds = m_Slider->getOriginBounds();
-        int32_t                 centerY      = originBounds.height / 2;
+        if (m_Slider->getOrientation() == Orientation::HORIZONTAL)
+        {
+            Sml::Rectangle<int32_t> originBounds = m_Slider->getOriginBounds();
+            int32_t                 centerY      = originBounds.height / 2;
 
-        return Sml::Rectangle<int32_t>{0, centerY - m_Thickness / 2, originBounds.width, m_Thickness};
+            return Sml::Rectangle<int32_t>{0, centerY - m_Thickness / 2, originBounds.width, m_Thickness};
+        }
+        else
+        {
+            Sml::Rectangle<int32_t> originBounds = m_Slider->getOriginBounds();
+            int32_t                 centerX      = originBounds.width / 2;
+
+            return Sml::Rectangle<int32_t>{centerX - m_Thickness / 2, 0, m_Thickness, originBounds.height};
+        }
     }
 
     Sml::Rectangle<int32_t> SliderSkin::getKnobRect()
     {
-        Sml::Rectangle<int32_t> originBounds = m_Slider->getOriginBounds();
-        int32_t                 centerY      = originBounds.height / 2;
-        int32_t                 knobCenterX  = m_KnobWidth / 2 + getPercentage() * (originBounds.width - m_KnobWidth);
+        if (m_Slider->getOrientation() == Orientation::HORIZONTAL)
+        {
+            Sml::Rectangle<int32_t> originBounds = m_Slider->getOriginBounds();
+            int32_t                 centerY      = originBounds.height / 2;
+            int32_t                 knobCenterX  = m_KnobSizeAlong / 2 + getPercentage() * (originBounds.width - m_KnobSizeAlong);
 
-        return Sml::Rectangle<int32_t>{knobCenterX - m_KnobWidth / 2, centerY - m_KnobHeight / 2,
-                                       m_KnobWidth, m_KnobHeight};
+            return Sml::Rectangle<int32_t>{knobCenterX - m_KnobSizeAlong / 2, centerY - m_KnobSizeAcross / 2,
+                                           m_KnobSizeAlong, m_KnobSizeAcross};
+        }
+        else
+        {
+            Sml::Rectangle<int32_t> originBounds = m_Slider->getOriginBounds();
+            int32_t                 centerX      = originBounds.width / 2;
+            int32_t                 knobCenterY  = m_KnobSizeAlong / 2 + getPercentage() * (originBounds.height - m_KnobSizeAlong);
+
+            return Sml::Rectangle<int32_t>{centerX - m_KnobSizeAcross / 2, knobCenterY - m_KnobSizeAlong / 2,
+                                           m_KnobSizeAcross, m_KnobSizeAlong};
+        }
     }
 
     float SliderSkin::getPercentage()
@@ -563,7 +615,7 @@ namespace DefaultSkins
         assert(scrollBar);
         m_ScrollBar = scrollBar;
 
-        if (m_ScrollBar->getOrientation() == ScrollBar::Orientation::HORIZONTAL)
+        if (m_ScrollBar->getOrientation() == Orientation::HORIZONTAL)
         {
             m_Box->setDirection(BoxContainer::Direction::LEFT_TO_RIGHT);
 
@@ -632,20 +684,21 @@ namespace DefaultSkins
         m_Slider->setRangeMin(m_ScrollBar->getRangeMin());
         m_Slider->setRangeMax(m_ScrollBar->getRangeMax());
         m_Slider->setValue(m_ScrollBar->getValue());
+        m_Slider->setOrientation(m_ScrollBar->getOrientation());
 
-        if (m_ScrollBar->getOrientation() == ScrollBar::Orientation::HORIZONTAL)
+        if (m_ScrollBar->getOrientation() == Orientation::HORIZONTAL)
         {
             m_SliderSkin->setThickness(layoutHeight);
-            m_SliderSkin->setKnobHeight(layoutHeight - 4);
-            m_SliderSkin->setKnobWidth(m_Slider->getLayoutWidth() * m_ScrollBar->getVisibleRange() /
-                                       (m_ScrollBar->getRangeMax() - m_ScrollBar->getRangeMin()));
+            m_SliderSkin->setKnobSizeAcross(layoutHeight - 4);
+            m_SliderSkin->setKnobSizeAlong(m_Slider->getLayoutWidth() * m_ScrollBar->getVisibleRange() /
+                                           (m_ScrollBar->getRangeMax() - m_ScrollBar->getRangeMin()));
         }
         else
         {
             m_SliderSkin->setThickness(layoutWidth);
-            m_SliderSkin->setKnobWidth(layoutWidth - 4);
-            m_SliderSkin->setKnobHeight(m_Slider->getLayoutHeight() * m_ScrollBar->getVisibleRange() /
-                                       (m_ScrollBar->getRangeMax() - m_ScrollBar->getRangeMin()));
+            m_SliderSkin->setKnobSizeAcross(layoutWidth - 4);
+            m_SliderSkin->setKnobSizeAlong(m_Slider->getLayoutHeight() * m_ScrollBar->getVisibleRange() /
+                                           (m_ScrollBar->getRangeMax() - m_ScrollBar->getRangeMin()));
         }
     }
 }

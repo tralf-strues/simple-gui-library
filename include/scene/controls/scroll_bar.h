@@ -15,13 +15,6 @@ namespace Sgl
     class ScrollBar : public Control
     {
     public:
-        enum class Orientation
-        {
-            VERTICAL,
-            HORIZONTAL
-        };
-
-    public:
         ScrollBar(Orientation orientation, float rangeMin, float rangeMax);
 
         Orientation getOrientation() const;

@@ -27,6 +27,9 @@ namespace Sgl
         setSkin(skin);
     }
 
+    Orientation Slider::getOrientation() const { return m_Orientation; }
+    void Slider::setOrientation(Orientation orientation) { m_Orientation = orientation; }
+
     float Slider::getRangeMin() const { return m_RangeMin; }
     float Slider::getRangeMax() const { return m_RangeMax; }
     float Slider::getValue()    const { return m_Value;    }

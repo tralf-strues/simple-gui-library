@@ -17,6 +17,12 @@ namespace Sgl
     class Parent;
     class Scene;
 
+    enum class Orientation
+    {
+        HORIZONTAL,
+        VERTICAL
+    };
+
     class Component : public Sml::EventTarget
     {
     public:

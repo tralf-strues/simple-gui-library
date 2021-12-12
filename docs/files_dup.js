@@ -20,9 +20,7 @@ var files_dup =
       [ "Sgl::ShadowSpecification", "class_sgl_1_1_shadow_specification.html", null ],
       [ "Sgl::Shadow", "class_sgl_1_1_shadow.html", null ]
     ] ],
-    [ "component.h", "component_8h.html", [
-      [ "Sgl::Component", "class_sgl_1_1_component.html", null ]
-    ] ],
+    [ "component.h", "component_8h.html", "component_8h" ],
     [ "anchor_pane.h", "anchor__pane_8h.html", [
       [ "Sgl::AnchorPane", "class_sgl_1_1_anchor_pane.html", "class_sgl_1_1_anchor_pane" ],
       [ "Sgl::AnchorPane::Anchors", "struct_sgl_1_1_anchor_pane_1_1_anchors.html", null ],

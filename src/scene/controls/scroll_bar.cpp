@@ -18,7 +18,7 @@ ScrollBar::ScrollBar(Orientation orientation, float rangeMin, float rangeMax)
     setSkin(m_DefaultSkin);
 }
 
-ScrollBar::Orientation ScrollBar::getOrientation() const { return m_Orientation; }
+Orientation ScrollBar::getOrientation() const { return m_Orientation; }
 
 float ScrollBar::getRangeMin() const { return m_RangeMin; }
 

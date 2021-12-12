@@ -18,6 +18,9 @@ namespace Sgl
         Slider(float rangeMin, float rangeMax);
         Slider(BaseSkin<Slider>* skin, float rangeMin, float rangeMax);
 
+        Orientation getOrientation() const;
+        void setOrientation(Orientation orientation);
+
         float getRangeMin() const;
         void setRangeMin(float min);
 
@@ -31,9 +34,11 @@ namespace Sgl
         Sml::PropertyChangeListener<float>* getOnPropertyChange(); // TODO: get rid of
 
     private:
-        float m_RangeMin = 0;
-        float m_RangeMax = 0;
-        float m_Value    = 0;
+        Orientation m_Orientation = Orientation::HORIZONTAL;
+
+        float       m_RangeMin    = 0;
+        float       m_RangeMax    = 0;
+        float       m_Value       = 0;
 
         Sml::PropertyChangeListener<float>* m_PropertyChangeListener = nullptr;
     };

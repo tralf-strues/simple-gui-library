@@ -190,16 +190,16 @@ namespace DefaultSkins
         static const ColorFill           SELECTED_FILL;
         static const Sml::Color          KNOB_COLOR;
         static const int32_t             THICKNESS;
-        static const int32_t             KNOB_WIDTH;
-        static const int32_t             KNOB_HEIGHT;
+        static const int32_t             KNOB_SIZE_ALONG;
+        static const int32_t             KNOB_SIZE_ACROSS;
 
     public:
         SliderSkin(const Fill* notSelectedFill,
                    const Fill* selectedFill,
                    Sml::Color knobColor = KNOB_COLOR,
                    int32_t thickness = THICKNESS,
-                   int32_t knobWidth = KNOB_WIDTH,
-                   int32_t knobHeight = KNOB_HEIGHT);
+                   int32_t knobSizeAlong = KNOB_SIZE_ALONG,
+                   int32_t knobSizeAcross = KNOB_SIZE_ACROSS);
 
         SliderSkin(Slider* slider);
 
@@ -212,6 +212,7 @@ namespace DefaultSkins
         virtual const Control* getControl() const override;
         virtual Control* getModifiableControl() override;
 
+        virtual int32_t computePrefWidth(int32_t height = -1) const override;
         virtual int32_t computePrefHeight(int32_t width = -1) const override;
 
         virtual void layoutChildren() override;
@@ -219,11 +220,11 @@ namespace DefaultSkins
         int32_t getThickness() const;
         void setThickness(int32_t thickness);
 
-        int32_t getKnobWidth() const;
-        void setKnobWidth(int32_t knobWidth);
+        int32_t getKnobSizeAlong() const;
+        void setKnobSizeAlong(int32_t knobWidth);
 
-        int32_t getKnobHeight() const;
-        void setKnobHeight(int32_t knobHeight);
+        int32_t getKnobSizeAcross() const;
+        void setKnobSizeAcross(int32_t knobSizeAcross);
 
         void setKnobShadow(const ShadowSpecification* shadow);
 
@@ -240,8 +241,8 @@ namespace DefaultSkins
         const Fill*                   m_SelectedFill       = nullptr;
         
         int32_t                       m_Thickness          = 0;
-        int32_t                       m_KnobWidth          = 0;
-        int32_t                       m_KnobHeight         = 0;
+        int32_t                       m_KnobSizeAlong      = 0;
+        int32_t                       m_KnobSizeAcross     = 0;
 
         Rectangle*                    m_KnobRect           = nullptr;
     };
