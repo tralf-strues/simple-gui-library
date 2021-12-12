@@ -13,6 +13,8 @@
 
 namespace Sgl
 {
+    void Skin::prerenderControl() {}
+
     Component* Skin::getHitComponent(int32_t x, int32_t y)
     {
         if (Sml::isPointInsideRectangle({x, y}, getControl()->getLayoutBounds()))

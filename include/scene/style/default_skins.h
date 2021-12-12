@@ -22,6 +22,8 @@ namespace Sgl
 {
     class Button;
     class Slider;
+    class ScrollBar;
+    class BoxContainer;
 
 namespace DefaultSkins
 {
@@ -192,7 +194,13 @@ namespace DefaultSkins
         static const int32_t             KNOB_HEIGHT;
 
     public:
-        SliderSkin(const Fill* notSelectedFill, const Fill* selectedFill, Sml::Color knobColor);
+        SliderSkin(const Fill* notSelectedFill,
+                   const Fill* selectedFill,
+                   Sml::Color knobColor = KNOB_COLOR,
+                   int32_t thickness = THICKNESS,
+                   int32_t knobWidth = KNOB_WIDTH,
+                   int32_t knobHeight = KNOB_HEIGHT);
+
         SliderSkin(Slider* slider);
 
         virtual void dispose() override;
@@ -208,6 +216,17 @@ namespace DefaultSkins
 
         virtual void layoutChildren() override;
 
+        int32_t getThickness() const;
+        void setThickness(int32_t thickness);
+
+        int32_t getKnobWidth() const;
+        void setKnobWidth(int32_t knobWidth);
+
+        int32_t getKnobHeight() const;
+        void setKnobHeight(int32_t knobHeight);
+
+        void setKnobShadow(const ShadowSpecification* shadow);
+
         Sml::Rectangle<int32_t> getLineRect();
         Sml::Rectangle<int32_t> getKnobRect();
         float                   getPercentage();
@@ -220,7 +239,41 @@ namespace DefaultSkins
         const Fill*                   m_NotSelectedFill    = nullptr;
         const Fill*                   m_SelectedFill       = nullptr;
         
+        int32_t                       m_Thickness          = 0;
+        int32_t                       m_KnobWidth          = 0;
+        int32_t                       m_KnobHeight         = 0;
+
         Rectangle*                    m_KnobRect           = nullptr;
+    };
+
+    //------------------------------------------------------------------------------
+    // ScrollBarSkin
+    //------------------------------------------------------------------------------
+    class ScrollBarSkin : public Sgl::BaseSkin<ScrollBar>
+    {
+    public:
+        static const Sml::Color          KNOB_COLOR;
+        static const ShadowSpecification KNOB_SHADOW;
+
+    public:
+        ScrollBarSkin(ScrollBar* scrollBar);
+
+        virtual void dispose() override;
+        virtual void attach(ScrollBar* scrollBar) override;
+
+        virtual const Control* getControl() const override;
+        virtual Control* getModifiableControl() override;
+
+        virtual void layoutChildren() override;
+
+    private:
+        ScrollBar*    m_ScrollBar       = nullptr;
+
+        BoxContainer* m_Box             = nullptr;
+        SliderSkin*   m_SliderSkin      = nullptr;
+        Slider*       m_Slider          = nullptr;
+        Button*       m_DecrementButton = nullptr;
+        Button*       m_IncrementButton = nullptr;
     };
 }
 }

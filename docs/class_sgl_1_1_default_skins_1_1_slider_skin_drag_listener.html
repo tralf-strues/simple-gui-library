@@ -105,6 +105,10 @@ Inheritance diagram for Sgl::DefaultSkins::SliderSkinDragListener:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a47ac4fda1f0cf4a28ff2db7783e66e12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_default_skins_1_1_slider_skin_drag_listener.html#a47ac4fda1f0cf4a28ff2db7783e66e12">SliderSkinDragListener</a> (<a class="el" href="class_sgl_1_1_slider.html">Slider</a> *slider)</td></tr>
 <tr class="separator:a47ac4fda1f0cf4a28ff2db7783e66e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01323e6c54e18aabc00a62d37a2d42f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_default_skins_1_1_slider_skin_drag_listener.html#a01323e6c54e18aabc00a62d37a2d42f3">updateValue</a> (const Sml::Vec2i &amp;mousePos)</td></tr>
+<tr class="separator:a01323e6c54e18aabc00a62d37a2d42f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76e3fa8e00ccfbef33a441f9512d4e15"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_default_skins_1_1_slider_skin_drag_listener.html#a76e3fa8e00ccfbef33a441f9512d4e15">onDragStart</a> (<a class="el" href="class_sgl_1_1_drag_start_event.html">DragStartEvent</a> *event)</td></tr>
+<tr class="separator:a76e3fa8e00ccfbef33a441f9512d4e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e364363cacd61a250f5874ec9fba419"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_default_skins_1_1_slider_skin_drag_listener.html#a3e364363cacd61a250f5874ec9fba419">onDragMove</a> (<a class="el" href="class_sgl_1_1_drag_move_event.html">DragMoveEvent</a> *event)</td></tr>
 <tr class="separator:a3e364363cacd61a250f5874ec9fba419"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_sgl_1_1_drag_listener"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_sgl_1_1_drag_listener')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_sgl_1_1_drag_listener.html">Sgl::DragListener&lt; Slider &gt;</a></td></tr>
@@ -112,8 +116,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ace6bca3a3ff8c0c02e509367ffaa284f inherit pub_methods_class_sgl_1_1_drag_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a834d80279349988a1ec457440fb60f59 inherit pub_methods_class_sgl_1_1_drag_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_drag_listener.html#a834d80279349988a1ec457440fb60f59">onEvent</a> (Sml::Event *event) override final</td></tr>
 <tr class="separator:a834d80279349988a1ec457440fb60f59 inherit pub_methods_class_sgl_1_1_drag_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89bbe011b6dbf89e629afb8002d39822 inherit pub_methods_class_sgl_1_1_drag_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_drag_listener.html#a89bbe011b6dbf89e629afb8002d39822">onDragStart</a> (<a class="el" href="class_sgl_1_1_drag_start_event.html">DragStartEvent</a> *event)</td></tr>
-<tr class="separator:a89bbe011b6dbf89e629afb8002d39822 inherit pub_methods_class_sgl_1_1_drag_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ad5c5eb9d7f5e1037dec4832684acbe inherit pub_methods_class_sgl_1_1_drag_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_drag_listener.html#a5ad5c5eb9d7f5e1037dec4832684acbe">onDragEnd</a> (<a class="el" href="class_sgl_1_1_drag_end_event.html">DragEndEvent</a> *event)</td></tr>
 <tr class="separator:a5ad5c5eb9d7f5e1037dec4832684acbe inherit pub_methods_class_sgl_1_1_drag_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_sgl_1_1_component_event_listener"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_sgl_1_1_component_event_listener')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_sgl_1_1_component_event_listener.html">Sgl::ComponentEventListener&lt; Slider &gt;</a></td></tr>
@@ -126,7 +128,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00347">347</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00349">349</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a47ac4fda1f0cf4a28ff2db7783e66e12" name="a47ac4fda1f0cf4a28ff2db7783e66e12"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a47ac4fda1f0cf4a28ff2db7783e66e12">&#9670;&nbsp;</a></span>SliderSkinDragListener()</h2>
@@ -152,7 +154,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00350">350</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00352">352</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
 
 </div>
 </div>
@@ -183,7 +185,65 @@ Public Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_sgl_1_1_drag_listener.html">Sgl::DragListener&lt; Slider &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00352">352</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00374">374</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a76e3fa8e00ccfbef33a441f9512d4e15" name="a76e3fa8e00ccfbef33a441f9512d4e15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76e3fa8e00ccfbef33a441f9512d4e15">&#9670;&nbsp;</a></span>onDragStart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Sgl::DefaultSkins::SliderSkinDragListener::onDragStart </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_sgl_1_1_drag_start_event.html">DragStartEvent</a> *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_sgl_1_1_drag_listener.html">Sgl::DragListener&lt; Slider &gt;</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00367">367</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a01323e6c54e18aabc00a62d37a2d42f3" name="a01323e6c54e18aabc00a62d37a2d42f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01323e6c54e18aabc00a62d37a2d42f3">&#9670;&nbsp;</a></span>updateValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sgl::DefaultSkins::SliderSkinDragListener::updateValue </td>
+          <td>(</td>
+          <td class="paramtype">const Sml::Vec2i &amp;&#160;</td>
+          <td class="paramname"><em>mousePos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="default__skins_8cpp_source.html#l00354">354</a> of file <a class="el" href="default__skins_8cpp_source.html">default_skins.cpp</a>.</p>
 
 </div>
 </div>

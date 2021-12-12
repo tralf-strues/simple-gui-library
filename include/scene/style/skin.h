@@ -29,7 +29,7 @@ namespace Sgl
          */
         virtual void dispose() = 0;
 
-        virtual void prerenderControl() = 0;
+        virtual void prerenderControl();
 
         virtual Component* getHitComponent(int32_t x, int32_t y);
         virtual const Control* getControl() const = 0;

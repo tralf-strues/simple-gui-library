@@ -19,6 +19,7 @@ namespace Sgl
         Button();
         Button(const char* label);
         Button(const Image* icon);
+        Button(BaseSkin<Button>* skin);
         Button(BaseSkin<Button>* skin, const char* label);
         Button(BaseSkin<Button>* skin, const Image* icon);
 

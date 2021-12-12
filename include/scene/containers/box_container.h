@@ -36,6 +36,7 @@ namespace Sgl
         };
 
     public:
+        BoxContainer() = default;
         BoxContainer(Direction direction);
         virtual ~BoxContainer() override = default;
 

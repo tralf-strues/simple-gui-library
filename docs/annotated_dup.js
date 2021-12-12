@@ -7,6 +7,7 @@ var annotated_dup =
         [ "ButtonPlaneSkin", "class_sgl_1_1_default_skins_1_1_button_plane_skin.html", null ],
         [ "ButtonSkin", "class_sgl_1_1_default_skins_1_1_button_skin.html", null ],
         [ "MenuItemSkin", "class_sgl_1_1_default_skins_1_1_menu_item_skin.html", null ],
+        [ "ScrollBarSkin", "class_sgl_1_1_default_skins_1_1_scroll_bar_skin.html", "class_sgl_1_1_default_skins_1_1_scroll_bar_skin" ],
         [ "SliderSkin", "class_sgl_1_1_default_skins_1_1_slider_skin.html", "class_sgl_1_1_default_skins_1_1_slider_skin" ],
         [ "SliderSkinDragListener", "class_sgl_1_1_default_skins_1_1_slider_skin_drag_listener.html", null ],
         [ "SliderSkinMousePressListener", "class_sgl_1_1_default_skins_1_1_slider_skin_mouse_press_listener.html", null ]
@@ -54,6 +55,7 @@ var annotated_dup =
       [ "Parent", "class_sgl_1_1_parent.html", "class_sgl_1_1_parent" ],
       [ "Rectangle", "class_sgl_1_1_rectangle.html", null ],
       [ "Scene", "class_sgl_1_1_scene.html", null ],
+      [ "ScrollBar", "class_sgl_1_1_scroll_bar.html", null ],
       [ "Shadow", "class_sgl_1_1_shadow.html", null ],
       [ "ShadowSpecification", "class_sgl_1_1_shadow_specification.html", null ],
       [ "Shape", "class_sgl_1_1_shape.html", null ],
