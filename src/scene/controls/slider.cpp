@@ -19,6 +19,14 @@ namespace Sgl
         setSkin(m_DefaultSkin);
     }
 
+    Slider::Slider(BaseSkin<Slider>* skin, float rangeMin, float rangeMax)
+        : m_RangeMin(rangeMin), m_RangeMax(rangeMax), m_Value(rangeMin)
+    {
+        assert(skin);
+        skin->attach(this);
+        setSkin(skin);
+    }
+
     float Slider::getRangeMin() const { return m_RangeMin; }
     float Slider::getRangeMax() const { return m_RangeMax; }
     float Slider::getValue()    const { return m_Value;    }

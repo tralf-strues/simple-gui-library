@@ -24,25 +24,22 @@ namespace Sgl
         m_Fills.insert(m_Fills.end(), fills);
     }
 
-    Background::Background(const Fill* fill)
-        : Background({fill}) {}
+    Background::Background(const Fill* fill) : Background({fill}) {}
 
-    const std::vector<const Fill*>& Background::getFills() const
-    {
-        return m_Fills;
-    }
+    void Background::addFill(const Fill* fill) { assert(fill); m_Fills.push_back(fill); }
+    void Background::addImage(const Image* image) { assert(image); m_Images.push_back(image); }
 
-    const std::vector<const Image*> Background::getImages() const
-    {
-        return m_Images;
-    }
+    void Background::clearFills() { m_Fills.clear(); }
+    void Background::clearImages() { m_Images.clear(); }
 
-    void Background::fillArea(const Background* background,
-                              const Sml::Rectangle<int32_t>& targetRegion)
+    const std::vector<const Fill*>& Background::getFills() const { return m_Fills; }
+    const std::vector<const Image*> Background::getImages() const { return m_Images; }
+
+    void Background::fillArea(const Background* background, const Sml::Rectangle<int32_t>& targetRegion)
     {
         for (const Fill* fill : background->getFills())
         {
-            fill->fillArea(targetRegion, targetRegion);
+            fill->fillArea({0, 0, targetRegion.width, targetRegion.height}, targetRegion);
         }
 
         for (const Image* image : background->getImages())

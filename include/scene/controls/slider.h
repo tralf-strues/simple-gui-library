@@ -16,6 +16,7 @@ namespace Sgl
     {
     public:
         Slider(float rangeMin, float rangeMax);
+        Slider(BaseSkin<Slider>* skin, float rangeMin, float rangeMax);
 
         float getRangeMin() const;
         void setRangeMin(float min);

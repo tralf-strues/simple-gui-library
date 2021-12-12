@@ -11,6 +11,7 @@
 #include "sml/events/listener_notifier.h"
 #include "../image_view.h"
 #include "../shapes/text.h"
+#include "../shapes/rectangle.h"
 #include "../../paint/background.h"
 #include "../../paint/border.h"
 #include "../../paint/insets.h"
@@ -182,15 +183,16 @@ namespace DefaultSkins
     class SliderSkin : public Sgl::BaseSkin<Slider>
     {
     public:
-        static const ShadowSpecification SHADOW;
-        static const Sml::Color          NOT_SELECTED_COLOR;
-        static const Sml::Color          SELECTED_COLOR;
+        static const ShadowSpecification KNOB_SHADOW;
+        static const ColorFill           NOT_SELECTED_FILL;
+        static const ColorFill           SELECTED_FILL;
         static const Sml::Color          KNOB_COLOR;
         static const int32_t             THICKNESS;
         static const int32_t             KNOB_WIDTH;
         static const int32_t             KNOB_HEIGHT;
 
     public:
+        SliderSkin(const Fill* notSelectedFill, const Fill* selectedFill, Sml::Color knobColor);
         SliderSkin(Slider* slider);
 
         virtual void dispose() override;
@@ -214,6 +216,11 @@ namespace DefaultSkins
         Slider*                       m_Slider             = nullptr;
         SliderSkinDragListener*       m_DragListener       = nullptr;
         SliderSkinMousePressListener* m_MousePressListener = nullptr;
+
+        const Fill*                   m_NotSelectedFill    = nullptr;
+        const Fill*                   m_SelectedFill       = nullptr;
+        
+        Rectangle*                    m_KnobRect           = nullptr;
     };
 }
 }

@@ -52,6 +52,15 @@ void ColorFill::fillPoint(const Sml::Vec2i& point,
 //------------------------------------------------------------------------------
 // LinearGradientFill->Stop
 //------------------------------------------------------------------------------
+const LinearGradientFill LinearGradientFill::RAINBOX_HORIZONTAL = {Sgl::LinearGradientFill::Direction::HORIZONTAL,
+                                                                   {{0.00, 0xFF'00'00'FF},
+                                                                    {0.15, 0xFF'FF'00'FF},
+                                                                    {0.33, 0x00'FF'00'FF},
+                                                                    {0.49, 0x00'FF'FF'FF},
+                                                                    {0.67, 0x00'00'FF'FF},
+                                                                    {0.84, 0xFF'00'FF'FF},
+                                                                    {1.00, 0xFF'00'00'FF}}};
+
 LinearGradientFill::Stop::Stop(float offset, Sml::Color color)
     : m_Offset(offset), m_Color(Sml::colorToNormalized(color)) {}
 

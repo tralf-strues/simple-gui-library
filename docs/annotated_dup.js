@@ -16,6 +16,7 @@ var annotated_dup =
       [ "AnchorPane", "class_sgl_1_1_anchor_pane.html", "class_sgl_1_1_anchor_pane" ],
       [ "Background", "class_sgl_1_1_background.html", null ],
       [ "BaseSkin", "class_sgl_1_1_base_skin.html", null ],
+      [ "BlankContainer", "class_sgl_1_1_blank_container.html", null ],
       [ "Border", "class_sgl_1_1_border.html", null ],
       [ "BoxContainer", "class_sgl_1_1_box_container.html", null ],
       [ "Button", "class_sgl_1_1_button.html", null ],

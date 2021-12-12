@@ -98,20 +98,21 @@ Inheritance diagram for Sgl::Parent:</div>
  <div class="center">
   <img src="class_sgl_1_1_parent.png" usemap="#Sgl::Parent_map" alt=""/>
   <map id="Sgl::Parent_map" name="Sgl::Parent_map">
-<area href="class_sgl_1_1_component.html" alt="Sgl::Component" shape="rect" coords="305,56,417,80"/>
-<area href="class_sgl_1_1_container.html" alt="Sgl::Container" shape="rect" coords="122,168,234,192"/>
-<area href="class_sgl_1_1_control.html" alt="Sgl::Control" shape="rect" coords="488,168,600,192"/>
-<area href="class_sgl_1_1_anchor_pane.html" title="Allows the edges of components to be anchored to anchor pane&#39;s edges." alt="Sgl::AnchorPane" shape="rect" coords="0,224,112,248"/>
-<area href="class_sgl_1_1_box_container.html" title="Basic list-like container which lays out children in a line one after another." alt="Sgl::BoxContainer" shape="rect" coords="122,224,234,248"/>
-<area href="class_sgl_1_1_tile_pane.html" alt="Sgl::TilePane" shape="rect" coords="244,224,356,248"/>
-<area href="class_sgl_1_1_button.html" alt="Sgl::Button" shape="rect" coords="366,224,478,248"/>
-<area href="class_sgl_1_1_label.html" alt="Sgl::Label" shape="rect" coords="488,224,600,248"/>
-<area href="class_sgl_1_1_slider.html" alt="Sgl::Slider" shape="rect" coords="610,224,722,248"/>
-<area href="class_sgl_1_1_h_box.html" alt="Sgl::HBox" shape="rect" coords="61,280,173,304"/>
-<area href="class_sgl_1_1_v_box.html" alt="Sgl::VBox" shape="rect" coords="183,280,295,304"/>
-<area href="class_sgl_1_1_menu_item.html" alt="Sgl::MenuItem" shape="rect" coords="366,280,478,304"/>
-<area href="class_sgl_1_1_menu_bar.html" alt="Sgl::MenuBar" shape="rect" coords="61,336,173,360"/>
-<area href="class_sgl_1_1_context_menu.html" alt="Sgl::ContextMenu" shape="rect" coords="183,336,295,360"/>
+<area href="class_sgl_1_1_component.html" alt="Sgl::Component" shape="rect" coords="429,56,551,80"/>
+<area href="class_sgl_1_1_container.html" alt="Sgl::Container" shape="rect" coords="198,168,320,192"/>
+<area href="class_sgl_1_1_control.html" alt="Sgl::Control" shape="rect" coords="660,168,782,192"/>
+<area href="class_sgl_1_1_anchor_pane.html" title="Allows the edges of components to be anchored to anchor pane&#39;s edges." alt="Sgl::AnchorPane" shape="rect" coords="0,224,122,248"/>
+<area href="class_sgl_1_1_blank_container.html" alt="Sgl::BlankContainer" shape="rect" coords="132,224,254,248"/>
+<area href="class_sgl_1_1_box_container.html" title="Basic list-like container which lays out children in a line one after another." alt="Sgl::BoxContainer" shape="rect" coords="264,224,386,248"/>
+<area href="class_sgl_1_1_tile_pane.html" alt="Sgl::TilePane" shape="rect" coords="396,224,518,248"/>
+<area href="class_sgl_1_1_button.html" alt="Sgl::Button" shape="rect" coords="528,224,650,248"/>
+<area href="class_sgl_1_1_label.html" alt="Sgl::Label" shape="rect" coords="660,224,782,248"/>
+<area href="class_sgl_1_1_slider.html" alt="Sgl::Slider" shape="rect" coords="792,224,914,248"/>
+<area href="class_sgl_1_1_h_box.html" alt="Sgl::HBox" shape="rect" coords="198,280,320,304"/>
+<area href="class_sgl_1_1_v_box.html" alt="Sgl::VBox" shape="rect" coords="330,280,452,304"/>
+<area href="class_sgl_1_1_menu_item.html" alt="Sgl::MenuItem" shape="rect" coords="528,280,650,304"/>
+<area href="class_sgl_1_1_menu_bar.html" alt="Sgl::MenuBar" shape="rect" coords="198,336,320,360"/>
+<area href="class_sgl_1_1_context_menu.html" alt="Sgl::ContextMenu" shape="rect" coords="330,336,452,360"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -130,6 +131,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a868d2b08da6aa1d751738d293d90ee98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a868d2b08da6aa1d751738d293d90ee98">addChild</a> (<a class="el" href="class_sgl_1_1_component.html">Component</a> *child)</td></tr>
 <tr class="memdesc:a868d2b08da6aa1d751738d293d90ee98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method for adding a child to <a class="el" href="class_sgl_1_1_parent.html">Parent</a>.  <a href="class_sgl_1_1_parent.html#a868d2b08da6aa1d751738d293d90ee98">More...</a><br /></td></tr>
 <tr class="separator:a868d2b08da6aa1d751738d293d90ee98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a344e91e48552cff3da77b48cd07f5228"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a344e91e48552cff3da77b48cd07f5228">addChildren</a> ()</td></tr>
+<tr class="separator:a344e91e48552cff3da77b48cd07f5228"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae13af197281f2883c537de06cdbee3f"><td class="memTemplParams" colspan="2">template&lt;typename Head , typename... Tail&gt; </td></tr>
+<tr class="memitem:aae13af197281f2883c537de06cdbee3f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#aae13af197281f2883c537de06cdbee3f">addChildren</a> (Head head, Tail... tail)</td></tr>
+<tr class="memdesc:aae13af197281f2883c537de06cdbee3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method for adding multiple children to <a class="el" href="class_sgl_1_1_parent.html">Parent</a>.  <a href="class_sgl_1_1_parent.html#aae13af197281f2883c537de06cdbee3f">More...</a><br /></td></tr>
+<tr class="separator:aae13af197281f2883c537de06cdbee3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a948ec0428d1eb6ad75b12bb180cd7d9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a948ec0428d1eb6ad75b12bb180cd7d9d">removeChild</a> (<a class="el" href="class_sgl_1_1_component.html">Component</a> *child)</td></tr>
 <tr class="memdesc:a948ec0428d1eb6ad75b12bb180cd7d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method for removing a child to <a class="el" href="class_sgl_1_1_parent.html">Parent</a>.  <a href="class_sgl_1_1_parent.html#a948ec0428d1eb6ad75b12bb180cd7d9d">More...</a><br /></td></tr>
 <tr class="separator:a948ec0428d1eb6ad75b12bb180cd7d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,14 +227,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a31d58297cc79cfa7919a2af00ee5babb inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dc987cf403d6b6776c9488e9109d272 inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a9dc987cf403d6b6776c9488e9109d272">setScene</a> (<a class="el" href="class_sgl_1_1_scene.html">Scene</a> *scene)</td></tr>
 <tr class="separator:a9dc987cf403d6b6776c9488e9109d272 inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad34c629b8234de708a03e57553156872 inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sgl_1_1_parent.html">Parent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#ad34c629b8234de708a03e57553156872">getParent</a> ()</td></tr>
-<tr class="separator:ad34c629b8234de708a03e57553156872 inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2769a53c5f993ad8809bc9bad003250d inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_sgl_1_1_parent.html">Parent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a2769a53c5f993ad8809bc9bad003250d">getParent</a> () const</td></tr>
+<tr class="separator:a2769a53c5f993ad8809bc9bad003250d inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadcdbceda37e8b24739d8f3b25531478 inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#aadcdbceda37e8b24739d8f3b25531478">setParent</a> (<a class="el" href="class_sgl_1_1_parent.html">Parent</a> *parent)</td></tr>
 <tr class="separator:aadcdbceda37e8b24739d8f3b25531478 inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8db623d6327d443ffe760a56ebe1068b inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">Sml::Vec2i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a8db623d6327d443ffe760a56ebe1068b">computeLocalToScenePos</a> (const Sml::Vec2i &amp;localPos)</td></tr>
-<tr class="separator:a8db623d6327d443ffe760a56ebe1068b inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a845e7a00fd2a5adf8bf19ac1c403c23a inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">Sml::Vec2i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a845e7a00fd2a5adf8bf19ac1c403c23a">computeSceneToLocalPos</a> (const Sml::Vec2i &amp;scenePos)</td></tr>
-<tr class="separator:a845e7a00fd2a5adf8bf19ac1c403c23a inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20aaaedf6cf0c895e17c6760e64753d0 inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">Sml::Vec2i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a20aaaedf6cf0c895e17c6760e64753d0">computeLocalToScenePos</a> (const Sml::Vec2i &amp;localPos) const</td></tr>
+<tr class="separator:a20aaaedf6cf0c895e17c6760e64753d0 inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ebbce53d151577f7e7b43e360a55f4c inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">Sml::Vec2i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a5ebbce53d151577f7e7b43e360a55f4c">computeSceneToLocalPos</a> (const Sml::Vec2i &amp;scenePos) const</td></tr>
+<tr class="separator:a5ebbce53d151577f7e7b43e360a55f4c inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c384a9d7498579608ef29147fc564c9 inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">Sml::Rectangle&lt; int32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a8c384a9d7498579608ef29147fc564c9">getOriginBounds</a> () const</td></tr>
 <tr class="separator:a8c384a9d7498579608ef29147fc564c9 inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0abdab7d835bce01be42ca975eb714df inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">const Sml::Rectangle&lt; int32_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a0abdab7d835bce01be42ca975eb714df">getLayoutBounds</a> () const</td></tr>
@@ -366,6 +373,82 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="parent_8cpp_source.html#l00107">107</a> of file <a class="el" href="parent_8cpp_source.html">parent.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a344e91e48552cff3da77b48cd07f5228" name="a344e91e48552cff3da77b48cd07f5228"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a344e91e48552cff3da77b48cd07f5228">&#9670;&nbsp;</a></span>addChildren() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sgl::Parent::addChildren </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00042">42</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+
+</div>
+</div>
+<a id="aae13af197281f2883c537de06cdbee3f" name="aae13af197281f2883c537de06cdbee3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae13af197281f2883c537de06cdbee3f">&#9670;&nbsp;</a></span>addChildren() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Head , typename... Tail&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sgl::Parent::addChildren </td>
+          <td>(</td>
+          <td class="paramtype">Head&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Tail...&#160;</td>
+          <td class="paramname"><em>tail</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convenience method for adding multiple children to <a class="el" href="class_sgl_1_1_parent.html">Parent</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">children</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_sgl_1_1_parent.html#a868d2b08da6aa1d751738d293d90ee98" title="Convenience method for adding a child to Parent.">addChild()</a> for more information on the restrictions. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00052">52</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1519,7 +1602,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00105">105</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00121">121</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1543,7 +1626,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00106">106</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00122">122</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1567,7 +1650,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00101">101</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00117">117</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1591,7 +1674,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00114">114</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00130">130</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1615,7 +1698,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00113">113</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00129">129</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1639,7 +1722,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00112">112</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00128">128</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1663,7 +1746,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00111">111</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00127">127</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1687,7 +1770,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00104">104</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00120">120</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1711,7 +1794,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00107">107</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00123">123</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1735,7 +1818,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00110">110</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00126">126</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1759,7 +1842,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00109">109</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00125">125</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>
@@ -1783,7 +1866,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00102">102</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="parent_8h_source.html#l00118">118</a> of file <a class="el" href="parent_8h_source.html">parent.h</a>.</p>
 
 </div>
 </div>

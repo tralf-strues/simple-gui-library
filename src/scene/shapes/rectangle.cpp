@@ -10,7 +10,8 @@
 
 using namespace Sgl;
 
-Rectangle::Rectangle(const Fill* fill) : Shape(fill) {}
+Rectangle::Rectangle(Sml::Color fillColor) : Shape(fillColor) {}
+Rectangle::Rectangle(const Background* background) : Shape(background) {}
 
 int32_t Rectangle::getWidth() const { return m_Width; }
 void Rectangle::setWidth(int32_t width) { m_Width = width; }
@@ -20,9 +21,17 @@ void Rectangle::setHeight(int32_t height) { m_Height = height; }
 
 void Rectangle::render(const Sml::Rectangle<int32_t>& targetRegion)
 {
-    for (auto fill : m_Fills)
+    renderShadow(targetRegion);
+
+    Sml::Rectangle<int32_t> region = getLayoutBounds();
+    region.pos += targetRegion.pos;
+
+    Sml::Renderer::getInstance().setColor(m_FillColor);
+    Sml::renderFilledRect(region);
+
+    if (getBackground() != nullptr)
     {
-        fill->fillArea(getLayoutBounds(), targetRegion);
+        Sgl::Background::fillArea(getBackground(), region);
     }
 
     if (getBorder() != nullptr)

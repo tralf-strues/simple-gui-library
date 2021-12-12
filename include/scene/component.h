@@ -55,11 +55,11 @@ namespace Sgl
         Scene* getScene();
         void setScene(Scene* scene);
 
-        Parent* getParent();
+        const Parent* getParent() const;
         void setParent(Parent* parent);
 
-        Sml::Vec2i computeLocalToScenePos(const Sml::Vec2i& localPos);
-        Sml::Vec2i computeSceneToLocalPos(const Sml::Vec2i& scenePos);
+        Sml::Vec2i computeLocalToScenePos(const Sml::Vec2i& localPos) const;
+        Sml::Vec2i computeSceneToLocalPos(const Sml::Vec2i& scenePos) const;
 
         Sml::Rectangle<int32_t> getOriginBounds() const;
         const Sml::Rectangle<int32_t>& getLayoutBounds() const;

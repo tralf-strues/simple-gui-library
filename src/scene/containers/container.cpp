@@ -73,4 +73,7 @@ namespace Sgl
             Border::encloseArea(m_Border, getOriginBounds());
         }
     }
+
+    int32_t BlankContainer::computeCustomPrefWidth(int32_t height) const { return 0; }
+    int32_t BlankContainer::computeCustomPrefHeight(int32_t width) const { return 0; }
 }

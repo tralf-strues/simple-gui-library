@@ -34,7 +34,8 @@ var files_dup =
       [ "Sgl::VBox", "class_sgl_1_1_v_box.html", null ]
     ] ],
     [ "container.h", "container_8h.html", [
-      [ "Sgl::Container", "class_sgl_1_1_container.html", null ]
+      [ "Sgl::Container", "class_sgl_1_1_container.html", null ],
+      [ "Sgl::BlankContainer", "class_sgl_1_1_blank_container.html", null ]
     ] ],
     [ "context_menu.h", "context__menu_8h.html", [
       [ "Sgl::MenuItem", "class_sgl_1_1_menu_item.html", null ],

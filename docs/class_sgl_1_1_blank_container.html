@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Simple GUI Library: Sgl::Container Class Reference</title>
+<title>Simple GUI Library: Sgl::BlankContainer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,7 +65,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_sgl_1_1_container.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('class_sgl_1_1_blank_container.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -86,37 +86,33 @@ $(document).ready(function(){initNavTree('class_sgl_1_1_container.html',''); ini
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="class_sgl_1_1_container-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Sgl::Container Class Reference</div></div>
+<a href="class_sgl_1_1_blank_container-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">Sgl::BlankContainer Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for Sgl::Container:</div>
+Inheritance diagram for Sgl::BlankContainer:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="class_sgl_1_1_container.png" usemap="#Sgl::Container_map" alt=""/>
-  <map id="Sgl::Container_map" name="Sgl::Container_map">
-<area href="class_sgl_1_1_parent.html" alt="Sgl::Parent" shape="rect" coords="198,112,320,136"/>
-<area href="class_sgl_1_1_component.html" alt="Sgl::Component" shape="rect" coords="198,56,320,80"/>
-<area href="class_sgl_1_1_anchor_pane.html" title="Allows the edges of components to be anchored to anchor pane&#39;s edges." alt="Sgl::AnchorPane" shape="rect" coords="0,224,122,248"/>
-<area href="class_sgl_1_1_blank_container.html" alt="Sgl::BlankContainer" shape="rect" coords="132,224,254,248"/>
-<area href="class_sgl_1_1_box_container.html" title="Basic list-like container which lays out children in a line one after another." alt="Sgl::BoxContainer" shape="rect" coords="264,224,386,248"/>
-<area href="class_sgl_1_1_tile_pane.html" alt="Sgl::TilePane" shape="rect" coords="396,224,518,248"/>
-<area href="class_sgl_1_1_h_box.html" alt="Sgl::HBox" shape="rect" coords="198,280,320,304"/>
-<area href="class_sgl_1_1_v_box.html" alt="Sgl::VBox" shape="rect" coords="330,280,452,304"/>
-<area href="class_sgl_1_1_menu_bar.html" alt="Sgl::MenuBar" shape="rect" coords="198,336,320,360"/>
-<area href="class_sgl_1_1_context_menu.html" alt="Sgl::ContextMenu" shape="rect" coords="330,336,452,360"/>
+  <img src="class_sgl_1_1_blank_container.png" usemap="#Sgl::BlankContainer_map" alt=""/>
+  <map id="Sgl::BlankContainer_map" name="Sgl::BlankContainer_map">
+<area href="class_sgl_1_1_container.html" alt="Sgl::Container" shape="rect" coords="0,168,122,192"/>
+<area href="class_sgl_1_1_parent.html" alt="Sgl::Parent" shape="rect" coords="0,112,122,136"/>
+<area href="class_sgl_1_1_component.html" alt="Sgl::Component" shape="rect" coords="0,56,122,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0950651be3fe450a1a90bd315212fad9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_sgl_1_1_component.html">Component</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_container.html#a0950651be3fe450a1a90bd315212fad9">getHitComponent</a> (int32_t x, int32_t y) override</td></tr>
-<tr class="separator:a0950651be3fe450a1a90bd315212fad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56d5ddee1aae81e1e48867d59ba87219"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_container.html#a56d5ddee1aae81e1e48867d59ba87219">render</a> (const Sml::Rectangle&lt; int32_t &gt; &amp;targetRegion) override</td></tr>
-<tr class="separator:a56d5ddee1aae81e1e48867d59ba87219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b35f4c5c9e0e33cf4086aab09b2fb02"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_blank_container.html#a6b35f4c5c9e0e33cf4086aab09b2fb02">computeCustomPrefWidth</a> (int32_t height=-1) const override</td></tr>
+<tr class="separator:a6b35f4c5c9e0e33cf4086aab09b2fb02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eca13d9532f7ee600ff1ff95de2ff52"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_blank_container.html#a9eca13d9532f7ee600ff1ff95de2ff52">computeCustomPrefHeight</a> (int32_t width=-1) const override</td></tr>
+<tr class="separator:a9eca13d9532f7ee600ff1ff95de2ff52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_sgl_1_1_container"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_sgl_1_1_container')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_sgl_1_1_container.html">Sgl::Container</a></td></tr>
+<tr class="memitem:a0950651be3fe450a1a90bd315212fad9 inherit pub_methods_class_sgl_1_1_container"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_sgl_1_1_component.html">Component</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_container.html#a0950651be3fe450a1a90bd315212fad9">getHitComponent</a> (int32_t x, int32_t y) override</td></tr>
+<tr class="separator:a0950651be3fe450a1a90bd315212fad9 inherit pub_methods_class_sgl_1_1_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56d5ddee1aae81e1e48867d59ba87219 inherit pub_methods_class_sgl_1_1_container"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_container.html#a56d5ddee1aae81e1e48867d59ba87219">render</a> (const Sml::Rectangle&lt; int32_t &gt; &amp;targetRegion) override</td></tr>
+<tr class="separator:a56d5ddee1aae81e1e48867d59ba87219 inherit pub_methods_class_sgl_1_1_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_sgl_1_1_parent"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_sgl_1_1_parent')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_sgl_1_1_parent.html">Sgl::Parent</a></td></tr>
 <tr class="memitem:a18a9a8909ee502b88b59b1e4392d0d02 inherit pub_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a18a9a8909ee502b88b59b1e4392d0d02">layout</a> () override final</td></tr>
 <tr class="separator:a18a9a8909ee502b88b59b1e4392d0d02 inherit pub_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -256,22 +252,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7c04dac9e42a88312b9cd01a507813e1 inherit pub_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">Sml::Vec2i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a7c04dac9e42a88312b9cd01a507813e1">computeScenePos</a> ()</td></tr>
 <tr class="separator:a7c04dac9e42a88312b9cd01a507813e1 inherit pub_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr class="memitem:a6ed243a5e337043f1e39c642e928b7ee"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_sgl_1_1_color_fill.html">ColorFill</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_container.html#a6ed243a5e337043f1e39c642e928b7ee">DEFAULT_FILL</a> = <a class="el" href="class_sgl_1_1_color_fill.html">ColorFill</a>{Sml::COLOR_WHITE}</td></tr>
-<tr class="separator:a6ed243a5e337043f1e39c642e928b7ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cce963de304839dddbb194d31f5a0d4"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_sgl_1_1_background.html">Background</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_container.html#a4cce963de304839dddbb194d31f5a0d4">DEFAULT_BACKGROUND</a> = <a class="el" href="class_sgl_1_1_background.html">Background</a>{&amp;Container::DEFAULT_FILL}</td></tr>
-<tr class="separator:a4cce963de304839dddbb194d31f5a0d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_attribs_class_sgl_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_sgl_1_1_component')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a></td></tr>
+<tr class="memitem:a0d779f9f3fadcc0bc2e6c55987cf2571 inherit pub_attribs_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a0d779f9f3fadcc0bc2e6c55987cf2571">Scene</a></td></tr>
+<tr class="separator:a0d779f9f3fadcc0bc2e6c55987cf2571 inherit pub_attribs_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_attribs_class_sgl_1_1_container"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_class_sgl_1_1_container')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="class_sgl_1_1_container.html">Sgl::Container</a></td></tr>
+<tr class="memitem:a6ed243a5e337043f1e39c642e928b7ee inherit pub_static_attribs_class_sgl_1_1_container"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_sgl_1_1_color_fill.html">ColorFill</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_container.html#a6ed243a5e337043f1e39c642e928b7ee">DEFAULT_FILL</a> = <a class="el" href="class_sgl_1_1_color_fill.html">ColorFill</a>{Sml::COLOR_WHITE}</td></tr>
+<tr class="separator:a6ed243a5e337043f1e39c642e928b7ee inherit pub_static_attribs_class_sgl_1_1_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cce963de304839dddbb194d31f5a0d4 inherit pub_static_attribs_class_sgl_1_1_container"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_sgl_1_1_background.html">Background</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_container.html#a4cce963de304839dddbb194d31f5a0d4">DEFAULT_BACKGROUND</a> = <a class="el" href="class_sgl_1_1_background.html">Background</a>{&amp;Container::DEFAULT_FILL}</td></tr>
+<tr class="separator:a4cce963de304839dddbb194d31f5a0d4 inherit pub_static_attribs_class_sgl_1_1_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_attribs_class_sgl_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_class_sgl_1_1_component')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a></td></tr>
 <tr class="memitem:ab4a49cf68c49be840df20d52ff84a08b inherit pub_static_attribs_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">static const int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#ab4a49cf68c49be840df20d52ff84a08b">USE_COMPUTED_SIZE</a> = INT32_MIN</td></tr>
 <tr class="separator:ab4a49cf68c49be840df20d52ff84a08b inherit pub_static_attribs_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bc78b5a3e838c15d123b66834bfdef7 inherit pub_static_attribs_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">static const int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a1bc78b5a3e838c15d123b66834bfdef7">UNLIMITED_SIZE</a> = INT32_MAX</td></tr>
 <tr class="separator:a1bc78b5a3e838c15d123b66834bfdef7 inherit pub_static_attribs_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:a44f43bd960dbfdb458cd667c7d652272"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_container.html#a44f43bd960dbfdb458cd667c7d652272">prerenderSelf</a> () override</td></tr>
-<tr class="separator:a44f43bd960dbfdb458cd667c7d652272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_sgl_1_1_container"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_sgl_1_1_container')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_sgl_1_1_container.html">Sgl::Container</a></td></tr>
+<tr class="memitem:a44f43bd960dbfdb458cd667c7d652272 inherit pro_methods_class_sgl_1_1_container"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_container.html#a44f43bd960dbfdb458cd667c7d652272">prerenderSelf</a> () override</td></tr>
+<tr class="separator:a44f43bd960dbfdb458cd667c7d652272 inherit pro_methods_class_sgl_1_1_container"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_sgl_1_1_parent"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_sgl_1_1_parent')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_sgl_1_1_parent.html">Sgl::Parent</a></td></tr>
 <tr class="memitem:ab697ae62c5985c0fdc7e3d165161ee8b inherit pro_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#ab697ae62c5985c0fdc7e3d165161ee8b">setSceneInSceneTree</a> (<a class="el" href="class_sgl_1_1_scene.html">Scene</a> *scene) override final</td></tr>
 <tr class="separator:ab697ae62c5985c0fdc7e3d165161ee8b inherit pro_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -279,10 +277,6 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a6241260932ed3412c9163a9d80d5adb4 inherit pro_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ce4e6c3742af70070ce3f7a767a77f4 inherit pro_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a5ce4e6c3742af70070ce3f7a767a77f4">updateSnapshotSize</a> ()</td></tr>
 <tr class="separator:a5ce4e6c3742af70070ce3f7a767a77f4 inherit pro_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf04d026e7dc6006b3ec06128843f33e inherit pro_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#aaf04d026e7dc6006b3ec06128843f33e">computeCustomPrefWidth</a> (int32_t height=-1) const</td></tr>
-<tr class="separator:aaf04d026e7dc6006b3ec06128843f33e inherit pro_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac93c4e2492a9f812475f6440138aaf8d inherit pro_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#ac93c4e2492a9f812475f6440138aaf8d">computeCustomPrefHeight</a> (int32_t width=-1) const</td></tr>
-<tr class="separator:ac93c4e2492a9f812475f6440138aaf8d inherit pro_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a663b58425a7b3766d2f1e0fdb2668c9e inherit pro_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a663b58425a7b3766d2f1e0fdb2668c9e">computeCustomMinWidth</a> (int32_t height=-1) const</td></tr>
 <tr class="separator:a663b58425a7b3766d2f1e0fdb2668c9e inherit pro_methods_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc632f7ed5621fcd5239e6ca988d3d61 inherit pro_methods_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">virtual int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#abc632f7ed5621fcd5239e6ca988d3d61">computeCustomMinHeight</a> (int32_t width=-1) const</td></tr>
@@ -296,12 +290,6 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:ac7da756f6396474af470f57d97954954 inherit pro_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fe9862b919a8a35dbd3656db03af76e inherit pro_methods_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a5fe9862b919a8a35dbd3656db03af76e">renderShadow</a> (const Sml::Rectangle&lt; int32_t &gt; &amp;targetRegion)</td></tr>
 <tr class="separator:a5fe9862b919a8a35dbd3656db03af76e inherit pro_methods_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_attribs_class_sgl_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_sgl_1_1_component')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_sgl_1_1_component.html">Sgl::Component</a></td></tr>
-<tr class="memitem:a0d779f9f3fadcc0bc2e6c55987cf2571 inherit pub_attribs_class_sgl_1_1_component"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a0d779f9f3fadcc0bc2e6c55987cf2571">Scene</a></td></tr>
-<tr class="separator:a0d779f9f3fadcc0bc2e6c55987cf2571 inherit pub_attribs_class_sgl_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_sgl_1_1_parent"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_sgl_1_1_parent')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_sgl_1_1_parent.html">Sgl::Parent</a></td></tr>
 <tr class="memitem:a9f0eb88d7982b2fe31538446de95a75a inherit pro_attribs_class_sgl_1_1_parent"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="class_sgl_1_1_component.html">Component</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_parent.html#a9f0eb88d7982b2fe31538446de95a75a">m_Children</a></td></tr>
 <tr class="separator:a9f0eb88d7982b2fe31538446de95a75a inherit pro_attribs_class_sgl_1_1_parent"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -347,30 +335,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="container_8h_source.html#l00015">15</a> of file <a class="el" href="container_8h_source.html">container.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae75f0752d3ecb353b1de3da45938220d" name="ae75f0752d3ecb353b1de3da45938220d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae75f0752d3ecb353b1de3da45938220d">&#9670;&nbsp;</a></span>Container()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Sgl::Container::Container </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="container_8cpp_source.html#l00016">16</a> of file <a class="el" href="container_8cpp_source.html">container.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0950651be3fe450a1a90bd315212fad9" name="a0950651be3fe450a1a90bd315212fad9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0950651be3fe450a1a90bd315212fad9">&#9670;&nbsp;</a></span>getHitComponent()</h2>
+<p class="definition">Definition at line <a class="el" href="container_8h_source.html#l00032">32</a> of file <a class="el" href="container_8h_source.html">container.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9eca13d9532f7ee600ff1ff95de2ff52" name="a9eca13d9532f7ee600ff1ff95de2ff52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eca13d9532f7ee600ff1ff95de2ff52">&#9670;&nbsp;</a></span>computeCustomPrefHeight()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -379,21 +347,11 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_sgl_1_1_component.html">Component</a> * Sgl::Container::getHitComponent </td>
+          <td class="memname">int32_t Sgl::BlankContainer::computeCustomPrefHeight </td>
           <td>(</td>
           <td class="paramtype">int32_t&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int32_t&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramname"><em>width</em> = <code>-1</code></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -405,12 +363,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_sgl_1_1_parent.html">Sgl::Parent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="container_8cpp_source.html#l00021">21</a> of file <a class="el" href="container_8cpp_source.html">container.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="container_8cpp_source.html#l00078">78</a> of file <a class="el" href="container_8cpp_source.html">container.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a44f43bd960dbfdb458cd667c7d652272" name="a44f43bd960dbfdb458cd667c7d652272"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44f43bd960dbfdb458cd667c7d652272">&#9670;&nbsp;</a></span>prerenderSelf()</h2>
+<a id="a6b35f4c5c9e0e33cf4086aab09b2fb02" name="a6b35f4c5c9e0e33cf4086aab09b2fb02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b35f4c5c9e0e33cf4086aab09b2fb02">&#9670;&nbsp;</a></span>computeCustomPrefWidth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -419,40 +377,11 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Sgl::Container::prerenderSelf </td>
+          <td class="memname">int32_t Sgl::BlankContainer::computeCustomPrefWidth </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="class_sgl_1_1_parent.html">Sgl::Parent</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="container_8cpp_source.html#l00064">64</a> of file <a class="el" href="container_8cpp_source.html">container.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a56d5ddee1aae81e1e48867d59ba87219" name="a56d5ddee1aae81e1e48867d59ba87219"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56d5ddee1aae81e1e48867d59ba87219">&#9670;&nbsp;</a></span>render()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Sgl::Container::render </td>
-          <td>(</td>
-          <td class="paramtype">const Sml::Rectangle&lt; int32_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>targetRegion</em></td><td>)</td>
-          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>height</em> = <code>-1</code></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -464,56 +393,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_sgl_1_1_parent.html">Sgl::Parent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="container_8cpp_source.html#l00040">40</a> of file <a class="el" href="container_8cpp_source.html">container.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a4cce963de304839dddbb194d31f5a0d4" name="a4cce963de304839dddbb194d31f5a0d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cce963de304839dddbb194d31f5a0d4">&#9670;&nbsp;</a></span>DEFAULT_BACKGROUND</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="class_sgl_1_1_background.html">Background</a> Sgl::Container::DEFAULT_BACKGROUND = <a class="el" href="class_sgl_1_1_background.html">Background</a>{&amp;Container::DEFAULT_FILL}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="container_8h_source.html#l00019">19</a> of file <a class="el" href="container_8h_source.html">container.h</a>.</p>
-
-</div>
-</div>
-<a id="a6ed243a5e337043f1e39c642e928b7ee" name="a6ed243a5e337043f1e39c642e928b7ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ed243a5e337043f1e39c642e928b7ee">&#9670;&nbsp;</a></span>DEFAULT_FILL</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="class_sgl_1_1_color_fill.html">ColorFill</a> Sgl::Container::DEFAULT_FILL = <a class="el" href="class_sgl_1_1_color_fill.html">ColorFill</a>{Sml::COLOR_WHITE}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="container_8h_source.html#l00018">18</a> of file <a class="el" href="container_8h_source.html">container.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="container_8cpp_source.html#l00077">77</a> of file <a class="el" href="container_8cpp_source.html">container.cpp</a>.</p>
 
 </div>
 </div>
@@ -526,7 +406,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>Sgl</b></li><li class="navelem"><a class="el" href="class_sgl_1_1_container.html">Container</a></li>
+    <li class="navelem"><b>Sgl</b></li><li class="navelem"><a class="el" href="class_sgl_1_1_blank_container.html">BlankContainer</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>

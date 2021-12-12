@@ -61,6 +61,9 @@ namespace Sgl
     class LinearGradientFill : public Fill
     {
     public:
+        static const LinearGradientFill RAINBOX_HORIZONTAL;
+
+    public:
         class Stop
         {
         public:

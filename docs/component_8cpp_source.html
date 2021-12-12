@@ -172,8 +172,8 @@ $(document).ready(function(){initNavTree('component_8cpp_source.html',''); initR
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        setSceneInSceneTree(scene);</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    Parent* Component::getParent()</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">const</span> Parent* Component::getParent()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">    </span>{</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">return</span> m_Parent;</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
@@ -183,14 +183,14 @@ $(document).ready(function(){initNavTree('component_8cpp_source.html',''); initR
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        m_Scene  = m_Parent-&gt;getScene();</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    Sml::Vec2i Component::computeLocalToScenePos(<span class="keyword">const</span> Sml::Vec2i&amp; localPos)</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    Sml::Vec2i Component::computeLocalToScenePos(<span class="keyword">const</span> Sml::Vec2i&amp; localPos)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">    </span>{</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">if</span> (getParent() == <span class="keyword">nullptr</span>) { <span class="keywordflow">return</span> localPos; }</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">return</span> getParent()-&gt;computeLocalToScenePos(localPos + getLayoutPos());</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    Sml::Vec2i Component::computeSceneToLocalPos(<span class="keyword">const</span> Sml::Vec2i&amp; scenePos)</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    Sml::Vec2i Component::computeSceneToLocalPos(<span class="keyword">const</span> Sml::Vec2i&amp; scenePos)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">    </span>{</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">if</span> (getParent() == <span class="keyword">nullptr</span>) { <span class="keywordflow">return</span> scenePos - getLayoutPos(); }</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">return</span> getParent()-&gt;computeSceneToLocalPos(scenePos - getLayoutPos());</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
@@ -254,7 +254,7 @@ $(document).ready(function(){initNavTree('component_8cpp_source.html',''); initR
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    {</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        Sml::Vec2i scenePos = getLayoutBounds().pos;</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        Component* parent = getParent();</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <span class="keyword">const</span> Component* parent = getParent();</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="keywordflow">while</span> (parent != <span class="keyword">nullptr</span>)</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        {</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            scenePos += parent-&gt;getLayoutBounds().pos;</div>

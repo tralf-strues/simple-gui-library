@@ -9,7 +9,7 @@
 #pragma once
 
 #include "../component.h"
-#include "../../paint/fill.h"
+#include "../../paint/background.h"
 #include "../../paint/border.h"
 
 namespace Sgl
@@ -17,17 +17,23 @@ namespace Sgl
     class Shape : public Component
     {
     public:
-        Shape() = default;
-        Shape(const Fill* fill);
+        Shape(Sml::Color fillColor = Sml::COLOR_TRANSPARENT);
+        Shape(const Background* background);
         virtual ~Shape() override = default;
 
         virtual void layout() override final;
         virtual bool isResizable() const override final;
 
-        const std::vector<const Fill*>& getFills() const;
-        void addFill(const Fill* fill);
+        // const std::vector<const Fill*>& getFills() const;
+        // void addFill(const Fill* fill);
 
-        void setFill(const Fill* fill);
+        // void setFill(const Fill* fill);
+
+        Sml::Color getFillColor() const;
+        void setFillColor(Sml::Color color);
+
+        const Background* getBackground() const;
+        void setBackground(const Background* background);
 
         const Border* getBorder() const;
         void setBorder(const Border* border);
@@ -39,8 +45,10 @@ namespace Sgl
         virtual int32_t computeMaxHeight(int32_t width = -1) const override final;
 
     protected:
-        std::vector<const Fill*> m_Fills;
-        const Border*            m_Border = nullptr;
+        Sml::Color        m_FillColor  = Sml::COLOR_TRANSPARENT;
+        const Background* m_Background = nullptr;
+        const Border*     m_Border     = nullptr;
+        // std::vector<const Fill*> m_Fills;
         // TODO: border, etc.
     };
 }

@@ -70,7 +70,13 @@ namespace Sgl
             for (Component* child : m_Children)
             {
                 child->setLayoutX(curX);
-                child->setLayoutWidth(child->computePrefWidth() + widthForGrowingComponent);
+                child->setLayoutWidth(child->computePrefWidth());
+
+                if (getGrowPriority(child) == GrowPriority::ALWAYS)
+                {
+                    child->setLayoutWidth(child->getLayoutWidth() + widthForGrowingComponent);
+                }
+
                 curX += child->getLayoutWidth() + getSpacing() +
                         computeSpacerSize(child, totalSpacersWeight, widthForSpacers);
 
@@ -80,10 +86,10 @@ namespace Sgl
         }
         else if (m_Direction == Direction::TOP_TO_BOTTOM)
         {
-            int32_t freeHeight                = getLayoutHeight() - computeCustomPrefHeight();
-            int32_t heightForSpacers          = (countGrowingComponents == 0) ? freeHeight : 0;
-            int32_t widthForGrowingComponents = freeHeight - heightForSpacers;
-            int32_t widthForGrowingComponent  = widthForGrowingComponents / countGrowingComponents;
+            int32_t freeHeight                 = getLayoutHeight() - computeCustomPrefHeight();
+            int32_t heightForSpacers           = (countGrowingComponents == 0) ? freeHeight : 0;
+            int32_t heightForGrowingComponents = freeHeight - heightForSpacers;
+            int32_t heightForGrowingComponent  = heightForGrowingComponents / countGrowingComponents;
 
             int32_t curY = contentArea.pos.y + computeSpacerSize(nullptr, totalSpacersWeight,
                                                                  heightForSpacers);
@@ -94,7 +100,13 @@ namespace Sgl
                 child->setLayoutWidth(m_FillAcross ? contentArea.width : child->computePrefWidth());
 
                 child->setLayoutY(curY);
-                child->setLayoutHeight(child->computePrefHeight() + widthForGrowingComponent);
+                child->setLayoutHeight(child->computePrefHeight());
+
+                if (getGrowPriority(child) == GrowPriority::ALWAYS)
+                {
+                    child->setLayoutHeight(child->getLayoutHeight() + heightForGrowingComponent);
+                }
+
                 curY += child->getLayoutHeight() + getSpacing() +
                         computeSpacerSize(child, totalSpacersWeight, heightForSpacers);
             }

@@ -25,6 +25,7 @@ var hierarchy =
         [ "Sgl::Parent", "class_sgl_1_1_parent.html", [
           [ "Sgl::Container", "class_sgl_1_1_container.html", [
             [ "Sgl::AnchorPane", "class_sgl_1_1_anchor_pane.html", null ],
+            [ "Sgl::BlankContainer", "class_sgl_1_1_blank_container.html", null ],
             [ "Sgl::BoxContainer", "class_sgl_1_1_box_container.html", [
               [ "Sgl::HBox", "class_sgl_1_1_h_box.html", [
                 [ "Sgl::MenuBar", "class_sgl_1_1_menu_bar.html", null ]

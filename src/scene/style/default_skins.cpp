@@ -336,9 +336,9 @@ namespace DefaultSkins
     //------------------------------------------------------------------------------
     // SliderSkin
     //------------------------------------------------------------------------------
-    const ShadowSpecification SliderSkin::SHADOW             = {{0, 2}, {1.01, 1}, 3, 0x44'44'44'88};
-    const Sml::Color          SliderSkin::NOT_SELECTED_COLOR = 0xE0'E0'E0'FF;
-    const Sml::Color          SliderSkin::SELECTED_COLOR     = 0x32'73'F6'FF;
+    const ShadowSpecification SliderSkin::KNOB_SHADOW        = {{0, 0}, {1.1, 1.1}, 3, 0x00'00'00'88};
+    const ColorFill           SliderSkin::NOT_SELECTED_FILL  = {0xE0'E0'E0'FF};
+    const ColorFill           SliderSkin::SELECTED_FILL      = {0x32'73'F6'FF};
     const Sml::Color          SliderSkin::KNOB_COLOR         = 0x27'5B'E1'FF;
     const int32_t             SliderSkin::THICKNESS          = 6;
     const int32_t             SliderSkin::KNOB_WIDTH         = 6;
@@ -380,7 +380,17 @@ namespace DefaultSkins
         }
     };
     
+    SliderSkin::SliderSkin(const Fill* notSelectedFill, const Fill* selectedFill, Sml::Color knobColor)
+        : m_NotSelectedFill(notSelectedFill),
+          m_SelectedFill(selectedFill),
+          m_KnobRect(new Sgl::Rectangle())
+    {
+        m_KnobRect->setFillColor(knobColor);
+        m_KnobRect->setShadow(&KNOB_SHADOW);
+    }
+
     SliderSkin::SliderSkin(Slider* slider)
+        : SliderSkin(&NOT_SELECTED_FILL, &SELECTED_FILL, KNOB_COLOR)
     {
         assert(slider);
         attach(slider);
@@ -388,6 +398,9 @@ namespace DefaultSkins
 
     void SliderSkin::dispose()
     {
+        m_Slider->removeChild(m_KnobRect);
+        delete m_KnobRect;
+
         m_Slider->getEventDispatcher()->detachHandler(m_MousePressListener);
         delete m_MousePressListener;
 
@@ -400,6 +413,7 @@ namespace DefaultSkins
         assert(slider);
 
         m_Slider = slider;
+        m_Slider->addChild(m_KnobRect);
 
         m_MousePressListener = new SliderSkinMousePressListener(m_Slider);
         m_Slider->getEventDispatcher()->attachHandler(SliderSkinMousePressListener::EVENT_TYPES, m_MousePressListener);
@@ -432,15 +446,23 @@ namespace DefaultSkins
     {
         Sml::Rectangle<int32_t> lineRect = getLineRect();
 
-        Sml::Renderer::getInstance().setColor(NOT_SELECTED_COLOR);
-        Sml::renderFilledRect(lineRect);
+        // Sml::Renderer::getInstance().setColor(NOT_SELECTED_COLOR);
+        // Sml::renderFilledRect(lineRect);
+        if (m_NotSelectedFill != nullptr)
+        {
+            m_NotSelectedFill->fillArea(lineRect, m_Slider->getOriginBounds());
+        }
 
         lineRect.width *= getPercentage();
-        Sml::Renderer::getInstance().setColor(SELECTED_COLOR);
-        Sml::renderFilledRect(lineRect);
+        // Sml::Renderer::getInstance().setColor(SELECTED_COLOR);
+        // Sml::renderFilledRect(lineRect);
+        if (m_SelectedFill != nullptr)
+        {
+            m_SelectedFill->fillArea(lineRect, m_Slider->getOriginBounds());
+        }
 
-        Sml::Renderer::getInstance().setColor(KNOB_COLOR);
-        Sml::renderFilledRect(getKnobRect());
+        // Sml::Renderer::getInstance().setColor(m_KnobColor);
+        // Sml::renderFilledRect(getKnobRect());
     }
 
     const Control* SliderSkin::getControl() const { return m_Slider; }
@@ -448,7 +470,15 @@ namespace DefaultSkins
 
     int32_t SliderSkin::computePrefHeight(int32_t width) const { return KNOB_HEIGHT; }
 
-    void SliderSkin::layoutChildren() {}
+    void SliderSkin::layoutChildren()
+    {
+        Sml::Rectangle<int32_t> knobRect = getKnobRect();
+
+        m_KnobRect->setLayoutWidth(knobRect.width);
+        m_KnobRect->setLayoutHeight(knobRect.height);
+        m_KnobRect->setLayoutX(knobRect.pos.x);
+        m_KnobRect->setLayoutY(knobRect.pos.y);
+    }
 
     Sml::Rectangle<int32_t> SliderSkin::getLineRect()
     {

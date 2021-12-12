@@ -28,4 +28,11 @@ namespace Sgl
     protected:
         virtual void prerenderSelf() override;
     };
+    
+    class BlankContainer : public Container
+    {
+    public:
+        virtual int32_t computeCustomPrefWidth(int32_t height = -1) const override;
+        virtual int32_t computeCustomPrefHeight(int32_t width = -1) const override;
+    };
 }

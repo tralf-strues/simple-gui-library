@@ -39,6 +39,22 @@ namespace Sgl
          */
         void addChild(Component* child);
 
+        void addChildren() {}
+
+        /**
+         * @brief Convenience method for adding multiple children to @ref Parent.
+         * 
+         * @param children
+         * 
+         * @see addChild() for more information on the restrictions.
+         */
+        template <typename Head, typename... Tail>
+        void addChildren(Head head, Tail... tail)
+        {
+            addChild(head);
+            addChildren(tail...);
+        }
+
         /**
          * @brief Convenience method for removing a child to @ref Parent.
          * 

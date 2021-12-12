@@ -20,10 +20,18 @@ void Circle::setRadius(int32_t radius) { m_Radius = radius; }
 
 void Circle::render(const Sml::Rectangle<int32_t>& targetRegion)
 {
+    renderShadow(targetRegion);
+
+    Sml::Circle circlePrimitive = Sml::Circle(targetRegion.pos + getLayoutPos() + m_Radius* Sml::Vec2i(1, 1),
+                                              m_Radius + 1);
+
+    Sml::Renderer::getInstance().setColor(getFillColor());
+    Sml::renderFilledCircle(circlePrimitive);
+
     if (getBorder() != nullptr)
     {
         Sml::Renderer::getInstance().setColor(getBorder()->getColor());
-        Sml::renderCircle(Sml::Circle(targetRegion.pos + getLayoutPos(), m_Radius));
+        Sml::renderCircle(circlePrimitive);
     }
 }
 

@@ -16,8 +16,8 @@ namespace Sgl
     class Rectangle : public Shape
     {
     public:
-        Rectangle() = default;
-        Rectangle(const Fill* fill);
+        Rectangle(Sml::Color fillColor = Sml::COLOR_TRANSPARENT);
+        Rectangle(const Background* background);
 
         int32_t getWidth() const;
         void setWidth(int32_t width);

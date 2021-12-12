@@ -25,12 +25,20 @@ namespace Sgl
                              const Sml::Rectangle<int32_t>& targetRegion);
 
     public:
+        Background() = default;
+
         Background(const std::initializer_list<const Fill*>& fills,
                    const std::initializer_list<const Image*>& images);
 
         Background(const std::initializer_list<const Fill*>& fills);
 
         Background(const Fill* fill);
+
+        void addFill(const Fill* fill);
+        void addImage(const Image* image);
+
+        void clearFills();
+        void clearImages();
 
         const std::vector<const Fill*>& getFills()  const;
         const std::vector<const Image*> getImages() const;

@@ -83,7 +83,7 @@ namespace Sgl
         setSceneInSceneTree(scene);
     }
 
-    Parent* Component::getParent()
+    const Parent* Component::getParent() const
     {
         return m_Parent;
     }
@@ -94,13 +94,13 @@ namespace Sgl
         m_Scene  = m_Parent->getScene();
     }
 
-    Sml::Vec2i Component::computeLocalToScenePos(const Sml::Vec2i& localPos)
+    Sml::Vec2i Component::computeLocalToScenePos(const Sml::Vec2i& localPos) const
     {
         if (getParent() == nullptr) { return localPos; }
         return getParent()->computeLocalToScenePos(localPos + getLayoutPos());
     }
 
-    Sml::Vec2i Component::computeSceneToLocalPos(const Sml::Vec2i& scenePos)
+    Sml::Vec2i Component::computeSceneToLocalPos(const Sml::Vec2i& scenePos) const
     {
         if (getParent() == nullptr) { return scenePos - getLayoutPos(); }
         return getParent()->computeSceneToLocalPos(scenePos - getLayoutPos());
@@ -165,7 +165,7 @@ namespace Sgl
     {
         Sml::Vec2i scenePos = getLayoutBounds().pos;
 
-        Component* parent = getParent();
+        const Component* parent = getParent();
         while (parent != nullptr)
         {
             scenePos += parent->getLayoutBounds().pos;
