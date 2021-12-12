@@ -11,7 +11,8 @@ var hierarchy =
         [ "Sgl::DragMoveEvent", "class_sgl_1_1_drag_move_event.html", null ],
         [ "Sgl::DragStartEvent", "class_sgl_1_1_drag_start_event.html", null ]
       ] ],
-      [ "Sgl::FocusEvent", "class_sgl_1_1_focus_event.html", null ]
+      [ "Sgl::FocusLostEvent", "class_sgl_1_1_focus_lost_event.html", null ],
+      [ "Sgl::FocusReceivedEvent", "class_sgl_1_1_focus_received_event.html", null ]
     ] ],
     [ "Sml::EventDispatchChain", null, [
       [ "GuiEventDispatchChain", "class_gui_event_dispatch_chain.html", null ]
@@ -71,7 +72,7 @@ var hierarchy =
       ] ],
       [ "Sgl::ComponentEventListener< C >", "class_sgl_1_1_component_event_listener.html", [
         [ "Sgl::FocusListener< ContextMenu >", "class_sgl_1_1_focus_listener.html", [
-          [ "Sgl::ContextMenuFocusListener", "class_sgl_1_1_context_menu_focus_listener.html", null ]
+          [ "Sgl::ContextMenuFocusFilter", "class_sgl_1_1_context_menu_focus_filter.html", null ]
         ] ],
         [ "Sgl::ActionListener< C >", "class_sgl_1_1_action_listener.html", null ],
         [ "Sgl::DragListener< C >", "class_sgl_1_1_drag_listener.html", null ],

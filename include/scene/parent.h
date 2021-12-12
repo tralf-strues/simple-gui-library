@@ -25,6 +25,7 @@ namespace Sgl
         virtual void render(const Sml::Rectangle<int32_t>& targetRegion) override;
         virtual void layout() override final;
         virtual void prerender() override final;
+        virtual bool containsComponent(Component* component) override final;
 
         virtual bool isResizable() const override;
 

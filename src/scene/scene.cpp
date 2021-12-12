@@ -108,16 +108,19 @@ namespace Sgl
     {
         if (m_FocusOwner != component)
         {
+            Component* prevFocus = m_FocusOwner;
+            Component* newFocus  = component;
+
             if (m_FocusOwner != nullptr)
             {
-                FocusEvent focusEvent{FocusEvent::Type::FOCUS_LOST, m_FocusOwner};
+                FocusLostEvent focusEvent{newFocus, prevFocus};
                 m_FocusOwner->m_Focused = false;
                 fireEvent(&focusEvent);
             }
 
             if (component != nullptr)
             {
-                FocusEvent focusEvent{FocusEvent::Type::FOCUS_GOT, component};
+                FocusReceivedEvent focusEvent{prevFocus, newFocus};
                 component->m_Focused = true;
                 fireEvent(&focusEvent);
             }

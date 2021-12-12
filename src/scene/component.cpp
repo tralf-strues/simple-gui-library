@@ -24,6 +24,12 @@ namespace Sgl
     void Component::layout() {}
     void Component::prerender() {}
 
+    bool Component::containsComponent(Component* component)
+    {
+        assert(component);
+        return this == component;
+    }
+
     Sml::EventDispatchChain* Component::buildEventDispatchChain(Sml::EventDispatchChain* chain)
     {
         assert(chain);

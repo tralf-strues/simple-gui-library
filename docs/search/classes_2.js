@@ -9,6 +9,6 @@ var searchData=
   ['constraints_6',['Constraints',['../struct_sgl_1_1_anchor_pane_1_1_constraints.html',1,'Sgl::AnchorPane']]],
   ['container_7',['Container',['../class_sgl_1_1_container.html',1,'Sgl']]],
   ['contextmenu_8',['ContextMenu',['../class_sgl_1_1_context_menu.html',1,'Sgl']]],
-  ['contextmenufocuslistener_9',['ContextMenuFocusListener',['../class_sgl_1_1_context_menu_focus_listener.html',1,'Sgl']]],
+  ['contextmenufocusfilter_9',['ContextMenuFocusFilter',['../class_sgl_1_1_context_menu_focus_filter.html',1,'Sgl']]],
   ['control_10',['Control',['../class_sgl_1_1_control.html',1,'Sgl']]]
 ];

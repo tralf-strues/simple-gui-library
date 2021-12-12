@@ -102,14 +102,14 @@ Inheritance diagram for Sgl::FocusListener&lt; C &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0ea2893fc1b2667fdbf50fc0ea2c6afa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_focus_listener.html#a0ea2893fc1b2667fdbf50fc0ea2c6afa">FocusListener</a> (C *component)</td></tr>
-<tr class="separator:a0ea2893fc1b2667fdbf50fc0ea2c6afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a255ccd7a3f8e0265a921df516ff87519"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_focus_listener.html#a255ccd7a3f8e0265a921df516ff87519">DEFINE_STATIC_LISTENED_EVENT_TYPES</a> (FocusReceivedEvent::getStaticType(), FocusLostEvent::getStaticType()) public</td></tr>
+<tr class="separator:a255ccd7a3f8e0265a921df516ff87519"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade124f5631cf027895f4dcae90f04f5f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_focus_listener.html#ade124f5631cf027895f4dcae90f04f5f">onEvent</a> (Sml::Event *event) override final</td></tr>
 <tr class="separator:ade124f5631cf027895f4dcae90f04f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3567f92591da0a75143e9a440add17d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_focus_listener.html#ac3567f92591da0a75143e9a440add17d">onFocusGot</a> (<a class="el" href="class_sgl_1_1_focus_event.html">FocusEvent</a> *event)</td></tr>
-<tr class="separator:ac3567f92591da0a75143e9a440add17d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cd461a69465adfe2bb0763e9c46cc5f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_focus_listener.html#a3cd461a69465adfe2bb0763e9c46cc5f">onFocusLost</a> (<a class="el" href="class_sgl_1_1_focus_event.html">FocusEvent</a> *event)</td></tr>
-<tr class="separator:a3cd461a69465adfe2bb0763e9c46cc5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a474d29c531027ebe9de8c9d0fc08f745"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_focus_listener.html#a474d29c531027ebe9de8c9d0fc08f745">onFocusReceived</a> (<a class="el" href="class_sgl_1_1_focus_received_event.html">FocusReceivedEvent</a> *event)</td></tr>
+<tr class="separator:a474d29c531027ebe9de8c9d0fc08f745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d7e6e4cc7afa794d4e29c10e7574efe"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_focus_listener.html#a2d7e6e4cc7afa794d4e29c10e7574efe">onFocusLost</a> (<a class="el" href="class_sgl_1_1_focus_lost_event.html">FocusLostEvent</a> *event)</td></tr>
+<tr class="separator:a2d7e6e4cc7afa794d4e29c10e7574efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_sgl_1_1_component_event_listener"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_sgl_1_1_component_event_listener')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_sgl_1_1_component_event_listener.html">Sgl::ComponentEventListener&lt; C &gt;</a></td></tr>
 <tr class="memitem:a3f016e62cce8760d08bd7116648472bb inherit pub_methods_class_sgl_1_1_component_event_listener"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component_event_listener.html#a3f016e62cce8760d08bd7116648472bb">ComponentEventListener</a> (C *component)</td></tr>
 <tr class="separator:a3f016e62cce8760d08bd7116648472bb inherit pub_methods_class_sgl_1_1_component_event_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,10 +121,10 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename C&gt;<br />
 class Sgl::FocusListener&lt; C &gt;</div>
-<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00145">145</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0ea2893fc1b2667fdbf50fc0ea2c6afa" name="a0ea2893fc1b2667fdbf50fc0ea2c6afa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ea2893fc1b2667fdbf50fc0ea2c6afa">&#9670;&nbsp;</a></span>FocusListener()</h2>
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00178">178</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a255ccd7a3f8e0265a921df516ff87519" name="a255ccd7a3f8e0265a921df516ff87519"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a255ccd7a3f8e0265a921df516ff87519">&#9670;&nbsp;</a></span>DEFINE_STATIC_LISTENED_EVENT_TYPES()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -135,11 +135,21 @@ template&lt;typename C &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_sgl_1_1_focus_listener.html">Sgl::FocusListener</a>&lt; C &gt;::<a class="el" href="class_sgl_1_1_focus_listener.html">FocusListener</a> </td>
+          <td class="memname"><a class="el" href="class_sgl_1_1_focus_listener.html">Sgl::FocusListener</a>&lt; C &gt;::DEFINE_STATIC_LISTENED_EVENT_TYPES </td>
           <td>(</td>
-          <td class="paramtype">C *&#160;</td>
-          <td class="paramname"><em>component</em></td><td>)</td>
+          <td class="paramtype">FocusReceivedEvent::getStaticType()&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">FocusLostEvent::getStaticType()&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -149,11 +159,10 @@ template&lt;typename C &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00151">151</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00181">181</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
 <a id="ade124f5631cf027895f4dcae90f04f5f" name="ade124f5631cf027895f4dcae90f04f5f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ade124f5631cf027895f4dcae90f04f5f">&#9670;&nbsp;</a></span>onEvent()</h2>
 
@@ -180,42 +189,12 @@ template&lt;typename C &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00153">153</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00186">186</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
 
 </div>
 </div>
-<a id="ac3567f92591da0a75143e9a440add17d" name="ac3567f92591da0a75143e9a440add17d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3567f92591da0a75143e9a440add17d">&#9670;&nbsp;</a></span>onFocusGot()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename C &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="class_sgl_1_1_focus_listener.html">Sgl::FocusListener</a>&lt; C &gt;::onFocusGot </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_sgl_1_1_focus_event.html">FocusEvent</a> *&#160;</td>
-          <td class="paramname"><em>event</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00169">169</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
-
-</div>
-</div>
-<a id="a3cd461a69465adfe2bb0763e9c46cc5f" name="a3cd461a69465adfe2bb0763e9c46cc5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cd461a69465adfe2bb0763e9c46cc5f">&#9670;&nbsp;</a></span>onFocusLost()</h2>
+<a id="a2d7e6e4cc7afa794d4e29c10e7574efe" name="a2d7e6e4cc7afa794d4e29c10e7574efe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d7e6e4cc7afa794d4e29c10e7574efe">&#9670;&nbsp;</a></span>onFocusLost()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -228,7 +207,7 @@ template&lt;typename C &gt; </div>
         <tr>
           <td class="memname">virtual void <a class="el" href="class_sgl_1_1_focus_listener.html">Sgl::FocusListener</a>&lt; C &gt;::onFocusLost </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_sgl_1_1_focus_event.html">FocusEvent</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_sgl_1_1_focus_lost_event.html">FocusLostEvent</a> *&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
           <td></td>
         </tr>
@@ -240,7 +219,37 @@ template&lt;typename C &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00170">170</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00212">212</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
+
+</div>
+</div>
+<a id="a474d29c531027ebe9de8c9d0fc08f745" name="a474d29c531027ebe9de8c9d0fc08f745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a474d29c531027ebe9de8c9d0fc08f745">&#9670;&nbsp;</a></span>onFocusReceived()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename C &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_sgl_1_1_focus_listener.html">Sgl::FocusListener</a>&lt; C &gt;::onFocusReceived </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_sgl_1_1_focus_received_event.html">FocusReceivedEvent</a> *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gui__event_8h_source.html#l00211">211</a> of file <a class="el" href="gui__event_8h_source.html">gui_event.h</a>.</p>
 
 </div>
 </div>

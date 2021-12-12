@@ -91,6 +91,26 @@ namespace Sgl
         updateShadow();
     }
 
+    bool Parent::containsComponent(Component* component)
+    {
+        assert(component);
+
+        if (component == this)
+        {
+            return true;
+        }
+        
+        for (auto child : m_Children)
+        {
+            if (child->containsComponent(component))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     void Parent::prerenderSelf(){}
 
     void Parent::layoutChildren()

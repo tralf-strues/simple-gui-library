@@ -33,6 +33,7 @@ namespace Sgl
         virtual void render(const Sml::Rectangle<int32_t>& targetRegion) = 0;
         virtual void layout();
         virtual void prerender();
+        virtual bool containsComponent(Component* component);
 
         virtual Sml::EventDispatchChain* buildEventDispatchChain(Sml::EventDispatchChain* chain) override;
 

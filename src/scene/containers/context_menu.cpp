@@ -27,14 +27,14 @@ namespace Sgl
         Button::setOnAction(reinterpret_cast<ActionListener<Button>*>(listener));
     }
 
-    class ContextMenuFocusListener : public FocusListener<ContextMenu>
+    class ContextMenuFocusFilter : public FocusListener<ContextMenu>
     {
     public:
-        ContextMenuFocusListener(ContextMenu* menu) : FocusListener(menu) {}
+        ContextMenuFocusFilter(ContextMenu* menu) : FocusListener(menu) {}
 
-        virtual void onFocusLost(FocusEvent* event) override
+        virtual void onFocusLost(FocusLostEvent* event) override
         {
-            if (getComponent()->isAutoHide())
+            if (getComponent()->isAutoHide() && !getComponent()->containsComponent(event->getNewFocus()))
             {
                 LOG_LIB_INFO("Hide ContextMenu!");
                 getComponent()->hide();
@@ -56,8 +56,8 @@ namespace Sgl
 
         setScene(scene);
         scene->registerContextMenu(this);
-        getEventDispatcher()->attachHandler(FocusListener<ContextMenu>::EVENT_TYPES,
-                                            new ContextMenuFocusListener(this));
+        getEventDispatcher()->attachFilter(FocusListener<ContextMenu>::EVENT_TYPES,
+                                           new ContextMenuFocusFilter(this));
     }
 
     ContextMenu::~ContextMenu()

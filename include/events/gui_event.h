@@ -19,7 +19,8 @@ namespace Sgl
         MOUSE_ENTERED = Sml::SML_EVENT_TYPE_FIRST_UNSPECIFIED,
         MOUSE_EXITED,
 
-        FOCUS_CHANGED,
+        FOCUS_RECEIVED,
+        FOCUS_LOST,
         ACTION_PERFORMED,
 
         /* Drag & drop events */
@@ -33,6 +34,8 @@ namespace Sgl
         EVENT_CATEGORY_GUI = Sml::SML_EVENT_CATEGORY_FIRST_UNSPECIFIED,
         EVENT_CATEGORY_DRAG_AND_DROP
     };
+
+    class Component;
 
     //------------------------------------------------------------------------------
     // Event category [GUI]
@@ -118,56 +121,95 @@ namespace Sgl
     private:
     };
 
-    class FocusEvent : public Sml::Event
+    // class FocusEvent : public Sml::Event
+    // {
+    // public:
+    //     enum class Type
+    //     {
+    //         FOCUS_GOT,
+    //         FOCUS_LOST
+    //     };
+
+    // public:
+    //     FocusEvent(Type type, Sml::EventTarget* target = nullptr)
+    //         : Sml::Event(getStaticType(), getStaticCategory(), target), m_Type(type) {}
+
+    //     bool gotFocus() const { return m_Type == Type::FOCUS_GOT; }
+    //     bool lostFocus() const { return m_Type == Type::FOCUS_LOST; }
+
+    //     DEFINE_STATIC_EVENT_TYPE(FOCUS_CHANGED)
+    //     DEFINE_STATIC_EVENT_CATEGORY(EVENT_CATEGORY_GUI)
+
+    // private:
+    //     const Type m_Type;
+    // };
+
+    class FocusReceivedEvent : public Sml::Event
     {
     public:
-        enum class Type
-        {
-            FOCUS_GOT,
-            FOCUS_LOST
-        };
+        FocusReceivedEvent(Component* prevFocus, Sml::EventTarget* target = nullptr)
+            : Sml::Event(getStaticType(), getStaticCategory(), target), m_PreviousFocus(prevFocus) {}
 
-    public:
-        FocusEvent(Type type, Sml::EventTarget* target = nullptr)
-            : Sml::Event(getStaticType(), getStaticCategory(), target), m_Type(type) {}
+        Component* getPreviousFocus() { return m_PreviousFocus; }
 
-        bool gotFocus() const { return m_Type == Type::FOCUS_GOT; }
-        bool lostFocus() const { return m_Type == Type::FOCUS_LOST; }
-
-        DEFINE_STATIC_EVENT_TYPE(FOCUS_CHANGED)
+        DEFINE_STATIC_EVENT_TYPE(FOCUS_RECEIVED)
         DEFINE_STATIC_EVENT_CATEGORY(EVENT_CATEGORY_GUI)
 
     private:
-        const Type m_Type;
+        Component* m_PreviousFocus = nullptr;
+    };
+
+    class FocusLostEvent : public Sml::Event
+    {
+    public:
+        FocusLostEvent(Component* newFocus, Sml::EventTarget* target = nullptr)
+            : Sml::Event(getStaticType(), getStaticCategory(), target), m_NewFocus(newFocus) {}
+
+        Component* getNewFocus() { return m_NewFocus; }
+
+        DEFINE_STATIC_EVENT_TYPE(FOCUS_LOST)
+        DEFINE_STATIC_EVENT_CATEGORY(EVENT_CATEGORY_GUI)
+
+    private:
+        Component* m_NewFocus = nullptr;
     };
 
     template<typename C>
     class FocusListener : public ComponentEventListener<C>
     {
     public:
-        DEFINE_STATIC_LISTENED_EVENT_TYPES(FocusEvent::getStaticType())
+        DEFINE_STATIC_LISTENED_EVENT_TYPES(FocusReceivedEvent::getStaticType(), FocusLostEvent::getStaticType())
 
     public:
         FocusListener(C* component) : ComponentEventListener<C>(component) {}
 
         virtual void onEvent(Sml::Event* event) override final
         {
-            FocusEvent* focusEvent = dynamic_cast<FocusEvent*>(event);
+            switch (event->getType())
+            {
+                case FocusReceivedEvent::getStaticType():
+                {
+                    onFocusReceived(dynamic_cast<FocusReceivedEvent*>(event));
+                    break;
+                }
 
-            if (focusEvent->gotFocus())
-            {
-                onFocusGot(focusEvent);
-            }
-            else
-            {
-                onFocusLost(focusEvent);
+                case FocusLostEvent::getStaticType():
+                {
+                    onFocusLost(dynamic_cast<FocusLostEvent*>(event));
+                    break;
+                }
+
+                default:
+                {
+                    LOG_LIB_ERROR("FocusListener received invalid event of type %d!", event->getType());
+                }
             }
 
             event->consume();
         }
 
-        virtual void onFocusGot(FocusEvent* event) {}
-        virtual void onFocusLost(FocusEvent* event) {}
+        virtual void onFocusReceived(FocusReceivedEvent* event) {}
+        virtual void onFocusLost(FocusLostEvent* event) {}
     };
 
     class ActionEvent : public Sml::Event
