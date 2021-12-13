@@ -781,6 +781,35 @@ namespace DefaultSkins
         m_VerticalScrollBar->setOnPropertyChange(new VerticalScrollListener(this));
     }
 
+    Component* ScrollPaneSkin::getHitComponent(int32_t x, int32_t y)
+    {
+        Sml::Vec2i posInPane = Sml::Vec2i(x, y) - m_ScrollPane->getLayoutPos();
+
+        if (m_ScrollPane->getContent() != nullptr && Sml::isPointInsideRectangle(posInPane, computeContentRegion()))
+        {
+            return m_ScrollPane->getContent()->getHitComponent(x, y);
+        }
+
+        if (Sml::isPointInsideRectangle(posInPane, m_HorizontalScrollBar->getLayoutBounds()))
+        {
+            const Sml::Vec2i& layoutPos = m_HorizontalScrollBar->getLayoutPos();
+            return m_HorizontalScrollBar->getHitComponent(layoutPos.x + x, layoutPos.y + y);
+        }
+
+        if (Sml::isPointInsideRectangle(posInPane, m_VerticalScrollBar->getLayoutBounds()))
+        {
+            const Sml::Vec2i& layoutPos = m_VerticalScrollBar->getLayoutPos();
+            return m_VerticalScrollBar->getHitComponent(layoutPos.x + x, layoutPos.y + y);
+        }
+
+        if (Sml::isPointInsideRectangle(posInPane, m_ScrollPane->getLayoutBounds()))
+        {
+            return m_ScrollPane;
+        }
+
+        return nullptr;
+    }
+
     void ScrollPaneSkin::prerenderControl()
     {
         if (m_ScrollPane->getContent() == nullptr)
@@ -833,12 +862,21 @@ namespace DefaultSkins
         m_HorizontalScrollBar->setLayoutY(contentArea.pos.y + contentArea.height -
                                           m_HorizontalScrollBar->getLayoutHeight());
         
+
         if (m_ScrollPane->getContent() != nullptr)
         {
             m_VerticalScrollBar->setVisibleRange(static_cast<float>(m_ScrollPane->getViewportHeight()) /
                                                  m_ScrollPane->getContent()->getLayoutHeight());
             m_HorizontalScrollBar->setVisibleRange(static_cast<float>(m_ScrollPane->getViewportWidth()) /
                                                  m_ScrollPane->getContent()->getLayoutWidth());
+
+            // m_ScrollPane->getContent()->setScene(m_ScrollPane->getScene());
+            m_ScrollPane->getContent()->setVisible(false);
+            // FIXME: COSTYL!!!
+            m_ScrollPane->removeChildren();
+            m_ScrollPane->addChild(m_ScrollPane->getContent());
+            m_ScrollPane->addChild(m_HorizontalScrollBar);
+            m_ScrollPane->addChild(m_VerticalScrollBar);
         }
         else
         {

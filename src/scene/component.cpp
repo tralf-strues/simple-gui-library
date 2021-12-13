@@ -44,8 +44,44 @@ namespace Sgl
         return m_Parent->buildEventDispatchChain(chain);
     }
 
-    bool Component::isVisible() const { return m_Visible; }
-    void Component::setVisible(bool visible) { m_Visible = visible; }
+    bool Component::isVisible() const { return GET_BIT(static_cast<uint32_t>(m_Visibility), 1) == 1; }
+
+    void Component::setVisible(bool visible)
+    {
+        uint32_t mask = static_cast<uint32_t>(m_Visibility);
+
+        if (visible)
+        {
+            mask |= 1 << 1;
+        }
+        else
+        {
+            mask &= ~(1 << 1);
+        }
+
+        m_Visibility = static_cast<Visibility>(mask);
+    }
+
+    bool Component::isInteractable() const { return GET_BIT(static_cast<uint32_t>(m_Visibility), 0) == 1; }
+    
+    void Component::setInteractable(bool interactable)
+    {
+        uint32_t mask = static_cast<uint32_t>(m_Visibility);
+
+        if (interactable)
+        {
+            mask |= 1 << 0;
+        }
+        else
+        {
+            mask &= ~(1 << 0);
+        }
+
+        m_Visibility = static_cast<Visibility>(mask);
+    }
+
+    Component::Visibility Component::getVisibility() const { return m_Visibility; }
+    void Component::setVisibility(Visibility visibility) { m_Visibility = visibility; }
 
     bool Component::isFocused() const { return m_Focused; }
     bool Component::isHovered() const { return m_Hovered; }
@@ -94,10 +130,19 @@ namespace Sgl
         return m_Parent;
     }
 
+    Parent* Component::getModifiableParent()
+    {
+        return m_Parent;
+    }
+
     void Component::setParent(Parent* parent)
     {
         m_Parent = parent;
-        m_Scene  = m_Parent->getScene();
+
+        if (m_Parent != nullptr)
+        {
+            m_Scene = m_Parent->getScene();
+        }
     }
 
     Sml::Vec2i Component::computeLocalToScenePos(const Sml::Vec2i& localPos) const

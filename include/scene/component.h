@@ -26,6 +26,21 @@ namespace Sgl
     class Component : public Sml::EventTarget
     {
     public:
+        /**
+         * @brief Used to determine if Component should be rendered and targeted by events.
+         * 
+         * @note The least significant bit specifies interactability, and the following one
+         *       specifies visibility.
+         */
+        enum class Visibility
+        {
+            INVISIBLE_DISABLED     = 0b00,
+            INVISIBLE_INTERACTABLE = 0b01,
+            VISIBLE_DISABLED       = 0b10,
+            VISIBLE_INTERACTABLE   = 0b11
+        };
+
+    public:
         static const int32_t USE_COMPUTED_SIZE = INT32_MIN;
         static const int32_t UNLIMITED_SIZE    = INT32_MAX; 
 
@@ -46,6 +61,12 @@ namespace Sgl
         bool isVisible() const;
         void setVisible(bool visible);
 
+        bool isInteractable() const;
+        void setInteractable(bool interactable);
+
+        Visibility getVisibility() const;
+        void setVisibility(Visibility visibility);
+
         bool isFocused() const;
         bool isHovered() const;
 
@@ -63,6 +84,7 @@ namespace Sgl
         void setScene(Scene* scene);
 
         const Parent* getParent() const;
+        Parent* getModifiableParent();
         void setParent(Parent* parent);
 
         Sml::Vec2i computeLocalToScenePos(const Sml::Vec2i& localPos) const;
@@ -93,7 +115,7 @@ namespace Sgl
         virtual int32_t computeMaxHeight(int32_t width = -1) const = 0;
 
     protected:
-        bool                    m_Visible      = true;
+        Visibility              m_Visibility   = Visibility::VISIBLE_INTERACTABLE;
         bool                    m_Focused      = false;
         bool                    m_Hovered      = false;
         Shadow                  m_Shadow;

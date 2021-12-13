@@ -264,9 +264,9 @@
 <text text-anchor="start" x="559" y="-262" font-family="Helvetica,sans-Serif" font-size="10.00">+ ScrollPaneSkin()</text>
 <text text-anchor="start" x="559" y="-251" font-family="Helvetica,sans-Serif" font-size="10.00">+ dispose()</text>
 <text text-anchor="start" x="559" y="-240" font-family="Helvetica,sans-Serif" font-size="10.00">+ attach()</text>
-<text text-anchor="start" x="559" y="-229" font-family="Helvetica,sans-Serif" font-size="10.00">+ prerenderControl()</text>
-<text text-anchor="start" x="559" y="-218" font-family="Helvetica,sans-Serif" font-size="10.00">+ getControl()</text>
-<text text-anchor="start" x="559" y="-207" font-family="Helvetica,sans-Serif" font-size="10.00">and 4 more...</text>
+<text text-anchor="start" x="559" y="-229" font-family="Helvetica,sans-Serif" font-size="10.00">+ getHitComponent()</text>
+<text text-anchor="start" x="559" y="-218" font-family="Helvetica,sans-Serif" font-size="10.00">+ prerenderControl()</text>
+<text text-anchor="start" x="559" y="-207" font-family="Helvetica,sans-Serif" font-size="10.00">and 5 more...</text>
 </a>
 </g>
 </g>

@@ -13,11 +13,11 @@ namespace Sgl
 {
     Component* Parent::getHitComponent(int32_t x, int32_t y)
     {
-        if (!isVisible()) { return nullptr; }
+        if (!isInteractable()) { return nullptr; }
 
         for (auto child = m_Children.rbegin(); child != m_Children.rend(); ++child)
         {
-            if (!(*child)->isVisible())
+            if (!(*child)->isInteractable())
             {
                 continue;
             }
@@ -53,7 +53,10 @@ namespace Sgl
 
         for (Component* child : getChildren())
         {
-            child->render(translatedTargetRegion);
+            if (child->isVisible())
+            {
+                child->render(translatedTargetRegion);
+            }
         }
     }
 
@@ -127,7 +130,14 @@ namespace Sgl
     void Parent::addChild(Component* child)
     {
         assert(child);
-        assert(child->getParent() == nullptr);
+
+        for (auto existingChild : m_Children)
+        {
+            if (existingChild == child)
+            {
+                return;
+            }
+        }
 
         m_Children.push_back(child);
         child->setParent(this);
@@ -141,6 +151,11 @@ namespace Sgl
 
         m_Children.remove(child);
         child->setParent(nullptr);
+    }
+
+    void Parent::removeChildren()
+    {
+        m_Children.clear();
     }
 
     std::list<Component*>& Parent::getChildren() { return m_Children; }

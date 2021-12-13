@@ -80,12 +80,12 @@ namespace Sgl
 
     void ContextMenu::show()
     {
-        setVisible(true);
+        setVisibility(Component::Visibility::VISIBLE_INTERACTABLE);
         requestFocus();
     }
 
     void ContextMenu::hide()
     {
-        setVisible(false);
+        setVisibility(Component::Visibility::INVISIBLE_DISABLED);
     }
 }

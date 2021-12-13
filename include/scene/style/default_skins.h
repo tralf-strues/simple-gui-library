@@ -289,6 +289,8 @@ namespace DefaultSkins
         virtual void dispose() override;
         virtual void attach(ScrollPane* scrollPane) override;
 
+        virtual Component* getHitComponent(int32_t x, int32_t y) override;
+
         virtual void prerenderControl() override;
 
         virtual const Control* getControl() const override;

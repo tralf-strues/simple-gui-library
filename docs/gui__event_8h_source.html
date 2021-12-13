@@ -355,89 +355,79 @@ $(document).ready(function(){initNavTree('gui__event_8h_source.html',''); initRe
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        DEFINE_STATIC_EVENT_TYPE(DRAG_END)</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        DEFINE_STATIC_EVENT_CATEGORY(DragEvent::getStaticCategory())</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    </div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        int32_t getX()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_X; }</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        <span class="keywordtype">void</span> setX(int32_t x) { m_X = x; }</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        int32_t getY()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_Y; }</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        <span class="keywordtype">void</span> setY(int32_t y) { m_Y = y; }</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        int32_t m_X = 0;</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        int32_t m_Y = 0;</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    };</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    };</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="class_sgl_1_1_drag_move_event.html">  271</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_sgl_1_1_drag_move_event.html">DragMoveEvent</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_sgl_1_1_drag_event.html">DragEvent</a></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    {</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        <a class="code hl_class" href="class_sgl_1_1_drag_move_event.html">DragMoveEvent</a>(int32_t x, int32_t y, int32_t deltaX, int32_t deltaY, Sml::EventTarget* target = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>            : <a class="code hl_class" href="class_sgl_1_1_drag_event.html">DragEvent</a>(x, y, target), m_DeltaX(deltaX), m_DeltaY(deltaY)</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        {</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            m_Type = getStaticType();</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>            m_Category = getStaticCategory();</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        }</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno"><a class="line" href="class_sgl_1_1_drag_move_event.html">  281</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_sgl_1_1_drag_move_event.html">DragMoveEvent</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_sgl_1_1_drag_event.html">DragEvent</a></div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    {</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        <a class="code hl_class" href="class_sgl_1_1_drag_move_event.html">DragMoveEvent</a>(int32_t x, int32_t y, int32_t deltaX, int32_t deltaY, Sml::EventTarget* target = <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            : <a class="code hl_class" href="class_sgl_1_1_drag_event.html">DragEvent</a>(x, y, target), m_DeltaX(deltaX), m_DeltaY(deltaY)</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>        {</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>            m_Type = getStaticType();</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>            m_Category = getStaticCategory();</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        }</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        int32_t getDeltaX()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_DeltaX; }</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        int32_t getDeltaY()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_DeltaY; }</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        DEFINE_STATIC_EVENT_TYPE(DRAG_MOVE)</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        DEFINE_STATIC_EVENT_CATEGORY(DragEvent::getStaticCategory())</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    </div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        int32_t m_DeltaX = 0;</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        int32_t m_DeltaY = 0;</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    };</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> C&gt;</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno"><a class="line" href="class_sgl_1_1_drag_listener.html">  303</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_sgl_1_1_drag_listener.html">DragListener</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_sgl_1_1_component_event_listener.html">ComponentEventListener</a>&lt;C&gt;</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    {</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        DEFINE_STATIC_LISTENED_EVENT_TYPES(DragStartEvent::getStaticType(),</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>                                           DragEndEvent::getStaticType(),</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>                                           DragMoveEvent::getStaticType())</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        <a class="code hl_class" href="class_sgl_1_1_drag_listener.html">DragListener</a>(C* component) : <a class="code hl_class" href="class_sgl_1_1_component_event_listener.html">ComponentEventListener&lt;C&gt;</a>(component) {}</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        int32_t getDeltaX()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_DeltaX; }</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        int32_t getDeltaY()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_DeltaY; }</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        DEFINE_STATIC_EVENT_TYPE(DRAG_MOVE)</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        DEFINE_STATIC_EVENT_CATEGORY(DragEvent::getStaticCategory())</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        int32_t m_DeltaX = 0;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        int32_t m_DeltaY = 0;</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    };</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> C&gt;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno"><a class="line" href="class_sgl_1_1_drag_listener.html">  293</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_sgl_1_1_drag_listener.html">DragListener</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_sgl_1_1_component_event_listener.html">ComponentEventListener</a>&lt;C&gt;</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    {</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        DEFINE_STATIC_LISTENED_EVENT_TYPES(DragStartEvent::getStaticType(),</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>                                           DragEndEvent::getStaticType(),</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>                                           DragMoveEvent::getStaticType())</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        <a class="code hl_class" href="class_sgl_1_1_drag_listener.html">DragListener</a>(C* component) : <a class="code hl_class" href="class_sgl_1_1_component_event_listener.html">ComponentEventListener&lt;C&gt;</a>(component) {}</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onEvent(Sml::Event* event) <span class="keyword">override</span> <span class="keyword">final</span></div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        {</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>            <span class="keywordflow">switch</span> (event-&gt;getType())</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>            {</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>                <span class="keywordflow">case</span> DragStartEvent::getStaticType():</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>                {</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>                    onDragStart(<span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="class_sgl_1_1_drag_start_event.html">DragStartEvent</a>*<span class="keyword">&gt;</span>(event));</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>                }</div>
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onEvent(Sml::Event* event) <span class="keyword">override</span> <span class="keyword">final</span></div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        {</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>            <span class="keywordflow">switch</span> (event-&gt;getType())</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>            {</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>                <span class="keywordflow">case</span> DragStartEvent::getStaticType():</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>                {</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>                    onDragStart(<span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="class_sgl_1_1_drag_start_event.html">DragStartEvent</a>*<span class="keyword">&gt;</span>(event));</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>                }</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>                <span class="keywordflow">case</span> DragEndEvent::getStaticType():</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>                {</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>                    onDragEnd(<span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="class_sgl_1_1_drag_end_event.html">DragEndEvent</a>*<span class="keyword">&gt;</span>(event));</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>                }</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>                <span class="keywordflow">case</span> DragEndEvent::getStaticType():</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>                {</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>                    onDragEnd(<span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="class_sgl_1_1_drag_end_event.html">DragEndEvent</a>*<span class="keyword">&gt;</span>(event));</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>                }</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>                <span class="keywordflow">case</span> DragMoveEvent::getStaticType():</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>                {</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>                    onDragMove(<span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="class_sgl_1_1_drag_move_event.html">DragMoveEvent</a>*<span class="keyword">&gt;</span>(event));</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>                }</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>            }</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>            <span class="keyword">event</span>-&gt;consume();</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        }</div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>                <span class="keywordflow">case</span> DragMoveEvent::getStaticType():</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>                {</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>                    onDragMove(<span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="class_sgl_1_1_drag_move_event.html">DragMoveEvent</a>*<span class="keyword">&gt;</span>(event));</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>                }</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>            }</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>            <span class="keyword">event</span>-&gt;consume();</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        }</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onDragStart(<a class="code hl_class" href="class_sgl_1_1_drag_start_event.html">DragStartEvent</a>* event) {}</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onDragEnd(<a class="code hl_class" href="class_sgl_1_1_drag_end_event.html">DragEndEvent</a>* event) {}</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onDragMove(<a class="code hl_class" href="class_sgl_1_1_drag_move_event.html">DragMoveEvent</a>* event) {}</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    };</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>}</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onDragStart(<a class="code hl_class" href="class_sgl_1_1_drag_start_event.html">DragStartEvent</a>* event) {}</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onDragEnd(<a class="code hl_class" href="class_sgl_1_1_drag_end_event.html">DragEndEvent</a>* event) {}</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        <span class="keyword">virtual</span> <span class="keywordtype">void</span> onDragMove(<a class="code hl_class" href="class_sgl_1_1_drag_move_event.html">DragMoveEvent</a>* event) {}</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    };</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>}</div>
 <div class="ttc" id="aclass_sgl_1_1_action_event_html"><div class="ttname"><a href="class_sgl_1_1_action_event.html">Sgl::ActionEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event_8h_source.html#l00194">gui_event.h:195</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_action_listener_html"><div class="ttname"><a href="class_sgl_1_1_action_listener.html">Sgl::ActionListener</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event_8h_source.html#l00205">gui_event.h:206</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_component_event_listener_html"><div class="ttname"><a href="class_sgl_1_1_component_event_listener.html">Sgl::ComponentEventListener</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event_8h_source.html#l00044">gui_event.h:45</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_component_html"><div class="ttname"><a href="class_sgl_1_1_component.html">Sgl::Component</a></div><div class="ttdef"><b>Definition:</b> <a href="component_8h_source.html#l00026">component.h:27</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_drag_end_event_html"><div class="ttname"><a href="class_sgl_1_1_drag_end_event.html">Sgl::DragEndEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event_8h_source.html#l00258">gui_event.h:259</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_drag_event_html"><div class="ttname"><a href="class_sgl_1_1_drag_event.html">Sgl::DragEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event_8h_source.html#l00225">gui_event.h:226</a></div></div>
-<div class="ttc" id="aclass_sgl_1_1_drag_listener_html"><div class="ttname"><a href="class_sgl_1_1_drag_listener.html">Sgl::DragListener</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event_8h_source.html#l00303">gui_event.h:304</a></div></div>
-<div class="ttc" id="aclass_sgl_1_1_drag_move_event_html"><div class="ttname"><a href="class_sgl_1_1_drag_move_event.html">Sgl::DragMoveEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event_8h_source.html#l00281">gui_event.h:282</a></div></div>
+<div class="ttc" id="aclass_sgl_1_1_drag_listener_html"><div class="ttname"><a href="class_sgl_1_1_drag_listener.html">Sgl::DragListener</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event_8h_source.html#l00293">gui_event.h:294</a></div></div>
+<div class="ttc" id="aclass_sgl_1_1_drag_move_event_html"><div class="ttname"><a href="class_sgl_1_1_drag_move_event.html">Sgl::DragMoveEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event_8h_source.html#l00271">gui_event.h:272</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_drag_start_event_html"><div class="ttname"><a href="class_sgl_1_1_drag_start_event.html">Sgl::DragStartEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event_8h_source.html#l00245">gui_event.h:246</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_focus_listener_html"><div class="ttname"><a href="class_sgl_1_1_focus_listener.html">Sgl::FocusListener</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event_8h_source.html#l00157">gui_event.h:158</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_focus_lost_event_html"><div class="ttname"><a href="class_sgl_1_1_focus_lost_event.html">Sgl::FocusLostEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event_8h_source.html#l00140">gui_event.h:141</a></div></div>

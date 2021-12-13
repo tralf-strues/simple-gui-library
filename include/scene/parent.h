@@ -67,6 +67,11 @@ namespace Sgl
          */
         void removeChild(Component* child);
 
+        /**
+         * @warning Doesn't delete the children!
+         */
+        void removeChildren();
+
         std::list<Component*>& getChildren();
         const std::list<Component*>& getChildrenReadonly() const;
 

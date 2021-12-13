@@ -185,7 +185,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="225.5" y="-757.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getHitComponent()</text>
 <text text-anchor="start" x="225.5" y="-746.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ render()</text>
 <text text-anchor="start" x="225.5" y="-735.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ layout()</text>
-<text text-anchor="start" x="225.5" y="-724.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 38 more...</text>
+<text text-anchor="start" x="225.5" y="-724.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 39 more...</text>
 <text text-anchor="start" x="225.5" y="-713.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setSceneInSceneTree()</text>
 <text text-anchor="start" x="225.5" y="-702.5" font-family="Helvetica,sans-Serif" font-size="10.00"># layoutChildren()</text>
 <text text-anchor="start" x="225.5" y="-691.5" font-family="Helvetica,sans-Serif" font-size="10.00"># prerenderSelf()</text>
@@ -211,7 +211,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="230" y="-1123.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Scene</text>
 <text text-anchor="start" x="230" y="-1112.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ USE_COMPUTED_SIZE</text>
 <text text-anchor="start" x="230" y="-1101.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ UNLIMITED_SIZE</text>
-<text text-anchor="start" x="230" y="-1090.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Visible</text>
+<text text-anchor="start" x="230" y="-1090.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Visibility</text>
 <text text-anchor="start" x="230" y="-1079.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Focused</text>
 <text text-anchor="start" x="230" y="-1068.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Hovered</text>
 <text text-anchor="start" x="230" y="-1057.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Shadow</text>
@@ -223,7 +223,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="230" y="-994.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getHitComponent()</text>
 <text text-anchor="start" x="230" y="-983.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ render()</text>
 <text text-anchor="start" x="230" y="-972.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ layout()</text>
-<text text-anchor="start" x="230" y="-961.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 37 more...</text>
+<text text-anchor="start" x="230" y="-961.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 42 more...</text>
 <text text-anchor="start" x="230" y="-950.5" font-family="Helvetica,sans-Serif" font-size="10.00"># updateShadow()</text>
 <text text-anchor="start" x="230" y="-939.5" font-family="Helvetica,sans-Serif" font-size="10.00"># renderShadow()</text>
 <text text-anchor="start" x="230" y="-928.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setSceneInSceneTree()</text>

@@ -266,16 +266,6 @@ namespace Sgl
 
         DEFINE_STATIC_EVENT_TYPE(DRAG_END)
         DEFINE_STATIC_EVENT_CATEGORY(DragEvent::getStaticCategory())
-    
-        int32_t getX() const { return m_X; }
-        void setX(int32_t x) { m_X = x; }
-
-        int32_t getY() const { return m_Y; }
-        void setY(int32_t y) { m_Y = y; }
-
-    private:
-        int32_t m_X = 0;
-        int32_t m_Y = 0;
     };
 
     class DragMoveEvent : public DragEvent

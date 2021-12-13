@@ -95,7 +95,7 @@
 <text text-anchor="start" x="21.5" y="-564.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getHitComponent()</text>
 <text text-anchor="start" x="21.5" y="-553.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ render()</text>
 <text text-anchor="start" x="21.5" y="-542.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ layout()</text>
-<text text-anchor="start" x="21.5" y="-531.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 38 more...</text>
+<text text-anchor="start" x="21.5" y="-531.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 39 more...</text>
 <text text-anchor="start" x="21.5" y="-520.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setSceneInSceneTree()</text>
 <text text-anchor="start" x="21.5" y="-509.5" font-family="Helvetica,sans-Serif" font-size="10.00"># layoutChildren()</text>
 <text text-anchor="start" x="21.5" y="-498.5" font-family="Helvetica,sans-Serif" font-size="10.00"># prerenderSelf()</text>
@@ -121,7 +121,7 @@
 <text text-anchor="start" x="26" y="-930.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Scene</text>
 <text text-anchor="start" x="26" y="-919.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ USE_COMPUTED_SIZE</text>
 <text text-anchor="start" x="26" y="-908.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ UNLIMITED_SIZE</text>
-<text text-anchor="start" x="26" y="-897.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Visible</text>
+<text text-anchor="start" x="26" y="-897.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Visibility</text>
 <text text-anchor="start" x="26" y="-886.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Focused</text>
 <text text-anchor="start" x="26" y="-875.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Hovered</text>
 <text text-anchor="start" x="26" y="-864.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Shadow</text>
@@ -133,7 +133,7 @@
 <text text-anchor="start" x="26" y="-801.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getHitComponent()</text>
 <text text-anchor="start" x="26" y="-790.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ render()</text>
 <text text-anchor="start" x="26" y="-779.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ layout()</text>
-<text text-anchor="start" x="26" y="-768.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 37 more...</text>
+<text text-anchor="start" x="26" y="-768.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 42 more...</text>
 <text text-anchor="start" x="26" y="-757.5" font-family="Helvetica,sans-Serif" font-size="10.00"># updateShadow()</text>
 <text text-anchor="start" x="26" y="-746.5" font-family="Helvetica,sans-Serif" font-size="10.00"># renderShadow()</text>
 <text text-anchor="start" x="26" y="-735.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setSceneInSceneTree()</text>

@@ -20,7 +20,7 @@ namespace Sgl
 
     Component* Container::getHitComponent(int32_t x, int32_t y)
     {
-        if (!isVisible()) { return nullptr; }
+        if (!isInteractable()) { return nullptr; }
 
         Component* hitted = Parent::getHitComponent(x, y);
 

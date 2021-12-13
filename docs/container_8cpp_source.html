@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('container_8cpp_source.html',''); initR
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    Component* Container::getHitComponent(int32_t x, int32_t y)</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span> (!isVisible()) { <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span> (!isInteractable()) { <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        Component* hitted = Parent::getHitComponent(x, y);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>

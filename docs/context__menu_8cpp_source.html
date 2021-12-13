@@ -169,13 +169,13 @@ $(document).ready(function(){initNavTree('context__menu_8cpp_source.html',''); i
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">void</span> ContextMenu::show()</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        setVisible(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        setVisibility(Component::Visibility::VISIBLE_INTERACTABLE);</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        requestFocus();</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">void</span> ContextMenu::hide()</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        setVisible(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        setVisibility(Component::Visibility::INVISIBLE_DISABLED);</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
 <div class="ttc" id="abutton_8h_html"><div class="ttname"><a href="button_8h.html">button.h</a></div></div>

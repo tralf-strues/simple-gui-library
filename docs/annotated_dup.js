@@ -26,7 +26,7 @@ var annotated_dup =
       [ "Button", "class_sgl_1_1_button.html", null ],
       [ "Circle", "class_sgl_1_1_circle.html", null ],
       [ "ColorFill", "class_sgl_1_1_color_fill.html", null ],
-      [ "Component", "class_sgl_1_1_component.html", null ],
+      [ "Component", "class_sgl_1_1_component.html", "class_sgl_1_1_component" ],
       [ "ComponentEventListener", "class_sgl_1_1_component_event_listener.html", null ],
       [ "Container", "class_sgl_1_1_container.html", null ],
       [ "ContextMenu", "class_sgl_1_1_context_menu.html", null ],

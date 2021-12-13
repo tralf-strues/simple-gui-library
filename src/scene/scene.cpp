@@ -149,9 +149,6 @@ namespace Sgl
     {
         if (m_DragOwner != nullptr)
         {
-            Sml::Vec2i pos{Sml::MouseState::getMouseState().x, Sml::MouseState::getMouseState().y};
-            pos = m_DragOwner->computeSceneToLocalPos(pos);
-
             DragEndEvent dragEndEvent{Sml::MouseState::getMouseState().x,
                                       Sml::MouseState::getMouseState().y,
                                       m_DragOwner};

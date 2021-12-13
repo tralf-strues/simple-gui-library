@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('class_sgl_1_1_component.html',''); ini
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
@@ -103,9 +104,20 @@ Inheritance diagram for Sgl::Component:</div>
 <div class="dynheader">
 Collaboration diagram for Sgl::Component:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_sgl_1_1_component__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_sgl_1_1_component__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a0ab143ead727a4156650de949f888c75"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a0ab143ead727a4156650de949f888c75">Visibility</a> { <b>INVISIBLE_DISABLED</b> = 0b00
+, <b>INVISIBLE_INTERACTABLE</b> = 0b01
+, <b>VISIBLE_DISABLED</b> = 0b10
+, <b>VISIBLE_INTERACTABLE</b> = 0b11
+ }</td></tr>
+<tr class="memdesc:a0ab143ead727a4156650de949f888c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to determine if <a class="el" href="class_sgl_1_1_component.html">Component</a> should be rendered and targeted by events.  <a href="class_sgl_1_1_component.html#a0ab143ead727a4156650de949f888c75">More...</a><br /></td></tr>
+<tr class="separator:a0ab143ead727a4156650de949f888c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af3d2ea0c0265a95d16f114a9d5c4b26e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_sgl_1_1_component.html">Component</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#af3d2ea0c0265a95d16f114a9d5c4b26e">getHitComponent</a> (int32_t x, int32_t y)</td></tr>
@@ -125,6 +137,14 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> (c
 <tr class="separator:a4017dc04f85e757c85c07fae118d7fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e1a5ff43b08452ea4ce577640e47282"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a6e1a5ff43b08452ea4ce577640e47282">setVisible</a> (bool visible)</td></tr>
 <tr class="separator:a6e1a5ff43b08452ea4ce577640e47282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f2e33b587aa3720e18df20a6f8ded13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a2f2e33b587aa3720e18df20a6f8ded13">isInteractable</a> () const</td></tr>
+<tr class="separator:a2f2e33b587aa3720e18df20a6f8ded13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f62d9c2a3221980fb4ec7af2212d89a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a2f62d9c2a3221980fb4ec7af2212d89a">setInteractable</a> (bool interactable)</td></tr>
+<tr class="separator:a2f62d9c2a3221980fb4ec7af2212d89a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab977b9e3cd0cfb307b57d2af1e479b97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sgl_1_1_component.html#a0ab143ead727a4156650de949f888c75">Visibility</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#ab977b9e3cd0cfb307b57d2af1e479b97">getVisibility</a> () const</td></tr>
+<tr class="separator:ab977b9e3cd0cfb307b57d2af1e479b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb746b44cf6a17735b39d10fccd5ec60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#aeb746b44cf6a17735b39d10fccd5ec60">setVisibility</a> (<a class="el" href="class_sgl_1_1_component.html#a0ab143ead727a4156650de949f888c75">Visibility</a> visibility)</td></tr>
+<tr class="separator:aeb746b44cf6a17735b39d10fccd5ec60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3dda419f3a119776ccabe6ad6e15edc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#ac3dda419f3a119776ccabe6ad6e15edc">isFocused</a> () const</td></tr>
 <tr class="separator:ac3dda419f3a119776ccabe6ad6e15edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62afe3f5b374e7da0b6f1a13a255bbcc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a62afe3f5b374e7da0b6f1a13a255bbcc">isHovered</a> () const</td></tr>
@@ -148,6 +168,8 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isResizable</
 <tr class="separator:a9dc987cf403d6b6776c9488e9109d272"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2769a53c5f993ad8809bc9bad003250d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_sgl_1_1_parent.html">Parent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a2769a53c5f993ad8809bc9bad003250d">getParent</a> () const</td></tr>
 <tr class="separator:a2769a53c5f993ad8809bc9bad003250d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33e35c15c4cb4cfba49b0f1b6bca3ce0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sgl_1_1_parent.html">Parent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a33e35c15c4cb4cfba49b0f1b6bca3ce0">getModifiableParent</a> ()</td></tr>
+<tr class="separator:a33e35c15c4cb4cfba49b0f1b6bca3ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadcdbceda37e8b24739d8f3b25531478"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#aadcdbceda37e8b24739d8f3b25531478">setParent</a> (<a class="el" href="class_sgl_1_1_parent.html">Parent</a> *parent)</td></tr>
 <tr class="separator:aadcdbceda37e8b24739d8f3b25531478"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20aaaedf6cf0c895e17c6760e64753d0"><td class="memItemLeft" align="right" valign="top">Sml::Vec2i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a20aaaedf6cf0c895e17c6760e64753d0">computeLocalToScenePos</a> (const Sml::Vec2i &amp;localPos) const</td></tr>
@@ -220,8 +242,8 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a7fd0ed8f4d4a85c1dbc1bd4e38e9ed92"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a7fd0ed8f4d4a85c1dbc1bd4e38e9ed92">m_Visible</a> = true</td></tr>
-<tr class="separator:a7fd0ed8f4d4a85c1dbc1bd4e38e9ed92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06cd67c2bbf019530101f29ca8afcd50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sgl_1_1_component.html#a0ab143ead727a4156650de949f888c75">Visibility</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a06cd67c2bbf019530101f29ca8afcd50">m_Visibility</a> = Visibility::VISIBLE_INTERACTABLE</td></tr>
+<tr class="separator:a06cd67c2bbf019530101f29ca8afcd50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a447563420e5a307504a0816bd7d46b73"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a447563420e5a307504a0816bd7d46b73">m_Focused</a> = false</td></tr>
 <tr class="separator:a447563420e5a307504a0816bd7d46b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3aea4cd1c158eb320bbd4dcd3796cfb2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_component.html#a3aea4cd1c158eb320bbd4dcd3796cfb2">m_Hovered</a> = false</td></tr>
@@ -240,7 +262,35 @@ Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00026">26</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a0ab143ead727a4156650de949f888c75" name="a0ab143ead727a4156650de949f888c75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ab143ead727a4156650de949f888c75">&#9670;&nbsp;</a></span>Visibility</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="class_sgl_1_1_component.html#a0ab143ead727a4156650de949f888c75">Sgl::Component::Visibility</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to determine if <a class="el" href="class_sgl_1_1_component.html">Component</a> should be rendered and targeted by events. </p>
+<dl class="section note"><dt>Note</dt><dd>The least significant bit specifies interactability, and the following one specifies visibility. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00035">35</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a20f0c167092df2fff6c4b311045f2b7e" name="a20f0c167092df2fff6c4b311045f2b7e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a20f0c167092df2fff6c4b311045f2b7e">&#9670;&nbsp;</a></span>buildEventDispatchChain()</h2>
 
@@ -285,7 +335,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00103">103</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00148">148</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -304,7 +354,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00170">170</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00215">215</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -324,7 +374,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00109">109</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00154">154</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -371,7 +421,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00077">77</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00113">113</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -428,7 +478,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00120">120</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00165">165</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -447,7 +497,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00145">145</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00190">190</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -466,7 +516,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00125">125</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00170">170</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -485,7 +535,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00140">140</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00185">185</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -504,7 +554,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00130">130</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00175">175</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -523,7 +573,26 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00135">135</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00180">180</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a33e35c15c4cb4cfba49b0f1b6bca3ce0" name="a33e35c15c4cb4cfba49b0f1b6bca3ce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33e35c15c4cb4cfba49b0f1b6bca3ce0">&#9670;&nbsp;</a></span>getModifiableParent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_sgl_1_1_parent.html">Parent</a> * Sgl::Component::getModifiableParent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00133">133</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -542,7 +611,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00115">115</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00160">160</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -561,7 +630,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00092">92</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00128">128</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -580,7 +649,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00082">82</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00118">118</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -599,7 +668,26 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00067">67</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00103">103</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab977b9e3cd0cfb307b57d2af1e479b97" name="ab977b9e3cd0cfb307b57d2af1e479b97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab977b9e3cd0cfb307b57d2af1e479b97">&#9670;&nbsp;</a></span>getVisibility()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_sgl_1_1_component.html#a0ab143ead727a4156650de949f888c75">Component::Visibility</a> Sgl::Component::getVisibility </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00083">83</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -618,7 +706,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00050">50</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00086">86</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -637,7 +725,26 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00051">51</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00087">87</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2f2e33b587aa3720e18df20a6f8ded13" name="a2f2e33b587aa3720e18df20a6f8ded13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f2e33b587aa3720e18df20a6f8ded13">&#9670;&nbsp;</a></span>isInteractable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Sgl::Component::isInteractable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00065">65</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -738,7 +845,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00211">211</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00256">256</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -757,7 +864,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00060">60</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00096">96</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -776,7 +883,27 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00053">53</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00089">89</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2f62d9c2a3221980fb4ec7af2212d89a" name="a2f62d9c2a3221980fb4ec7af2212d89a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f62d9c2a3221980fb4ec7af2212d89a">&#9670;&nbsp;</a></span>setInteractable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sgl::Component::setInteractable </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>interactable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00067">67</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -796,7 +923,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00165">165</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00210">210</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -816,7 +943,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00160">160</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00205">205</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -836,7 +963,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00150">150</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00195">195</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -856,7 +983,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00155">155</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00200">200</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -876,7 +1003,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00097">97</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00138">138</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -896,7 +1023,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00087">87</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00123">123</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -924,7 +1051,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00219">219</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00264">264</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -944,7 +1071,27 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00072">72</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00108">108</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aeb746b44cf6a17735b39d10fccd5ec60" name="aeb746b44cf6a17735b39d10fccd5ec60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb746b44cf6a17735b39d10fccd5ec60">&#9670;&nbsp;</a></span>setVisibility()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sgl::Component::setVisibility </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_sgl_1_1_component.html#a0ab143ead727a4156650de949f888c75">Visibility</a>&#160;</td>
+          <td class="paramname"><em>visibility</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00084">84</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -964,7 +1111,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00048">48</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00049">49</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -991,7 +1138,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00184">184</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8cpp_source.html#l00229">229</a> of file <a class="el" href="component_8cpp_source.html">component.cpp</a>.</p>
 
 </div>
 </div>
@@ -1016,7 +1163,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00101">101</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00123">123</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
@@ -1040,7 +1187,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00097">97</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00119">119</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
@@ -1064,7 +1211,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00098">98</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00120">120</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
@@ -1088,7 +1235,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00105">105</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00127">127</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
@@ -1112,7 +1259,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00104">104</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00126">126</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
@@ -1136,7 +1283,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00103">103</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00125">125</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
@@ -1160,12 +1307,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00099">99</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00121">121</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
-<a id="a7fd0ed8f4d4a85c1dbc1bd4e38e9ed92" name="a7fd0ed8f4d4a85c1dbc1bd4e38e9ed92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fd0ed8f4d4a85c1dbc1bd4e38e9ed92">&#9670;&nbsp;</a></span>m_Visible</h2>
+<a id="a06cd67c2bbf019530101f29ca8afcd50" name="a06cd67c2bbf019530101f29ca8afcd50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06cd67c2bbf019530101f29ca8afcd50">&#9670;&nbsp;</a></span>m_Visibility</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1174,7 +1321,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Sgl::Component::m_Visible = true</td>
+          <td class="memname"><a class="el" href="class_sgl_1_1_component.html#a0ab143ead727a4156650de949f888c75">Visibility</a> Sgl::Component::m_Visibility = Visibility::VISIBLE_INTERACTABLE</td>
         </tr>
       </table>
   </td>
@@ -1184,7 +1331,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00096">96</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00118">118</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
@@ -1200,7 +1347,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00033">33</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00048">48</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
@@ -1224,7 +1371,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00030">30</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00045">45</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
@@ -1248,7 +1395,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00029">29</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="component_8h_source.html#l00044">44</a> of file <a class="el" href="component_8h_source.html">component.h</a>.</p>
 
 </div>
 </div>
