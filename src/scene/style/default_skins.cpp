@@ -11,6 +11,7 @@
 #include "scene/controls/button.h"
 #include "scene/controls/slider.h"
 #include "scene/controls/scroll_bar.h"
+#include "scene/controls/scroll_pane.h"
 
 namespace Sgl
 {
@@ -584,7 +585,7 @@ namespace DefaultSkins
     // ScrollBarSkin
     //------------------------------------------------------------------------------
     const Sml::Color          ScrollBarSkin::KNOB_COLOR  = 0xF5'F5'F5'FF;
-    const ShadowSpecification ScrollBarSkin::KNOB_SHADOW = {{0, 0}, {1.07, 1.07}, 3, 0xCC'CC'CC'88};
+    // const ShadowSpecification ScrollBarSkin::KNOB_SHADOW = {{0, 0}, {1.07, 1.07}, 3, 0xCC'CC'CC'88};
 
     ScrollBarSkin::ScrollBarSkin(ScrollBar* scrollBar)
         : m_Box(new BoxContainer()),
@@ -599,7 +600,7 @@ namespace DefaultSkins
         m_Box->setGrowPriority(m_Slider, BoxContainer::GrowPriority::ALWAYS);
         m_Box->setFillAcross(true);
 
-        m_SliderSkin->setKnobShadow(&KNOB_SHADOW);
+        m_SliderSkin->setKnobShadow(nullptr);
 
         attach(scrollBar);
     }
@@ -700,6 +701,200 @@ namespace DefaultSkins
             m_SliderSkin->setKnobSizeAlong(m_Slider->getLayoutHeight() * m_ScrollBar->getVisibleRange() /
                                            (m_ScrollBar->getRangeMax() - m_ScrollBar->getRangeMin()));
         }
+    }
+
+    //------------------------------------------------------------------------------
+    // ScrollPaneSkin
+    //------------------------------------------------------------------------------
+    class HorizontalScrollListener : public Sml::PropertyChangeListener<float>
+    {
+    public:
+        HorizontalScrollListener(ScrollPaneSkin* skin) : m_Skin(skin) {}
+
+        virtual void onPropertyChange(Sml::PropertyChangeEvent<float>* event) override
+        {
+            ScrollPane* scrollPane = dynamic_cast<ScrollPane*>(m_Skin->getModifiableControl());
+
+            if (scrollPane->getContent() != nullptr)
+            {
+                // int32_t delta = (scrollPane->getContent()->getLayoutWidth() - scrollPane->getViewportWidth()) *
+                                // (event->getNewValue() - event->getOldValue());
+
+                // scrollPane->setViewportWidth(scrollPane->getViewportWidth() + delta);
+                scrollPane->setViewportX(event->getNewValue() * (scrollPane->getContent()->getLayoutWidth() - scrollPane->getViewportWidth()));
+            }
+        }
+
+    private:
+        ScrollPaneSkin* m_Skin = nullptr;
+    };
+
+    class VerticalScrollListener : public Sml::PropertyChangeListener<float>
+    {
+    public:
+        VerticalScrollListener(ScrollPaneSkin* skin) : m_Skin(skin) {}
+
+        virtual void onPropertyChange(Sml::PropertyChangeEvent<float>* event) override
+        {
+            ScrollPane* scrollPane = dynamic_cast<ScrollPane*>(m_Skin->getModifiableControl());
+
+            if (scrollPane->getContent() != nullptr)
+            {
+                // int32_t delta = (scrollPane->getContent()->getLayoutHeight() - scrollPane->getViewportHeight()) *
+                //                 (event->getNewValue() - event->getOldValue());
+
+                // // scrollPane->setViewportHeight(scrollPane->getViewportHeight() + delta);
+                // scrollPane->setViewportY(scrollPane->getViewportY() + delta);
+                scrollPane->setViewportY(event->getNewValue() * (scrollPane->getContent()->getLayoutHeight() - scrollPane->getViewportHeight()));
+            }
+        }
+
+    private:
+        ScrollPaneSkin* m_Skin = nullptr;
+    };
+
+    ScrollPaneSkin::ScrollPaneSkin(ScrollPane* scrollPane)
+        : m_HorizontalScrollBar(new Sgl::ScrollBar(Orientation::HORIZONTAL, 0, 1)),
+          m_VerticalScrollBar(new Sgl::ScrollBar(Orientation::VERTICAL, 0, 1))
+    {
+        assert(scrollPane);
+
+        m_HorizontalScrollBar->setIncrement(0.1);
+        m_VerticalScrollBar->setIncrement(0.1);
+
+        attach(scrollPane);
+    }
+
+    void ScrollPaneSkin::dispose()
+    {
+        m_ScrollPane->removeChild(m_ScrollPane->getContent());
+    }
+
+    void ScrollPaneSkin::attach(ScrollPane* scrollPane)
+    {
+        assert(scrollPane);
+        m_ScrollPane = scrollPane;
+
+        m_ScrollPane->addChildren(m_HorizontalScrollBar, m_VerticalScrollBar);
+
+        m_HorizontalScrollBar->setOnPropertyChange(new HorizontalScrollListener(this));
+        m_VerticalScrollBar->setOnPropertyChange(new VerticalScrollListener(this));
+    }
+
+    void ScrollPaneSkin::prerenderControl()
+    {
+        if (m_ScrollPane->getContent() == nullptr)
+        {
+            return;
+        }
+
+        updateRenderedContentTexture();
+
+        if (m_RenderedContentTexture != nullptr)
+        {   
+            Sml::Rectangle<int32_t> snapshotRegion = computeContentRegion();
+            m_RenderedContentTexture->copyTo(m_ScrollPane->getSnapshot(), &snapshotRegion, &m_ScrollPane->getViewport());
+        }
+    }
+
+    const Control* ScrollPaneSkin::getControl() const { return m_ScrollPane; }
+    Control* ScrollPaneSkin::getModifiableControl() { return m_ScrollPane; }
+
+    int32_t ScrollPaneSkin::computePrefWidth(int32_t height) const
+    {
+        return m_VerticalScrollBar->computePrefWidth(height) +
+               m_ScrollPane->getContent() != nullptr ? m_ScrollPane->getContent()->computePrefWidth(height) : 0;
+    }
+
+    int32_t ScrollPaneSkin::computePrefHeight(int32_t width) const
+    {
+        return m_HorizontalScrollBar->computePrefHeight(width) +
+               m_ScrollPane->getContent() != nullptr ? m_ScrollPane->getContent()->computePrefHeight(width) : 0;
+    }
+
+    void ScrollPaneSkin::layoutChildren()
+    {
+        Sml::Rectangle<int32_t> contentArea = m_ScrollPane->getContentArea();
+
+        int32_t scrollWidth  = m_VerticalScrollBar->computePrefWidth();
+        int32_t scrollHeight = m_HorizontalScrollBar->computePrefHeight();
+
+        m_ScrollPane->getContent()->setLayoutWidth(m_ScrollPane->getContent()->computePrefWidth());
+        m_ScrollPane->getContent()->setLayoutHeight(m_ScrollPane->getContent()->computePrefHeight());
+
+        m_VerticalScrollBar->setLayoutWidth(scrollWidth);
+        m_VerticalScrollBar->setLayoutHeight(contentArea.height - scrollHeight);
+        m_VerticalScrollBar->setLayoutX(contentArea.pos.x + contentArea.width - m_VerticalScrollBar->getLayoutWidth());
+        m_VerticalScrollBar->setLayoutY(contentArea.pos.y);
+
+        m_HorizontalScrollBar->setLayoutWidth(contentArea.width - scrollWidth);
+        m_HorizontalScrollBar->setLayoutHeight(scrollHeight);
+        m_HorizontalScrollBar->setLayoutX(contentArea.pos.x);
+        m_HorizontalScrollBar->setLayoutY(contentArea.pos.y + contentArea.height -
+                                          m_HorizontalScrollBar->getLayoutHeight());
+        
+        if (m_ScrollPane->getContent() != nullptr)
+        {
+            m_VerticalScrollBar->setVisibleRange(static_cast<float>(m_ScrollPane->getViewportHeight()) /
+                                                 m_ScrollPane->getContent()->getLayoutHeight());
+            m_HorizontalScrollBar->setVisibleRange(static_cast<float>(m_ScrollPane->getViewportWidth()) /
+                                                 m_ScrollPane->getContent()->getLayoutWidth());
+        }
+        else
+        {
+            m_VerticalScrollBar->setVisibleRange(1);
+            m_HorizontalScrollBar->setVisibleRange(1);
+        }
+
+        if (m_PrevContent != m_ScrollPane->getContent())
+        {
+            m_PrevContent = m_ScrollPane->getContent();
+
+            if (m_PrevContent != nullptr)
+            {
+                m_ScrollPane->setViewport({0, 0, computeContentRegion().width, computeContentRegion().height});
+            }
+        }
+    }
+
+    Sml::Rectangle<int32_t> ScrollPaneSkin::computeContentRegion() const
+    {
+        Sml::Rectangle<int32_t> contentArea = m_ScrollPane->getContentArea();
+
+        return {contentArea.pos, contentArea.width - m_VerticalScrollBar->getLayoutWidth(),
+                                 contentArea.height - m_HorizontalScrollBar->getLayoutHeight()};
+    }
+
+    void ScrollPaneSkin::updateRenderedContentTexture()
+    {
+        Component* content = m_ScrollPane->getContent();
+        int32_t contentWidth = content->getLayoutWidth();
+        int32_t contentHeight = content->getLayoutHeight();
+
+        if (content == nullptr || contentWidth == 0 || contentHeight == 0)
+        {
+            return;
+        }
+
+        if (m_RenderedContentTexture == nullptr ||
+            m_RenderedContentTexture->getWidth() != contentWidth ||
+            m_RenderedContentTexture->getHeight() != contentHeight)
+        {
+            if (m_RenderedContentTexture == nullptr)
+            {
+                delete m_RenderedContentTexture;
+            }
+
+            m_RenderedContentTexture = new Sml::Texture(contentWidth, contentHeight);
+        }
+
+        Sml::Renderer& render = Sml::Renderer::getInstance();
+        render.pushTarget();
+        render.setTarget(m_RenderedContentTexture);
+
+        content->render({0, 0, contentWidth, contentHeight});
+
+        render.popTarget();
     }
 }
 }

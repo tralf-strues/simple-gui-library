@@ -24,6 +24,7 @@ namespace Sgl
     class Slider;
     class ScrollBar;
     class BoxContainer;
+    class ScrollPane;
 
 namespace DefaultSkins
 {
@@ -275,6 +276,43 @@ namespace DefaultSkins
         Slider*       m_Slider          = nullptr;
         Button*       m_DecrementButton = nullptr;
         Button*       m_IncrementButton = nullptr;
+    };
+
+    //------------------------------------------------------------------------------
+    // ScrollPaneSkin
+    //------------------------------------------------------------------------------
+    class ScrollPaneSkin : public Sgl::BaseSkin<ScrollPane>
+    {
+    public:
+        ScrollPaneSkin(ScrollPane* scrollPane);
+
+        virtual void dispose() override;
+        virtual void attach(ScrollPane* scrollPane) override;
+
+        virtual void prerenderControl() override;
+
+        virtual const Control* getControl() const override;
+        virtual Control* getModifiableControl() override;
+
+        virtual int32_t computePrefWidth(int32_t height = -1) const override;
+        virtual int32_t computePrefHeight(int32_t width = -1) const override;
+
+        virtual void layoutChildren() override;
+        
+    private:
+        ScrollPane*   m_ScrollPane             = nullptr;
+        Component*    m_PrevContent            = nullptr;
+
+        ScrollBar*    m_HorizontalScrollBar    = nullptr;
+        ScrollBar*    m_VerticalScrollBar      = nullptr;
+
+        Sml::Texture* m_RenderedContentTexture = nullptr;
+
+        // Sml::PropertyChangeListener<float>* m_HorizontalScrollListener = nullptr;
+        // Sml::PropertyChangeListener<float>* m_VerticalScrollListener   = nullptr;
+
+        Sml::Rectangle<int32_t> computeContentRegion() const;
+        void updateRenderedContentTexture();
     };
 }
 }

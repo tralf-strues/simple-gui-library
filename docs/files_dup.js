@@ -61,6 +61,9 @@ var files_dup =
     [ "scroll_bar.h", "scroll__bar_8h.html", [
       [ "Sgl::ScrollBar", "class_sgl_1_1_scroll_bar.html", null ]
     ] ],
+    [ "scroll_pane.h", "scroll__pane_8h.html", [
+      [ "Sgl::ScrollPane", "class_sgl_1_1_scroll_pane.html", null ]
+    ] ],
     [ "slider.h", "slider_8h.html", [
       [ "Sgl::Slider", "class_sgl_1_1_slider.html", null ]
     ] ],
@@ -115,6 +118,7 @@ var files_dup =
     [ "button.cpp", "button_8cpp.html", null ],
     [ "control.cpp", "control_8cpp.html", null ],
     [ "scroll_bar.cpp", "scroll__bar_8cpp.html", null ],
+    [ "scroll_pane.cpp", "scroll__pane_8cpp.html", null ],
     [ "slider.cpp", "slider_8cpp.html", null ],
     [ "parent.cpp", "parent_8cpp.html", null ],
     [ "scene.cpp", "scene_8cpp.html", null ],

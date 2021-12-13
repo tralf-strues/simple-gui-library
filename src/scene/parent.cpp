@@ -72,6 +72,11 @@ namespace Sgl
 
     void Parent::prerender()
     {
+        for (Component* child : m_Children)
+        {
+            child->prerender();
+        }
+
         updateSnapshotSize();
 
         Sml::Renderer::getInstance().pushTarget();
@@ -82,11 +87,6 @@ namespace Sgl
         prerenderSelf();
 
         Sml::Renderer::getInstance().popTarget();
-
-        for (Component* child : m_Children)
-        {
-            child->prerender();
-        }
 
         updateShadow();
     }

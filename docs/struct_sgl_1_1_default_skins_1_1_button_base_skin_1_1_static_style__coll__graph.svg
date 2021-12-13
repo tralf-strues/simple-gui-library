@@ -13,14 +13,14 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="33.5,-0.5 33.5,-79.5 174.5,-79.5 174.5,-0.5 33.5,-0.5"/>
-<text text-anchor="start" x="41.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::DefaultSkins::</text>
-<text text-anchor="middle" x="104" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">ButtonBaseSkin::StaticStyle</text>
-<polyline fill="none" stroke="black" points="33.5,-49.5 174.5,-49.5 "/>
+<polygon fill="#bfbfbf" stroke="black" points="19,-0.5 19,-79.5 189,-79.5 189,-0.5 19,-0.5"/>
+<text text-anchor="start" x="27" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::DefaultSkins::ButtonBaseSkin</text>
+<text text-anchor="middle" x="104" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">::StaticStyle</text>
+<polyline fill="none" stroke="black" points="19,-49.5 189,-49.5 "/>
 <text text-anchor="middle" x="104" y="-37.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="33.5,-30.5 174.5,-30.5 "/>
-<text text-anchor="start" x="41.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ StaticStyle()</text>
-<text text-anchor="start" x="41.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ StaticStyle()</text>
+<polyline fill="none" stroke="black" points="19,-30.5 189,-30.5 "/>
+<text text-anchor="start" x="27" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ StaticStyle()</text>
+<text text-anchor="start" x="27" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ StaticStyle()</text>
 </a>
 </g>
 </g>
@@ -109,8 +109,8 @@
 <!-- Node4&#45;&gt;Node1 -->
 <g id="edge5" class="edge">
 <title>Node4&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M246.74,-149.47C237.59,-131.53 225.66,-112.52 211,-98 203.26,-90.33 194.27,-83.43 184.86,-77.31"/>
-<polygon fill="none" stroke="#404040" points="184.75,-77.24 177.54,-77.51 174.52,-70.96 181.73,-70.69 184.75,-77.24"/>
+<path fill="none" stroke="#404040" d="M246.74,-149.47C237.59,-131.53 225.66,-112.52 211,-98 206.96,-94 202.58,-90.21 197.98,-86.62"/>
+<polygon fill="none" stroke="#404040" points="197.97,-86.62 190.77,-86.33 188.26,-79.57 195.47,-79.85 197.97,-86.62"/>
 <text text-anchor="middle" x="253.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00"> +border</text>
 </g>
 </g>
