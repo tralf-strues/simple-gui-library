@@ -1015,16 +1015,15 @@ $(document).ready(function(){initNavTree('default__skins_8cpp_source.html',''); 
 <div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>            m_RenderedContentTexture = <span class="keyword">new</span> Sml::Texture(contentWidth, contentHeight);</div>
 <div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>        }</div>
 <div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span> </div>
-<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>        Sml::Renderer&amp; render = Sml::Renderer::getInstance();</div>
-<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>        render.pushTarget();</div>
-<div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span>        render.setTarget(m_RenderedContentTexture);</div>
-<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span> </div>
-<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span>        content-&gt;render({0, 0, contentWidth, contentHeight});</div>
-<div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span> </div>
-<div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span>        render.popTarget();</div>
-<div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span>    }</div>
+<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>        Sml::Renderer&amp; renderer = Sml::Renderer::getInstance();</div>
+<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>        renderer.pushSetTarget(m_RenderedContentTexture);</div>
+<div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span> </div>
+<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span>        content-&gt;render({0, 0, contentWidth, contentHeight});</div>
+<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span> </div>
+<div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span>        renderer.popTarget();</div>
+<div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span>    }</div>
+<div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span>}</div>
 <div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span>}</div>
-<div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span>}</div>
 <div class="ttc" id="abox__container_8h_html"><div class="ttname"><a href="box__container_8h.html">box_container.h</a></div></div>
 <div class="ttc" id="abutton_8h_html"><div class="ttname"><a href="button_8h.html">button.h</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_action_event_html"><div class="ttname"><a href="class_sgl_1_1_action_event.html">Sgl::ActionEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event_8h_source.html#l00194">gui_event.h:195</a></div></div>
@@ -1048,9 +1047,9 @@ $(document).ready(function(){initNavTree('default__skins_8cpp_source.html',''); 
 <div class="ttc" id="aclass_sgl_1_1_drag_start_event_html"><div class="ttname"><a href="class_sgl_1_1_drag_start_event.html">Sgl::DragStartEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event_8h_source.html#l00245">gui_event.h:246</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_fill_html"><div class="ttname"><a href="class_sgl_1_1_fill.html">Sgl::Fill</a></div><div class="ttdef"><b>Definition:</b> <a href="fill_8h_source.html#l00018">fill.h:19</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_image_html"><div class="ttname"><a href="class_sgl_1_1_image.html">Sgl::Image</a></div><div class="ttdef"><b>Definition:</b> <a href="image_8h_source.html#l00022">image.h:23</a></div></div>
-<div class="ttc" id="aclass_sgl_1_1_parent_html_a868d2b08da6aa1d751738d293d90ee98"><div class="ttname"><a href="class_sgl_1_1_parent.html#a868d2b08da6aa1d751738d293d90ee98">Sgl::Parent::addChild</a></div><div class="ttdeci">void addChild(Component *child)</div><div class="ttdoc">Convenience method for adding a child to Parent.</div><div class="ttdef"><b>Definition:</b> <a href="parent_8cpp_source.html#l00130">parent.cpp:130</a></div></div>
-<div class="ttc" id="aclass_sgl_1_1_parent_html_a8873cedd5f749df26e232218130a47c6"><div class="ttname"><a href="class_sgl_1_1_parent.html#a8873cedd5f749df26e232218130a47c6">Sgl::Parent::removeChildren</a></div><div class="ttdeci">void removeChildren()</div><div class="ttdef"><b>Definition:</b> <a href="parent_8cpp_source.html#l00156">parent.cpp:156</a></div></div>
-<div class="ttc" id="aclass_sgl_1_1_parent_html_a948ec0428d1eb6ad75b12bb180cd7d9d"><div class="ttname"><a href="class_sgl_1_1_parent.html#a948ec0428d1eb6ad75b12bb180cd7d9d">Sgl::Parent::removeChild</a></div><div class="ttdeci">void removeChild(Component *child)</div><div class="ttdoc">Convenience method for removing a child to Parent.</div><div class="ttdef"><b>Definition:</b> <a href="parent_8cpp_source.html#l00147">parent.cpp:147</a></div></div>
+<div class="ttc" id="aclass_sgl_1_1_parent_html_a868d2b08da6aa1d751738d293d90ee98"><div class="ttname"><a href="class_sgl_1_1_parent.html#a868d2b08da6aa1d751738d293d90ee98">Sgl::Parent::addChild</a></div><div class="ttdeci">void addChild(Component *child)</div><div class="ttdoc">Convenience method for adding a child to Parent.</div><div class="ttdef"><b>Definition:</b> <a href="parent_8cpp_source.html#l00129">parent.cpp:129</a></div></div>
+<div class="ttc" id="aclass_sgl_1_1_parent_html_a8873cedd5f749df26e232218130a47c6"><div class="ttname"><a href="class_sgl_1_1_parent.html#a8873cedd5f749df26e232218130a47c6">Sgl::Parent::removeChildren</a></div><div class="ttdeci">void removeChildren()</div><div class="ttdef"><b>Definition:</b> <a href="parent_8cpp_source.html#l00155">parent.cpp:155</a></div></div>
+<div class="ttc" id="aclass_sgl_1_1_parent_html_a948ec0428d1eb6ad75b12bb180cd7d9d"><div class="ttname"><a href="class_sgl_1_1_parent.html#a948ec0428d1eb6ad75b12bb180cd7d9d">Sgl::Parent::removeChild</a></div><div class="ttdeci">void removeChild(Component *child)</div><div class="ttdoc">Convenience method for removing a child to Parent.</div><div class="ttdef"><b>Definition:</b> <a href="parent_8cpp_source.html#l00146">parent.cpp:146</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_rectangle_html"><div class="ttname"><a href="class_sgl_1_1_rectangle.html">Sgl::Rectangle</a></div><div class="ttdef"><b>Definition:</b> <a href="rectangle_8h_source.html#l00016">rectangle.h:17</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_scroll_bar_html"><div class="ttname"><a href="class_sgl_1_1_scroll_bar.html">Sgl::ScrollBar</a></div><div class="ttdef"><b>Definition:</b> <a href="scroll__bar_8h_source.html#l00015">scroll_bar.h:16</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_scroll_pane_html"><div class="ttname"><a href="class_sgl_1_1_scroll_pane.html">Sgl::ScrollPane</a></div><div class="ttdef"><b>Definition:</b> <a href="scroll__pane_8h_source.html#l00015">scroll_pane.h:16</a></div></div>

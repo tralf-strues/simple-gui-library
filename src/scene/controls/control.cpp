@@ -58,8 +58,7 @@ namespace Sgl
     {
         if (m_Skin != nullptr)
         {
-            Sml::Renderer::getInstance().pushTarget();
-            Sml::Renderer::getInstance().setTarget(getSnapshot());
+            Sml::Renderer::getInstance().pushSetTarget(getSnapshot());
             
             m_Skin->prerenderControl();
 

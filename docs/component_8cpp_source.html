@@ -326,35 +326,33 @@ $(document).ready(function(){initNavTree('component_8cpp_source.html',''); initR
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        Sml::Texture* renderedComponent = <span class="keyword">new</span> Sml::Texture(m_LayoutBounds.width, m_LayoutBounds.height);</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        </div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        renderer.pushTarget();</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        renderer.pushSetTarget(renderedComponent);</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        renderer.setTarget(renderedComponent);</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        Sml::Vec2i savedLayoutPos = m_LayoutBounds.pos;</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        m_LayoutBounds.pos = {0, 0};</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        render(getOriginBounds());</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        m_LayoutBounds.pos = savedLayoutPos;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        Sml::Vec2i savedLayoutPos = m_LayoutBounds.pos;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        m_LayoutBounds.pos = {0, 0};</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        render(getOriginBounds());</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        m_LayoutBounds.pos = savedLayoutPos;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        renderer.popTarget();</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        renderer.popTarget();</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        m_Shadow.update(renderedComponent, getLayoutBounds());</div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        m_Shadow.update(renderedComponent, getLayoutBounds());</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="keyword">delete</span> renderedComponent;</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    }</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keywordtype">void</span> Component::renderShadow(<span class="keyword">const</span> Sml::Rectangle&lt;int32_t&gt;&amp; targetRegion)</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    {</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        <span class="keywordflow">if</span> (isVisible())</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        {   </div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>            m_Shadow.render(getLayoutBounds(), targetRegion);</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        }</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    }</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="keywordtype">void</span> Component::setSceneInSceneTree(Scene* scene)</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    {</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        m_Scene = scene;</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    }</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>}</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <span class="keyword">delete</span> renderedComponent;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    }</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keywordtype">void</span> Component::renderShadow(<span class="keyword">const</span> Sml::Rectangle&lt;int32_t&gt;&amp; targetRegion)</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    {</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        <span class="keywordflow">if</span> (isVisible())</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        {   </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>            m_Shadow.render(getLayoutBounds(), targetRegion);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        }</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    }</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keywordtype">void</span> Component::setSceneInSceneTree(Scene* scene)</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    {</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        m_Scene = scene;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    }</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>}</div>
 <div class="ttc" id="aclass_gui_event_dispatcher_html"><div class="ttname"><a href="class_gui_event_dispatcher.html">GuiEventDispatcher</a></div><div class="ttdef"><b>Definition:</b> <a href="gui__event__dispatching_8h_source.html#l00063">gui_event_dispatching.h:64</a></div></div>
 <div class="ttc" id="aclass_sgl_1_1_component_html_a0ab143ead727a4156650de949f888c75"><div class="ttname"><a href="class_sgl_1_1_component.html#a0ab143ead727a4156650de949f888c75">Sgl::Component::Visibility</a></div><div class="ttdeci">Visibility</div><div class="ttdoc">Used to determine if Component should be rendered and targeted by events.</div><div class="ttdef"><b>Definition:</b> <a href="component_8h_source.html#l00035">component.h:36</a></div></div>
 <div class="ttc" id="aparent_8h_html"><div class="ttname"><a href="parent_8h.html">parent.h</a></div></div>

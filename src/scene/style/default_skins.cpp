@@ -926,13 +926,12 @@ namespace DefaultSkins
             m_RenderedContentTexture = new Sml::Texture(contentWidth, contentHeight);
         }
 
-        Sml::Renderer& render = Sml::Renderer::getInstance();
-        render.pushTarget();
-        render.setTarget(m_RenderedContentTexture);
+        Sml::Renderer& renderer = Sml::Renderer::getInstance();
+        renderer.pushSetTarget(m_RenderedContentTexture);
 
         content->render({0, 0, contentWidth, contentHeight});
 
-        render.popTarget();
+        renderer.popTarget();
     }
 }
 }

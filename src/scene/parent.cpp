@@ -82,8 +82,7 @@ namespace Sgl
 
         updateSnapshotSize();
 
-        Sml::Renderer::getInstance().pushTarget();
-        Sml::Renderer::getInstance().setTarget(m_Snapshot);
+        Sml::Renderer::getInstance().pushSetTarget(m_Snapshot);
 
         Sml::Renderer::getInstance().setColor(Sml::COLOR_TRANSPARENT);
         Sml::Renderer::getInstance().clear();

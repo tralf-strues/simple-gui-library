@@ -237,9 +237,7 @@ namespace Sgl
 
         Sml::Texture* renderedComponent = new Sml::Texture(m_LayoutBounds.width, m_LayoutBounds.height);
         
-        renderer.pushTarget();
-
-        renderer.setTarget(renderedComponent);
+        renderer.pushSetTarget(renderedComponent);
 
         Sml::Vec2i savedLayoutPos = m_LayoutBounds.pos;
         m_LayoutBounds.pos = {0, 0};
