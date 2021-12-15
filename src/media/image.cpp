@@ -12,17 +12,20 @@
 namespace Sgl
 {
     Image::Image(const char* filename, ImageFormat format)
-        : m_Format(format), m_Texture()
+        : m_Format(format), m_Texture(new Sml::Texture())
     {
-        m_Texture.loadFromImage(filename);
-        assert(m_Texture.getWidth()  > 0);
-        assert(m_Texture.getHeight() > 0);
+        m_Texture->loadFromImage(filename);
+        assert(m_Texture->getWidth()  > 0);
+        assert(m_Texture->getHeight() > 0);
     }
 
-    int32_t             Image::getWidth()   const { return m_Texture.getWidth();  }
-    int32_t             Image::getHeight()  const { return m_Texture.getHeight(); }
-    ImageFormat         Image::getFormat()  const { return m_Format;              }
-    const Sml::Texture* Image::getTexture() const { return &m_Texture;            }
+    Image::Image(const Sml::Texture* texture)
+        : m_Format(ImageFormat::INVALID), m_Texture(texture->copy()) {}
+
+    int32_t             Image::getWidth()   const { return m_Texture->getWidth();  }
+    int32_t             Image::getHeight()  const { return m_Texture->getHeight(); }
+    ImageFormat         Image::getFormat()  const { return m_Format;               }
+    const Sml::Texture* Image::getTexture() const { return m_Texture;              }
 
     void renderImage(const Image* image, const Sml::Rectangle<int32_t>& targetRegion)
     {

@@ -23,6 +23,7 @@ namespace Sgl
     {
     public:
         Image(const char* filename, ImageFormat format);
+        Image(const Sml::Texture* texture);
         ~Image() = default;
 
         int32_t             getWidth()   const;
@@ -31,8 +32,8 @@ namespace Sgl
         const Sml::Texture* getTexture() const;
 
     private:
-        ImageFormat  m_Format;
-        Sml::Texture m_Texture;
+        ImageFormat   m_Format  = ImageFormat::INVALID;
+        Sml::Texture* m_Texture = nullptr;
     };
 
     void renderImage(const Image* image, const Sml::Rectangle<int32_t>& targetRegion);

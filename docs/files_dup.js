@@ -1,5 +1,7 @@
 var files_dup =
 [
+    [ "containers.h", "containers_8h.html", null ],
+    [ "controls.h", "controls_8h.html", null ],
     [ "gui_event.h", "gui__event_8h.html", "gui__event_8h" ],
     [ "gui_event_dispatching.h", "gui__event__dispatching_8h.html", "gui__event__dispatching_8h" ],
     [ "image.h", "image_8h.html", "image_8h" ],
@@ -95,6 +97,7 @@ var files_dup =
       [ "Sgl::Skinnable", "class_sgl_1_1_skinnable.html", null ]
     ] ],
     [ "utils.h", "utils_8h.html", null ],
+    [ "shapes.h", "shapes_8h.html", null ],
     [ "gui_event_dispatching.cpp", "gui__event__dispatching_8cpp.html", "gui__event__dispatching_8cpp" ],
     [ "image.cpp", "image_8cpp.html", null ],
     [ "image_view.cpp", "image__view_8cpp.html", null ],
