@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 350;
+var viewWidth = 489;
 var viewHeight = 1202;
 var sectionId = 'dynsection-0';
 </script>
@@ -54,22 +54,22 @@ var sectionId = 'dynsection-0';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>Sgl::BoxContainer</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-1198 345.5,-1198 345.5,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-1198 484.5,-1198 484.5,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title="Basic list&#45;like container which lays out children in a line one after another.">
-<polygon fill="#bfbfbf" stroke="black" points="116,-298.5 116,-410.5 213,-410.5 213,-298.5 116,-298.5"/>
-<text text-anchor="middle" x="164.5" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::BoxContainer</text>
-<polyline fill="none" stroke="black" points="116,-391.5 213,-391.5 "/>
-<text text-anchor="middle" x="164.5" y="-379.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="116,-372.5 213,-372.5 "/>
-<text text-anchor="start" x="124" y="-360.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ BoxContainer()</text>
-<text text-anchor="start" x="124" y="-349.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ BoxContainer()</text>
-<text text-anchor="start" x="124" y="-338.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~BoxContainer()</text>
-<text text-anchor="start" x="124" y="-327.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDirection()</text>
-<text text-anchor="start" x="124" y="-316.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDirection()</text>
-<text text-anchor="start" x="124" y="-305.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
+<polygon fill="#bfbfbf" stroke="black" points="219,-298.5 219,-410.5 316,-410.5 316,-298.5 219,-298.5"/>
+<text text-anchor="middle" x="267.5" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::BoxContainer</text>
+<polyline fill="none" stroke="black" points="219,-391.5 316,-391.5 "/>
+<text text-anchor="middle" x="267.5" y="-379.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="219,-372.5 316,-372.5 "/>
+<text text-anchor="start" x="227" y="-360.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ BoxContainer()</text>
+<text text-anchor="start" x="227" y="-349.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ BoxContainer()</text>
+<text text-anchor="start" x="227" y="-338.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~BoxContainer()</text>
+<text text-anchor="start" x="227" y="-327.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDirection()</text>
+<text text-anchor="start" x="227" y="-316.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDirection()</text>
+<text text-anchor="start" x="227" y="-305.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
 </a>
 </g>
 </g>
@@ -77,154 +77,154 @@ var sectionId = 'dynsection-0';
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:href="class_sgl_1_1_h_box.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="93.5,-193.5 93.5,-261.5 155.5,-261.5 155.5,-193.5 93.5,-193.5"/>
-<text text-anchor="middle" x="124.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::HBox</text>
-<polyline fill="none" stroke="black" points="93.5,-242.5 155.5,-242.5 "/>
-<text text-anchor="middle" x="124.5" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="93.5,-223.5 155.5,-223.5 "/>
-<text text-anchor="start" x="101.5" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ HBox()</text>
-<text text-anchor="start" x="101.5" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~HBox()</text>
+<polygon fill="white" stroke="black" points="196.5,-193.5 196.5,-261.5 258.5,-261.5 258.5,-193.5 196.5,-193.5"/>
+<text text-anchor="middle" x="227.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::HBox</text>
+<polyline fill="none" stroke="black" points="196.5,-242.5 258.5,-242.5 "/>
+<text text-anchor="middle" x="227.5" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="196.5,-223.5 258.5,-223.5 "/>
+<text text-anchor="start" x="204.5" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ HBox()</text>
+<text text-anchor="start" x="204.5" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~HBox()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M143.72,-288.55C140.72,-279.18 137.74,-269.89 135.06,-261.51"/>
-<polygon fill="none" stroke="midnightblue" points="140.46,-289.85 146.84,-298.31 147.12,-287.72 140.46,-289.85"/>
+<path fill="none" stroke="midnightblue" d="M246.72,-288.55C243.72,-279.18 240.74,-269.89 238.06,-261.51"/>
+<polygon fill="none" stroke="midnightblue" points="243.46,-289.85 249.84,-298.31 250.12,-287.72 243.46,-289.85"/>
 </g>
-<!-- Node8 -->
-<g id="node8" class="node">
-<title>Node8</title>
-<g id="a_node8"><a xlink:href="class_sgl_1_1_v_box.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="198.5,-193.5 198.5,-261.5 260.5,-261.5 260.5,-193.5 198.5,-193.5"/>
-<text text-anchor="middle" x="229.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::VBox</text>
-<polyline fill="none" stroke="black" points="198.5,-242.5 260.5,-242.5 "/>
-<text text-anchor="middle" x="229.5" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="198.5,-223.5 260.5,-223.5 "/>
-<text text-anchor="start" x="206.5" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VBox()</text>
-<text text-anchor="start" x="206.5" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VBox()</text>
+<!-- Node9 -->
+<g id="node9" class="node">
+<title>Node9</title>
+<g id="a_node9"><a xlink:href="class_sgl_1_1_v_box.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="319.5,-193.5 319.5,-261.5 381.5,-261.5 381.5,-193.5 319.5,-193.5"/>
+<text text-anchor="middle" x="350.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::VBox</text>
+<polyline fill="none" stroke="black" points="319.5,-242.5 381.5,-242.5 "/>
+<text text-anchor="middle" x="350.5" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="319.5,-223.5 381.5,-223.5 "/>
+<text text-anchor="start" x="327.5" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VBox()</text>
+<text text-anchor="start" x="327.5" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VBox()</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node8 -->
-<g id="edge7" class="edge">
-<title>Node1&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M197.96,-289.14C202.94,-279.57 207.89,-270.06 212.34,-261.51"/>
-<polygon fill="none" stroke="midnightblue" points="194.71,-287.82 193.2,-298.31 200.92,-291.05 194.71,-287.82"/>
+<!-- Node1&#45;&gt;Node9 -->
+<g id="edge8" class="edge">
+<title>Node1&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M309.84,-289.74C316.33,-279.97 322.79,-270.24 328.58,-261.51"/>
+<polygon fill="none" stroke="midnightblue" points="306.76,-288.04 304.15,-298.31 312.59,-291.91 306.76,-288.04"/>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="class_sgl_1_1_container.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="90,-447.5 90,-559.5 239,-559.5 239,-447.5 90,-447.5"/>
-<text text-anchor="middle" x="164.5" y="-547.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::Container</text>
-<polyline fill="none" stroke="black" points="90,-540.5 239,-540.5 "/>
-<text text-anchor="start" x="98" y="-528.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DEFAULT_FILL</text>
-<text text-anchor="start" x="98" y="-517.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DEFAULT_BACKGROUND</text>
-<polyline fill="none" stroke="black" points="90,-510.5 239,-510.5 "/>
-<text text-anchor="start" x="98" y="-498.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Container()</text>
-<text text-anchor="start" x="98" y="-487.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Container()</text>
-<text text-anchor="start" x="98" y="-476.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getHitComponent()</text>
-<text text-anchor="start" x="98" y="-465.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ render()</text>
-<text text-anchor="start" x="98" y="-454.5" font-family="Helvetica,sans-Serif" font-size="10.00"># prerenderSelf()</text>
+<polygon fill="white" stroke="black" points="193,-447.5 193,-559.5 342,-559.5 342,-447.5 193,-447.5"/>
+<text text-anchor="middle" x="267.5" y="-547.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::Container</text>
+<polyline fill="none" stroke="black" points="193,-540.5 342,-540.5 "/>
+<text text-anchor="start" x="201" y="-528.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DEFAULT_FILL</text>
+<text text-anchor="start" x="201" y="-517.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DEFAULT_BACKGROUND</text>
+<polyline fill="none" stroke="black" points="193,-510.5 342,-510.5 "/>
+<text text-anchor="start" x="201" y="-498.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Container()</text>
+<text text-anchor="start" x="201" y="-487.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Container()</text>
+<text text-anchor="start" x="201" y="-476.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getHitComponent()</text>
+<text text-anchor="start" x="201" y="-465.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ render()</text>
+<text text-anchor="start" x="201" y="-454.5" font-family="Helvetica,sans-Serif" font-size="10.00"># prerenderSelf()</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M164.5,-437.18C164.5,-428.43 164.5,-419.52 164.5,-410.96"/>
-<polygon fill="none" stroke="midnightblue" points="161,-437.34 164.5,-447.34 168,-437.34 161,-437.34"/>
+<path fill="none" stroke="midnightblue" d="M267.5,-437.18C267.5,-428.43 267.5,-419.52 267.5,-410.96"/>
+<polygon fill="none" stroke="midnightblue" points="264,-437.34 267.5,-447.34 271,-437.34 264,-437.34"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="class_sgl_1_1_parent.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="91.5,-596.5 91.5,-829.5 237.5,-829.5 237.5,-596.5 91.5,-596.5"/>
-<text text-anchor="middle" x="164.5" y="-817.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::Parent</text>
-<polyline fill="none" stroke="black" points="91.5,-810.5 237.5,-810.5 "/>
-<text text-anchor="start" x="99.5" y="-798.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Children</text>
-<text text-anchor="start" x="99.5" y="-787.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Snapshot</text>
-<text text-anchor="start" x="99.5" y="-776.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_NeedLayoutPass</text>
-<text text-anchor="start" x="99.5" y="-765.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Background</text>
-<text text-anchor="start" x="99.5" y="-754.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Border</text>
-<text text-anchor="start" x="99.5" y="-743.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
-<polyline fill="none" stroke="black" points="91.5,-736.5 237.5,-736.5 "/>
-<text text-anchor="start" x="99.5" y="-724.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Parent()</text>
-<text text-anchor="start" x="99.5" y="-713.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Parent()</text>
-<text text-anchor="start" x="99.5" y="-702.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getHitComponent()</text>
-<text text-anchor="start" x="99.5" y="-691.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ render()</text>
-<text text-anchor="start" x="99.5" y="-680.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ layout()</text>
-<text text-anchor="start" x="99.5" y="-669.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 39 more...</text>
-<text text-anchor="start" x="99.5" y="-658.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setSceneInSceneTree()</text>
-<text text-anchor="start" x="99.5" y="-647.5" font-family="Helvetica,sans-Serif" font-size="10.00"># layoutChildren()</text>
-<text text-anchor="start" x="99.5" y="-636.5" font-family="Helvetica,sans-Serif" font-size="10.00"># prerenderSelf()</text>
-<text text-anchor="start" x="99.5" y="-625.5" font-family="Helvetica,sans-Serif" font-size="10.00"># updateSnapshotSize()</text>
-<text text-anchor="start" x="99.5" y="-614.5" font-family="Helvetica,sans-Serif" font-size="10.00"># computeCustomPrefWidth()</text>
-<text text-anchor="start" x="99.5" y="-603.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 5 more...</text>
+<polygon fill="white" stroke="black" points="194.5,-596.5 194.5,-829.5 340.5,-829.5 340.5,-596.5 194.5,-596.5"/>
+<text text-anchor="middle" x="267.5" y="-817.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::Parent</text>
+<polyline fill="none" stroke="black" points="194.5,-810.5 340.5,-810.5 "/>
+<text text-anchor="start" x="202.5" y="-798.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Children</text>
+<text text-anchor="start" x="202.5" y="-787.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Snapshot</text>
+<text text-anchor="start" x="202.5" y="-776.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_NeedLayoutPass</text>
+<text text-anchor="start" x="202.5" y="-765.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Background</text>
+<text text-anchor="start" x="202.5" y="-754.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Border</text>
+<text text-anchor="start" x="202.5" y="-743.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
+<polyline fill="none" stroke="black" points="194.5,-736.5 340.5,-736.5 "/>
+<text text-anchor="start" x="202.5" y="-724.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Parent()</text>
+<text text-anchor="start" x="202.5" y="-713.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Parent()</text>
+<text text-anchor="start" x="202.5" y="-702.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getHitComponent()</text>
+<text text-anchor="start" x="202.5" y="-691.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ render()</text>
+<text text-anchor="start" x="202.5" y="-680.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ layout()</text>
+<text text-anchor="start" x="202.5" y="-669.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 39 more...</text>
+<text text-anchor="start" x="202.5" y="-658.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setSceneInSceneTree()</text>
+<text text-anchor="start" x="202.5" y="-647.5" font-family="Helvetica,sans-Serif" font-size="10.00"># layoutChildren()</text>
+<text text-anchor="start" x="202.5" y="-636.5" font-family="Helvetica,sans-Serif" font-size="10.00"># prerenderSelf()</text>
+<text text-anchor="start" x="202.5" y="-625.5" font-family="Helvetica,sans-Serif" font-size="10.00"># updateSnapshotSize()</text>
+<text text-anchor="start" x="202.5" y="-614.5" font-family="Helvetica,sans-Serif" font-size="10.00"># computeCustomPrefWidth()</text>
+<text text-anchor="start" x="202.5" y="-603.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 5 more...</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M164.5,-586.33C164.5,-577.1 164.5,-568.11 164.5,-559.68"/>
-<polygon fill="none" stroke="midnightblue" points="161,-586.42 164.5,-596.42 168,-586.42 161,-586.42"/>
+<path fill="none" stroke="midnightblue" d="M267.5,-586.33C267.5,-577.1 267.5,-568.11 267.5,-559.68"/>
+<polygon fill="none" stroke="midnightblue" points="264,-586.42 267.5,-596.42 271,-586.42 264,-586.42"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
 <g id="a_node4"><a xlink:href="class_sgl_1_1_component.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="96,-866.5 96,-1099.5 233,-1099.5 233,-866.5 96,-866.5"/>
-<text text-anchor="middle" x="164.5" y="-1087.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::Component</text>
-<polyline fill="none" stroke="black" points="96,-1080.5 233,-1080.5 "/>
-<text text-anchor="start" x="104" y="-1068.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Scene</text>
-<text text-anchor="start" x="104" y="-1057.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ USE_COMPUTED_SIZE</text>
-<text text-anchor="start" x="104" y="-1046.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ UNLIMITED_SIZE</text>
-<text text-anchor="start" x="104" y="-1035.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Visibility</text>
-<text text-anchor="start" x="104" y="-1024.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Focused</text>
-<text text-anchor="start" x="104" y="-1013.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Hovered</text>
-<text text-anchor="start" x="104" y="-1002.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Shadow</text>
-<text text-anchor="start" x="104" y="-991.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Dispatcher</text>
-<text text-anchor="start" x="104" y="-980.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 3 more...</text>
-<polyline fill="none" stroke="black" points="96,-973.5 233,-973.5 "/>
-<text text-anchor="start" x="104" y="-961.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Component()</text>
-<text text-anchor="start" x="104" y="-950.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Component()</text>
-<text text-anchor="start" x="104" y="-939.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getHitComponent()</text>
-<text text-anchor="start" x="104" y="-928.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ render()</text>
-<text text-anchor="start" x="104" y="-917.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ layout()</text>
-<text text-anchor="start" x="104" y="-906.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 42 more...</text>
-<text text-anchor="start" x="104" y="-895.5" font-family="Helvetica,sans-Serif" font-size="10.00"># updateShadow()</text>
-<text text-anchor="start" x="104" y="-884.5" font-family="Helvetica,sans-Serif" font-size="10.00"># renderShadow()</text>
-<text text-anchor="start" x="104" y="-873.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setSceneInSceneTree()</text>
+<polygon fill="white" stroke="black" points="199,-866.5 199,-1099.5 336,-1099.5 336,-866.5 199,-866.5"/>
+<text text-anchor="middle" x="267.5" y="-1087.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::Component</text>
+<polyline fill="none" stroke="black" points="199,-1080.5 336,-1080.5 "/>
+<text text-anchor="start" x="207" y="-1068.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Scene</text>
+<text text-anchor="start" x="207" y="-1057.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ USE_COMPUTED_SIZE</text>
+<text text-anchor="start" x="207" y="-1046.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ UNLIMITED_SIZE</text>
+<text text-anchor="start" x="207" y="-1035.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Visibility</text>
+<text text-anchor="start" x="207" y="-1024.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Focused</text>
+<text text-anchor="start" x="207" y="-1013.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Hovered</text>
+<text text-anchor="start" x="207" y="-1002.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Shadow</text>
+<text text-anchor="start" x="207" y="-991.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_Dispatcher</text>
+<text text-anchor="start" x="207" y="-980.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 3 more...</text>
+<polyline fill="none" stroke="black" points="199,-973.5 336,-973.5 "/>
+<text text-anchor="start" x="207" y="-961.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Component()</text>
+<text text-anchor="start" x="207" y="-950.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Component()</text>
+<text text-anchor="start" x="207" y="-939.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getHitComponent()</text>
+<text text-anchor="start" x="207" y="-928.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ render()</text>
+<text text-anchor="start" x="207" y="-917.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ layout()</text>
+<text text-anchor="start" x="207" y="-906.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 42 more...</text>
+<text text-anchor="start" x="207" y="-895.5" font-family="Helvetica,sans-Serif" font-size="10.00"># updateShadow()</text>
+<text text-anchor="start" x="207" y="-884.5" font-family="Helvetica,sans-Serif" font-size="10.00"># renderShadow()</text>
+<text text-anchor="start" x="207" y="-873.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setSceneInSceneTree()</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node3 -->
 <g id="edge3" class="edge">
 <title>Node4&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M164.5,-856.37C164.5,-847.46 164.5,-838.49 164.5,-829.64"/>
-<polygon fill="none" stroke="midnightblue" points="161,-856.4 164.5,-866.4 168,-856.4 161,-856.4"/>
+<path fill="none" stroke="midnightblue" d="M267.5,-856.37C267.5,-847.46 267.5,-838.49 267.5,-829.64"/>
+<polygon fill="none" stroke="midnightblue" points="264,-856.4 267.5,-866.4 271,-856.4 264,-856.4"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
 <g id="a_node5"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="118.5,-1136.5 118.5,-1193.5 210.5,-1193.5 210.5,-1136.5 118.5,-1136.5"/>
-<text text-anchor="middle" x="164.5" y="-1181.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sml::EventTarget</text>
-<polyline fill="none" stroke="#bfbfbf" points="118.5,-1174.5 210.5,-1174.5 "/>
-<text text-anchor="middle" x="164.5" y="-1162.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#bfbfbf" points="118.5,-1155.5 210.5,-1155.5 "/>
-<text text-anchor="middle" x="164.5" y="-1143.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="#bfbfbf" points="221.5,-1136.5 221.5,-1193.5 313.5,-1193.5 313.5,-1136.5 221.5,-1136.5"/>
+<text text-anchor="middle" x="267.5" y="-1181.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sml::EventTarget</text>
+<polyline fill="none" stroke="#bfbfbf" points="221.5,-1174.5 313.5,-1174.5 "/>
+<text text-anchor="middle" x="267.5" y="-1162.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#bfbfbf" points="221.5,-1155.5 313.5,-1155.5 "/>
+<text text-anchor="middle" x="267.5" y="-1143.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node4 -->
 <g id="edge4" class="edge">
 <title>Node5&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M164.5,-1126.14C164.5,-1118.03 164.5,-1109.05 164.5,-1099.67"/>
-<polygon fill="none" stroke="midnightblue" points="161,-1126.27 164.5,-1136.27 168,-1126.27 161,-1126.27"/>
+<path fill="none" stroke="midnightblue" d="M267.5,-1126.14C267.5,-1118.03 267.5,-1109.05 267.5,-1099.67"/>
+<polygon fill="none" stroke="midnightblue" points="264,-1126.27 267.5,-1136.27 271,-1126.27 264,-1126.27"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
@@ -248,36 +248,58 @@ var sectionId = 'dynsection-0';
 <!-- Node6&#45;&gt;Node7 -->
 <g id="edge6" class="edge">
 <title>Node6&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M109.91,-183.59C105.29,-170.02 100.1,-154.75 95.14,-140.18"/>
-<polygon fill="none" stroke="midnightblue" points="106.62,-184.8 113.15,-193.14 113.25,-182.55 106.62,-184.8"/>
+<path fill="none" stroke="midnightblue" d="M188.8,-189.31C173.29,-174.42 155.02,-156.86 137.69,-140.21"/>
+<polygon fill="none" stroke="midnightblue" points="186.53,-191.99 196.17,-196.4 191.38,-186.95 186.53,-191.99"/>
 </g>
-<!-- Node9 -->
-<g id="node9" class="node">
-<title>Node9</title>
-<g id="a_node9"><a xlink:href="class_sgl_1_1_context_menu.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="167.5,-0.5 167.5,-156.5 341.5,-156.5 341.5,-0.5 167.5,-0.5"/>
-<text text-anchor="middle" x="254.5" y="-144.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::ContextMenu</text>
-<polyline fill="none" stroke="black" points="167.5,-137.5 341.5,-137.5 "/>
-<text text-anchor="start" x="175.5" y="-125.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DEFAULT_PADDING</text>
-<text text-anchor="start" x="175.5" y="-114.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DEFAULT_BORDER</text>
-<text text-anchor="start" x="175.5" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DEFAULT_BACKGROUND_FILL</text>
-<text text-anchor="start" x="175.5" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DEFAULT_BACKGROUND</text>
-<text text-anchor="start" x="175.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DEFAULT_SHADOW</text>
-<polyline fill="none" stroke="black" points="167.5,-74.5 341.5,-74.5 "/>
-<text text-anchor="start" x="175.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ContextMenu()</text>
-<text text-anchor="start" x="175.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~ContextMenu()</text>
-<text text-anchor="start" x="175.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ render()</text>
-<text text-anchor="start" x="175.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSource()</text>
-<text text-anchor="start" x="175.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSource()</text>
-<text text-anchor="start" x="175.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 4 more...</text>
+<!-- Node8 -->
+<g id="node8" class="node">
+<title>Node8</title>
+<g id="a_node8"><a xlink:href="class_sgl_1_1_slider_with_label.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="167,-33.5 167,-123.5 288,-123.5 288,-33.5 167,-33.5"/>
+<text text-anchor="middle" x="227.5" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::SliderWithLabel</text>
+<polyline fill="none" stroke="black" points="167,-104.5 288,-104.5 "/>
+<text text-anchor="start" x="175" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DEFAULT_SPACING</text>
+<polyline fill="none" stroke="black" points="167,-85.5 288,-85.5 "/>
+<text text-anchor="start" x="175" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SliderWithLabel()</text>
+<text text-anchor="start" x="175" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SliderWithLabel()</text>
+<text text-anchor="start" x="175" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSlider()</text>
+<text text-anchor="start" x="175" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLabel()</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node9 -->
-<g id="edge8" class="edge">
-<title>Node8&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M236.85,-183.28C238.28,-174.9 239.81,-165.88 241.36,-156.79"/>
-<polygon fill="none" stroke="midnightblue" points="233.4,-182.7 235.17,-193.14 240.3,-183.87 233.4,-182.7"/>
+<!-- Node6&#45;&gt;Node8 -->
+<g id="edge7" class="edge">
+<title>Node6&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M227.5,-183.09C227.5,-164.34 227.5,-142.43 227.5,-123.6"/>
+<polygon fill="none" stroke="midnightblue" points="224,-183.14 227.5,-193.14 231,-183.14 224,-183.14"/>
+</g>
+<!-- Node10 -->
+<g id="node10" class="node">
+<title>Node10</title>
+<g id="a_node10"><a xlink:href="class_sgl_1_1_context_menu.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="306.5,-0.5 306.5,-156.5 480.5,-156.5 480.5,-0.5 306.5,-0.5"/>
+<text text-anchor="middle" x="393.5" y="-144.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::ContextMenu</text>
+<polyline fill="none" stroke="black" points="306.5,-137.5 480.5,-137.5 "/>
+<text text-anchor="start" x="314.5" y="-125.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DEFAULT_PADDING</text>
+<text text-anchor="start" x="314.5" y="-114.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DEFAULT_BORDER</text>
+<text text-anchor="start" x="314.5" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DEFAULT_BACKGROUND_FILL</text>
+<text text-anchor="start" x="314.5" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DEFAULT_BACKGROUND</text>
+<text text-anchor="start" x="314.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DEFAULT_SHADOW</text>
+<polyline fill="none" stroke="black" points="306.5,-74.5 480.5,-74.5 "/>
+<text text-anchor="start" x="314.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ContextMenu()</text>
+<text text-anchor="start" x="314.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~ContextMenu()</text>
+<text text-anchor="start" x="314.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ render()</text>
+<text text-anchor="start" x="314.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSource()</text>
+<text text-anchor="start" x="314.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSource()</text>
+<text text-anchor="start" x="314.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 4 more...</text>
+</a>
+</g>
+</g>
+<!-- Node9&#45;&gt;Node10 -->
+<g id="edge9" class="edge">
+<title>Node9&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M363.14,-183.28C365.59,-174.9 368.23,-165.88 370.89,-156.79"/>
+<polygon fill="none" stroke="midnightblue" points="359.71,-182.56 360.26,-193.14 366.42,-184.53 359.71,-182.56"/>
 </g>
 </g>
 </svg>

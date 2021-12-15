@@ -165,8 +165,9 @@ namespace Sgl
             else if (constraints.anchors.leftAnchor  == ANCHOR_NOT_ENABLED &&
                      constraints.anchors.rightAnchor != ANCHOR_NOT_ENABLED)
             {
-                child->setLayoutX(contentArea.pos.x + contentArea.width - constraints.anchors.rightAnchor);
                 child->setLayoutWidth(child->computePrefWidth());
+                child->setLayoutX(contentArea.pos.x + contentArea.width - child->getLayoutWidth() -
+                                  constraints.anchors.rightAnchor);
             }
             else
             {
@@ -203,8 +204,9 @@ namespace Sgl
             else if (constraints.anchors.topAnchor    == ANCHOR_NOT_ENABLED &&
                      constraints.anchors.bottomAnchor != ANCHOR_NOT_ENABLED)
             {
-                child->setLayoutY(contentArea.pos.y + contentArea.height - constraints.anchors.bottomAnchor);
                 child->setLayoutHeight(child->computePrefHeight());
+                child->setLayoutY(contentArea.pos.y + contentArea.height - child->getLayoutHeight() -
+                                  constraints.anchors.bottomAnchor);
             }
             else
             {

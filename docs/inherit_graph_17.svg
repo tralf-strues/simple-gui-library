@@ -9,9 +9,9 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 62)">
 <title>Graphical Class Hierarchy</title>
 <polygon fill="white" stroke="transparent" points="-4,4 -4,-62 260,-62 260,4 -4,4"/>
-<!-- Node67 -->
+<!-- Node68 -->
 <g id="node1" class="node">
-<title>Node67</title>
+<title>Node68</title>
 <g id="a_node1"><a xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="0,-19.5 0,-38.5 95,-38.5 95,-19.5 0,-19.5"/>
 <text text-anchor="middle" x="47.5" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sml::MouseEvent</text>
@@ -27,24 +27,24 @@
 </a>
 </g>
 </g>
-<!-- Node67&#45;&gt;Node0 -->
+<!-- Node68&#45;&gt;Node0 -->
 <g id="edge1" class="edge">
-<title>Node67&#45;&gt;Node0</title>
+<title>Node68&#45;&gt;Node0</title>
 <path fill="none" stroke="midnightblue" d="M105.29,-36.49C113.66,-37.6 122.32,-38.74 130.78,-39.86"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="105.62,-33.01 95.25,-35.17 104.71,-39.95 105.62,-33.01"/>
 </g>
-<!-- Node69 -->
+<!-- Node70 -->
 <g id="node3" class="node">
-<title>Node69</title>
+<title>Node70</title>
 <g id="a_node3"><a xlink:href="class_sgl_1_1_mouse_exited_event.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="134,-0.5 134,-19.5 253,-19.5 253,-0.5 134,-0.5"/>
 <text text-anchor="middle" x="193.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Sgl::MouseExitedEvent</text>
 </a>
 </g>
 </g>
-<!-- Node67&#45;&gt;Node69 -->
+<!-- Node68&#45;&gt;Node70 -->
 <g id="edge2" class="edge">
-<title>Node67&#45;&gt;Node69</title>
+<title>Node68&#45;&gt;Node70</title>
 <path fill="none" stroke="midnightblue" d="M105.28,-21.51C114.67,-20.27 124.43,-18.98 133.88,-17.74"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="104.71,-18.05 95.25,-22.83 105.62,-24.99 104.71,-18.05"/>
 </g>

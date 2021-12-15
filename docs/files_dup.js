@@ -67,7 +67,8 @@ var files_dup =
       [ "Sgl::ScrollPane", "class_sgl_1_1_scroll_pane.html", null ]
     ] ],
     [ "slider.h", "slider_8h.html", [
-      [ "Sgl::Slider", "class_sgl_1_1_slider.html", null ]
+      [ "Sgl::Slider", "class_sgl_1_1_slider.html", null ],
+      [ "Sgl::SliderWithLabel", "class_sgl_1_1_slider_with_label.html", null ]
     ] ],
     [ "image_view.h", "image__view_8h.html", [
       [ "Sgl::ImageView", "class_sgl_1_1_image_view.html", null ]

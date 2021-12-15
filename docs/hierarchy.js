@@ -28,7 +28,8 @@ var hierarchy =
             [ "Sgl::BlankContainer", "class_sgl_1_1_blank_container.html", null ],
             [ "Sgl::BoxContainer", "class_sgl_1_1_box_container.html", [
               [ "Sgl::HBox", "class_sgl_1_1_h_box.html", [
-                [ "Sgl::MenuBar", "class_sgl_1_1_menu_bar.html", null ]
+                [ "Sgl::MenuBar", "class_sgl_1_1_menu_bar.html", null ],
+                [ "Sgl::SliderWithLabel", "class_sgl_1_1_slider_with_label.html", null ]
               ] ],
               [ "Sgl::VBox", "class_sgl_1_1_v_box.html", [
                 [ "Sgl::ContextMenu", "class_sgl_1_1_context_menu.html", null ]

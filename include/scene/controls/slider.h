@@ -9,6 +9,8 @@
 #pragma once
 
 #include "control.h"
+#include "../containers/box_container.h"
+#include "../shapes/text.h"
 
 namespace Sgl
 {
@@ -30,8 +32,8 @@ namespace Sgl
         float getValue() const;
         void setValue(float value);
 
-        void setOnPropertyChange(Sml::PropertyChangeListener<float>* listener);
-        Sml::PropertyChangeListener<float>* getOnPropertyChange(); // TODO: get rid of
+        void addOnPropertyChange(Sml::PropertyChangeListener<float>* listener);
+        const std::list<Sml::PropertyChangeListener<float>*>& getOnPropertyChange(); // TODO: get rid of
 
     private:
         Orientation m_Orientation = Orientation::HORIZONTAL;
@@ -40,6 +42,26 @@ namespace Sgl
         float       m_RangeMax    = 0;
         float       m_Value       = 0;
 
-        Sml::PropertyChangeListener<float>* m_PropertyChangeListener = nullptr;
+        std::list<Sml::PropertyChangeListener<float>*> m_PropertyChangeListeners;
+    };
+
+    class SliderWithLabel : public HBox
+    {
+    public:
+        static const int32_t DEFAULT_SPACING;
+
+    public:
+        SliderWithLabel(float rangeMin, float rangeMax, const char* format = "%lg");
+        SliderWithLabel(BaseSkin<Slider>* skin, float rangeMin, float rangeMax, const char* format = "%lg");
+
+        Slider* getSlider();
+        Text* getLabel();
+
+    private:
+        Slider*     m_Slider = nullptr;
+        Text*       m_Label  = nullptr;
+        const char* m_Format = nullptr;
+
+        void attach();
     };
 }

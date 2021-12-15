@@ -66,6 +66,7 @@ var annotated_dup =
       [ "Skin", "class_sgl_1_1_skin.html", "class_sgl_1_1_skin" ],
       [ "Skinnable", "class_sgl_1_1_skinnable.html", null ],
       [ "Slider", "class_sgl_1_1_slider.html", null ],
+      [ "SliderWithLabel", "class_sgl_1_1_slider_with_label.html", null ],
       [ "Text", "class_sgl_1_1_text.html", null ],
       [ "TilePane", "class_sgl_1_1_tile_pane.html", null ],
       [ "VBox", "class_sgl_1_1_v_box.html", null ]

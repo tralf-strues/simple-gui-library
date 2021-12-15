@@ -9,6 +9,7 @@
 #pragma once
 
 #include "box_container.h"
+#include "../controls/button.h"
 
 namespace Sgl
 {

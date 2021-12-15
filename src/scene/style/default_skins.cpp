@@ -666,7 +666,7 @@ namespace DefaultSkins
             ScrollBar* m_ScrollBar = nullptr;
         };
 
-        m_Slider->setOnPropertyChange(new SliderPropertyChangeListener(m_ScrollBar));
+        m_Slider->addOnPropertyChange(new SliderPropertyChangeListener(m_ScrollBar));
     }
 
     const Control* ScrollBarSkin::getControl() const { return m_ScrollBar; }

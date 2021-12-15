@@ -123,10 +123,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5e542615b7e12e9e0a44445987e0befb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e01c3be367ed6afa4270ccc737ca4e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_slider.html#a3e01c3be367ed6afa4270ccc737ca4e4">setValue</a> (float value)</td></tr>
 <tr class="separator:a3e01c3be367ed6afa4270ccc737ca4e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef5a25c8bf1557db11adc4da6ba9f419"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_slider.html#aef5a25c8bf1557db11adc4da6ba9f419">setOnPropertyChange</a> (Sml::PropertyChangeListener&lt; float &gt; *listener)</td></tr>
-<tr class="separator:aef5a25c8bf1557db11adc4da6ba9f419"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35a92b2829aada1478d1e819dd863a44"><td class="memItemLeft" align="right" valign="top">Sml::PropertyChangeListener&lt; float &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_slider.html#a35a92b2829aada1478d1e819dd863a44">getOnPropertyChange</a> ()</td></tr>
-<tr class="separator:a35a92b2829aada1478d1e819dd863a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cdda244fe47c2a984335fd4dbd8e3f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_slider.html#a3cdda244fe47c2a984335fd4dbd8e3f9">addOnPropertyChange</a> (Sml::PropertyChangeListener&lt; float &gt; *listener)</td></tr>
+<tr class="separator:a3cdda244fe47c2a984335fd4dbd8e3f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af285eb83437f5f7df0665a59ef06195a"><td class="memItemLeft" align="right" valign="top">const std::list&lt; Sml::PropertyChangeListener&lt; float &gt; * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_slider.html#af285eb83437f5f7df0665a59ef06195a">getOnPropertyChange</a> ()</td></tr>
+<tr class="separator:af285eb83437f5f7df0665a59ef06195a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_sgl_1_1_control"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_sgl_1_1_control')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_sgl_1_1_control.html">Sgl::Control</a></td></tr>
 <tr class="memitem:a837d88e6d3ecd359560dcef25da56934 inherit pub_methods_class_sgl_1_1_control"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_sgl_1_1_component.html">Component</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sgl_1_1_control.html#a837d88e6d3ecd359560dcef25da56934">getHitComponent</a> (int32_t x, int32_t y) override</td></tr>
 <tr class="separator:a837d88e6d3ecd359560dcef25da56934 inherit pub_methods_class_sgl_1_1_control"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -386,7 +386,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="slider_8h_source.html#l00015">15</a> of file <a class="el" href="slider_8h_source.html">slider.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="slider_8h_source.html#l00017">17</a> of file <a class="el" href="slider_8h_source.html">slider.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2a61d7eab23e2dcfdeae1729292708e0" name="a2a61d7eab23e2dcfdeae1729292708e0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a61d7eab23e2dcfdeae1729292708e0">&#9670;&nbsp;</a></span>Slider() <span class="overload">[1/2]</span></h2>
@@ -455,14 +455,34 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a35a92b2829aada1478d1e819dd863a44" name="a35a92b2829aada1478d1e819dd863a44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35a92b2829aada1478d1e819dd863a44">&#9670;&nbsp;</a></span>getOnPropertyChange()</h2>
+<a id="a3cdda244fe47c2a984335fd4dbd8e3f9" name="a3cdda244fe47c2a984335fd4dbd8e3f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cdda244fe47c2a984335fd4dbd8e3f9">&#9670;&nbsp;</a></span>addOnPropertyChange()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Sml::PropertyChangeListener&lt; float &gt; * Sgl::Slider::getOnPropertyChange </td>
+          <td class="memname">void Sgl::Slider::addOnPropertyChange </td>
+          <td>(</td>
+          <td class="paramtype">Sml::PropertyChangeListener&lt; float &gt; *&#160;</td>
+          <td class="paramname"><em>listener</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="slider_8cpp_source.html#l00078">78</a> of file <a class="el" href="slider_8cpp_source.html">slider.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af285eb83437f5f7df0665a59ef06195a" name="af285eb83437f5f7df0665a59ef06195a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af285eb83437f5f7df0665a59ef06195a">&#9670;&nbsp;</a></span>getOnPropertyChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::list&lt; Sml::PropertyChangeListener&lt; float &gt; * &gt; &amp; Sgl::Slider::getOnPropertyChange </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -470,7 +490,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="slider_8cpp_source.html#l00078">78</a> of file <a class="el" href="slider_8cpp_source.html">slider.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="slider_8cpp_source.html#l00083">83</a> of file <a class="el" href="slider_8cpp_source.html">slider.cpp</a>.</p>
 
 </div>
 </div>
@@ -547,26 +567,6 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="slider_8cpp_source.html#l00035">35</a> of file <a class="el" href="slider_8cpp_source.html">slider.cpp</a>.</p>
-
-</div>
-</div>
-<a id="aef5a25c8bf1557db11adc4da6ba9f419" name="aef5a25c8bf1557db11adc4da6ba9f419"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef5a25c8bf1557db11adc4da6ba9f419">&#9670;&nbsp;</a></span>setOnPropertyChange()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Sgl::Slider::setOnPropertyChange </td>
-          <td>(</td>
-          <td class="paramtype">Sml::PropertyChangeListener&lt; float &gt; *&#160;</td>
-          <td class="paramname"><em>listener</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="slider_8cpp_source.html#l00073">73</a> of file <a class="el" href="slider_8cpp_source.html">slider.cpp</a>.</p>
 
 </div>
 </div>

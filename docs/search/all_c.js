@@ -30,6 +30,7 @@ var searchData=
   ['sliderskin_27',['SliderSkin',['../class_sgl_1_1_default_skins_1_1_slider_skin.html',1,'Sgl::DefaultSkins']]],
   ['sliderskindraglistener_28',['SliderSkinDragListener',['../class_sgl_1_1_default_skins_1_1_slider_skin_drag_listener.html',1,'Sgl::DefaultSkins']]],
   ['sliderskinmousepresslistener_29',['SliderSkinMousePressListener',['../class_sgl_1_1_default_skins_1_1_slider_skin_mouse_press_listener.html',1,'Sgl::DefaultSkins']]],
-  ['staticstyle_30',['StaticStyle',['../struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_static_style.html',1,'Sgl::DefaultSkins::ButtonBaseSkin']]],
-  ['stop_31',['Stop',['../class_sgl_1_1_linear_gradient_fill_1_1_stop.html',1,'Sgl::LinearGradientFill']]]
+  ['sliderwithlabel_30',['SliderWithLabel',['../class_sgl_1_1_slider_with_label.html',1,'Sgl']]],
+  ['staticstyle_31',['StaticStyle',['../struct_sgl_1_1_default_skins_1_1_button_base_skin_1_1_static_style.html',1,'Sgl::DefaultSkins::ButtonBaseSkin']]],
+  ['stop_32',['Stop',['../class_sgl_1_1_linear_gradient_fill_1_1_stop.html',1,'Sgl::LinearGradientFill']]]
 ];
