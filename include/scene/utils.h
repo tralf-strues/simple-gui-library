@@ -35,7 +35,7 @@
                                                                                     \
     if (min##axis != INT32_MAX)                                                     \
     {                                                                               \
-        return max##axis - min##axis + addition;                                    \
+        return max##axis + addition;                                                \
     }                                                                               \
                                                                                     \
     return addition;

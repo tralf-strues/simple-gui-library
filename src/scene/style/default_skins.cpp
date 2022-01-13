@@ -871,6 +871,7 @@ namespace DefaultSkins
                                                  m_ScrollPane->getContent()->getLayoutWidth());
 
             // m_ScrollPane->getContent()->setScene(m_ScrollPane->getScene());
+            m_ScrollPane->getContent()->setInteractable(false);
             m_ScrollPane->getContent()->setVisible(false);
             // FIXME: COSTYL!!!
             m_ScrollPane->removeChildren();

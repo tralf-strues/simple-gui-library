@@ -26,6 +26,14 @@ var NAVTREE =
 [
   [ "Simple GUI Library", "index.html", [
     [ "Installation", "index.html#autotoc_md1", null ],
+    [ "Overview", "index.html#autotoc_md2", [
+      [ "Scene components", "index.html#autotoc_md3", [
+        [ "Shapes", "index.html#autotoc_md4", null ],
+        [ "Containers", "index.html#autotoc_md5", null ],
+        [ "Controls", "index.html#autotoc_md6", null ]
+      ] ],
+      [ "Event system", "index.html#autotoc_md7", null ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
