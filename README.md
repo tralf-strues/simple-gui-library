@@ -14,7 +14,7 @@ $ make install OutputPrefix=<YOUR DIRECTORY HERE>
 ```
 
 ## Overview
-The library uses my [simple-multimedia-library](). Components render themselves to sml's `Texture`, the event system uses sml's `Event` and event-dispatching (though highly modified version of it) and so on.
+The library uses my [simple-multimedia-library](https://github.com/tralf-strues/simple-multimedia-library). Components render themselves to sml's `Texture`, the event system uses sml's `Event` and event-dispatching (though highly modified version of it) and so on.
 
 ### Scene components
 A `Scene` is basically a hierarchical tree of gui `Component`s. This hierarchy is used for things like rendering, layout management, event dispatching, etc. Below is the inheritance diagram of gui components.
